@@ -39,12 +39,14 @@ int main()
 
     while (!exit)
     {
+        res.printResourcesCount();
+
         std::cin >> select;
 
         switch (select)
         {
         case 'e':
-            std::cout << "Extracted!!!" << std::endl;
+            ResourcesEtract::extract(res.log, res.wood, res.wood);
             break;
         case 's':
             std::cout << "Skiped (0  )/\\(0  )!" << std::endl;

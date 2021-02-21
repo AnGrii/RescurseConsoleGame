@@ -66,3 +66,11 @@ void Resource::SaveData(std::vector<uint64_t>& dataList)
 	dataList[4] = stone.getCount();
 	dataList[5] = stone.getValue();
 }
+
+void Resource::printResourcesCount()
+{
+	std::cout
+		<< "Log:\t" << log.getCount() << std::endl
+		<< "Wood:\t" << wood.getCount() << std::endl
+		<< "Stone:\t" << stone.getCount() << std::endl << std::endl;
+}

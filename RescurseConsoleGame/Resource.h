@@ -30,6 +30,8 @@ public:
 	Resource();
 	Resource(std::vector<uint64_t> dataList);
 	void SaveData(std::vector<uint64_t>& dataList);
+
+	void printResourcesCount();
 };
 
 
