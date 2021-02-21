@@ -8,6 +8,7 @@
 
 class DataModule
 {
+public:
 	DataModule(std::string dataFileName) 
 	{
 		std::ifstream loadDataFile(dataFileName);

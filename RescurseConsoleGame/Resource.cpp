@@ -26,10 +26,7 @@ void Resource::setLog(uint64_t count)
 	log = count;
 }
 
-uint64_t Resource::getWood()
-{
-	return wood;
-}
+uint64_t Resource::getWood() { return wood; }
 uint64_t Resource::addWood(uint64_t count)
 {
 	uint64_t limit = UINT64_MAX - wood;
@@ -55,10 +52,7 @@ void Resource::setWood(uint64_t count)
 	wood = count;
 }
 
-uint64_t Resource::getStone()
-{
-	return stone;
-}
+uint64_t Resource::getStone(){ return stone; }
 uint64_t Resource::addstone(uint64_t count)
 {
 	uint64_t limit = UINT64_MAX - stone;
