@@ -15,7 +15,7 @@
 #include "Player.h"
 #include "Resource.h"
 #include "ResourcesEtract.h"
-#include "Factories.h"
+#include "Buildings.h"
 #include "Shop.h"
 
 
@@ -45,6 +45,9 @@ int main()
         {
         case 'e':
             std::cout << "Extracted!!!" << std::endl;
+            break;
+        case 's':
+            std::cout << "Skiped (0  )/\\(0  )!" << std::endl;
             break;
         case 'x':
             exit = true;

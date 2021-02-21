@@ -24,9 +24,6 @@
     <ClCompile Include="ResourcesEtract.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Factories.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Shop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,6 +31,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DataModule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Buildings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,9 +44,6 @@
     <ClInclude Include="ResourcesEtract.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Factories.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Shop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -54,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DataModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Buildings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

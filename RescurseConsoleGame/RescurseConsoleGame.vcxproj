@@ -140,7 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DataModule.cpp" />
-    <ClCompile Include="Factories.cpp" />
+    <ClCompile Include="Buildings.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RescurseConsoleGame.cpp" />
     <ClCompile Include="Resource.cpp" />
@@ -149,7 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataModule.h" />
-    <ClInclude Include="Factories.h" />
+    <ClInclude Include="Buildings.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourcesEtract.h" />

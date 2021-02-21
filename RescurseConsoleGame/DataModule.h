@@ -20,7 +20,7 @@ private:
 	std::vector<std::vector<uint64_t>> dataMatrix;
 	std::string playerName;
 
-	const uint16_t RESOURCES_COUNT = 3;
+	const uint8_t RESOURCES_COUNT = 3;
 
 	void loadPlayer(std::ifstream& loadDataFile);
 
