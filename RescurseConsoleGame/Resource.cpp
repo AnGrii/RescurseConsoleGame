@@ -1,80 +1,50 @@
 #include "Resource.h"
 
-uint64_t Resource::getLog() { return log; }
-void Resource::addLog(uint64_t count)
+uint64_t ResTmp::getCount()
 {
-	uint64_t limit = UINT64_MAX - log;
-
-	if ( limit > count ) {
-		log += count;
-	}
-	else {
-		log = UINT64_MAX;
-	}
+	return count;
 }
-void Resource::reduceLog(uint64_t count)
+void ResTmp::add(uint64_t count)
 {
-	if (log > count) {
-		log -= count;
-	}
-	else {
-		log = 0;
-	}
-}
-void Resource::setLog(uint64_t count)
-{
-	log = count;
-}
-
-uint64_t Resource::getWood() { return wood; }
-void Resource::addWood(uint64_t count)
-{
-	uint64_t limit = UINT64_MAX - wood;
+	uint64_t limit = UINT64_MAX - this->count;
 
 	if (limit > count) {
-		wood += count;
+		this->count += count;
 	}
 	else {
-		wood = UINT64_MAX;
+		this->count = UINT64_MAX;
 	}
 }
-void Resource::reduceWood(uint64_t count)
+void ResTmp::reduce(uint64_t count)
 {
-	if (wood > count) {
-		wood -= count;
+	if (this->count > count) {
+		this->count -= count;
 	}
 	else {
-		wood = 0;
+		this->count = 0;
 	}
 }
-void Resource::setWood(uint64_t count)
+void ResTmp::set(uint64_t count)
 {
-	wood = count;
+	this->count = count;
 }
 
-uint64_t Resource::getStone(){ return stone; }
-void Resource::addstone(uint64_t count)
-{
-	uint64_t limit = UINT64_MAX - stone;
 
-	if (limit > count) {
-		stone += count;
-	}
-	else {
-		stone = UINT64_MAX;
-	}
-}
-void Resource::reduceStone(uint64_t count)
+Resource::Resource()
 {
-	if (stone > count) {
-		stone -= count;
-	}
-	else {
-		stone = 0;
-	}
+	log.Reinitialisate(0);
+	wood.Reinitialisate(0);
+	stone.Reinitialisate(0);
 }
-void Resource::setStone(uint64_t count)
+Resource::Resource(std::vector<uint64_t> dataList)
 {
-	stone = count;
+	log.Reinitialisate(dataList[0]);
+	wood.Reinitialisate(dataList[1]);
+	stone.Reinitialisate(dataList[2]);
 }
-
+void Resource::SaveData(std::vector<uint64_t>& dataList)
+{
+	dataList[0] = log.getCount();
+	dataList[1] = wood.getCount();
+	dataList[2] = stone.getCount();
+}

@@ -9,13 +9,7 @@
 class DataModule
 {
 public:
-	DataModule(std::string dataFileName) 
-	{
-		std::ifstream loadDataFile(dataFileName);
-
-		loadPlayer(loadDataFile);
-		loadResources(loadDataFile);
-	}
+	DataModule(std::string dataFileName);
 
 	std::string getPlayerName();
 	std::vector<uint64_t> getPlayerData();
@@ -29,6 +23,7 @@ private:
 	const uint16_t RESOURCES_COUNT = 3;
 
 	void loadPlayer(std::ifstream& loadDataFile);
+
 	void loadResources(std::ifstream& loadDataFile);
 };
 

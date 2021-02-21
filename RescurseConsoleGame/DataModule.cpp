@@ -31,6 +31,14 @@ void DataModule::loadResources(std::ifstream& loadDataFile)
 }
 
 
+DataModule::DataModule(std::string dataFileName)
+{
+	std::ifstream loadDataFile(dataFileName);
+
+	loadPlayer(loadDataFile);
+	loadResources(loadDataFile);
+}
+
 std::string DataModule::getPlayerName()
 {
 	return playerName;
