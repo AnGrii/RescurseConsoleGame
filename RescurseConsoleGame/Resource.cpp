@@ -1,7 +1,7 @@
 #include "Resource.h"
 
 uint64_t Resource::getLog() { return log; }
-uint64_t Resource::addLog(uint64_t count)
+void Resource::addLog(uint64_t count)
 {
 	uint64_t limit = UINT64_MAX - log;
 
@@ -12,7 +12,7 @@ uint64_t Resource::addLog(uint64_t count)
 		log = UINT64_MAX;
 	}
 }
-uint64_t Resource::reduceLog(uint64_t count)
+void Resource::reduceLog(uint64_t count)
 {
 	if (log > count) {
 		log -= count;
@@ -27,7 +27,7 @@ void Resource::setLog(uint64_t count)
 }
 
 uint64_t Resource::getWood() { return wood; }
-uint64_t Resource::addWood(uint64_t count)
+void Resource::addWood(uint64_t count)
 {
 	uint64_t limit = UINT64_MAX - wood;
 
@@ -38,7 +38,7 @@ uint64_t Resource::addWood(uint64_t count)
 		wood = UINT64_MAX;
 	}
 }
-uint64_t Resource::reduceWood(uint64_t count)
+void Resource::reduceWood(uint64_t count)
 {
 	if (wood > count) {
 		wood -= count;
@@ -53,7 +53,7 @@ void Resource::setWood(uint64_t count)
 }
 
 uint64_t Resource::getStone(){ return stone; }
-uint64_t Resource::addstone(uint64_t count)
+void Resource::addstone(uint64_t count)
 {
 	uint64_t limit = UINT64_MAX - stone;
 
@@ -64,7 +64,7 @@ uint64_t Resource::addstone(uint64_t count)
 		stone = UINT64_MAX;
 	}
 }
-uint64_t Resource::reduceStone(uint64_t count)
+void Resource::reduceStone(uint64_t count)
 {
 	if (stone > count) {
 		stone -= count;
