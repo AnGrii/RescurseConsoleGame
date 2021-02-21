@@ -2,32 +2,35 @@
 #include<iostream>
 #include<vector>
 
-
-class Resource
+class ResTemplate
 {
 public:
-	Resource();
-	Resource(std::vector<uint64_t> dataList);
-	void SaveData(std::vector<uint64_t>& dataList);
+	ResTemplate();
+	ResTemplate(uint64_t count, uint64_t value) : count(count), value(value) {}
+	void Reinitialisate(uint64_t count, uint64_t value);
 
-private:
-	ResTmp log, wood, stone;
-};
-
-
-class ResTmp
-{
-public:
-	ResTmp() { count = 0; }
-
-	ResTmp(uint64_t count) : count(count) {}
-	void Reinitialisate(uint64_t count) { this->count = count; }
 
 	uint64_t getCount();
 	void add(uint64_t count);
 	void reduce(uint64_t count);
 	void set(uint64_t count);
 
+	uint64_t getValue();
+
 private:
-	uint64_t count;
+	uint64_t count, value;
 };
+
+
+class Resource
+{
+public:
+	ResTemplate log, wood, stone;
+
+
+	Resource();
+	Resource(std::vector<uint64_t> dataList);
+	void SaveData(std::vector<uint64_t>& dataList);
+};
+
+

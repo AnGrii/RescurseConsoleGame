@@ -1,10 +1,22 @@
 #include "Resource.h"
 
-uint64_t ResTmp::getCount()
+ResTemplate::ResTemplate()
+{
+	count = 0; 
+	value = 0;
+}
+void ResTemplate::Reinitialisate(uint64_t count, uint64_t value)
+{
+	this->count = count;
+	this->value = value;
+}
+
+
+uint64_t ResTemplate::getCount()
 {
 	return count;
 }
-void ResTmp::add(uint64_t count)
+void ResTemplate::add(uint64_t count)
 {
 	uint64_t limit = UINT64_MAX - this->count;
 
@@ -15,7 +27,7 @@ void ResTmp::add(uint64_t count)
 		this->count = UINT64_MAX;
 	}
 }
-void ResTmp::reduce(uint64_t count)
+void ResTemplate::reduce(uint64_t count)
 {
 	if (this->count > count) {
 		this->count -= count;
@@ -24,17 +36,20 @@ void ResTmp::reduce(uint64_t count)
 		this->count = 0;
 	}
 }
-void ResTmp::set(uint64_t count)
+void ResTemplate::set(uint64_t count)
 {
 	this->count = count;
+}
+
+uint64_t ResTemplate::getValue()
+{
+	return value;
 }
 
 
 Resource::Resource()
 {
-	log.Reinitialisate(0);
-	wood.Reinitialisate(0);
-	stone.Reinitialisate(0);
+	//Standart ResTmp constructor has initialisating in declaration
 }
 Resource::Resource(std::vector<uint64_t> dataList)
 {

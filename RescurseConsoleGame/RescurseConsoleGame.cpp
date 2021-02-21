@@ -10,6 +10,7 @@
 #include <vector>
 #include <list>
 
+
 #include "DataModule.h"
 #include "Player.h"
 #include "Resource.h"
@@ -26,9 +27,9 @@ int main()
 
     Player player(data.getPlayerName(), data.getPlayerData());
     
-    Resource resources(data.getRecourcesData());
+    Resource res(data.getRecourcesData());
 
-
+    std::cout << res.log.getCount() << '\t' << res.wood.getCount() << '\t' << res.stone.getCount();
 
     return 0;
 }
