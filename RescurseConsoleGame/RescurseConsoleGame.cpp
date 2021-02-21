@@ -31,7 +31,31 @@ int main()
 
     std::cout << res.log.getCount() << '\t' << res.log.getValue()
         << '\t' << res.wood.getCount() << '\t' << res.wood.getValue()
-        << '\t' << res.stone.getCount() << '\t' << res.stone.getValue();
+        << '\t' << res.stone.getCount() << '\t' << res.stone.getValue() << std::endl;
+
+
+    char select = '0';
+    bool exit = false;
+
+    while (!exit)
+    {
+        std::cin >> select;
+
+        switch (select)
+        {
+        case 'e':
+            std::cout << "Extracted!!!" << std::endl;
+            break;
+        case 'x':
+            exit = true;
+            break;
+        default:
+            std::cout << "Incorrect input!!!" << std::endl;
+            break;
+        }
+    }
+   
+
 
     return 0;
 }
