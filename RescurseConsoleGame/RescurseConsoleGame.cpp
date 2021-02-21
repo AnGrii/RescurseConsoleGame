@@ -10,6 +10,10 @@
 #include <vector>
 #include <list>
 
+#include "Resource.h"
+#include "ResourcesEtract.h"
+#include "Factories.h"
+
 
 
 int main()
