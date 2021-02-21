@@ -21,11 +21,13 @@
 
 int main()
 {
+    //Loading and initialisation data
     DataModule data("Data.txt");
 
     Player player(data.getPlayerName(), data.getPlayerData());
     
-    std::cout << data.getRecourcesData()[0] << '\t' << data.getRecourcesData()[1] << '\t' << data.getRecourcesData()[2];
+    Resource resources(data.getRecourcesData());
+
 
 
     return 0;
