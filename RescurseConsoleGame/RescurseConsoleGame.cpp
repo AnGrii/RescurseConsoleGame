@@ -26,24 +26,19 @@ int main()
     DataModule data("Data.txt");
 
     Player player(data.getPlayerName(), data.getPlayerData());
-    
     Resource res(data.getRecourcesData());
 
-    std::cout << res.log.getCount() << '\t' << res.log.getValue()
-        << '\t' << res.wood.getCount() << '\t' << res.wood.getValue()
-        << '\t' << res.stone.getCount() << '\t' << res.stone.getValue() << std::endl;
 
+    char g_Select = '0';
+    bool g_Exit = false;
 
-    char select = '0';
-    bool exit = false;
-
-    while (!exit)
+    while (!g_Exit)
     {
         res.printResourcesCount();
 
-        std::cin >> select;
+        std::cin >> g_Select;
 
-        switch (select)
+        switch (g_Select)
         {
         case 'e':
             ResourcesEtract::extract(res.log, res.wood, res.wood);
@@ -52,7 +47,7 @@ int main()
             std::cout << "Skiped (0  )/\\(0  )!" << std::endl;
             break;
         case 'x':
-            exit = true;
+            g_Exit = true;
             break;
         default:
             std::cout << "Incorrect input!!!" << std::endl;
