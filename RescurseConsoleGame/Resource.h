@@ -26,7 +26,6 @@ public:
 	}
 	
 
-
 	uint64_t getLog();
 	uint64_t addLog(uint64_t count);
 	uint64_t reduceLog(uint64_t count);

@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DataModule.cpp" />
     <ClCompile Include="Factories.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RescurseConsoleGame.cpp" />
@@ -147,11 +148,15 @@
     <ClCompile Include="Shop.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataModule.h" />
     <ClInclude Include="Factories.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourcesEtract.h" />
     <ClInclude Include="Shop.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
