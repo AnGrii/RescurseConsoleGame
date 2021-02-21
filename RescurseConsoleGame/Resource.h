@@ -18,6 +18,14 @@ public:
 		stone = dataList[2];
 	}
 
+	void SaveData(std::vector<uint64_t> dataList)
+	{
+		dataList[0] = log;
+		dataList[1]= wood;
+		dataList[2] = stone;
+	}
+	
+
 
 	uint64_t getLog();
 	uint64_t addLog(uint64_t count);
