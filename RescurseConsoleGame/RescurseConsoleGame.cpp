@@ -29,7 +29,9 @@ int main()
     
     Resource res(data.getRecourcesData());
 
-    std::cout << res.log.getCount() << '\t' << res.wood.getCount() << '\t' << res.stone.getCount();
+    std::cout << res.log.getCount() << '\t' << res.log.getValue()
+        << '\t' << res.wood.getCount() << '\t' << res.wood.getValue()
+        << '\t' << res.stone.getCount() << '\t' << res.stone.getValue();
 
     return 0;
 }

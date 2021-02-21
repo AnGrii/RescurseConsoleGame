@@ -18,10 +18,10 @@ void DataModule::loadResources(std::ifstream& loadDataFile)
 {
 	uint64_t buffer;
 	std::vector<uint64_t> resourcesData;
-	resourcesData.resize(RESOURCES_COUNT);
+	resourcesData.resize((static_cast<uint64_t>(RESOURCES_COUNT) * 2));
 
 
-	for (size_t i = 0; i < RESOURCES_COUNT; i++)
+	for (size_t i = 0; i < (static_cast<uint64_t>(RESOURCES_COUNT) * 2); i++)
 	{
 		loadDataFile >> buffer;
 		resourcesData[i] = buffer;
