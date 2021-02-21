@@ -26,6 +26,8 @@ void DataModule::loadResources(std::ifstream& loadDataFile)
 		loadDataFile >> buffer;
 		resourcesData[i] = buffer;
 	}
+
+	dataMatrix.push_back(resourcesData);
 }
 
 

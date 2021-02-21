@@ -23,9 +23,9 @@ int main()
 {
     DataModule data("Data.txt");
 
-    Player player();
+    Player player(data.getPlayerName(), data.getPlayerData());
     
-
+    std::cout << data.getRecourcesData()[0] << '\t' << data.getRecourcesData()[1] << '\t' << data.getRecourcesData()[2];
 
 
     return 0;
