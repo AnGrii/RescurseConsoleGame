@@ -36,7 +36,7 @@ int main()
 
     while (!g_Exit)
     {
-        GameHelper::KeywordHelp(true);
+        GameHelper::keywordHelp(true);
 
         res.printResourcesCount();
 
@@ -48,7 +48,7 @@ int main()
             ResourcesEtract::extract(res.log, res.wood, res.wood);
             break;
         case 'n':
-            GameHelper::SkipLine();
+            GameHelper::skipLine();
             break;
         case 's':
             std::cout << "SHOP!" << std::endl;
@@ -56,11 +56,11 @@ int main()
         case 'b':
             std::cout << "Build factories!" << std::endl;
             break;
-        case 'x':
+        case 'x': 
             g_Exit = true;
             break;
         default:
-            std::cout << "Incorrect input!!!" << std::endl;
+            GameHelper::incorrectInputWarning();
             break;
         }
     }

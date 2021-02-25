@@ -8,8 +8,10 @@ private:
 	GameHelper() {}
 
 public:
-	static void KeywordHelp(bool show);
+	static void keywordHelp(bool show);
 
-	static void SkipLine();
+	static void skipLine();
+
+	static void incorrectInputWarning();
 };
 
