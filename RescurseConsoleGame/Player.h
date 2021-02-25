@@ -11,8 +11,9 @@ public:
 
 	void SaveData(std::string& name, std::vector<uint64_t>& data);
 
-	std::string getName();
-	void setNewName(std::string newName);
+	void printBalance();
+	/*std::string getName();
+	void setNewName(std::string newName);*/
 
 private:
 	uint64_t balance;
