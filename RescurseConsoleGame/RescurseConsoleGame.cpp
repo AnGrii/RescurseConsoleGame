@@ -17,6 +17,7 @@
 #include "ResourcesEtract.h"
 #include "Buildings.h"
 #include "Shop.h"
+#include "GameHelper.h"
 
 
 
@@ -44,7 +45,13 @@ int main()
             ResourcesEtract::extract(res.log, res.wood, res.wood);
             break;
         case 'n':
-            std::cout << "Skiped |(0  )/\\(0  )|" << std::endl;
+            GameHelper::KeywordHelp(true);
+                break;
+        case 's':
+            std::cout << "SHOP!" << std::endl;
+            break;
+        case 'b':
+            std::cout << "Build factories!" << std::endl;
             break;
         case 'x':
             g_Exit = true;

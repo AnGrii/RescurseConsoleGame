@@ -8,14 +8,6 @@
 
 class DataModule
 {
-public:
-	DataModule(std::string dataFileName);
-
-	std::string getPlayerName();
-	std::vector<uint64_t> getPlayerData();
-
-	std::vector<uint64_t> getRecourcesData();
-
 private:
 	std::vector<std::vector<uint64_t>> dataMatrix;
 	std::string playerName;
@@ -25,5 +17,15 @@ private:
 	void loadPlayer(std::ifstream& loadDataFile);
 
 	void loadResources(std::ifstream& loadDataFile);
+
+	//void loadSettings(std::ifstream& loadDataFile);
+
+public:
+	DataModule(std::string dataFileName);
+
+	std::string getPlayerName();
+	std::vector<uint64_t> getPlayerData();
+
+	std::vector<uint64_t> getRecourcesData();
 };
 
