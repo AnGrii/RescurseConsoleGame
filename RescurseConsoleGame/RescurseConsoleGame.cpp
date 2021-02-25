@@ -23,7 +23,6 @@
 
 int main()
 {
-    //Loading and initialisation data
     DataModule data("Data.txt");
 
     Player player(data.getPlayerName(), data.getPlayerData());

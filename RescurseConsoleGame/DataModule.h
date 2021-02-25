@@ -5,7 +5,9 @@
 #include<fstream>
 #include<string>
 
-
+/// <summary>
+///  Loading, initialisation and checking game data
+/// </summary>
 class DataModule
 {
 private:
