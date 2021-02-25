@@ -22,24 +22,24 @@ void GameHelper::skipLine()
 	switch (rand)
 	{
 	case 0:
-		std::cout << "Skiped (0  )/\\(  0)" << std::endl;
+		std::cout << "Skiped (0  )/\\(  0)" << std::endl << std::endl;
 		break;
 	case 1:
-		std::cout << "Skiped (  0)/\\(0  )" << std::endl;
+		std::cout << "Skiped (  0)/\\(0  )" << std::endl << std::endl;
 		break;
 	case 2:
-		std::cout << "Skiped (0  )/\\(0  )" << std::endl;
+		std::cout << "Skiped (0  )/\\(0  )" << std::endl << std::endl;
 		break;
 	case 3:
-		std::cout << "Skiped (  0)/\\(  0)" << std::endl;
+		std::cout << "Skiped (  0)/\\(  0)" << std::endl << std::endl;
 		break;
 	default:
-		std::cout << "idk it's error. Don't mind!" << std::endl;
+		std::cout << "idk it's error. Don't mind!" << std::endl << std::endl;
 		break;
 	}
 }
 
 void GameHelper::incorrectInputWarning()
 {
-	std::cout << "Incorrect input!!!" << std::endl;
+	std::cout << "Incorrect input!!!" << std::endl << std::endl;
 }

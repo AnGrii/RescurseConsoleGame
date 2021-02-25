@@ -3,11 +3,14 @@
 void ResourcesEtract::extract(ResTemplate& log, ResTemplate& wood, ResTemplate& stone)
 {
 	std::cout << "Select type of resource!" << std::endl
-		<< "l - Log / w - Wood / s - Stone!" << std::endl;
+		<< "l - Log / w - Wood / s - Stone!" << std::endl
+		<< "Input: ";
 
 	char select = '0';
 
 	std::cin >> select;
+
+	std::cout << std::endl;
 
 	switch (select)
 	{

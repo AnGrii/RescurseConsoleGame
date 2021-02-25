@@ -38,9 +38,13 @@ int main()
     {
         GameHelper::keywordHelp(true);
 
-        res.printResourcesCount();
+        player.printBalance();
 
+        res.printResourcesCount();
+        
+        std::cout << "Input: ";
         std::cin >> g_Select;
+        std::cout << std::endl;
 
         switch (g_Select)
         {
