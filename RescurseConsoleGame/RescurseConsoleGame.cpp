@@ -43,8 +43,8 @@ int main()
         case 'e':
             ResourcesEtract::extract(res.log, res.wood, res.wood);
             break;
-        case 's':
-            std::cout << "Skiped (0  )/\\(0  )!" << std::endl;
+        case 'n':
+            std::cout << "Skiped |(0  )/\\(0  )|" << std::endl;
             break;
         case 'x':
             g_Exit = true;

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="DataModule.cpp" />
     <ClCompile Include="Buildings.cpp" />
+    <ClCompile Include="GameHelper.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RescurseConsoleGame.cpp" />
     <ClCompile Include="Resource.cpp" />
@@ -150,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="DataModule.h" />
     <ClInclude Include="Buildings.h" />
+    <ClInclude Include="GameHelper.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourcesEtract.h" />
