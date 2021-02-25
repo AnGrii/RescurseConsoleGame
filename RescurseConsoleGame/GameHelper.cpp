@@ -10,12 +10,13 @@ void GameHelper::KeywordHelp(bool show)
 		<< "b - Build Factories!" << std::endl
 		<< "" << std::endl;
 }
-
+/// <summary>
+/// Initialization srand in header needed!!!
+/// </summary>
 void GameHelper::SkipLine()
 {
-	srand(static_cast<uint64_t>(NULL));
-
-	uint8_t rand = std::rand() % 4;
+	
+	uint16_t rand = std::rand() % 4;
 
 	switch (rand)
 	{

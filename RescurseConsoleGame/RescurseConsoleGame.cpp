@@ -23,6 +23,8 @@
 
 int main()
 {
+    srand(static_cast<uint64_t>(NULL));
+
     DataModule data("Data.txt");
 
     Player player(data.getPlayerName(), data.getPlayerData());
@@ -34,6 +36,8 @@ int main()
 
     while (!g_Exit)
     {
+        GameHelper::KeywordHelp(true);
+
         res.printResourcesCount();
 
         std::cin >> g_Select;
@@ -44,8 +48,8 @@ int main()
             ResourcesEtract::extract(res.log, res.wood, res.wood);
             break;
         case 'n':
-            GameHelper::KeywordHelp(true);
-                break;
+            GameHelper::SkipLine();
+            break;
         case 's':
             std::cout << "SHOP!" << std::endl;
             break;
