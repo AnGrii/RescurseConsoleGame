@@ -21,7 +21,7 @@ void ResourcesEtract::extract(ResTemplate& log, ResTemplate& wood, ResTemplate& 
 		extractWood(log, wood);
 		break;
 	case 'w':
-		extractStone(stone);
+		extractStone(stone, wood);
 		break;
 	default:
 		std::cout << "Incorrect input!" << std::endl;
@@ -31,32 +31,37 @@ void ResourcesEtract::extract(ResTemplate& log, ResTemplate& wood, ResTemplate& 
 
 void ResourcesEtract::extractLog(ResTemplate& log)
 {
-	uint8_t ADD_LOG = 1;
+	log.add(LOG_EXTRACT);
 
-	log.add(ADD_LOG);
-
-	std::cout << "Cutted " << uint16_t(ADD_LOG) << " logs!" << std::endl;
+	std::cout << "Cutted " << uint16_t(LOG_EXTRACT) << " logs!" << std::endl;
 }
 
 void ResourcesEtract::extractWood(ResTemplate& log, ResTemplate& wood)
 {
-	uint8_t CUTTED_LOG = 2, ADD_WOOD = 1;
-
-	if (log.getCount() >= CUTTED_LOG)
+	if (log.getCount() >= LOG_TO_WOOD_NEEDED)
 	{
-		log.reduce(CUTTED_LOG);
-		wood.add(ADD_WOOD);
+		log.reduce(LOG_TO_WOOD_NEEDED);
+		wood.add(WOOD_EXTRACT);
 
-		std::cout << "Cutted " << uint16_t(CUTTED_LOG) << " logs, added "
-			<< uint16_t(ADD_WOOD) << " woods!" << std::endl;
+		std::cout << "Cutted " << uint16_t(LOG_TO_WOOD_NEEDED) << " logs, added "
+			<< uint16_t(WOOD_EXTRACT) << " woods!" << std::endl;
+	}
+	else{
+		std::cout << "Not enough logs to cut to woods! 2 nedded!!!" << std::endl;
 	}
 }
 
-void ResourcesEtract::extractStone(ResTemplate& stone)
+void ResourcesEtract::extractStone(ResTemplate& wood, ResTemplate& stone)
 {
-	uint8_t ADD_STONE = 1;
+	if (wood.getCount() >= WOOD_TO_STONE_NEDDED) {
 
-	stone.add(ADD_STONE);
+		wood.reduce(WOOD_TO_STONE_NEDDED);
+		stone.add(STONE_EXTACT);
 
-	std::cout << "Mined " << uint16_t(ADD_STONE) << " stones!" << std::endl;
+		std::cout << "Builded new branch of mine for " << WOOD_TO_STONE_NEDDED << " woods!" << std::endl
+			<< "Mined " << uint16_t(STONE_EXTACT) << " stones!" << std::endl;
+	}
+	else{
+		std::cout << "Not enough woods to build new side of mine! 5 nedded!!!" << std::endl;
+	}
 }
