@@ -33,7 +33,7 @@ void ResourcesEtract::extractLog(ResTemplate& log)
 {
 	log.add(LOG_EXTRACT);
 
-	std::cout << "Cutted " << uint16_t(LOG_EXTRACT) << " logs!" << std::endl << std::endl;
+	std::cout << "Cutted " << uint16_t(LOG_EXTRACT) << " logs!" << std::endl;
 }
 
 void ResourcesEtract::extractWood(ResTemplate& log, ResTemplate& wood)
@@ -44,10 +44,10 @@ void ResourcesEtract::extractWood(ResTemplate& log, ResTemplate& wood)
 		wood.add(WOOD_EXTRACT);
 
 		std::cout << "Cutted " << uint16_t(LOG_TO_WOOD_NEEDED) << " logs, added "
-			<< uint16_t(WOOD_EXTRACT) << " woods!" << std::endl << std::endl;
+			<< uint16_t(WOOD_EXTRACT) << " woods!" << std::endl;
 	}
 	else{
-		std::cout << "Not enough logs to cut to woods! 2 nedded!!!" << std::endl << std::endl;
+		std::cout << "Not enough logs to cut to woods! 2 nedded!!!" << std::endl;
 	}
 }
 
@@ -59,9 +59,9 @@ void ResourcesEtract::extractStone(ResTemplate& wood, ResTemplate& stone)
 		stone.add(STONE_EXTACT);
 
 		std::cout << "Builded new branch of mine for " << WOOD_TO_STONE_NEDDED << " woods!" << std::endl
-			<< "Mined " << uint16_t(STONE_EXTACT) << " stones!" << std::endl << std::endl;
+			<< "Mined " << uint16_t(STONE_EXTACT) << " stones!" << std::endl;
 	}
 	else{
-		std::cout << "Not enough woods to build new side of mine! 5 nedded!!!" << std::endl << std::endl;
+		std::cout << "Not enough woods to build new side of mine! 5 nedded!!!" << std::endl;
 	}
 }
