@@ -1,19 +1,18 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <string>
 
 #include "Resource.h"
 
 class Buildings
 {
 public:
-	/*Buildings();
-	~Buildings();*/
-
-	/*void buildBuilding();
-	void doWork();*/
+	Buildings(std::string name, std::vector<uint64_t> dataList);
+	//void SaveData(std::vector<uint64_t>& dataList);
 
 private:
-	uint64_t moneyNeeded, valueOfSkipTime, buildTime;
+	std::string name;
+	uint64_t count, inQueue, moneyNeeded, valueOfSkipTime, buildTime, endBuildTime ,resource1, resource2, resource3;
 };
 
