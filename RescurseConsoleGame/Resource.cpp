@@ -16,6 +16,10 @@ uint64_t ResTemplate::getCount()
 {
 	return count;
 }
+uint64_t& ResTemplate::getCountLink()
+{
+	return count;
+}
 void ResTemplate::add(uint64_t count)
 {
 	uint64_t limit = UINT64_MAX - this->count;
