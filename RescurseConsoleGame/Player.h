@@ -6,10 +6,10 @@
 class Player
 {
 public:
-	Player(std::string name, std::vector<uint64_t> data):
-		name(name), balance(data[0]) {}
+	Player(std::vector<std::string> name, std::vector<uint64_t> data):
+		name(name[0]), balance(data[0]) {}
 
-	void SaveData(std::string& name, std::vector<uint64_t>& data);
+	void SaveData(std::vector<std::string>& name, std::vector<uint64_t>& data);
 
 	void printBalance();
 	/*std::string getName();

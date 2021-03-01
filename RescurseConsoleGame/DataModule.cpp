@@ -4,12 +4,20 @@
 
 void DataModule::loadPlayer(std::ifstream& loadDataFile)
 {
-	uint64_t buffer;
-	loadDataFile >> playerName;
-	loadDataFile >> buffer;
+	std::string nameBuffer;
+	uint64_t numberBuffer;
+
+	loadDataFile >> nameBuffer;
+	loadDataFile >> numberBuffer;
 	
+	std::vector<std::string> playeName;
+	playeName.push_back(nameBuffer);
+
+	nameList.push_back(playeName);
+
+
 	std::vector<uint64_t> playerData;
-	playerData.push_back(buffer);
+	playerData.push_back(numberBuffer);
 
 	dataMatrix.push_back(playerData);
 }
@@ -18,6 +26,7 @@ void DataModule::loadResources(std::ifstream& loadDataFile)
 {
 	uint64_t buffer;
 	std::vector<uint64_t> resourcesData;
+
 	resourcesData.resize((static_cast<uint64_t>(RESOURCES_COUNT) * 2));
 
 
@@ -39,9 +48,9 @@ DataModule::DataModule(std::string dataFileName)
 	loadResources(loadDataFile);
 }
 
-std::string DataModule::getPlayerName()
+std::vector < std::string> DataModule::getPlayerName()
 {
-	return playerName;
+	return nameList[0];
 }
 
 std::vector<uint64_t> DataModule::getPlayerData()
