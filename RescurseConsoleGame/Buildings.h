@@ -9,7 +9,7 @@ class Buildings
 {
 public:
 	Buildings(std::string name, std::vector<uint64_t> dataList);
-	//void SaveData(std::vector<uint64_t>& dataList);
+	void SaveData(std::vector<uint64_t>& dataList);
 
 private:
 	std::string name;

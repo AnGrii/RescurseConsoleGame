@@ -39,7 +39,7 @@ void GameHelper::skipLine()
 	}
 }
 
-void GameHelper::incorrectInputWarning()
+void GameHelper::incorrectInputMSG()
 {
 	std::cout << "Incorrect input!!!" << std::endl << std::endl;
 }

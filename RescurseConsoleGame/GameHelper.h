@@ -12,6 +12,6 @@ public:
 
 	static void skipLine();
 
-	static void incorrectInputWarning();
+	static void incorrectInputMSG();
 };
 

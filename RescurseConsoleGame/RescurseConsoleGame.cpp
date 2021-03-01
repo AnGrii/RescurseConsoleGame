@@ -64,7 +64,7 @@ int main()
             g_Exit = true;
             break;
         default:
-            GameHelper::incorrectInputWarning();
+            GameHelper::incorrectInputMSG();
             break;
         }
     }
