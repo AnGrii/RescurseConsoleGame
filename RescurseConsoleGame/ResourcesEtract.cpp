@@ -59,7 +59,7 @@ void ResourcesEtract::extractStone(ResTemplate& wood, ResTemplate& stone)
 		stone.add(STONE_EXTACT);
 
 		std::cout << "Builded new branch of mine for " << WOOD_TO_STONE_NEDDED << " woods!" << std::endl
-			<< "Mined " << uint16_t(STONE_EXTACT) << " stones!" << std::endl << std::endl;
+			<< "Mined " << STONE_EXTACT << " stones!" << std::endl << std::endl;
 	}
 	else{
 		std::cout << "Not enough woods to build new side of mine! 5 nedded!!!" << std::endl << std::endl;

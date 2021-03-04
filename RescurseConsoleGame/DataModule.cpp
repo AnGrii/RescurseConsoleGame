@@ -1,7 +1,5 @@
 #include "DataModule.h"
 
-
-
 void DataModule::loadPlayer(std::ifstream& loadDataFile)
 {
 	std::string nameBuffer;

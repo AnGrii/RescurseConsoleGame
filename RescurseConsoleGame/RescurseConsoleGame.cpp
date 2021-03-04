@@ -49,7 +49,7 @@ int main()
         switch (g_Select)
         {
         case 'e':
-            ResourcesEtract::extract(res.log, res.wood, res.wood);
+            ResourcesEtract::extract(res.log, res.wood, res.stone);
             break;
         case 'n':
             GameHelper::skipLine();

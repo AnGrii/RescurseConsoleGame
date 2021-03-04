@@ -6,10 +6,11 @@ class ResTemplate
 {
 public:
 	ResTemplate() : count(0), value(0){}
-	ResTemplate(std::vector<uint64_t> dataList);
+	void Reinitialisate(std::vector<uint64_t> dataList);
 
 	uint64_t getCount();
 	uint64_t& getCountLink();
+
 	void add(uint64_t count);
 	void reduce(uint64_t count);
 	void set(uint64_t count);
@@ -26,7 +27,7 @@ class Resource
 public:
 	ResTemplate log, wood, stone;
 
-	
+
 	Resource(std::vector< std::vector<uint64_t>> dataList);
 	void SaveData(std::vector<uint64_t>& dataList);
 

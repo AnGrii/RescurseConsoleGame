@@ -1,7 +1,7 @@
 #include "Resource.h"
 
 
-ResTemplate::ResTemplate(std::vector<uint64_t> dataList)
+void ResTemplate::Reinitialisate(std::vector<uint64_t> dataList)
 {
 	this->count = dataList[0];
 	this->value = dataList[1];
@@ -48,7 +48,9 @@ uint64_t ResTemplate::getValue()
 
 Resource::Resource(std::vector< std::vector<uint64_t>> dataList)
 {
-	ResTemplate log(dataList[0]), wood(dataList[1]), stone(dataList[2]);
+	log.Reinitialisate(dataList[0]);
+	wood.Reinitialisate(dataList[1]);
+	stone.Reinitialisate(dataList[2]);
 }
 
 void Resource::SaveData(std::vector<uint64_t>& dataList)
