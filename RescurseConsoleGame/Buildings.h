@@ -21,7 +21,7 @@ private:
 class Buildings
 {
 public:
-	Buildings() 
+	Buildings();
 
 	
 	//void BuildMenu();

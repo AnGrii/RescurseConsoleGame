@@ -27,9 +27,7 @@ class Resource
 public:
 	ResTemplate log, wood, stone;
 
-
 	Resource(std::vector< std::vector<uint64_t>> dataList);
-	void SaveData(std::vector<uint64_t>& dataList);
 
 	void printResourcesCount();
 };

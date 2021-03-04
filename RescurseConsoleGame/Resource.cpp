@@ -53,16 +53,6 @@ Resource::Resource(std::vector< std::vector<uint64_t>> dataList)
 	stone.Reinitialisate(dataList[2]);
 }
 
-void Resource::SaveData(std::vector<uint64_t>& dataList)
-{
-	dataList[0] = log.getCount();
-	dataList[1] = log.getValue();
-	dataList[2] = wood.getCount();
-	dataList[3] = wood.getValue();
-	dataList[4] = stone.getCount();
-	dataList[5] = stone.getValue();
-}
-
 void Resource::printResourcesCount()
 {
 	std::cout
