@@ -23,7 +23,9 @@ class Buildings
 public:
 	Buildings(std::vector< std::vector<uint64_t>> dataList);
 
-	
+	//void BuildMenu();
+	//void BuildInfo();
+	//void BuildingInfo();
 	//void BuildMenu();
 
 private:

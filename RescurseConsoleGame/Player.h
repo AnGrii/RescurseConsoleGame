@@ -12,6 +12,9 @@ public:
 	void SaveData(std::vector<std::string>& name, std::vector<uint64_t>& data);
 
 	void printBalance();
+	void addMoney(uint64_t count);
+	void reduceMoney(uint64_t count);
+
 	/*std::string getName();
 	void setNewName(std::string newName);*/
 
