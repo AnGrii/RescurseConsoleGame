@@ -18,29 +18,24 @@ void DataModule::loadPlayer(std::ifstream& loadDataFile)
 void DataModule::loadResources(std::ifstream& loadDataFile)
 {
 	uint64_t buffer;
-	std::vector<uint64_t> logData, woodData, stoneData;
 
+	std::vector<uint64_t>* dataLists = new std::vector<uint64_t>[RESOURCES_COUNT];
 
-	logData.resize(RESOURCES_COUNT);
-	woodData.resize(RESOURCES_COUNT);
-	stoneData.resize(RESOURCES_COUNT);
-
-
-	for (size_t i = 0; i < RESOURCES_COUNT; i++)
-	{
-		loadDataFile >> buffer;
-		logData[i] = buffer;
-
-		loadDataFile >> buffer;
-		woodData[i] = buffer;
-
-		loadDataFile >> buffer;
-		stoneData[i] = buffer;
+	for (size_t i = 0; i < RESOURCES_COUNT; i++){
+		dataLists[i].resize(RESOURCES_DATA_COUNT);
 	}
 
-	resourcesData.push_back(logData);
-	resourcesData.push_back(woodData);
-	resourcesData.push_back(stoneData);
+	//Dynamic loading (count) and (value) for resource
+	for (size_t row = 0; row < RESOURCES_COUNT; row++) {
+		for (size_t collumn = 0; collumn < RESOURCES_DATA_COUNT; collumn++) {
+			loadDataFile >> buffer;
+			dataLists[row][collumn] = buffer;
+		}
+	}
+	
+	for (size_t i = 0; i < RESOURCES_COUNT; i++){
+		resourcesData.push_back(dataLists[i]);
+	}
 }
 
 
@@ -66,3 +61,20 @@ std::vector< std::vector< uint64_t>> DataModule::getRecourcesData()
 {
 	return resourcesData;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

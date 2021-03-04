@@ -12,3 +12,10 @@ void TempBuildings::Reinitialisate(std::vector<uint64_t> dataList)
 	resource2 = dataList[7];
 	resource3 = dataList[8];
 }
+
+Buildings::Buildings(std::vector<std::vector<uint64_t>> dataList)
+{
+	Forestry.Reinitialisate(dataList[0]);
+	Sawmill.Reinitialisate(dataList[1]);
+	Mine.Reinitialisate(dataList[2]);
+}

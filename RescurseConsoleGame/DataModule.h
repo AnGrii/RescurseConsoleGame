@@ -20,7 +20,12 @@ public:
 	std::vector< std::vector< uint64_t>> getRecourcesData();
 
 private:
-	const uint8_t RESOURCES_COUNT = 3;
+	const uint8_t
+		RESOURCES_COUNT = 3,
+		RESOURCES_DATA_COUNT = 2,
+		BUILDING_COUNT = 3,
+		BUILDING_DATA_COUNT = 9;
+	
 
 
 	std::vector<uint64_t> playerData;

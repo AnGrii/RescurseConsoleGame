@@ -21,7 +21,7 @@ private:
 class Buildings
 {
 public:
-	Buildings();
+	Buildings(std::vector< std::vector<uint64_t>> dataList);
 
 	
 	//void BuildMenu();
