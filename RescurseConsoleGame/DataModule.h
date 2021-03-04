@@ -10,17 +10,6 @@
 /// </summary>
 class DataModule
 {
-private:
-	const uint8_t RESOURCES_COUNT = 3;
-
-	std::vector< std::vector< uint64_t>> dataMatrix;
-	std::vector< std::vector< std::string>> nameList;
-
-
-	void loadPlayer(std::ifstream& loadDataFile);
-	void loadResources(std::ifstream& loadDataFile);
-
-	//void loadSettings(std::ifstream& loadDataFile);
 
 public:
 	DataModule(std::string dataFileName);
@@ -28,6 +17,26 @@ public:
 	std::vector< std::string> getPlayerName();
 	std::vector< uint64_t> getPlayerData();
 
-	std::vector< uint64_t> getRecourcesData();
+	std::vector< std::vector< uint64_t>> getRecourcesData();
+
+private:
+	const uint8_t RESOURCES_COUNT = 3;
+
+
+	std::vector<uint64_t> playerData;
+	std::vector<std::string> playerNameData;
+
+	std::vector< std::vector< uint64_t>> resourcesData;
+
+	std::vector< std::vector< uint64_t>> buildingsData;
+
+	std::vector< std::vector< uint64_t>> settingsData;
+	
+
+	void loadPlayer(std::ifstream& loadDataFile);
+	void loadResources(std::ifstream& loadDataFile);
+
+	//void loadSettings(std::ifstream& loadDataFile);
+
 };
 

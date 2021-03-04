@@ -1,6 +1,6 @@
 #include "Buildings.h"
 
-Buildings::Buildings(std::string name, std::vector<uint64_t> dataList)
+TempBuildings::TempBuildings(std::string name, std::vector<uint64_t> dataList)
 {
 	count = dataList[0];
 	inQueue = dataList[1];
@@ -13,7 +13,7 @@ Buildings::Buildings(std::string name, std::vector<uint64_t> dataList)
 	resource3 = dataList[8];
 }
 
-void Buildings::SaveData(std::vector<uint64_t>& dataList)
+void TempBuildings::SaveData(std::vector<uint64_t>& dataList)
 {
 	dataList[0] = count;
 	dataList[1] = inQueue;

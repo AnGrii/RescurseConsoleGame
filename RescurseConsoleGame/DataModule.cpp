@@ -10,33 +10,39 @@ void DataModule::loadPlayer(std::ifstream& loadDataFile)
 	loadDataFile >> nameBuffer;
 	loadDataFile >> numberBuffer;
 	
-	std::vector<std::string> playeName;
-	playeName.push_back(nameBuffer);
+	//Data name
+	playerNameData.push_back(nameBuffer);
 
-	nameList.push_back(playeName);
-
-
-	std::vector<uint64_t> playerData;
+	//Data number
 	playerData.push_back(numberBuffer);
-
-	dataMatrix.push_back(playerData);
 }
 
 void DataModule::loadResources(std::ifstream& loadDataFile)
 {
 	uint64_t buffer;
-	std::vector<uint64_t> resourcesData;
-
-	resourcesData.resize((static_cast<uint64_t>(RESOURCES_COUNT) * 2));
+	std::vector<uint64_t> logData, woodData, stoneData;
 
 
-	for (size_t i = 0; i < (static_cast<uint64_t>(RESOURCES_COUNT) * 2); i++)
+	logData.resize(RESOURCES_COUNT);
+	woodData.resize(RESOURCES_COUNT);
+	stoneData.resize(RESOURCES_COUNT);
+
+
+	for (size_t i = 0; i < RESOURCES_COUNT; i++)
 	{
 		loadDataFile >> buffer;
-		resourcesData[i] = buffer;
+		logData[i] = buffer;
+
+		loadDataFile >> buffer;
+		woodData[i] = buffer;
+
+		loadDataFile >> buffer;
+		stoneData[i] = buffer;
 	}
 
-	dataMatrix.push_back(resourcesData);
+	resourcesData.push_back(logData);
+	resourcesData.push_back(woodData);
+	resourcesData.push_back(stoneData);
 }
 
 
@@ -50,15 +56,15 @@ DataModule::DataModule(std::string dataFileName)
 
 std::vector < std::string> DataModule::getPlayerName()
 {
-	return nameList[0];
+	return playerNameData;
 }
 
 std::vector<uint64_t> DataModule::getPlayerData()
 {
-	return dataMatrix[0];
+	return playerData;
 }
 
-std::vector<uint64_t> DataModule::getRecourcesData()
+std::vector< std::vector< uint64_t>> DataModule::getRecourcesData()
 {
-	return dataMatrix[1];
+	return resourcesData;
 }

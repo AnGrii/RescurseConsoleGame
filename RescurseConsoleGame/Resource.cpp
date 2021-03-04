@@ -1,16 +1,11 @@
 #include "Resource.h"
 
-ResTemplate::ResTemplate()
-{
-	count = 0; 
-	value = 0;
-}
-void ResTemplate::Reinitialisate(uint64_t count, uint64_t value)
-{
-	this->count = count;
-	this->value = value;
-}
 
+ResTemplate::ResTemplate(std::vector<uint64_t> dataList)
+{
+	this->count = dataList[0];
+	this->value = dataList[1];
+}
 
 uint64_t ResTemplate::getCount()
 {
@@ -51,16 +46,11 @@ uint64_t ResTemplate::getValue()
 }
 
 
-Resource::Resource()
+Resource::Resource(std::vector< std::vector<uint64_t>> dataList)
 {
-	//Standart ResTmp constructor has initialisating in declaration
+	ResTemplate log(dataList[0]), wood(dataList[1]), stone(dataList[2]);
 }
-Resource::Resource(std::vector<uint64_t> dataList)
-{
-	log.Reinitialisate(dataList[0], dataList[1]);
-	wood.Reinitialisate(dataList[2], dataList[3]);
-	stone.Reinitialisate(dataList[4], dataList[5]);
-}
+
 void Resource::SaveData(std::vector<uint64_t>& dataList)
 {
 	dataList[0] = log.getCount();

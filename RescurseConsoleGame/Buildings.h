@@ -5,14 +5,25 @@
 
 #include "Resource.h"
 
-class Buildings
+class TempBuildings
 {
 public:
-	Buildings(std::string name, std::vector<uint64_t> dataList);
+	TempBuildings(std::string name, std::vector<uint64_t> dataList);
 	void SaveData(std::vector<uint64_t>& dataList);
 
 private:
 	std::string name;
-	uint64_t count, inQueue, moneyNeeded, valueOfSkipTime, buildTime, endBuildTime ,resource1, resource2, resource3;
+	uint64_t count, inQueue, moneyNeeded, valueOfSkipTime, buildTime, endBuildTime, resource1, resource2, resource3;
 };
 
+
+class Buildings
+{
+public:
+	Buildings();
+	
+	//void BuildMenu();
+
+private:
+	TempBuildings Forestry, Sawmill, Mine;
+};
