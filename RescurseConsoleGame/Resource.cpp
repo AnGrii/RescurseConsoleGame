@@ -64,6 +64,11 @@ Resource::Resource(std::vector< std::vector<uint64_t>> dataList)
 void Resource::printResourcesCount()
 {
 	std::cout
-		<< "Log:\t" << log.getCount() << "\tWood:\t" << wood.getCount() << "\tStone:\t" << stone.getCount() << "\tCoal:\t" << coal.getCount()
-		<< std::endl << std::endl;
+		<< "Log:\t" << log.getCount() << "\t\tBronze:\t" << bronze.getCount() << std::endl
+		<< "Wood:\t" << wood.getCount() << "\t\tSilver:\t" << silver.getCount() << std::endl
+		<< "Stone:\t" << stone.getCount() << "\t\tGold:\t" << gold.getCount() << std::endl
+		<< "Coal:\t" << coal.getCount() << "\t\tPlatina:" << platina.getCount() << std::endl
+		<< "Copper:\t" << copper.getCount() << "\t\tDiamond:" << diamond.getCount() << std::endl
+		<< "Tin:\t" << tin.getCount() << std::endl
+		<< std::endl;
 }
