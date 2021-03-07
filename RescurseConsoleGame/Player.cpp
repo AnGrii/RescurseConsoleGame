@@ -10,3 +10,25 @@ void Player::printBalance()
 {
 	std::cout << "Current balance: " << balance << std::endl << std::endl;
 }
+
+void Player::addMoney(uint64_t count)
+{
+	uint64_t limit = UINT64_MAX - this->balance;
+
+	if (limit > count) {
+		this->balance += count;
+	}
+	else {
+		this->balance = UINT64_MAX;
+	}
+}
+
+void Player::reduceMoney(uint64_t count)
+{
+	if (this->balance > count) {
+		this->balance -= count;
+	}
+	else {
+		this->balance = 0;
+	}
+}

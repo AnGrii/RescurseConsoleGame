@@ -11,6 +11,7 @@ void TempBuildings::Reinitialisate(std::vector<uint64_t> dataList)
 	resource1 = dataList[6];
 	resource2 = dataList[7];
 	resource3 = dataList[8];
+	activated = dataList[9];
 }
 
 Buildings::Buildings(std::vector<std::vector<uint64_t>> dataList)

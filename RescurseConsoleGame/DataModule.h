@@ -10,7 +10,6 @@
 /// </summary>
 class DataModule
 {
-
 public:
 	DataModule(std::string dataFileName);
 
@@ -24,7 +23,7 @@ private:
 		RESOURCES_COUNT = 3,
 		RESOURCES_DATA_COUNT = 2,
 		BUILDING_COUNT = 3,
-		BUILDING_DATA_COUNT = 9;
+		BUILDING_DATA_COUNT = 10;
 	
 
 
