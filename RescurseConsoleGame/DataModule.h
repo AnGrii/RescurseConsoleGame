@@ -20,7 +20,7 @@ public:
 
 private:
 	const uint8_t
-		RESOURCES_COUNT = 3,
+		RESOURCES_COUNT = 11,
 		RESOURCES_DATA_COUNT = 2,
 		BUILDING_COUNT = 3,
 		BUILDING_DATA_COUNT = 10;
