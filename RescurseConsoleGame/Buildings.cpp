@@ -1,6 +1,6 @@
 #include "Buildings.h"
 
-void TempBuildings::Reinitialisate(std::vector<uint64_t> dataList)
+void BuildTemplate::Reinitialisate(std::vector<uint64_t> dataList)
 {
 	count = dataList[0];
 	inQueue = dataList[1];
@@ -16,7 +16,7 @@ void TempBuildings::Reinitialisate(std::vector<uint64_t> dataList)
 
 Buildings::Buildings(std::vector<std::vector<uint64_t>> dataList)
 {
-	Forestry.Reinitialisate(dataList[0]);
-	Sawmill.Reinitialisate(dataList[1]);
-	Mine.Reinitialisate(dataList[2]);
+	forestry.Reinitialisate(dataList[0]);
+	sawmill.Reinitialisate(dataList[1]);
+	quarry.Reinitialisate(dataList[2]);
 }

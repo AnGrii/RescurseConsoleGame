@@ -5,10 +5,10 @@
 
 #include "Resource.h"
 
-class TempBuildings
+class BuildTemplate
 {
 public:
-	TempBuildings() :
+	BuildTemplate() :
 	count(0), inQueue(0), moneyNeeded(0), valueOfSkipTime(0), buildTime(0), endBuildTime(0), resource1(0), resource2(0), resource3(0), activated(0){}
 
 	void Reinitialisate(std::vector<uint64_t> dataList);
@@ -24,11 +24,12 @@ class Buildings
 public:
 	Buildings(std::vector< std::vector<uint64_t>> dataList);
 
-	void BuildMenu();
+	//void BuildMenu();
 	//void BuildInfo();
 	//void BuildingInfo();
 	//void BuildMenu();
 
 private:
-	TempBuildings Forestry, Sawmill, Mine;
+	BuildTemplate forestry, sawmill, quarry, copperMine, tinMine, alloyPlant, silverCleaner, stone—leaner, goldMine, platinaCleaner, diamondFactory;
+	//log, wood, stone, coal, copper, tin, bronze, silver, gold, platina, diamond;
 };
