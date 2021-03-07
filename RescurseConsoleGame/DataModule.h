@@ -15,8 +15,10 @@ public:
 
 	std::vector< std::string> getPlayerName();
 	std::vector< uint64_t> getPlayerData();
-
+	
 	std::vector< std::vector< uint64_t>> getRecourcesData();
+
+	std::vector< std::vector< uint64_t>> getBuildingsData();
 
 private:
 	const uint16_t
@@ -39,6 +41,7 @@ private:
 
 	void loadPlayer(std::ifstream& loadDataFile);
 	void loadResources(std::ifstream& loadDataFile);
+	void loadBuildings(std::ifstream& loadDataFile);
 
 	//void loadSettings(std::ifstream& loadDataFile);
 

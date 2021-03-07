@@ -24,12 +24,16 @@ class Buildings
 public:
 	Buildings(std::vector< std::vector<uint64_t>> dataList);
 
-	//void BuildMenu();
+	void BuildMenu();
 	//void BuildInfo();
 	//void BuildingInfo();
 	//void BuildMenu();
 
 private:
-	BuildTemplate forestry, sawmill, quarry, copperMine, tinMine, alloyPlant, silverCleaner, stone—leaner, goldMine, platinaCleaner, diamondFactory;
+	BuildTemplate 
+		forestry, sawmill, quarry,
+		copperMine, tinMine, alloyPlant,
+		silverCleaner, stone—leaner, goldMine,
+		platinaCleaner, diamondFactory;
 	//log, wood, stone, coal, copper, tin, bronze, silver, gold, platina, diamond;
 };

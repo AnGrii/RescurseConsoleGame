@@ -29,6 +29,8 @@ int main()
 
     Player player(data.getPlayerName(), data.getPlayerData());
     Resource res(data.getRecourcesData());
+    Buildings buildings(data.getBuildingsData());
+
 
 
     char g_Select = '0';
@@ -58,7 +60,7 @@ int main()
             std::cout << "SHOP!" << std::endl;
             break;
         case 'b':
-            std::cout << "Build factories!" << std::endl;
+            buildings.BuildMenu();
             break;
         case 'x': 
             g_Exit = true;

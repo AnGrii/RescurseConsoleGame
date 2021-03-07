@@ -28,3 +28,9 @@ Buildings::Buildings(std::vector<std::vector<uint64_t>> dataList)
 	platinaCleaner.Reinitialisate(dataList[9]);
 	diamondFactory.Reinitialisate(dataList[10]);
 }
+
+void Buildings::BuildMenu()
+{
+	//forestry, sawmill, quarry, copperMine, tinMine, alloyPlant, silverCleaner, stone—leaner, goldMine, platinaCleaner, diamondFactory;
+	std::cout << "Select build:" << std::endl;
+}
