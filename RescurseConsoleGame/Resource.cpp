@@ -51,6 +51,14 @@ Resource::Resource(std::vector< std::vector<uint64_t>> dataList)
 	log.Reinitialisate(dataList[0]);
 	wood.Reinitialisate(dataList[1]);
 	stone.Reinitialisate(dataList[2]);
+	coal.Reinitialisate(dataList[3]);
+	copper.Reinitialisate(dataList[4]);
+	tin.Reinitialisate(dataList[5]);
+	bronze.Reinitialisate(dataList[6]);
+	silver.Reinitialisate(dataList[7]);
+	gold.Reinitialisate(dataList[8]);
+	platina.Reinitialisate(dataList[9]);
+	diamond.Reinitialisate(dataList[10]);
 }
 
 void Resource::printResourcesCount()

@@ -19,7 +19,7 @@ public:
 	std::vector< std::vector< uint64_t>> getRecourcesData();
 
 private:
-	const uint8_t
+	const uint16_t
 		RESOURCES_COUNT = 11,
 		RESOURCES_DATA_COUNT = 2,
 		BUILDING_COUNT = 3,
