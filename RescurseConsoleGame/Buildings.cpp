@@ -19,4 +19,12 @@ Buildings::Buildings(std::vector<std::vector<uint64_t>> dataList)
 	forestry.Reinitialisate(dataList[0]);
 	sawmill.Reinitialisate(dataList[1]);
 	quarry.Reinitialisate(dataList[2]);
+	copperMine.Reinitialisate(dataList[3]);
+	tinMine.Reinitialisate(dataList[4]);
+	alloyPlant.Reinitialisate(dataList[5]);
+	silverCleaner.Reinitialisate(dataList[6]);
+	stone—leaner.Reinitialisate(dataList[7]);
+	goldMine.Reinitialisate(dataList[8]);
+	platinaCleaner.Reinitialisate(dataList[9]);
+	diamondFactory.Reinitialisate(dataList[10]);
 }
