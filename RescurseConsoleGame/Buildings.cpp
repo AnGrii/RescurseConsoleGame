@@ -15,6 +15,21 @@ void BuildTemplate::Reinitialisate(std::vector<uint64_t> dataList)
 	activated = dataList[10];
 }
 
+uint64_t BuildTemplate::getRes1()
+{
+	return resource1;
+}
+
+uint64_t BuildTemplate::getRes2()
+{
+	return resource2;
+}
+
+uint64_t BuildTemplate::getRes3()
+{
+	return resource3;
+}
+
 Buildings::Buildings(std::vector<std::vector<uint64_t>> dataList)
 {
 	forestry.Reinitialisate(dataList[0]);
@@ -24,14 +39,37 @@ Buildings::Buildings(std::vector<std::vector<uint64_t>> dataList)
 	tinMine.Reinitialisate(dataList[4]);
 	alloyPlant.Reinitialisate(dataList[5]);
 	silverCleaner.Reinitialisate(dataList[6]);
-	stone—leaner.Reinitialisate(dataList[7]);
-	goldMine.Reinitialisate(dataList[8]);
-	platinaCleaner.Reinitialisate(dataList[9]);
-	diamondFactory.Reinitialisate(dataList[10]);
+	goldMine.Reinitialisate(dataList[7]);
+	platinaCleaner.Reinitialisate(dataList[8]);
+	diamondFactory.Reinitialisate(dataList[9]);
 }
 
 void Buildings::BuildMenu()
 {
 	//forestry, sawmill, quarry, copperMine, tinMine, alloyPlant, silverCleaner, stone—leaner, goldMine, platinaCleaner, diamondFactory;
 	std::cout << "Select build:" << std::endl;
+
+	printBuildRequest("Forestry", "Wood", "Log", "Stone");
+	printBuildRequest("Sawmill", "Wood", "Log", "Stone");
+	printBuildRequest("Quarry", "Wood", "Log", "Stone");
+	printBuildRequest("Copper Mine", "Wood", "Log", "Stone");
+	printBuildRequest("Tin Mine", "Log", "Stone", "Copper");
+	printBuildRequest("Alloy Plant", "Log", "Stone", "Copper");
+	printBuildRequest("Silver Cleaner", "Stone", "Copper", "Bronze");
+	printBuildRequest("Gold Mine", "Copper", "Bronze", "Silver");
+	printBuildRequest("Platina Cleaner", "Bronze", "Silver", "Gold");
+	printBuildRequest("Platina Cleaner", "Bronze", "Silver", "Gold");
+	printBuildRequest("Diamond Factory", "Silver", "Gold", "Platina");
+}
+
+void Buildings::printBuildRequest(std::string buildName,
+	std::string resourceName1,
+	std::string resourceName2,
+	std::string resourceName3)
+{
+	std::cout
+		<< buildName << '\t' << std::endl << std::endl
+		<< resourceName1 << " -\t" << forestry.getRes1() << std::endl
+		<< resourceName2 << " -\t" << forestry.getRes2() << std::endl
+		<< resourceName3 << " -\t" << forestry.getRes3() << std::endl;
 }
