@@ -68,8 +68,11 @@ void Buildings::printBuildRequest(std::string buildName,
 	std::string resourceName3)
 {
 	std::cout
-		<< buildName << '\t' << std::endl << std::endl
-		<< resourceName1 << " -\t" << forestry.getRes1() << std::endl
-		<< resourceName2 << " -\t" << forestry.getRes2() << std::endl
-		<< resourceName3 << " -\t" << forestry.getRes3() << std::endl;
+		<< "========== "
+		<< buildName 
+		<< " ==========" 
+		<< std::endl << std::endl
+		<< resourceName1 << " - " << forestry.getRes1() << '\t'
+		<< resourceName2 << " - " << forestry.getRes2() << '\t'
+		<< resourceName3 << " - " << forestry.getRes3() << std::endl << std::endl;
 }
