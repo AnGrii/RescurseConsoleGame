@@ -19,22 +19,18 @@ void DataModule::loadResources(std::ifstream& loadDataFile)
 {
 	uint64_t buffer;
 
-	std::vector<uint64_t>* dataLists = new std::vector<uint64_t>[RESOURCES_COUNT];
+	resourcesData.resize(RESOURCES_COUNT);
 
 	for (size_t i = 0; i < RESOURCES_COUNT; i++){
-		dataLists[i].resize(RESOURCES_DATA_COUNT);
+		resourcesData[i].resize(RESOURCES_DATA_COUNT);
 	}
 
 	//Dynamic loading (count) and (value) for resource
 	for (size_t row = 0; row < RESOURCES_COUNT; row++) {
 		for (size_t collumn = 0; collumn < RESOURCES_DATA_COUNT; collumn++) {
 			loadDataFile >> buffer;
-			dataLists[row][collumn] = buffer;
+			resourcesData[row][collumn] = buffer;
 		}
-	}
-	
-	for (size_t i = 0; i < RESOURCES_COUNT; i++){
-		resourcesData.push_back(dataLists[i]);
 	}
 }
 

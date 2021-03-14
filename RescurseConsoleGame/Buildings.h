@@ -11,7 +11,7 @@ public:
 	BuildTemplate() :
 	count(0), productivity(0), inQueue(0), moneyNeeded(0), valueOfSkipTime(0), buildTime(0), endBuildTime(0), resource1(0), resource2(0), resource3(0), activated(0){}
 
-	void Reinitialisate(std::vector<uint64_t> dataList);
+	void Reinitialisate(std::vector<uint64_t> buildingData);
 
 	uint64_t getRes1();
 	uint64_t getRes2();
@@ -29,7 +29,7 @@ private:
 class Buildings
 {
 public:
-	Buildings(std::vector< std::vector<uint64_t>> dataList);
+	Buildings(std::vector< std::vector<uint64_t>> buildingsData);
 
 	void BuildMenu();
 	//void BuildInfo();

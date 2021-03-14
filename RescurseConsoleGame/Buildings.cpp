@@ -1,18 +1,18 @@
 #include "Buildings.h"
 
-void BuildTemplate::Reinitialisate(std::vector<uint64_t> dataList)
+void BuildTemplate::Reinitialisate(std::vector<uint64_t> buildingData)
 {
-	count = dataList[0];
-	productivity = dataList[1];
-	inQueue = dataList[2];
-	moneyNeeded = dataList[3];
-	valueOfSkipTime = dataList[4];
-	endBuildTime = dataList[5];
-	buildTime = dataList[6];
-	resource1 = dataList[7];
-	resource2 = dataList[8];
-	resource3 = dataList[9];
-	activated = dataList[10];
+	count = buildingData[0];
+	productivity = buildingData[1];
+	inQueue = buildingData[2];
+	moneyNeeded = buildingData[3];
+	valueOfSkipTime = buildingData[4];
+	endBuildTime = buildingData[5];
+	buildTime = buildingData[6];
+	resource1 = buildingData[7];
+	resource2 = buildingData[8];
+	resource3 = buildingData[9];
+	activated = buildingData[10];
 }
 
 uint64_t BuildTemplate::getRes1()
@@ -30,24 +30,23 @@ uint64_t BuildTemplate::getRes3()
 	return resource3;
 }
 
-Buildings::Buildings(std::vector<std::vector<uint64_t>> dataList)
+Buildings::Buildings(std::vector<std::vector<uint64_t>> buildingsData)
 {
-	forestry.Reinitialisate(dataList[0]);
-	sawmill.Reinitialisate(dataList[1]);
-	quarry.Reinitialisate(dataList[2]);
-	career.Reinitialisate(dataList[3]);
-	copperMine.Reinitialisate(dataList[4]);
-	tinMine.Reinitialisate(dataList[5]);
-	alloyPlant.Reinitialisate(dataList[6]);
-	silverCleaner.Reinitialisate(dataList[7]);
-	goldMine.Reinitialisate(dataList[8]);
-	platinaCleaner.Reinitialisate(dataList[9]);
-	diamondFactory.Reinitialisate(dataList[10]);
+	forestry.Reinitialisate(buildingsData[0]);
+	sawmill.Reinitialisate(buildingsData[1]);
+	quarry.Reinitialisate(buildingsData[2]);
+	career.Reinitialisate(buildingsData[3]);
+	copperMine.Reinitialisate(buildingsData[4]);
+	tinMine.Reinitialisate(buildingsData[5]);
+	alloyPlant.Reinitialisate(buildingsData[6]);
+	silverCleaner.Reinitialisate(buildingsData[7]);
+	goldMine.Reinitialisate(buildingsData[8]);
+	platinaCleaner.Reinitialisate(buildingsData[9]);
+	diamondFactory.Reinitialisate(buildingsData[10]);
 }
 
 void Buildings::BuildMenu()
 {
-	//forestry, sawmill, quarry, copperMine, tinMine, alloyPlant, silverCleaner, stone—leaner, goldMine, platinaCleaner, diamondFactory;
 	std::cout << "Select build:" << std::endl;
 
 	printBuildRequest("Forestry", "Wood", "Log", "Stone");
