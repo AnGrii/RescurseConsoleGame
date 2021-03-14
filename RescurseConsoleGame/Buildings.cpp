@@ -35,13 +35,14 @@ Buildings::Buildings(std::vector<std::vector<uint64_t>> dataList)
 	forestry.Reinitialisate(dataList[0]);
 	sawmill.Reinitialisate(dataList[1]);
 	quarry.Reinitialisate(dataList[2]);
-	copperMine.Reinitialisate(dataList[3]);
-	tinMine.Reinitialisate(dataList[4]);
-	alloyPlant.Reinitialisate(dataList[5]);
-	silverCleaner.Reinitialisate(dataList[6]);
-	goldMine.Reinitialisate(dataList[7]);
-	platinaCleaner.Reinitialisate(dataList[8]);
-	diamondFactory.Reinitialisate(dataList[9]);
+	career.Reinitialisate(dataList[3]);
+	copperMine.Reinitialisate(dataList[4]);
+	tinMine.Reinitialisate(dataList[5]);
+	alloyPlant.Reinitialisate(dataList[6]);
+	silverCleaner.Reinitialisate(dataList[7]);
+	goldMine.Reinitialisate(dataList[8]);
+	platinaCleaner.Reinitialisate(dataList[9]);
+	diamondFactory.Reinitialisate(dataList[10]);
 }
 
 void Buildings::BuildMenu()
@@ -52,6 +53,7 @@ void Buildings::BuildMenu()
 	printBuildRequest("Forestry", "Wood", "Log", "Stone");
 	printBuildRequest("Sawmill", "Wood", "Log", "Stone");
 	printBuildRequest("Quarry", "Wood", "Log", "Stone");
+	printBuildRequest("Carrer", "Wood", "Log", "Stone");
 	printBuildRequest("Copper Mine", "Wood", "Log", "Stone");
 	printBuildRequest("Tin Mine", "Log", "Stone", "Copper");
 	printBuildRequest("Alloy Plant", "Log", "Stone", "Copper");

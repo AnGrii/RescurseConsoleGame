@@ -38,7 +38,7 @@ public:
 
 private:
 	BuildTemplate 
-		forestry, sawmill, quarry,
+		forestry, sawmill, quarry, career,
 		copperMine, tinMine, alloyPlant,
 		silverCleaner, goldMine,
 		platinaCleaner, diamondFactory;
@@ -47,5 +47,4 @@ private:
 		std::string resourceName1, 
 		std::string resourceName2, 
 		std::string resourceName3 );
-	//log, wood, stone, coal, copper, tin, bronze, silver, gold, platina, diamond;
 };
