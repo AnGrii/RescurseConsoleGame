@@ -49,21 +49,20 @@ void Buildings::BuildMenu()
 {
 	std::cout << "Select build:" << std::endl;
 
-	printBuildRequest("Forestry", "Wood", "Log", "Stone");
-	printBuildRequest("Sawmill", "Wood", "Log", "Stone");
-	printBuildRequest("Quarry", "Wood", "Log", "Stone");
-	printBuildRequest("Carrer", "Wood", "Log", "Stone");
-	printBuildRequest("Copper Mine", "Wood", "Log", "Stone");
-	printBuildRequest("Tin Mine", "Log", "Stone", "Copper");
-	printBuildRequest("Alloy Plant", "Log", "Stone", "Copper");
-	printBuildRequest("Silver Cleaner", "Stone", "Copper", "Bronze");
-	printBuildRequest("Gold Mine", "Copper", "Bronze", "Silver");
-	printBuildRequest("Platina Cleaner", "Bronze", "Silver", "Gold");
-	printBuildRequest("Platina Cleaner", "Bronze", "Silver", "Gold");
-	printBuildRequest("Diamond Factory", "Silver", "Gold", "Platina");
+	printBuildRequest(forestry, "Forestry", "Wood", "Log", "Stone");
+	printBuildRequest(sawmill, "Sawmill", "Wood", "Log", "Stone");
+	printBuildRequest(quarry,"Quarry", "Wood", "Log", "Stone");
+	printBuildRequest(career,"Carrer", "Wood", "Log", "Stone");
+	printBuildRequest(copperMine,"Copper Mine", "Wood", "Log", "Stone");
+	printBuildRequest(tinMine,"Tin Mine", "Log", "Stone", "Copper");
+	printBuildRequest(alloyPlant,"Alloy Plant", "Log", "Stone", "Copper");
+	printBuildRequest(silverCleaner,"Silver Cleaner", "Stone", "Copper", "Bronze");
+	printBuildRequest(goldMine,"Gold Mine", "Copper", "Bronze", "Silver");
+	printBuildRequest(platinaCleaner,"Platina Cleaner", "Bronze", "Silver", "Gold");
+	printBuildRequest(diamondFactory,"Diamond Factory", "Silver", "Gold", "Platina");
 }
 
-void Buildings::printBuildRequest(std::string buildName,
+void Buildings::printBuildRequest(BuildTemplate build, std::string buildName,
 	std::string resourceName1,
 	std::string resourceName2,
 	std::string resourceName3)
@@ -73,7 +72,7 @@ void Buildings::printBuildRequest(std::string buildName,
 		<< buildName 
 		<< " ==========" 
 		<< std::endl << std::endl
-		<< resourceName1 << " - " << forestry.getRes1() << '\t'
-		<< resourceName2 << " - " << forestry.getRes2() << '\t'
-		<< resourceName3 << " - " << forestry.getRes3() << std::endl << std::endl;
+		<< resourceName1 << " - " << build.getRes1() << '\t'
+		<< resourceName2 << " - " << build.getRes2() << '\t'
+		<< resourceName3 << " - " << build.getRes3() << std::endl << std::endl;
 }
