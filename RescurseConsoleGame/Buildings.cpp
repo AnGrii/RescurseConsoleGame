@@ -52,6 +52,26 @@ uint64_t BuildTemplate::getProductivity()
 	return productivity;
 }
 
+bool BuildTemplate::isInQueue()
+{
+	if (endBuildTime == 0){
+		if (inQueue == 0) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+bool BuildTemplate::addInQueue()
+{
+	if (UINT64_MAX - inQueue > 1) {
+		inQueue++;
+		return true;
+	}
+	return false;
+}
+
 Buildings::Buildings(std::vector<std::vector<uint64_t>> buildingsData)
 {
 	forestry.Reinitialisate(buildingsData[0]);
@@ -67,14 +87,14 @@ Buildings::Buildings(std::vector<std::vector<uint64_t>> buildingsData)
 	diamondFactory.Reinitialisate(buildingsData[10]);
 }
 
-void Buildings::buildMenu()
+void Buildings::buildMenu(Resource& res)
 {
 	std::cout << "Select build:" << std::endl;
 
-	printBuildRequest(forestry, "1 -Forestry", "Wood", "Log", "Stone");
-	printBuildRequest(sawmill, "2 - Sawmill", "Wood", "Log", "Stone");
-	printBuildRequest(quarry,"3 - Quarry", "Wood", "Log", "Stone");
-	printBuildRequest(career,"4 - Carrer", "Wood", "Log", "Stone");
+	printBuildRequest(forestry, "1 -Forestry", "Log", "Wood", "Stone");
+	printBuildRequest(sawmill, "2 - Sawmill", "Log", "Wood", "Stone");
+	printBuildRequest(quarry,"3 - Quarry", "Log", "Wood", "Stone");
+	printBuildRequest(career,"4 - Carrer", "Log", "Wood", "Stone");
 	printBuildRequest(copperMine,"5 - Copper Mine", "Log", "Stone", "Coal");
 	printBuildRequest(tinMine,"6 - Tin Mine", "Coal", "Stone", "Copper");
 	printBuildRequest(alloyPlant,"7 - Alloy Plant", "Stone", "Copper", "Tin");
@@ -91,26 +111,37 @@ void Buildings::buildMenu()
 	switch (select)
 	{
 	case '1':
+		build(forestry, res.log, res.wood, res.stone);
 		break;
 	case '2':
+		build(sawmill, res.log, res.wood, res.stone);
 		break;
 	case '3':
+		build(quarry, res.log, res.wood, res.stone);
 		break;
 	case '4':
+		build(career, res.log, res.wood, res.stone);
 		break;
 	case '5':
+		build(copperMine, res.log, res.stone, res.coal);
 		break;
 	case '6':
+		build(tinMine, res.coal, res.stone, res.copper);
 		break;
 	case '7':
+		build(alloyPlant, res.stone, res.copper, res.tin);
 		break;
 	case '8':
+		build(silverCleaner, res.stone, res.copper, res.bronze);
 		break;
 	case '9':
+		build(goldMine, res.copper, res.bronze, res.silver);
 		break;
 	case 'a':
+		build(platinaCleaner, res.bronze, res.silver, res.gold);
 		break;
 	case 'b':
+		build(diamondFactory, res.silver, res.gold, res.platina);
 		break;
 	default:
 		std::cout << "Wrong input!" << std::endl << std::endl;
@@ -155,15 +186,33 @@ void Buildings::build(BuildTemplate& build, ResTemplate& reqRes1, ResTemplate& r
 		build.getRes2() <= reqRes2.getCount() and
 		build.getRes3() <= reqRes3.getCount())
 	{
-		reqRes1.reduce(build.getRes1());
-		reqRes2.reduce(build.getRes2());
-		reqRes3.reduce(build.getRes3());
+		char select = 'y';//init with y if inQueue - false
+		if (build.isInQueue()) {
+			std::cout << "This type of build are in process, want to add one more to queue?" << std::endl
+				<< "y - Yes, n - any key" << std::endl
+				<< "Input: ";
+			std::cin >> select;
+			std::cout << std::endl;
+		}
+		else
+		{
+			std::cout << "Request for building is canceled!" << std::endl << std::endl;
+		}
 
-		build.addCount(1);
+		if (select == 'y') {
+			if (build.addInQueue()) {
+				reqRes1.reduce(build.getRes1());
+				reqRes2.reduce(build.getRes2());
+				reqRes3.reduce(build.getRes3());
+			}
+
+			std::cout << "Adding building in queue succeed!" << std::endl << std::endl;
+		}
 	}
 	else
 	{
 		std::cout << "Not enough cunt of recources!" << std::endl;
 	}
+
 }
 

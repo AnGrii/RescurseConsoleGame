@@ -22,8 +22,12 @@ public:
 	uint64_t getCount();
 	uint64_t getProductivity();
 	
+	bool isInQueue();
+	bool addInQueue();
+
 private:
-	uint64_t count, productivity, inQueue, moneyNeeded, valueOfSkipTime, buildTime, endBuildTime, resource1, resource2, resource3;
+	uint64_t count, productivity, inQueue, moneyNeeded, valueOfSkipTime,
+		buildTime, endBuildTime, resource1, resource2, resource3;
 	bool activated;
 
 	
@@ -35,7 +39,7 @@ class Buildings
 public:
 	Buildings(std::vector< std::vector<uint64_t>> buildingsData);
 
-	void buildMenu();
+	void buildMenu(Resource& res);
 
 	void work(Resource& res);
 	//void BuildingInfo();
