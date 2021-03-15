@@ -17,6 +17,10 @@ public:
 	uint64_t getRes2();
 	uint64_t getRes3();
 
+	void addCount(uint64_t addCount);
+
+	uint64_t getCount();
+	uint64_t getProductivity();
 	
 private:
 	uint64_t count, productivity, inQueue, moneyNeeded, valueOfSkipTime, buildTime, endBuildTime, resource1, resource2, resource3;
@@ -31,10 +35,11 @@ class Buildings
 public:
 	Buildings(std::vector< std::vector<uint64_t>> buildingsData);
 
-	void BuildMenu();
-	//void BuildInfo();
+	void buildMenu();
+
+	void work(Resource& res);
 	//void BuildingInfo();
-	//void BuildMenu();
+	
 
 private:
 	BuildTemplate 
@@ -47,4 +52,9 @@ private:
 		std::string resourceName1, 
 		std::string resourceName2, 
 		std::string resourceName3 );
+
+	void build(BuildTemplate& build, 
+		ResTemplate &reqRes1, ResTemplate &reqRes2, ResTemplate &reqRes3 );
+
+
 };

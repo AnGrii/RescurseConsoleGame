@@ -25,7 +25,8 @@ private:
 class Resource
 {
 public:
-	ResTemplate log, wood, stone, coal, copper, tin, bronze, silver, gold, platina, diamond;
+	ResTemplate log, wood, stone, coal, copper, tin, bronze,
+		silver, gold, platina, diamond;
 
 	Resource(std::vector< std::vector<uint64_t>> dataList);
 

@@ -60,7 +60,7 @@ int main()
             std::cout << "SHOP!" << std::endl;
             break;
         case 'b':
-            buildings.BuildMenu();
+            buildings.buildMenu();
             break;
         case 'x': 
             g_Exit = true;
