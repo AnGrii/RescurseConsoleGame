@@ -72,6 +72,17 @@ bool BuildTemplate::addInQueue()
 	return false;
 }
 
+void BuildTemplate::updateQueue()
+{
+	if (endBuildTime == 0) {
+		if (inQueue > 0) {
+			endBuildTime = buildTime;
+			inQueue--;
+			count++;
+		}
+	}
+}
+
 Buildings::Buildings(std::vector<std::vector<uint64_t>> buildingsData)
 {
 	forestry.Reinitialisate(buildingsData[0]);
@@ -163,6 +174,21 @@ void Buildings::work(Resource& res)
 	res.gold.add(goldMine.getCount()		* goldMine.getProductivity());
 	res.platina.add(platinaCleaner.getCount() * platinaCleaner.getProductivity());
 	res.diamond.add(diamondFactory.getCount() * diamondFactory.getProductivity());
+}
+
+void Buildings::updateBuildingsBuild()
+{
+	forestry.updateQueue();
+	sawmill.updateQueue();
+	quarry.updateQueue();
+	career.updateQueue();
+	copperMine.updateQueue(); 
+	tinMine.updateQueue();
+	alloyPlant.updateQueue();
+	silverCleaner.updateQueue();
+	goldMine.updateQueue();
+	platinaCleaner.updateQueue();
+	diamondFactory.updateQueue();
 }
 
 void Buildings::printBuildRequest(BuildTemplate build, std::string buildName,

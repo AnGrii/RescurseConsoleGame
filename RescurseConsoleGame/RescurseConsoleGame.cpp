@@ -40,6 +40,8 @@ int main()
     {
         GameHelper::keywordHelp(true);
 
+        buildings.updateBuildingsBuild();
+
         player.printBalance();
 
         res.printResourcesCount();
@@ -60,7 +62,7 @@ int main()
             std::cout << "SHOP!" << std::endl;
             break;
         case 'b':
-            buildings.buildMenu();
+            buildings.buildMenu(res);
             break;
         case 'x': 
             g_Exit = true;

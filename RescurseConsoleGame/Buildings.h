@@ -25,6 +25,8 @@ public:
 	bool isInQueue();
 	bool addInQueue();
 
+	void updateQueue();
+
 private:
 	uint64_t count, productivity, inQueue, moneyNeeded, valueOfSkipTime,
 		buildTime, endBuildTime, resource1, resource2, resource3;
@@ -44,6 +46,7 @@ public:
 	void work(Resource& res);
 	//void BuildingInfo();
 	
+	void updateBuildingsBuild();
 
 private:
 	BuildTemplate 
