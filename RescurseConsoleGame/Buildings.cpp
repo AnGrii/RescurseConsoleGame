@@ -74,6 +74,7 @@ bool BuildTemplate::addInQueue()
 
 void BuildTemplate::updateQueue()
 {
+	endBuildTime--;
 	if (endBuildTime == 0) {
 		if (inQueue > 0) {
 			endBuildTime = buildTime;
