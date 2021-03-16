@@ -60,7 +60,7 @@ private:
 		silverCleaner, goldMine,
 		platinaCleaner, diamondFactory;
 
-	void printBuildRequest(BuildTemplate build, std::string buildName,
+	void printBuildRequest(BuildTemplate build, std::string buildSymb,
 		std::string resourceName1, 
 		std::string resourceName2, 
 		std::string resourceName3 );

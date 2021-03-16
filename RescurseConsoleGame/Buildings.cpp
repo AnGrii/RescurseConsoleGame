@@ -112,17 +112,17 @@ void Buildings::buildMenu(Resource& res)
 {
 	std::cout << "Select build:" << std::endl;
 
-	printBuildRequest(forestry, "1 -Forestry", "Log", "Wood", "Stone");
-	printBuildRequest(sawmill, "2 - Sawmill", "Log", "Wood", "Stone");
-	printBuildRequest(quarry,"3 - Quarry", "Log", "Wood", "Stone");
-	printBuildRequest(career,"4 - Carrer", "Log", "Wood", "Stone");
-	printBuildRequest(copperMine,"5 - Copper Mine", "Log", "Stone", "Coal");
-	printBuildRequest(tinMine,"6 - Tin Mine", "Coal", "Stone", "Copper");
-	printBuildRequest(alloyPlant,"7 - Alloy Plant", "Stone", "Copper", "Tin");
-	printBuildRequest(silverCleaner,"8 - Silver Cleaner", "Stone", "Copper", "Bronze");
-	printBuildRequest(goldMine,"9 - Gold Mine", "Copper", "Bronze", "Silver");
-	printBuildRequest(platinaCleaner,"a - Platina Cleaner", "Bronze", "Silver", "Gold");
-	printBuildRequest(diamondFactory,"b - Diamond Factory", "Silver", "Gold", "Platina");
+	printBuildRequest(forestry, "1", "Log", "Wood", "Stone");
+	printBuildRequest(sawmill, "2", "Log", "Wood", "Stone");
+	printBuildRequest(quarry,"3", "Log", "Wood", "Stone");
+	printBuildRequest(career,"4", "Log", "Wood", "Stone");
+	printBuildRequest(copperMine,"5", "Log", "Stone", "Coal");
+	printBuildRequest(tinMine,"6", "Coal", "Stone", "Copper");
+	printBuildRequest(alloyPlant,"7", "Stone", "Copper", "Tin");
+	printBuildRequest(silverCleaner,"8", "Stone", "Copper", "Bronze");
+	printBuildRequest(goldMine,"9", "Copper", "Bronze", "Silver");
+	printBuildRequest(platinaCleaner,"a", "Bronze", "Silver", "Gold");
+	printBuildRequest(diamondFactory,"b", "Silver", "Gold", "Platina");
 
 	char select;
 	std::cout << "Input to build: ";
@@ -201,14 +201,14 @@ void Buildings::updateBuildingsBuild()
 	diamondFactory.updateQueue();
 }
 
-void Buildings::printBuildRequest(BuildTemplate build, std::string buildName,
+void Buildings::printBuildRequest(BuildTemplate build, std::string buildSymb,
 	std::string resourceName1,
 	std::string resourceName2,
 	std::string resourceName3)
 {
 	std::cout
 		<< "========== "
-		<< buildName 
+		<< buildSymb << " - " << build.getName()
 		<< " ==========" 
 		<< std::endl << std::endl
 		<< resourceName1 << " - " << build.getRes1() << '\t'
