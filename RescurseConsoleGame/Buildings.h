@@ -9,9 +9,12 @@ class BuildTemplate
 {
 public:
 	BuildTemplate() :
-	count(0), productivity(0), inQueue(0), moneyNeeded(0), valueOfSkipTime(0), buildTime(0), endBuildTime(0), resource1(0), resource2(0), resource3(0), activated(0){}
+	count(0), productivity(0), inQueue(0), moneyNeeded(0),
+		valueOfSkipTime(0), buildTime(0), endBuildTime(0),
+		resource1(0), resource2(0), resource3(0), activated(0),
+	name("NoName"){}
 
-	void Reinitialisate(std::vector<uint64_t> buildingData);
+	void Reinitialisate(std::vector<uint64_t> buildingData, std::string name);
 
 	uint64_t getRes1();
 	uint64_t getRes2();
@@ -27,19 +30,21 @@ public:
 
 	void updateQueue();
 
+	std::string getName() { return name; }
+
 private:
 	uint64_t count, productivity, inQueue, moneyNeeded, valueOfSkipTime,
 		buildTime, endBuildTime, resource1, resource2, resource3;
 	bool activated;
-
-	
+	std::string name;
 };
 
 
 class Buildings
 {
 public:
-	Buildings(std::vector< std::vector<uint64_t>> buildingsData);
+	Buildings(std::vector< std::vector<uint64_t>> buildingsData,
+		std::vector<std::string> nameData);
 
 	void buildMenu(Resource& res);
 
