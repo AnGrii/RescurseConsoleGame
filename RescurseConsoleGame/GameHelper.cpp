@@ -1,6 +1,6 @@
 #include "GameHelper.h"
 
-void GameHelper::keywordHelp(bool show)
+void GameMessage::keywordHelp(bool show)
 {
 	std::cout << "Key to do:" << std::endl
 		<< "e - Extract base resources" << std::endl
@@ -14,7 +14,7 @@ void GameHelper::keywordHelp(bool show)
 /// <summary>
 /// Initialization srand in header needed!!!
 /// </summary>
-void GameHelper::skipLine()
+void GameMessage::skipLine()
 {
 	
 	uint16_t rand = std::rand() % 4;
@@ -39,7 +39,7 @@ void GameHelper::skipLine()
 	}
 }
 
-void GameHelper::incorrectInputMSG()
+void GameMessage::incorrectInput()
 {
 	std::cout << "Incorrect input!!!" << std::endl << std::endl;
 }

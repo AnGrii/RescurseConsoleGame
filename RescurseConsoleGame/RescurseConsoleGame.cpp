@@ -38,7 +38,7 @@ int main()
 
     while (!g_Exit)
     {
-        GameHelper::keywordHelp(true);
+        GameMessage::keywordHelp(true);
 
         buildings.updateBuildingsBuild();
         buildings.work(res);
@@ -57,7 +57,7 @@ int main()
             ResourcesEtract::extract(res.log, res.wood, res.stone);
             break;
         case 'n':
-            GameHelper::skipLine();
+            GameMessage::skipLine();
             break;
         case 's':
             std::cout << "SHOP!" << std::endl;
@@ -69,7 +69,7 @@ int main()
             g_Exit = true;
             break;
         default:
-            GameHelper::incorrectInputMSG();
+            GameMessage::incorrectInput();
             break;
         }
     }

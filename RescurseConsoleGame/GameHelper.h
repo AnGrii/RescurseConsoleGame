@@ -2,16 +2,16 @@
 #include <iostream>
 #include <random>
 
-class GameHelper
+class GameMessage
 {
 private:
-	GameHelper() {}
+	GameMessage() {}
 
 public:
 	static void keywordHelp(bool show);
 
 	static void skipLine();
 
-	static void incorrectInputMSG();
+	static void incorrectInput();
 };
 
