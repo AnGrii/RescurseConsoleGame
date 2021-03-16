@@ -34,6 +34,19 @@ void DataModule::loadResources(std::ifstream& loadDataFile)
 	}
 }
 
+void DataModule::loadBuildingsName(std::ifstream& loadDataFile)
+{
+	std::string buffer;
+
+	buildingNameData.resize(BUILDING_COUNT);
+
+	for (size_t i = 0; i < BUILDING_COUNT; i++)
+	{
+		loadDataFile >> buffer;
+		buildingNameData[i] = buffer;
+	}
+}
+
 void DataModule::loadBuildings(std::ifstream& loadDataFile)
 {
 	uint64_t buffer;
@@ -60,6 +73,7 @@ DataModule::DataModule(std::string dataFileName)
 
 	loadPlayer(loadDataFile);
 	loadResources(loadDataFile);
+	loadBuildingsName(loadDataFile);
 	loadBuildings(loadDataFile);
 }
 
@@ -83,6 +97,10 @@ std::vector< std::vector< uint64_t>> DataModule::getBuildingsData()
 	return buildingsData;
 }
 
+std::vector<std::string> DataModule::getBuildingsNameData()
+{
+	return buildingNameData;
+}
 
 
 

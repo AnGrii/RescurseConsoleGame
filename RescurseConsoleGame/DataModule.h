@@ -19,6 +19,7 @@ public:
 	std::vector< std::vector< uint64_t>> getRecourcesData();
 
 	std::vector< std::vector< uint64_t>> getBuildingsData();
+	std::vector<std::string> getBuildingsNameData();
 
 private:
 	const uint16_t
@@ -34,6 +35,7 @@ private:
 
 	std::vector< std::vector< uint64_t>> resourcesData;
 
+	std::vector< std::string> buildingNameData;
 	std::vector< std::vector< uint64_t>> buildingsData;
 
 	std::vector< std::vector< uint64_t>> settingsData;
@@ -42,6 +44,7 @@ private:
 	void loadPlayer(std::ifstream& loadDataFile);
 	void loadResources(std::ifstream& loadDataFile);
 	void loadBuildings(std::ifstream& loadDataFile);
+	void loadBuildingsName(std::ifstream& loadDataFile);
 
 	//void loadSettings(std::ifstream& loadDataFile);
 

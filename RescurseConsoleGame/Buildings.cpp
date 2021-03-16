@@ -92,7 +92,8 @@ void BuildTemplate::updateQueue()
 	}
 }
 
-Buildings::Buildings(std::vector<std::vector<uint64_t>> buildingsData, std::vector<std::string> nameData)
+Buildings::Buildings(std::vector<std::string> nameData,
+	std::vector<std::vector<uint64_t>> buildingsData)
 {
 	forestry.Reinitialisate(buildingsData[0], nameData[0]);
 	sawmill.Reinitialisate(buildingsData[1], nameData[1]);

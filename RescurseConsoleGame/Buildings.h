@@ -43,8 +43,8 @@ private:
 class Buildings
 {
 public:
-	Buildings(std::vector< std::vector<uint64_t>> buildingsData,
-		std::vector<std::string> nameData);
+	Buildings(std::vector<std::string> nameData,
+		std::vector< std::vector<uint64_t>> buildingsData);
 
 	void buildMenu(Resource& res);
 

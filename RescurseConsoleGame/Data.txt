@@ -10,6 +10,10 @@ Player 1
 117 118
 119 120
 121 122
+forestry sawmill quarry career
+copperMine tinMine alloyPlant
+silverCleaner goldMine
+platinaCleaner diamondFactory
 1 1 0 0 100 1 0 1 2 3 1
 0 1 0 0 100 2 0 4 5 6 1
 0 1 0 0 100 3 0 7 8 9 1
