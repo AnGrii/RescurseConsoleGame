@@ -29,7 +29,7 @@ int main()
 
     Player player(data.getPlayerName(), data.getPlayerData());
     Resource res(data.getRecourcesData());
-    Buildings buildings(data.getBuildingsData());
+    Buildings buildings(data.getBuildingsNameData(), data.getBuildingsData());
 
 
 
