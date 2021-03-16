@@ -41,6 +41,7 @@ int main()
         GameHelper::keywordHelp(true);
 
         buildings.updateBuildingsBuild();
+        buildings.work(res);
 
         player.printBalance();
 

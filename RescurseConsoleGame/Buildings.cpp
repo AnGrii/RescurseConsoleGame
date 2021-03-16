@@ -7,8 +7,8 @@ void BuildTemplate::Reinitialisate(std::vector<uint64_t> buildingData)
 	inQueue = buildingData[2];
 	moneyNeeded = buildingData[3];
 	valueOfSkipTime = buildingData[4];
-	endBuildTime = buildingData[5];
-	buildTime = buildingData[6];
+	buildTime = buildingData[5];
+	endBuildTime = buildingData[6];
 	resource1 = buildingData[7];
 	resource2 = buildingData[8];
 	resource3 = buildingData[9];
@@ -74,9 +74,16 @@ bool BuildTemplate::addInQueue()
 
 void BuildTemplate::updateQueue()
 {
-	endBuildTime--;
+	if (endBuildTime > 0) {	
+		endBuildTime--; 
+		if (endBuildTime == 0) {
+			std::cout << "Building finished!" << std::endl << std::endl;
+		}
+	}
+
 	if (endBuildTime == 0) {
-		if (inQueue > 0) {
+			if (inQueue > 0) {
+				std::cout << "Building started!" << std::endl;
 			endBuildTime = buildTime;
 			inQueue--;
 			count++;
@@ -221,10 +228,7 @@ void Buildings::build(BuildTemplate& build, ResTemplate& reqRes1, ResTemplate& r
 			std::cin >> select;
 			std::cout << std::endl;
 		}
-		else
-		{
-			std::cout << "Request for building is canceled!" << std::endl << std::endl;
-		}
+		else { /*Nothing to do*/ }
 
 		if (select == 'y') {
 			if (build.addInQueue()) {
