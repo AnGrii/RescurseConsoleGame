@@ -21,7 +21,7 @@ void ResourcesEtract::extract(ResTemplate& log, ResTemplate& wood, ResTemplate& 
 		extractWood(log, wood);
 		break;
 	case 's':
-		extractStone(stone, wood);
+		extractStone(wood, stone);
 		break;
 	default:
 		std::cout << "Incorrect input!" << std::endl;
@@ -53,7 +53,7 @@ void ResourcesEtract::extractWood(ResTemplate& log, ResTemplate& wood)
 
 void ResourcesEtract::extractStone(ResTemplate& wood, ResTemplate& stone)
 {
-	if (wood.getCount() >= WOOD_TO_STONE_NEDDED) {
+	if (WOOD_TO_STONE_NEDDED <= wood.getCount()) {
 
 		wood.reduce(WOOD_TO_STONE_NEDDED);
 		stone.add(STONE_EXTACT);
@@ -62,6 +62,7 @@ void ResourcesEtract::extractStone(ResTemplate& wood, ResTemplate& stone)
 			<< "Mined " << STONE_EXTACT << " stones!" << std::endl << std::endl;
 	}
 	else{
-		std::cout << "Not enough woods to build new side of mine! 5 nedded!!!" << std::endl << std::endl;
+		std::cout << "Not enough woods to build new side of mine! "
+			<< WOOD_TO_STONE_NEDDED << " nedded!!!" << std::endl << std::endl;
 	}
 }

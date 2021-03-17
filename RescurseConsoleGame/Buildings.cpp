@@ -84,7 +84,7 @@ void BuildTemplate::updateQueue()
 
 	if (endBuildTime == 0) {
 			if (inQueue > 0) {
-				std::cout << "Building started!" << std::endl;
+				std::cout << "Building started!" << std::endl << std::endl;
 			endBuildTime = buildTime;
 			inQueue--;
 			count++;
