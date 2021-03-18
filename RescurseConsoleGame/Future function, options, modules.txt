@@ -8,8 +8,6 @@ minimum x - 1, if data == 0 throw error and ask for wait or rewrite data file );
 
 - Add shop ( market )( buy / sell production )
 
-- Add queue info ( buildings )
-
 - Add skip building time
 
 - Save data ( normal - without security - 1)

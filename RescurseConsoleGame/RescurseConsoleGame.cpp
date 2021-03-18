@@ -57,6 +57,9 @@ int main()
         case 'n':
             GameMessage::skipLine();
             break;
+        case 'q':
+            buildings.printQueueStatus();
+            break;
         case 's':
             std::cout << "SHOP!" << std::endl;
             break;

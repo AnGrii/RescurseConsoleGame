@@ -92,6 +92,14 @@ void BuildTemplate::updateQueue()
 	}
 }
 
+void BuildTemplate::printQueueInfo()
+{
+	if (this->isInQueue()) {
+		std::cout << "Count of " << name << " in queue -\t" << inQueue << std::endl
+			<< "Days to building left -\t" << endBuildTime << std::endl << std::endl;
+	}
+}
+
 Buildings::Buildings(std::vector<std::string> nameData,
 	std::vector<std::vector<uint64_t>> buildingsData)
 {
@@ -248,4 +256,21 @@ void Buildings::build(BuildTemplate& build, ResTemplate& reqRes1, ResTemplate& r
 	}
 
 }
+
+void Buildings::printQueueStatus()
+{
+	forestry.printQueueInfo();
+	sawmill.printQueueInfo();
+	quarry.printQueueInfo();
+	career.printQueueInfo();
+	copperMine.printQueueInfo();
+	tinMine.printQueueInfo();
+	alloyPlant.printQueueInfo();
+	silverCleaner.printQueueInfo();
+	goldMine.printQueueInfo();
+	platinaCleaner.printQueueInfo();
+	diamondFactory.printQueueInfo();
+}
+
+
 

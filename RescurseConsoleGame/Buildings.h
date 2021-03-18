@@ -27,8 +27,8 @@ public:
 	
 	bool isInQueue();
 	bool addInQueue();
-
 	void updateQueue();
+	void printQueueInfo();
 
 	std::string getName() { return name; }
 
@@ -53,6 +53,8 @@ public:
 	
 	void updateBuildingsBuild();
 
+	void printQueueStatus();
+
 private:
 	BuildTemplate 
 		forestry, sawmill, quarry, career,
@@ -67,6 +69,4 @@ private:
 
 	void build(BuildTemplate& build, 
 		ResTemplate &reqRes1, ResTemplate &reqRes2, ResTemplate &reqRes3 );
-
-
 };
