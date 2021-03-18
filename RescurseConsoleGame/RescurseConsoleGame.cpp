@@ -1,10 +1,10 @@
 #include <iostream>
-#include <thread>
 #include <ctime>
 #include <string>
 #include <fstream>
 #include <algorithm>
 #include <conio.h>
+#include <thread>
 #include <mutex>
 #include <math.h>
 #include <vector>
@@ -20,7 +20,6 @@
 #include "GameHelper.h"
 
 
-
 int main()
 {
     srand(static_cast<uint64_t>(NULL));
@@ -30,7 +29,6 @@ int main()
     Player player(data.getPlayerName(), data.getPlayerData());
     Resource res(data.getRecourcesData());
     Buildings buildings(data.getBuildingsNameData(), data.getBuildingsData());
-
 
 
     char g_Select = '0';

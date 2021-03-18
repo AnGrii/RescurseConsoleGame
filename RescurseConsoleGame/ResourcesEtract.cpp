@@ -38,15 +38,14 @@ void ResourcesEtract::extractLog(ResTemplate& log)
 
 void ResourcesEtract::extractWood(ResTemplate& log, ResTemplate& wood)
 {
-	if (log.getCount() >= LOG_TO_WOOD_NEEDED)
-	{
+	if (log.getCount() >= LOG_TO_WOOD_NEEDED) {
 		log.reduce(LOG_TO_WOOD_NEEDED);
 		wood.add(WOOD_EXTRACT);
 
 		std::cout << "Cutted " << uint16_t(LOG_TO_WOOD_NEEDED) << " logs, added "
 			<< uint16_t(WOOD_EXTRACT) << " woods!" << std::endl << std::endl;
 	}
-	else{
+	else {
 		std::cout << "Not enough logs to cut to woods! 2 nedded!!!" << std::endl << std::endl;
 	}
 }
@@ -54,14 +53,13 @@ void ResourcesEtract::extractWood(ResTemplate& log, ResTemplate& wood)
 void ResourcesEtract::extractStone(ResTemplate& wood, ResTemplate& stone)
 {
 	if (WOOD_TO_STONE_NEDDED <= wood.getCount()) {
-
 		wood.reduce(WOOD_TO_STONE_NEDDED);
 		stone.add(STONE_EXTACT);
 
 		std::cout << "Builded new branch of mine for " << WOOD_TO_STONE_NEDDED << " woods!" << std::endl
 			<< "Mined " << STONE_EXTACT << " stones!" << std::endl << std::endl;
 	}
-	else{
+	else {
 		std::cout << "Not enough woods to build new side of mine! "
 			<< WOOD_TO_STONE_NEDDED << " nedded!!!" << std::endl << std::endl;
 	}

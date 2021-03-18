@@ -1,5 +1,22 @@
-- Add load data checking(data will on 1 higher to find non initialisate data - 0, minimum x - 1, if x = 0 throw error or rewrite data file);
+- Add load data checking 
+(data will be for 1 unit higher to find non initialisate data - 0 or UINT64_MAX,
+minimum x - 1, if data == 0 throw error and ask for wait or rewrite data file );
 
-- Add different status to building - power(10%, 25%, 50%, 75%, 100%);
+- Add different status to building - power( 10%, 25%, 50%, 75%, 100% );
 
--Add names for buildings
+- Add normal load of names for buildings
+
+- Add shop ( market )( buy / sell production )
+
+- Add queue info ( buildings )
+
+- Add skip building time
+
+- Save data ( normal - without security - 1)
+
+- Save data ( with security )
+
+
+
+
+
