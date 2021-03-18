@@ -21,6 +21,8 @@ public:
 	std::vector< std::vector< uint64_t>> getBuildingsData();
 	std::vector<std::string> getBuildingsNameData();
 
+	uint64_t getSellCoeficient();
+
 private:
 	const uint16_t
 		RESOURCES_COUNT = 11,
@@ -28,6 +30,7 @@ private:
 		BUILDING_COUNT = 11,
 		BUILDING_DATA_COUNT = 10;
 
+	double sellCoeficient = 1;
 
 	std::vector<uint64_t> playerData;
 	std::vector<std::string> playerNameData;
@@ -39,11 +42,16 @@ private:
 
 	std::vector< std::vector< uint64_t>> settingsData;
 	
-
+	//Loading part
 	void loadPlayer(std::ifstream& loadDataFile);
+
 	void loadResources(std::ifstream& loadDataFile);
+
 	void loadBuildings(std::ifstream& loadDataFile);
+
 	void loadBuildingsName(std::ifstream& loadDataFile);
+
+	void loadSellCoeficient(std::ifstream& loadDataFile);
 
 	//void loadSettings(std::ifstream& loadDataFile);
 

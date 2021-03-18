@@ -47,6 +47,11 @@ void DataModule::loadBuildingsName(std::ifstream& loadDataFile)
 	}
 }
 
+void DataModule::loadSellCoeficient(std::ifstream& loadDataFile)
+{
+	loadDataFile >> sellCoeficient;
+}
+
 void DataModule::loadBuildings(std::ifstream& loadDataFile)
 {
 	uint64_t buffer;
@@ -72,9 +77,13 @@ DataModule::DataModule(std::string dataFileName)
 	std::ifstream loadDataFile(dataFileName);
 
 	loadPlayer(loadDataFile);
+	
 	loadResources(loadDataFile);
+	
 	loadBuildingsName(loadDataFile);
 	loadBuildings(loadDataFile);
+
+	loadSellCoeficient(loadDataFile);
 }
 
 std::vector < std::string> DataModule::getPlayerName()
@@ -100,6 +109,11 @@ std::vector< std::vector< uint64_t>> DataModule::getBuildingsData()
 std::vector<std::string> DataModule::getBuildingsNameData()
 {
 	return buildingNameData;
+}
+
+uint64_t DataModule::getSellCoeficient()
+{
+	return sellCoeficient;
 }
 
 

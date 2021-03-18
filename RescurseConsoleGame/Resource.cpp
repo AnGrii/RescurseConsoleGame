@@ -47,10 +47,10 @@ uint64_t ResTemplate::getValue()
 	return value;
 }
 
-
 Resource::Resource(std::vector< std::vector<uint64_t>> dataList)
 {
 	uint16_t counter = 0;
+
 	log.Reinitialisate(dataList[counter++]);
 	wood.Reinitialisate(dataList[counter++]);
 	stone.Reinitialisate(dataList[counter++]);
