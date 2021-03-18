@@ -26,7 +26,7 @@ private:
 		RESOURCES_COUNT = 11,
 		RESOURCES_DATA_COUNT = 2,
 		BUILDING_COUNT = 11,
-		BUILDING_DATA_COUNT = 11;
+		BUILDING_DATA_COUNT = 10;
 
 
 	std::vector<uint64_t> playerData;

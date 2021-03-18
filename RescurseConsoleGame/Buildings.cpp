@@ -2,17 +2,18 @@
 
 void BuildTemplate::Reinitialisate(std::vector<uint64_t> buildingData, std::string name)
 {
-	count = buildingData[0];
-	productivity = buildingData[1];
-	inQueue = buildingData[2];
-	moneyNeeded = buildingData[3];
-	valueOfSkipTime = buildingData[4];
-	buildTime = buildingData[5];
-	endBuildTime = buildingData[6];
-	resource1 = buildingData[7];
-	resource2 = buildingData[8];
-	resource3 = buildingData[9];
-	activated = buildingData[10];
+	uint16_t counter = 0;
+
+	count = buildingData[counter++];
+	productivity = buildingData[counter++];
+	inQueue = buildingData[counter++];
+	valueOfSkipTime = buildingData[counter++];
+	buildTime = buildingData[counter++];
+	endBuildTime = buildingData[counter++];
+	resource1 = buildingData[counter++];
+	resource2 = buildingData[counter++];
+	resource3 = buildingData[counter++];
+	activated = buildingData[counter++];
 	this->name = name;
 }
 
