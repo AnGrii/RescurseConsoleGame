@@ -3,8 +3,10 @@
 
 void ResTemplate::Reinitialisate(std::vector<uint64_t> dataList)
 {
-	this->count = dataList[0];
-	this->value = dataList[1];
+	uint16_t counter = 0;
+
+	this->count = dataList[counter++];
+	this->value = dataList[counter++];
 }
 
 uint64_t ResTemplate::getCount()
@@ -48,17 +50,18 @@ uint64_t ResTemplate::getValue()
 
 Resource::Resource(std::vector< std::vector<uint64_t>> dataList)
 {
-	log.Reinitialisate(dataList[0]);
-	wood.Reinitialisate(dataList[1]);
-	stone.Reinitialisate(dataList[2]);
-	coal.Reinitialisate(dataList[3]);
-	copper.Reinitialisate(dataList[4]);
-	tin.Reinitialisate(dataList[5]);
-	bronze.Reinitialisate(dataList[6]);
-	silver.Reinitialisate(dataList[7]);
-	gold.Reinitialisate(dataList[8]);
-	platina.Reinitialisate(dataList[9]);
-	diamond.Reinitialisate(dataList[10]);
+	uint16_t counter = 0;
+	log.Reinitialisate(dataList[counter++]);
+	wood.Reinitialisate(dataList[counter++]);
+	stone.Reinitialisate(dataList[counter++]);
+	coal.Reinitialisate(dataList[counter++]);
+	copper.Reinitialisate(dataList[counter++]);
+	tin.Reinitialisate(dataList[counter++]);
+	bronze.Reinitialisate(dataList[counter++]);
+	silver.Reinitialisate(dataList[counter++]);
+	gold.Reinitialisate(dataList[counter++]);
+	platina.Reinitialisate(dataList[counter++]);
+	diamond.Reinitialisate(dataList[counter++]);
 }
 
 void Resource::printResourcesCount()
