@@ -1,5 +1,25 @@
 #include "DataModule.h"
 
+std::string getFullNameDataUnit(std::ifstream& DataFile)
+{
+	std::string Buffer, Result;
+
+	DataFile >> Buffer;
+
+	while (Buffer.at(Buffer.length() - 1) != '/') {
+		Result += Buffer + ' ';
+		DataFile >> Buffer;
+	}
+
+	Result += Buffer;
+
+	Result.erase(Result.end() - 1);
+
+	return Result;
+}
+
+
+
 void DataModule::loadPlayer(std::ifstream& loadDataFile)
 {
 	std::string nameBuffer;
@@ -36,14 +56,11 @@ void DataModule::loadResources(std::ifstream& loadDataFile)
 
 void DataModule::loadBuildingsName(std::ifstream& loadDataFile)
 {
-	std::string buffer;
-
 	buildingNameData.resize(BUILDING_COUNT);
 
 	for (size_t i = 0; i < BUILDING_COUNT; i++)
 	{
-		loadDataFile >> buffer;
-		buildingNameData[i] = buffer;
+		buildingNameData[i] = getFullNameDataUnit(loadDataFile);
 	}
 }
 

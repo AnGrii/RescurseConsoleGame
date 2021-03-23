@@ -10,10 +10,10 @@ Player 1
 0 0
 0 0
 0 0
-Forestry Sawmill Quarry Career
-Copper_Mine Tin_Mine Alloy_Plant
-Silver_Cleaner Gold_Mine
-Platina_Cleaner Diamond_Factory
+Forestry/ Sawmill/ Quarry/ Career/
+Copper Mine/ Tin Mine/ Alloy Plant/
+Silver Cleaner/ Gold_Mine/
+Platina Cleaner/ Diamond Factory/
 1 1 1 0 100 5 0 1 2 3 1
 0 1 0 0 100 10 0 4 5 6 1
 0 1 0 0 100 15 0 7 8 9 1

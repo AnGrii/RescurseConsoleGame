@@ -6,8 +6,8 @@ minimum x - 1, if data == 0 throw error and ask for wait or rewrite data file );
 
 - Add normal load of names for buildings
 
-- Add shop ( market )( buy / sell production )
-( coeficient of sell will be on data file in setting line)
+- Add shop ( market )( buy / sell production ) /
+( coeficient of sell will be on data file in setting data) - done
 
 - Add skip menu
 - Add skip building time
