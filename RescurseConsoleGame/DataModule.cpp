@@ -75,15 +75,15 @@ void DataModule::loadBuildings(std::ifstream& loadDataFile)
 
 	buildingsData.resize(BUILDING_COUNT);
 
-	for (size_t i = 0; i < BUILDING_COUNT; i++) {
-		buildingsData[i].resize(BUILDING_DATA_COUNT);
+	for (auto dataMatrix : buildingsData) {
+		dataMatrix.resize(BUILDING_DATA_COUNT);
 	}
 
 	//Dynamic loading (count) and (value) for resource
-	for (size_t row = 0; row < BUILDING_COUNT; row++) {
-		for (size_t collumn = 0; collumn < BUILDING_DATA_COUNT; collumn++) {
+	for (auto list : buildingsData) {
+		for (auto data : list) {
 			loadDataFile >> buffer;
-			buildingsData[row][collumn] = buffer;
+			data = buffer;
 		}
 	}
 }
