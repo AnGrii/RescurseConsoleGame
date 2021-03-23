@@ -58,9 +58,9 @@ void DataModule::loadBuildingsName(std::ifstream& loadDataFile)
 {
 	buildingNameData.resize(BUILDING_COUNT);
 
-	for (size_t i = 0; i < BUILDING_COUNT; i++)
+	for (std::string& data : buildingNameData)
 	{
-		buildingNameData[i] = getFullNameDataUnit(loadDataFile);
+		data = getFullNameDataUnit(loadDataFile);
 	}
 }
 
@@ -75,13 +75,13 @@ void DataModule::loadBuildings(std::ifstream& loadDataFile)
 
 	buildingsData.resize(BUILDING_COUNT);
 
-	for (auto dataMatrix : buildingsData) {
+	for (std::vector<uint64_t>& dataMatrix : buildingsData) {
 		dataMatrix.resize(BUILDING_DATA_COUNT);
 	}
 
 	//Dynamic loading (count) and (value) for resource
-	for (auto list : buildingsData) {
-		for (auto data : list) {
+	for (std::vector<uint64_t>& list : buildingsData) {
+		for (uint64_t& data : list) {
 			loadDataFile >> buffer;
 			data = buffer;
 		}

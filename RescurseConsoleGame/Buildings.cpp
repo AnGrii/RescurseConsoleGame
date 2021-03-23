@@ -4,16 +4,16 @@ void BuildTemplate::Reinitialisate(std::vector<uint64_t> buildingData, std::stri
 {
 	uint16_t counter = 0;
 
-	count = buildingData[counter++];
-	productivity = buildingData[counter++];
-	inQueue = buildingData[counter++];
-	valueOfSkipTime = buildingData[counter++];
-	buildTime = buildingData[counter++];
-	endBuildTime = buildingData[counter++];
-	resource1 = buildingData[counter++];
-	resource2 = buildingData[counter++];
-	resource3 = buildingData[counter++];
-	activated = buildingData[counter++];
+	count =			buildingData[++counter];
+	productivity =	buildingData[++counter];
+	inQueue =		buildingData[++counter];
+	valueOfSkipTime = buildingData[++counter];
+	buildTime =		buildingData[++counter];
+	endBuildTime =	buildingData[++counter];
+	resource1 =		buildingData[++counter];
+	resource2 =		buildingData[++counter];
+	resource3 =		buildingData[++counter];
+	activated =		buildingData[++counter];
 	this->name = name;
 }
 
@@ -105,19 +105,19 @@ void BuildTemplate::printQueueInfo()
 Buildings::Buildings(std::vector<std::string> nameData,
 	std::vector<std::vector<uint64_t>> buildingsData)
 {
-	uint16_t counter = 0;
+	uint16_t bCounter = 0;
 
-	forestry.Reinitialisate(buildingsData[counter], nameData[counter++]);
-	sawmill.Reinitialisate(buildingsData[counter], nameData[counter++]);
-	quarry.Reinitialisate(buildingsData[counter], nameData[counter++]);
-	career.Reinitialisate(buildingsData[counter], nameData[counter++]);
-	copperMine.Reinitialisate(buildingsData[counter], nameData[counter++]);
-	tinMine.Reinitialisate(buildingsData[counter], nameData[counter++]);
-	alloyPlant.Reinitialisate(buildingsData[counter], nameData[counter++]);
-	silverCleaner.Reinitialisate(buildingsData[counter], nameData[counter++]);
-	goldMine.Reinitialisate(buildingsData[counter], nameData[counter++]);
-	platinaCleaner.Reinitialisate(buildingsData[counter], nameData[counter++]);
-	diamondFactory.Reinitialisate(buildingsData[counter], nameData[counter++]);
+	forestry.Reinitialisate(		buildingsData[bCounter],	nameData[bCounter]);
+	sawmill.Reinitialisate(			buildingsData[++bCounter],	nameData[bCounter]);
+	quarry.Reinitialisate(			buildingsData[++bCounter],	nameData[bCounter]);
+	career.Reinitialisate(			buildingsData[++bCounter],	nameData[bCounter]);
+	copperMine.Reinitialisate(		buildingsData[++bCounter],	nameData[bCounter]);
+	tinMine.Reinitialisate(			buildingsData[++bCounter],	nameData[bCounter]);
+	alloyPlant.Reinitialisate(		buildingsData[++bCounter],	nameData[bCounter]);
+	silverCleaner.Reinitialisate(	buildingsData[++bCounter],	nameData[bCounter]);
+	goldMine.Reinitialisate(		buildingsData[++bCounter],	nameData[bCounter]);
+	platinaCleaner.Reinitialisate(	buildingsData[++bCounter],	nameData[bCounter]);
+	diamondFactory.Reinitialisate(	buildingsData[++bCounter],	nameData[bCounter]);
 }
 
 void Buildings::buildMenu(Resource& res)
