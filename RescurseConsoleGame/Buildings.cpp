@@ -4,7 +4,7 @@ void BuildTemplate::Reinitialisate(std::vector<uint64_t> buildingData, std::stri
 {
 	uint16_t counter = 0;
 
-	count =			buildingData[++counter];
+	count =			buildingData[counter];
 	productivity =	buildingData[++counter];
 	inQueue =		buildingData[++counter];
 	valueOfSkipTime = buildingData[++counter];
