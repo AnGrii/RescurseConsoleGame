@@ -283,17 +283,16 @@ void Buildings::build(BuildTemplate& build, ResTemplate& reqRes1, ResTemplate& r
 
 void BuildTemplate::buildInfo()
 {
-	std::cout << "=========\t" << this->getName() << "\t=========" << std::endl
-		<< "Count: " << this->getCount() << std::endl
-		<< "Productivity: " << this->getProductivity() << std::endl
-		<< "Skip build time value: " << this->getValueSkipTime() << std::endl
-		<< "Build time: " << this->getBuildTime() << std::endl
-		<< "Resource1 needed: " << this->getRes1() << std::endl
-		<< "Resource2 needed: " << this->getRes2() << std::endl
-		<< "Resource3 needed: " << this->getRes3() << std::endl
-		<< "Activated: " << this->getActiveStatus() << std::endl << std::endl;
+	std::cout << "=========   " << this->getName() << "   =========" << std::endl
+		<< "Count:\t\t\t" << this->getCount() << std::endl
+		<< "Productivity:\t\t" << this->getProductivity() << std::endl
+		<< "Skip build time value:\t" << this->getValueSkipTime() << std::endl
+		<< "Build time:\t\t" << this->getBuildTime() << std::endl
+		<< "Resource1 needed:\t" << this->getRes1() << std::endl
+		<< "Resource2 needed:\t" << this->getRes2() << std::endl
+		<< "Resource3 needed:\t" << this->getRes3() << std::endl
+		<< "Activated:\t\t" << this->getActiveStatus() << std::endl << std::endl;
 }
-
 
 void Buildings::printQueueStatus()
 {
