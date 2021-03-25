@@ -54,6 +54,21 @@ uint64_t BuildTemplate::getProductivity()
 	return productivity;
 }
 
+uint64_t BuildTemplate::getValueSkipTime()
+{
+	return valueOfSkipTime;
+}
+
+uint64_t BuildTemplate::getBuildTime()
+{
+	return buildTime;
+}
+
+bool BuildTemplate::getActiveStatus()
+{
+	return activated;
+}
+
 bool BuildTemplate::isInQueue()
 {
 	if (endBuildTime == 0){
@@ -266,6 +281,18 @@ void Buildings::build(BuildTemplate& build, ResTemplate& reqRes1, ResTemplate& r
 	}
 }
 
+void BuildTemplate::buildInfo()
+{
+	std::cout << "=========\t" << this->getName() << "\t=========" << std::endl
+		<< "Count: " << this->getCount() << std::endl
+		<< "Productivity: " << this->getProductivity() << std::endl
+		<< "Skip build time value: " << this->getValueSkipTime() << std::endl
+		<< "Build time: " << this->getBuildTime() << std::endl
+		<< "Resource1 needed: " << this->getRes1() << std::endl
+		<< "Resource2 needed: " << this->getRes2() << std::endl
+		<< "Resource3 needed: " << this->getRes3() << std::endl
+		<< "Activated: " << this->getActiveStatus() << std::endl << std::endl;
+}
 
 
 void Buildings::printQueueStatus()
@@ -285,7 +312,7 @@ void Buildings::printQueueStatus()
 
 void Buildings::brokeEvent()
 {
-	srand((unsigned int)time(NULL));
+	srand(static_cast<uint64_t>(NULL));
 
 	uint16_t chance = rand() % 100 * rand() % 1000;
 
@@ -328,6 +355,21 @@ void Buildings::brokeEvent()
 		break;
 	}
 
+}
+
+void Buildings::printBuildingsInfo()
+{
+	forestry.buildInfo();
+	sawmill.buildInfo();
+	quarry.buildInfo();
+	career.buildInfo();
+	copperMine.buildInfo();
+	tinMine.buildInfo();
+	alloyPlant.buildInfo();
+	silverCleaner.buildInfo();
+	goldMine.buildInfo();
+	platinaCleaner.buildInfo();
+	diamondFactory.buildInfo();
 }
 
 

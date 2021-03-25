@@ -27,12 +27,20 @@ public:
 	uint64_t getCount();
 	uint64_t getProductivity();
 	
+	uint64_t getValueSkipTime();
+	uint64_t getBuildTime();
+	bool getActiveStatus();
+
+
+	
 	bool isInQueue();
 	bool addInQueue();
 	void updateQueue();
 	void printQueueInfo();
 
 	void brokeBuild();
+
+	void buildInfo();
 
 	std::string getName() { return name; }
 
@@ -61,6 +69,8 @@ public:
 
 	void brokeEvent();
 
+	void printBuildingsInfo();
+
 private:
 	BuildTemplate 
 		forestry, sawmill, quarry, career,
@@ -75,6 +85,4 @@ private:
 
 	void build(BuildTemplate& build, 
 		ResTemplate &reqRes1, ResTemplate &reqRes2, ResTemplate &reqRes3 );
-
-	
 };

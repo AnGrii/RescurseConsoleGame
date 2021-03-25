@@ -67,6 +67,9 @@ int main()
         case 'b':
             buildings.buildMenu(res);
             break;
+        case 'i':
+            buildings.printBuildingsInfo();
+            break;
         case 'x': 
             g_Exit = true;
             break;

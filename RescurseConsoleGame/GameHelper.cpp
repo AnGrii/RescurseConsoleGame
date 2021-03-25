@@ -9,6 +9,7 @@ void GameMessage::keywordHelp(bool show)
 		<< "s - Resources Shop" << std::endl
 		<< "b - Build Factories!" << std::endl
 		<< "q - Queue of buildings!" << std::endl
+		<< "i - Buildings information!" << std::endl
 		<< "" << std::endl;
 }
 
