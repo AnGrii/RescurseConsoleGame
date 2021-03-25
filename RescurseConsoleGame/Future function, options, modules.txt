@@ -18,7 +18,24 @@ minimum x - 1, if data == 0 throw error and ask for wait or rewrite data file );
 
 - Add instruments to resources extract(increase recource extracting)
 
-- 
+- ScienceCentre will increase building productivity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- About 
 
 
 
