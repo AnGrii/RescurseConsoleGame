@@ -2,8 +2,10 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <ctime>
 
 #include "Resource.h"
+
 
 class BuildTemplate
 {
@@ -30,6 +32,8 @@ public:
 	void updateQueue();
 	void printQueueInfo();
 
+	void brokeBuild();
+
 	std::string getName() { return name; }
 
 private:
@@ -55,6 +59,8 @@ public:
 
 	void printQueueStatus();
 
+	void brokeEvent();
+
 private:
 	BuildTemplate 
 		forestry, sawmill, quarry, career,
@@ -69,4 +75,6 @@ private:
 
 	void build(BuildTemplate& build, 
 		ResTemplate &reqRes1, ResTemplate &reqRes2, ResTemplate &reqRes3 );
+
+	
 };

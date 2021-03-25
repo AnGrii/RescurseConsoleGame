@@ -101,6 +101,12 @@ void BuildTemplate::printQueueInfo()
 	}
 }
 
+void BuildTemplate::brokeBuild()
+{
+	count--;
+	std::cout << this->getName() << " was broken!" << std::endl << std::endl;
+}
+
 
 Buildings::Buildings(std::vector<std::string> nameData,
 	std::vector<std::vector<uint64_t>> buildingsData)
@@ -258,8 +264,9 @@ void Buildings::build(BuildTemplate& build, ResTemplate& reqRes1, ResTemplate& r
 	{
 		std::cout << "Not enough cunt of recources!" << std::endl;
 	}
-
 }
+
+
 
 void Buildings::printQueueStatus()
 {
@@ -274,6 +281,53 @@ void Buildings::printQueueStatus()
 	goldMine.printQueueInfo();
 	platinaCleaner.printQueueInfo();
 	diamondFactory.printQueueInfo();
+}
+
+void Buildings::brokeEvent()
+{
+	srand((unsigned int)time(NULL));
+
+	uint16_t chance = rand() % 100 * rand() % 1000;
+
+	switch (chance)
+	{
+		case 1:
+			forestry.brokeBuild();
+			break;
+		case 2:
+			sawmill.brokeBuild();
+			break;
+		case 3:
+			quarry.brokeBuild();
+			break;
+		case 4:
+			career.brokeBuild();
+			break;
+		case 5:
+			copperMine.brokeBuild();
+			break;
+		case 6:
+			tinMine.brokeBuild();
+			break;
+		case 7:
+			alloyPlant.brokeBuild();
+			break;
+		case 8:
+			silverCleaner.brokeBuild();
+			break;
+		case 9:
+			goldMine.brokeBuild();
+			break;
+		case 10:
+			platinaCleaner.brokeBuild();
+			break;
+		case 11:
+			diamondFactory.brokeBuild();
+			break;
+		default:
+		break;
+	}
+
 }
 
 

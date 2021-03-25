@@ -40,6 +40,7 @@ int main()
 
         buildings.updateBuildingsBuild();
         buildings.work(res);
+        buildings.brokeEvent();
 
         player.printBalance();
 

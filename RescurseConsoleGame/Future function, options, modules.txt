@@ -4,16 +4,108 @@ minimum x - 1, if data == 0 throw error and ask for wait or rewrite data file );
 
 - Add different status to building - power( 10%, 25%, 50%, 75%, 100% );
 
-- Add normal load of names for buildings
-
 - Add shop ( market )( buy / sell production ) /
 ( coeficient of sell will be on data file in setting data) - done
 
 - Add skip menu
 - Add skip building time
+- Add building information
 
 - Save data ( normal - without security - 1)
 - Save data ( with security )
+
+- Data file restore / new game
+
+- Add instruments to resources extract(increase recource extracting)
+
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -32,3 +32,8 @@ void Player::reduceMoney(uint64_t count)
 		this->balance = 0;
 	}
 }
+
+uint64_t& Player::getBalanceLink()
+{
+	return balance;
+}
