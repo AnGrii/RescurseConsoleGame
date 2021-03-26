@@ -141,22 +141,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BuildingsManager.cpp" />
     <ClCompile Include="DataModule.cpp" />
     <ClCompile Include="Buildings.cpp" />
     <ClCompile Include="GameHelper.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RescurseConsoleGame.cpp" />
     <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ResourcesEtract.cpp" />
     <ClCompile Include="ScienceCentre.cpp" />
     <ClCompile Include="Shop.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BuildingsManager.h" />
     <ClInclude Include="DataModule.h" />
     <ClInclude Include="Buildings.h" />
     <ClInclude Include="GameHelper.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ResourcesEtract.h" />
     <ClInclude Include="ScienceCentre.h" />
     <ClInclude Include="Shop.h" />

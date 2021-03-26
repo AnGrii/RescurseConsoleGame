@@ -14,8 +14,10 @@
 #include "DataModule.h"
 #include "Player.h"
 #include "Resource.h"
+#include "ResourceManager.h"
 #include "ResourcesEtract.h"
 #include "Buildings.h"
+#include "BuildingsManager.h"
 #include "Shop.h"
 #include "GameHelper.h"
 

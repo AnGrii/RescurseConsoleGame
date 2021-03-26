@@ -1,0 +1,44 @@
+#pragma once
+#include <iostream>
+#include <vector>
+#include <string>
+#include <ctime>
+
+#include "Resource.h"
+#include "Buildings.h"
+
+
+class BuildingsManager
+{
+public:
+	BuildingsManager(std::vector<std::string> nameData,
+		std::vector< std::vector<uint64_t>> buildingsData);
+
+	void buildMenu(ResourceManager1& res);
+
+	void work(ResourceManager1& res);
+	//void BuildingInfo();
+
+	void updateBuildingsQueue();
+
+	void printQueueStatus();
+
+	void brokeEvent();
+
+	void printBuildingsInfo();
+
+private:
+	Building
+		forestry, sawmill, quarry, career,
+		copperMine, tinMine, alloyPlant,
+		silverCleaner, goldMine,
+		platinaCleaner, diamondFactory;
+
+	void printBuildRequest(Building build, std::string buildSymb,
+		std::string resourceName1,
+		std::string resourceName2,
+		std::string resourceName3);
+
+	void build(Building& build,
+		Resource& reqRes1, Resource& reqRes2, Resource& reqRes3);
+};
