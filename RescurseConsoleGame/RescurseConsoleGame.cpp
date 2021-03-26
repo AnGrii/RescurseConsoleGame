@@ -3,12 +3,12 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
+#include <vector>
+#include <list>
+#include <math.h>
 #include <conio.h>
 #include <thread>
 #include <mutex>
-#include <math.h>
-#include <vector>
-#include <list>
 
 
 #include "DataModule.h"
@@ -28,8 +28,10 @@ int main()
 
     Player player(data.getPlayerName(), data.getPlayerData());
     ResourceManager res(data.getRecourcesData());
-    BuildingsManager buildings(data.getBuildingsNameData(), data.getBuildingsData());
-
+    //ResourcesEtract
+    BuildingsManager buildings(
+        data.getBuildingsNameData(),
+        data.getBuildingsData());
 
     char g_Select = '0';
     bool g_Exit = false;
@@ -38,7 +40,7 @@ int main()
     {
         GameMessage::keywordHelp(true);
 
-        buildings.updateBuildingsBuild();
+        buildings.updateBuildingsQueue();
         buildings.work(res);
         buildings.brokeEvent();
 

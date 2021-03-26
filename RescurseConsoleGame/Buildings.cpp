@@ -32,6 +32,21 @@ uint64_t Building::getRes3()
 	return resource3;
 }
 
+void Building::increaseResValue1()
+{
+	resource1 += uint64_t(resource1 * RESOURCE_VALUE_INCREASE_PROCENT);
+}
+
+void Building::increaseResValue2()
+{
+	resource2 += uint64_t(resource2 * RESOURCE_VALUE_INCREASE_PROCENT);
+}
+
+void Building::increaseResValue3()
+{
+	resource3 += uint64_t(resource3 * RESOURCE_VALUE_INCREASE_PROCENT);
+}
+
 void Building::addCount(uint64_t addCount)
 {
 	uint64_t limit = UINT64_MAX - this->count;
@@ -221,7 +236,7 @@ void BuildingsManager::work(ResourceManager& res)
 	res.diamond.add(diamondFactory.getCount() * diamondFactory.getProductivity());
 }
 
-void BuildingsManager::updateBuildingsBuild()
+void BuildingsManager::updateBuildingsQueue()
 {
 	forestry.updateQueue();
 	sawmill.updateQueue();
@@ -251,13 +266,17 @@ void BuildingsManager::printBuildRequest(Building build, std::string buildSymb,
 		<< resourceName3 << " - " << build.getRes3() << std::endl << std::endl;
 }
 
-void BuildingsManager::build(Building& build, Resource& reqRes1, Resource& reqRes2, Resource& reqRes3)
+void BuildingsManager::build(Building& build,
+	Resource& reqRes1,
+	Resource& reqRes2,
+	Resource& reqRes3)
 {
 	if (build.getRes1() <= reqRes1.getCount() and
 		build.getRes2() <= reqRes2.getCount() and
 		build.getRes3() <= reqRes3.getCount())
 	{
-		char select = 'y';//init with y if inQueue - false
+		char select = 'y';
+
 		if (build.isInQueue()) {
 			std::cout << "This type of build are in process, want to add one more to queue?" << std::endl
 				<< "y - Yes, n - any key" << std::endl
@@ -265,13 +284,16 @@ void BuildingsManager::build(Building& build, Resource& reqRes1, Resource& reqRe
 			std::cin >> select;
 			std::cout << std::endl;
 		}
-		else { /*Nothing to do*/ }
 
 		if (select == 'y') {
 			if (build.addInQueue()) {
 				reqRes1.reduce(build.getRes1());
 				reqRes2.reduce(build.getRes2());
 				reqRes3.reduce(build.getRes3());
+
+				build.increaseResValue1();
+				build.increaseResValue2();
+				build.increaseResValue3();
 			}
 
 			std::cout << "Adding building in queue succeed!" << std::endl << std::endl;

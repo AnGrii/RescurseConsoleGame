@@ -22,6 +22,10 @@ public:
 	uint64_t getRes2();
 	uint64_t getRes3();
 
+	void increaseResValue1();
+	void increaseResValue2();
+	void increaseResValue3();
+
 	void addCount(uint64_t addCount);
 
 	uint64_t getCount();
@@ -30,8 +34,6 @@ public:
 	uint64_t getValueSkipTime();
 	uint64_t getBuildTime();
 	bool getActiveStatus();
-
-
 	
 	bool isInQueue();
 	bool addInQueue();
@@ -49,6 +51,8 @@ private:
 		buildTime, endBuildTime, resource1, resource2, resource3;
 	bool activated;
 	std::string name;
+
+	const double RESOURCE_VALUE_INCREASE_PROCENT = 0.2;
 };
 
 
@@ -63,7 +67,7 @@ public:
 	void work(ResourceManager& res);
 	//void BuildingInfo();
 	
-	void updateBuildingsBuild();
+	void updateBuildingsQueue();
 
 	void printQueueStatus();
 
