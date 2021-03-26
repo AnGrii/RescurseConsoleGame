@@ -5,6 +5,7 @@
 #include <ctime>
 
 #include "Resource.h"
+#include "ResourceManager.h"
 #include "Buildings.h"
 
 
@@ -14,9 +15,9 @@ public:
 	BuildingsManager(std::vector<std::string> nameData,
 		std::vector< std::vector<uint64_t>> buildingsData);
 
-	void buildMenu(ResourceManager1& res);
+	void buildMenu(ResourceManager& res);
 
-	void work(ResourceManager1& res);
+	void work(ResourceManager& res);
 	//void BuildingInfo();
 
 	void updateBuildingsQueue();

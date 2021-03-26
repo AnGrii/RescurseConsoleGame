@@ -18,7 +18,7 @@ BuildingsManager::BuildingsManager(std::vector<std::string> nameData,
 	diamondFactory.Reinitialisate(buildingsData[++bCounter], nameData[bCounter]);
 }
 
-void BuildingsManager::buildMenu(ResourceManager1& res)
+void BuildingsManager::buildMenu(ResourceManager& res)
 {
 	std::cout << "Select build:" << std::endl;
 
@@ -81,7 +81,7 @@ void BuildingsManager::buildMenu(ResourceManager1& res)
 
 }
 
-void BuildingsManager::work(ResourceManager1& res)
+void BuildingsManager::work(ResourceManager& res)
 {
 	res.log.add(forestry.getCount() * forestry.getProductivity());
 	res.wood.add(sawmill.getCount() * sawmill.getProductivity());
@@ -161,7 +161,7 @@ void BuildingsManager::build(Building& build,
 	}
 	else
 	{
-		std::cout << "Not enough cunt of recources!" << std::endl;
+		std::cout << "Not enough count of recources!" << std::endl << std::endl;
 	}
 }
 
