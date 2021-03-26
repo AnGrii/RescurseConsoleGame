@@ -1,7 +1,7 @@
 #include "Resource.h"
 
 
-void ResTemplate::Reinitialisate(std::vector<uint64_t> dataList)
+void Resource::Reinitialisate(std::vector<uint64_t> dataList)
 {
 	uint16_t counter = 0;
 
@@ -9,15 +9,15 @@ void ResTemplate::Reinitialisate(std::vector<uint64_t> dataList)
 	this->value = dataList[counter++];
 }
 
-uint64_t ResTemplate::getCount()
+uint64_t Resource::getCount()
 {
 	return count;
 }
-uint64_t& ResTemplate::getCountLink()
+uint64_t& Resource::getCountLink()
 {
 	return count;
 }
-void ResTemplate::add(uint64_t count)
+void Resource::add(uint64_t count)
 {
 	uint64_t limit = UINT64_MAX - this->count;
 
@@ -28,7 +28,7 @@ void ResTemplate::add(uint64_t count)
 		this->count = UINT64_MAX;
 	}
 }
-void ResTemplate::reduce(uint64_t count)
+void Resource::reduce(uint64_t count)
 {
 	if (this->count > count) {
 		this->count -= count;
@@ -37,17 +37,17 @@ void ResTemplate::reduce(uint64_t count)
 		this->count = 0;
 	}
 }
-void ResTemplate::set(uint64_t count)
+void Resource::set(uint64_t count)
 {
 	this->count = count;
 }
 
-uint64_t ResTemplate::getValue()
+uint64_t Resource::getValue()
 {
 	return value;
 }
 
-Resource::Resource(std::vector< std::vector<uint64_t>> dataList)
+ResourceManager::ResourceManager(std::vector< std::vector<uint64_t>> dataList)
 {
 	uint16_t counter = 0;
 
@@ -64,7 +64,7 @@ Resource::Resource(std::vector< std::vector<uint64_t>> dataList)
 	diamond.Reinitialisate(dataList[counter++]);
 }
 
-void Resource::printResourcesCount()
+void ResourceManager::printResourcesCount()
 {
 	std::cout
 		<< "Log:\t" << log.getCount() << "\t\tBronze:\t" << bronze.getCount() << std::endl

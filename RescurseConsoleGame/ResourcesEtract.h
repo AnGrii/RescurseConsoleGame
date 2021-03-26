@@ -6,12 +6,12 @@
 class ResourcesEtract
 {
 public:
-	static void extract(ResTemplate& log, ResTemplate& wood, ResTemplate& stone);
+	static void extract(Resource& log, Resource& wood, Resource& stone);
 
 private:
-	static void extractLog(ResTemplate& log);
-	static void extractWood(ResTemplate& log, ResTemplate& wood);
-	static void extractStone(ResTemplate& wood, ResTemplate& stone);
+	static void extractLog(Resource& log);
+	static void extractWood(Resource& log, Resource& wood);
+	static void extractStone(Resource& wood, Resource& stone);
 
 	static const uint32_t LOG_EXTRACT = 1,
 		LOG_TO_WOOD_NEEDED = 2,

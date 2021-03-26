@@ -1,6 +1,6 @@
 #include "Buildings.h"
 
-void BuildTemplate::Reinitialisate(std::vector<uint64_t> buildingData, std::string name)
+void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string name)
 {
 	uint16_t counter = 0;
 
@@ -17,22 +17,22 @@ void BuildTemplate::Reinitialisate(std::vector<uint64_t> buildingData, std::stri
 	this->name = name;
 }
 
-uint64_t BuildTemplate::getRes1()
+uint64_t Building::getRes1()
 {
 	return resource1;
 }
 
-uint64_t BuildTemplate::getRes2()
+uint64_t Building::getRes2()
 {
 	return resource2;
 }
 
-uint64_t BuildTemplate::getRes3()
+uint64_t Building::getRes3()
 {
 	return resource3;
 }
 
-void BuildTemplate::addCount(uint64_t addCount)
+void Building::addCount(uint64_t addCount)
 {
 	uint64_t limit = UINT64_MAX - this->count;
 
@@ -44,32 +44,32 @@ void BuildTemplate::addCount(uint64_t addCount)
 	}
 }
 
-uint64_t BuildTemplate::getCount()
+uint64_t Building::getCount()
 {
 	return count;
 }
 
-uint64_t BuildTemplate::getProductivity()
+uint64_t Building::getProductivity()
 {
 	return productivity;
 }
 
-uint64_t BuildTemplate::getValueSkipTime()
+uint64_t Building::getValueSkipTime()
 {
 	return valueOfSkipTime;
 }
 
-uint64_t BuildTemplate::getBuildTime()
+uint64_t Building::getBuildTime()
 {
 	return buildTime;
 }
 
-bool BuildTemplate::getActiveStatus()
+bool Building::getActiveStatus()
 {
 	return activated;
 }
 
-bool BuildTemplate::isInQueue()
+bool Building::isInQueue()
 {
 	if (endBuildTime == 0){
 		if (inQueue == 0) {
@@ -80,7 +80,7 @@ bool BuildTemplate::isInQueue()
 	return true;
 }
 
-bool BuildTemplate::addInQueue()
+bool Building::addInQueue()
 {
 	if (UINT64_MAX - inQueue > 1) {
 		inQueue++;
@@ -89,7 +89,7 @@ bool BuildTemplate::addInQueue()
 	return false;
 }
 
-void BuildTemplate::updateQueue()
+void Building::updateQueue()
 {
 	if (endBuildTime > 0) {	
 		endBuildTime--; 
@@ -108,7 +108,7 @@ void BuildTemplate::updateQueue()
 	}
 }
 
-void BuildTemplate::printQueueInfo()
+void Building::printQueueInfo()
 {
 	if (this->isInQueue()) {
 		std::cout << "Count of " << name << " in queue -\t" << inQueue << std::endl
@@ -116,14 +116,16 @@ void BuildTemplate::printQueueInfo()
 	}
 }
 
-void BuildTemplate::brokeBuild()
+void Building::brokeBuild()
 {
-	count--;
-	std::cout << this->getName() << " was broken!" << std::endl << std::endl;
+	if (count > 0) {
+		count--;
+		std::cout << this->getName() << " was broken!" << std::endl << std::endl;
+	}
 }
 
 
-Buildings::Buildings(std::vector<std::string> nameData,
+BuildingsManager::BuildingsManager(std::vector<std::string> nameData,
 	std::vector<std::vector<uint64_t>> buildingsData)
 {
 	uint16_t bCounter = 0;
@@ -141,7 +143,7 @@ Buildings::Buildings(std::vector<std::string> nameData,
 	diamondFactory.Reinitialisate(	buildingsData[++bCounter],	nameData[bCounter]);
 }
 
-void Buildings::buildMenu(Resource& res)
+void BuildingsManager::buildMenu(ResourceManager& res)
 {
 	std::cout << "Select build:" << std::endl;
 
@@ -204,7 +206,7 @@ void Buildings::buildMenu(Resource& res)
 
 }
 
-void Buildings::work(Resource& res)
+void BuildingsManager::work(ResourceManager& res)
 {
 	res.log.add(forestry.getCount()			* forestry.getProductivity());
 	res.wood.add(sawmill.getCount()			* sawmill.getProductivity());
@@ -219,7 +221,7 @@ void Buildings::work(Resource& res)
 	res.diamond.add(diamondFactory.getCount() * diamondFactory.getProductivity());
 }
 
-void Buildings::updateBuildingsBuild()
+void BuildingsManager::updateBuildingsBuild()
 {
 	forestry.updateQueue();
 	sawmill.updateQueue();
@@ -234,7 +236,7 @@ void Buildings::updateBuildingsBuild()
 	diamondFactory.updateQueue();
 }
 
-void Buildings::printBuildRequest(BuildTemplate build, std::string buildSymb,
+void BuildingsManager::printBuildRequest(Building build, std::string buildSymb,
 	std::string resourceName1,
 	std::string resourceName2,
 	std::string resourceName3)
@@ -249,7 +251,7 @@ void Buildings::printBuildRequest(BuildTemplate build, std::string buildSymb,
 		<< resourceName3 << " - " << build.getRes3() << std::endl << std::endl;
 }
 
-void Buildings::build(BuildTemplate& build, ResTemplate& reqRes1, ResTemplate& reqRes2, ResTemplate& reqRes3)
+void BuildingsManager::build(Building& build, Resource& reqRes1, Resource& reqRes2, Resource& reqRes3)
 {
 	if (build.getRes1() <= reqRes1.getCount() and
 		build.getRes2() <= reqRes2.getCount() and
@@ -281,7 +283,7 @@ void Buildings::build(BuildTemplate& build, ResTemplate& reqRes1, ResTemplate& r
 	}
 }
 
-void BuildTemplate::buildInfo()
+void Building::buildInfo()
 {
 	std::cout << "=========   " << this->getName() << "   =========" << std::endl
 		<< "Count:\t\t\t" << this->getCount() << std::endl
@@ -294,7 +296,7 @@ void BuildTemplate::buildInfo()
 		<< "Activated:\t\t" << this->getActiveStatus() << std::endl << std::endl;
 }
 
-void Buildings::printQueueStatus()
+void BuildingsManager::printQueueStatus()
 {
 	forestry.printQueueInfo();
 	sawmill.printQueueInfo();
@@ -309,7 +311,7 @@ void Buildings::printQueueStatus()
 	diamondFactory.printQueueInfo();
 }
 
-void Buildings::brokeEvent()
+void BuildingsManager::brokeEvent()
 {
 	srand(static_cast<uint64_t>(NULL));
 
@@ -356,7 +358,7 @@ void Buildings::brokeEvent()
 
 }
 
-void Buildings::printBuildingsInfo()
+void BuildingsManager::printBuildingsInfo()
 {
 	forestry.buildInfo();
 	sawmill.buildInfo();

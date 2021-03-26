@@ -7,10 +7,10 @@
 #include "Resource.h"
 
 
-class BuildTemplate
+class Building
 {
 public:
-	BuildTemplate() :
+	Building() :
 	count(0), productivity(0), inQueue(0),
 		valueOfSkipTime(0), buildTime(0), endBuildTime(0),
 		resource1(0), resource2(0), resource3(0), activated(0),
@@ -52,15 +52,15 @@ private:
 };
 
 
-class Buildings
+class BuildingsManager
 {
 public:
-	Buildings(std::vector<std::string> nameData,
+	BuildingsManager(std::vector<std::string> nameData,
 		std::vector< std::vector<uint64_t>> buildingsData);
 
-	void buildMenu(Resource& res);
+	void buildMenu(ResourceManager& res);
 
-	void work(Resource& res);
+	void work(ResourceManager& res);
 	//void BuildingInfo();
 	
 	void updateBuildingsBuild();
@@ -72,17 +72,17 @@ public:
 	void printBuildingsInfo();
 
 private:
-	BuildTemplate 
+	Building 
 		forestry, sawmill, quarry, career,
 		copperMine, tinMine, alloyPlant,
 		silverCleaner, goldMine,
 		platinaCleaner, diamondFactory;
 
-	void printBuildRequest(BuildTemplate build, std::string buildSymb,
+	void printBuildRequest(Building build, std::string buildSymb,
 		std::string resourceName1, 
 		std::string resourceName2, 
 		std::string resourceName3 );
 
-	void build(BuildTemplate& build, 
-		ResTemplate &reqRes1, ResTemplate &reqRes2, ResTemplate &reqRes3 );
+	void build(Building& build, 
+		Resource &reqRes1, Resource &reqRes2, Resource &reqRes3 );
 };

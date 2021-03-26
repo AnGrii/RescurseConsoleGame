@@ -2,10 +2,10 @@
 #include<iostream>
 #include<vector>
 
-class ResTemplate
+class Resource
 {
 public:
-	ResTemplate() : count(0), value(0){}
+	Resource() : count(0), value(0){}
 	void Reinitialisate(std::vector<uint64_t> dataList);
 
 	uint64_t getCount();
@@ -22,13 +22,13 @@ private:
 };
 
 
-class Resource
+class ResourceManager
 {
 public:
-	ResTemplate log, wood, stone, coal, copper, tin, bronze,
+	Resource log, wood, stone, coal, copper, tin, bronze,
 		silver, gold, platina, diamond;
 
-	Resource(std::vector< std::vector<uint64_t>> dataList);
+	ResourceManager(std::vector< std::vector<uint64_t>> dataList);
 
 	void printResourcesCount();
 };

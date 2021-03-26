@@ -1,6 +1,6 @@
 #include "ResourcesEtract.h"
 
-void ResourcesEtract::extract(ResTemplate& log, ResTemplate& wood, ResTemplate& stone)
+void ResourcesEtract::extract(Resource& log, Resource& wood, Resource& stone)
 {
 	std::cout << "Select type of resource!" << std::endl
 		<< "l - Log / w - Wood / s - Stone!" << std::endl
@@ -29,14 +29,14 @@ void ResourcesEtract::extract(ResTemplate& log, ResTemplate& wood, ResTemplate& 
 	}
 }
 
-void ResourcesEtract::extractLog(ResTemplate& log)
+void ResourcesEtract::extractLog(Resource& log)
 {
 	log.add(LOG_EXTRACT);
 
 	std::cout << "Cutted " << uint16_t(LOG_EXTRACT) << " logs!" << std::endl << std::endl;
 }
 
-void ResourcesEtract::extractWood(ResTemplate& log, ResTemplate& wood)
+void ResourcesEtract::extractWood(Resource& log, Resource& wood)
 {
 	if (log.getCount() >= LOG_TO_WOOD_NEEDED) {
 		log.reduce(LOG_TO_WOOD_NEEDED);
@@ -50,7 +50,7 @@ void ResourcesEtract::extractWood(ResTemplate& log, ResTemplate& wood)
 	}
 }
 
-void ResourcesEtract::extractStone(ResTemplate& wood, ResTemplate& stone)
+void ResourcesEtract::extractStone(Resource& wood, Resource& stone)
 {
 	if (WOOD_TO_STONE_NEDDED <= wood.getCount()) {
 		wood.reduce(WOOD_TO_STONE_NEDDED);

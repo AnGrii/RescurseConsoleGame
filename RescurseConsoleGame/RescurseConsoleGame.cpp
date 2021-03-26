@@ -27,8 +27,8 @@ int main()
     DataModule data("Data.txt");
 
     Player player(data.getPlayerName(), data.getPlayerData());
-    Resource res(data.getRecourcesData());
-    Buildings buildings(data.getBuildingsNameData(), data.getBuildingsData());
+    ResourceManager res(data.getRecourcesData());
+    BuildingsManager buildings(data.getBuildingsNameData(), data.getBuildingsData());
 
 
     char g_Select = '0';
