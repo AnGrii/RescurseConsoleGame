@@ -4,6 +4,8 @@
 #include<vector>
 #include<fstream>
 #include<string>
+#include<algorithm>
+#include<functional>
 
 /// <summary>
 ///  Loading, initialisation and checking game data
@@ -25,6 +27,8 @@ public:
 
 private:
 	const uint16_t
+		COUNT_DATA_UNIT_LOADING_TO_ERROR_THROW = 1000,
+		//function will find "key word" of data if it's word will be don't finded function will throw error
 		RESOURCES_COUNT = 11,
 		RESOURCES_DATA_COUNT = 2,
 		BUILDING_COUNT = 11,
@@ -54,6 +58,4 @@ private:
 	void loadSellCoeficient(std::ifstream& loadDataFile);
 
 	//void loadSettings(std::ifstream& loadDataFile);
-
 };
-

@@ -18,8 +18,6 @@ std::string getFullNameDataUnit(std::ifstream& DataFile)
 	return Result;
 }
 
-
-
 void DataModule::loadPlayer(std::ifstream& loadDataFile)
 {
 	std::string nameBuffer;
@@ -132,6 +130,7 @@ uint64_t DataModule::getSellCoeficient()
 {
 	return sellCoeficient;
 }
+
 
 
 

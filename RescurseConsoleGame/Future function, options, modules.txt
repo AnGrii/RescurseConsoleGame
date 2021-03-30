@@ -20,6 +20,7 @@ minimum x - 1, if data == 0 throw error and ask for wait or rewrite data file );
 
 - ScienceCentre will increase building productivity
 
+- Change data loading way( data part need to have name for chaotic data read )
 
 
 

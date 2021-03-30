@@ -18,7 +18,6 @@ public:
 	void buildMenu(ResourceManager& res);
 
 	void work(ResourceManager& res);
-	//void BuildingInfo();
 
 	void updateBuildingsQueue();
 
