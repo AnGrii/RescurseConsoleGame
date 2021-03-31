@@ -1,6 +1,3 @@
-- Add load data checking 
-(data will be for 1 unit higher to find non initialisate data - 0 or UINT64_MAX,
-minimum x - 1, if data == 0 throw error and ask for wait or rewrite data file );
 
 - Add different status to building - power( 10%, 25%, 50%, 75%, 100% );
 
@@ -11,8 +8,7 @@ minimum x - 1, if data == 0 throw error and ask for wait or rewrite data file );
 - Add skip building time
 - Add building information
 
-- Save data
-- Save data ( with security )
+
 
 - Data file restore / new game
 
@@ -22,9 +18,26 @@ minimum x - 1, if data == 0 throw error and ask for wait or rewrite data file );
 
 - Change data loading way( data part need to have name for chaotic data read )
 
-
-
-
+Data loading / saving
+{
+	Dynamic data loading:
+	(
+	open file
+	go to string(key word)(function)
+	create vecto (r / rs)
+	2 functions for uint64_t / string
+	&function of data read(&file)
+	write data to vecto (r / rs)
+	close file
+	)
+}
+{
+	- Add load data checking 
+    (data will be for 1 unit higher to find non initialisate data - 0 or UINT64_MAX,
+	minimum x - 1, if data == 0 throw error and ask for wait orrewrite data file );
+	- Save data
+	- Save data ( with security )
+}
 
 
 
