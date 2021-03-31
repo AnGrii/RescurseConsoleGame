@@ -34,17 +34,22 @@ uint64_t Building::getRes3()
 
 void Building::increaseResValue1()
 {
-	resource1 += uint64_t(resource1 * RESOURCE_VALUE_INCREASE_PROCENT);
+	resource1 += uint64_t(resource1 * VALUE_INCREASE_PROCENT);
 }
 
 void Building::increaseResValue2()
 {
-	resource2 += uint64_t(resource2 * RESOURCE_VALUE_INCREASE_PROCENT);
+	resource2 += uint64_t(resource2 * VALUE_INCREASE_PROCENT);
 }
 
 void Building::increaseResValue3()
 {
-	resource3 += uint64_t(resource3 * RESOURCE_VALUE_INCREASE_PROCENT);
+	resource3 += uint64_t(resource3 * VALUE_INCREASE_PROCENT);
+}
+
+void Building::increaseSkipValue()
+{
+	valueOfSkipTime =uint64_t(valueOfSkipTime * double(1.0 + VALUE_INCREASE_PROCENT));
 }
 
 void Building::addCount(uint64_t addCount)
@@ -69,11 +74,6 @@ uint64_t Building::getProductivity()
 	return productivity;
 }
 
-uint64_t Building::getValueSkipTime()
-{
-	return valueOfSkipTime;
-}
-
 uint64_t Building::getBuildTime()
 {
 	return buildTime;
@@ -82,6 +82,11 @@ uint64_t Building::getBuildTime()
 bool Building::getActiveStatus()
 {
 	return activated;
+}
+
+uint64_t Building::getSkipValue()
+{
+	return valueOfSkipTime;
 }
 
 bool Building::isInQueue()
@@ -128,6 +133,29 @@ void Building::printQueueInfo()
 	if (this->isInQueue()) {
 		std::cout << "Count of " << name << " in queue -\t" << inQueue << std::endl
 			<< "Days to building left -\t" << endBuildTime << std::endl << std::endl;
+	}
+}
+
+void Building::printSkipInfo(char nameId)
+{
+	std::cout << nameId << " - " << name << "\t\t\t-\t" << valueOfSkipTime
+		<< std::endl << std::endl;
+}
+
+void Building::skipBuildingTime()
+{
+	endBuildTime = 0;
+}
+
+void Building::skipBuildingProcess(bool payStatus)
+{
+	if (payStatus) {
+		this->skipBuildingTime();
+		this->increaseSkipValue();
+	}
+	else
+	{
+		std::cout << "Not enough money!" << std::endl;
 	}
 }
 

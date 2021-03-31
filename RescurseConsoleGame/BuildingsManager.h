@@ -7,6 +7,7 @@
 #include "Resource.h"
 #include "ResourceManager.h"
 #include "Buildings.h"
+#include "Player.h"
 
 
 class BuildingsManager
@@ -26,6 +27,8 @@ public:
 	void brokeEvent();
 
 	void printBuildingsInfo();
+
+	void SkipBuildingMenu(Player& p);
 
 private:
 	Building

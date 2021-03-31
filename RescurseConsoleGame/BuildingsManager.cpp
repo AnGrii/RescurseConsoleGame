@@ -254,3 +254,65 @@ void BuildingsManager::printBuildingsInfo()
 	platinaCleaner.buildInfo();
 	diamondFactory.buildInfo();
 }
+
+void BuildingsManager::SkipBuildingMenu(Player &p)
+{
+	std::cout << "=====\tValue of skip building\t=====" << std::endl;
+	forestry.printSkipInfo('1');
+	sawmill.printSkipInfo('2');
+	quarry.printSkipInfo('3');
+	career.printSkipInfo('4');
+	copperMine.printSkipInfo('5');
+	tinMine.printSkipInfo('6');
+	alloyPlant.printSkipInfo('7');
+	silverCleaner.printSkipInfo('8');
+	goldMine.printSkipInfo('9');
+	platinaCleaner.printSkipInfo('a');
+	diamondFactory.printSkipInfo('b');
+
+	char select;
+	std::cout << "Input to build: ";
+	std::cin >> select;
+	std::cout << std::endl;
+
+	switch (select)
+	{
+	case '1':
+		forestry.skipBuildingProcess(p.payMoney(forestry.getSkipValue()));
+		break;
+	case '2':
+		sawmill.skipBuildingProcess(p.payMoney(sawmill.getSkipValue()));
+		break;
+	case '3':
+		quarry.skipBuildingProcess(p.payMoney(quarry.getSkipValue()));
+		break;
+	case '4':
+		career.skipBuildingProcess(p.payMoney(career.getSkipValue()));
+		break;
+	case '5':
+		copperMine.skipBuildingProcess(p.payMoney(copperMine.getSkipValue()));
+		break;
+	case '6':
+		tinMine.skipBuildingProcess(p.payMoney(tinMine.getSkipValue()));
+		break;
+	case '7':
+		alloyPlant.skipBuildingProcess(p.payMoney(alloyPlant.getSkipValue()));
+		break;
+	case '8':
+		silverCleaner.skipBuildingProcess(p.payMoney(silverCleaner.getSkipValue()));
+		break;
+	case '9':
+		goldMine.skipBuildingProcess(p.payMoney(goldMine.getSkipValue()));
+		break;
+	case 'a':
+		platinaCleaner.skipBuildingProcess(p.payMoney(platinaCleaner.getSkipValue()));
+		break;
+	case 'b':
+		diamondFactory.skipBuildingProcess(p.payMoney(diamondFactory.getSkipValue()));
+		break;
+	default:
+		std::cout << "Wrong input!" << std::endl << std::endl;
+		break;
+	}
+
+}

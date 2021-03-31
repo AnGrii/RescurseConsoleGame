@@ -26,20 +26,26 @@ public:
 	void increaseResValue2();
 	void increaseResValue3();
 
+	void increaseSkipValue();
+
 	void addCount(uint64_t addCount);
 
 	uint64_t getCount();
 	uint64_t getProductivity();
 	
-	uint64_t getValueSkipTime();
 	uint64_t getBuildTime();
 	bool getActiveStatus();
 	
+	uint64_t getSkipValue();
+
 	bool isInQueue();
 	bool addInQueue();
 	void updateQueue();
 	void printQueueInfo();
 
+	void printSkipInfo(char nameId);
+	
+	void skipBuildingProcess(bool payStatus);
 	void brokeBuild();
 
 	void buildInfo();
@@ -52,5 +58,7 @@ private:
 	bool activated;
 	std::string name;
 
-	const double RESOURCE_VALUE_INCREASE_PROCENT = 0.2;
+	const double VALUE_INCREASE_PROCENT = 0.2;
+
+	void skipBuildingTime();
 };
