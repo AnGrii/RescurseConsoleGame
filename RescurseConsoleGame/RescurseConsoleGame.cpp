@@ -67,13 +67,16 @@ int main()
             buildings.printQueueStatus();
             break;
         case 's':
-            std::cout << "SHOP!" << std::endl;
+            buildings.SkipBuildingMenu(player);
             break;
         case 'b':
             buildings.buildMenu(res);
             break;
         case 'i':
             buildings.printBuildingsInfo();
+            break;
+        case 'm':
+            std::cout << "Resource Market!" << std::endl;
             break;
         case 'x': 
             g_Exit = true;

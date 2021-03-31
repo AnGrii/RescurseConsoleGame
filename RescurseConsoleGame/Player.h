@@ -15,7 +15,7 @@ public:
 	void addMoney(uint64_t count);
 	void reduceMoney(uint64_t count);
 	uint64_t& getBalanceLink();
-	bool payMoney(uint64_t count);
+	bool payAndGetStatus(uint64_t count);
 
 	/*std::string getName();
 	void setNewName(std::string newName);*/

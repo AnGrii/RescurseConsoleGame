@@ -138,7 +138,7 @@ void Building::printQueueInfo()
 
 void Building::printSkipInfo(char nameId)
 {
-	std::cout << nameId << " - " << name << "\t\t\t-\t" << valueOfSkipTime
+	std::cout << nameId << " - " << name << "\t-\t\t" << valueOfSkipTime
 		<< std::endl << std::endl;
 }
 
@@ -152,6 +152,8 @@ void Building::skipBuildingProcess(bool payStatus)
 	if (payStatus) {
 		this->skipBuildingTime();
 		this->increaseSkipValue();
+
+		std::cout << name << " building skiped!" << std::endl << std::endl;
 	}
 	else
 	{

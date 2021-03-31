@@ -38,7 +38,7 @@ uint64_t& Player::getBalanceLink()
 	return balance;
 }
 
-bool Player::payMoney(uint64_t count)
+bool Player::payAndGetStatus(uint64_t count)
 {
 	if (this->balance > count) {
 		this->balance -= count;

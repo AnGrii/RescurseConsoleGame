@@ -170,7 +170,7 @@ void Building::buildInfo()
 	std::cout << "=========   " << this->getName() << "   =========" << std::endl
 		<< "Count:\t\t\t" << this->getCount() << std::endl
 		<< "Productivity:\t\t" << this->getProductivity() << std::endl
-		<< "Skip build time value:\t" << this->getValueSkipTime() << std::endl
+		<< "Skip build time value:\t" << this->getSkipValue() << std::endl
 		<< "Build time:\t\t" << this->getBuildTime() << std::endl
 		<< "Resource1 needed:\t" << this->getRes1() << std::endl
 		<< "Resource2 needed:\t" << this->getRes2() << std::endl
@@ -257,7 +257,7 @@ void BuildingsManager::printBuildingsInfo()
 
 void BuildingsManager::SkipBuildingMenu(Player &p)
 {
-	std::cout << "=====\tValue of skip building\t=====" << std::endl;
+	std::cout << "=====\tValue of skip time of building\t=====" << std::endl;
 	forestry.printSkipInfo('1');
 	sawmill.printSkipInfo('2');
 	quarry.printSkipInfo('3');
@@ -271,44 +271,44 @@ void BuildingsManager::SkipBuildingMenu(Player &p)
 	diamondFactory.printSkipInfo('b');
 
 	char select;
-	std::cout << "Input to build: ";
+	std::cout << "Input skip build id: ";
 	std::cin >> select;
 	std::cout << std::endl;
 
 	switch (select)
 	{
 	case '1':
-		forestry.skipBuildingProcess(p.payMoney(forestry.getSkipValue()));
+		forestry.skipBuildingProcess(p.payAndGetStatus(forestry.getSkipValue()));
 		break;
 	case '2':
-		sawmill.skipBuildingProcess(p.payMoney(sawmill.getSkipValue()));
+		sawmill.skipBuildingProcess(p.payAndGetStatus(sawmill.getSkipValue()));
 		break;
 	case '3':
-		quarry.skipBuildingProcess(p.payMoney(quarry.getSkipValue()));
+		quarry.skipBuildingProcess(p.payAndGetStatus(quarry.getSkipValue()));
 		break;
 	case '4':
-		career.skipBuildingProcess(p.payMoney(career.getSkipValue()));
+		career.skipBuildingProcess(p.payAndGetStatus(career.getSkipValue()));
 		break;
 	case '5':
-		copperMine.skipBuildingProcess(p.payMoney(copperMine.getSkipValue()));
+		copperMine.skipBuildingProcess(p.payAndGetStatus(copperMine.getSkipValue()));
 		break;
 	case '6':
-		tinMine.skipBuildingProcess(p.payMoney(tinMine.getSkipValue()));
+		tinMine.skipBuildingProcess(p.payAndGetStatus(tinMine.getSkipValue()));
 		break;
 	case '7':
-		alloyPlant.skipBuildingProcess(p.payMoney(alloyPlant.getSkipValue()));
+		alloyPlant.skipBuildingProcess(p.payAndGetStatus(alloyPlant.getSkipValue()));
 		break;
 	case '8':
-		silverCleaner.skipBuildingProcess(p.payMoney(silverCleaner.getSkipValue()));
+		silverCleaner.skipBuildingProcess(p.payAndGetStatus(silverCleaner.getSkipValue()));
 		break;
 	case '9':
-		goldMine.skipBuildingProcess(p.payMoney(goldMine.getSkipValue()));
+		goldMine.skipBuildingProcess(p.payAndGetStatus(goldMine.getSkipValue()));
 		break;
 	case 'a':
-		platinaCleaner.skipBuildingProcess(p.payMoney(platinaCleaner.getSkipValue()));
+		platinaCleaner.skipBuildingProcess(p.payAndGetStatus(platinaCleaner.getSkipValue()));
 		break;
 	case 'b':
-		diamondFactory.skipBuildingProcess(p.payMoney(diamondFactory.getSkipValue()));
+		diamondFactory.skipBuildingProcess(p.payAndGetStatus(diamondFactory.getSkipValue()));
 		break;
 	default:
 		std::cout << "Wrong input!" << std::endl << std::endl;
