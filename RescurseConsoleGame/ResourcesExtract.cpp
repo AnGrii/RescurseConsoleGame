@@ -138,7 +138,7 @@ void ResourcesExtract::upgradeExtractionInfo()
 	std::cout << "Value of extract upgrade:" << std::endl
 		<< "Upgrade will increase extrat to 1 unit!!!" << std::endl
 		<< "Count of resources needed to extract will not changed!!!" << std::endl
-		<< "1- Log level: " << logExtract << " upgrade value: "
+		<< "1 - Log level: " << logExtract << " upgrade value: "
 		<< upgradeLogExtractValue << std::endl
 		<< "2 - Wood level: " << woodExtract << " upgrade value: "
 		<< upgradeWoodExtractValue << std::endl
