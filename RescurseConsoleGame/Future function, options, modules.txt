@@ -3,18 +3,20 @@
 - Add shop ( market )( buy / sell production ) /
 ( coeficient of sell will be on data file in setting data) - done
 
-- Add skip building time menu
-- Add building information
-
-
 - Add instruments to resources extract(increase recource extracting)
 
 - ScienceCentre will increase building productivity
 
-- Change data loading way( data part need to have name for chaotic data read )
+
+
+
+
+
 
 Data loading / saving
 {
+- Change data loading way( data part need to have name for chaotic data read )
+
 	Dynamic data loading:
 	(
 	open file

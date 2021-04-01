@@ -31,7 +31,7 @@ int main()
 
     Player player(data.getPlayerName(), data.getPlayerData());
     ResourceManager res(data.getRecourcesData());
-    //ResourcesEtract
+    ResourcesExtract resExtract(data.getResourcesExtractData());
     BuildingsManager buildings(
         data.getBuildingsNameData(),
         data.getBuildingsData());
@@ -58,7 +58,7 @@ int main()
         switch (g_Select)
         {
         case 'e':
-            ResourcesEtract::extract(res.log, res.wood, res.stone);
+           resExtract.extract(res.log, res.wood, res.stone);
             break;
         case 'n':
             GameMessage::skipLine();

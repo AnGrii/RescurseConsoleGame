@@ -23,6 +23,8 @@ public:
 	std::vector< std::vector< uint64_t>> getBuildingsData();
 	std::vector<std::string> getBuildingsNameData();
 
+	std::vector< uint64_t> getResourcesExtractData();
+
 	uint64_t getSellCoeficient();
 
 private:
@@ -32,9 +34,10 @@ private:
 		RESOURCES_COUNT = 11,
 		RESOURCES_DATA_COUNT = 2,
 		BUILDING_COUNT = 11,
-		BUILDING_DATA_COUNT = 10;
+		BUILDING_DATA_COUNT = 10,
+		RESOURCES_EXTRACT_DATA_COUNT = 3;
 
-	double sellCoeficient = 1;
+	double sellCoeficient;
 
 	std::vector<uint64_t> playerData;
 	std::vector<std::string> playerNameData;
@@ -43,6 +46,8 @@ private:
 
 	std::vector< std::string> buildingNameData;
 	std::vector< std::vector< uint64_t>> buildingsData;
+
+	std::vector<uint64_t> resourcesExtractData;
 
 	std::vector< std::vector< uint64_t>> settingsData;
 	
@@ -56,6 +61,8 @@ private:
 	void loadBuildingsName(std::ifstream& loadDataFile);
 
 	void loadSellCoeficient(std::ifstream& loadDataFile);
+
+	void loadResourcesExtract(std::ifstream& loadDataFile);
 
 	//void loadSettings(std::ifstream& loadDataFile);
 };

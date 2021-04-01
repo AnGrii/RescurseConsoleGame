@@ -1,22 +1,25 @@
 #pragma once
 #include <iostream>
+#include <vector>
 
 #include "Resource.h"
 
-class ResourcesEtract
+class ResourcesExtract
 {
 public:
-	static void extract(Resource& log, Resource& wood, Resource& stone);
+	ResourcesExtract(std::vector<uint64_t> dataList);
+
+	void extract(Resource& log, Resource& wood, Resource& stone);
 
 private:
-	static void extractLog(Resource& log);
-	static void extractWood(Resource& log, Resource& wood);
-	static void extractStone(Resource& wood, Resource& stone);
+	uint64_t logExtract = 1, woodExtract = 1, stoneExtract = 1;
 
-	static const uint32_t LOG_EXTRACT = 1,
+	void extractLog(Resource& log);
+	void extractWood(Resource& log, Resource& wood);
+	void extractStone(Resource& wood, Resource& stone);
+
+	static const uint32_t
 		LOG_TO_WOOD_NEEDED = 2,
-		WOOD_EXTRACT = 1,
-		WOOD_TO_STONE_NEDDED = 5,
-		STONE_EXTACT = 2;
+		WOOD_TO_STONE_NEDDED = 5;
 };
 

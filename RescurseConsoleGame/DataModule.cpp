@@ -67,6 +67,18 @@ void DataModule::loadSellCoeficient(std::ifstream& loadDataFile)
 	loadDataFile >> sellCoeficient;
 }
 
+void DataModule::loadResourcesExtract(std::ifstream& loadDataFile)
+{
+	resourcesExtractData.resize(RESOURCES_EXTRACT_DATA_COUNT);
+
+	for (auto& data : resourcesExtractData)
+	{
+		uint64_t buffer;
+		loadDataFile >> buffer;
+		data = buffer;
+	}
+}
+
 void DataModule::loadBuildings(std::ifstream& loadDataFile)
 {
 	uint64_t buffer;
@@ -98,6 +110,8 @@ DataModule::DataModule(std::string dataFileName)
 	loadBuildingsName(loadDataFile);
 	loadBuildings(loadDataFile);
 
+	loadResourcesExtract(loadDataFile);
+
 	loadSellCoeficient(loadDataFile);
 }
 
@@ -124,6 +138,11 @@ std::vector< std::vector< uint64_t>> DataModule::getBuildingsData()
 std::vector<std::string> DataModule::getBuildingsNameData()
 {
 	return buildingNameData;
+}
+
+std::vector<uint64_t> DataModule::getResourcesExtractData()
+{
+	return resourcesExtractData;
 }
 
 uint64_t DataModule::getSellCoeficient()
