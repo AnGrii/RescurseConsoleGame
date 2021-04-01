@@ -5,6 +5,7 @@ void GameMessage::keywordHelp(bool show)
 	std::cout << "Key to do:" << std::endl
 		<< "e - Extract base resources" << std::endl
 		<< "n - Next day :)" << std::endl
+		<< "g - Upgrade Resources Extraction!" << std::endl
 		<< "q - Queue of buildings!" << std::endl
 		<< "s - Skip Building Menu!" << std::endl
 		<< "b - Build Factories!" << std::endl

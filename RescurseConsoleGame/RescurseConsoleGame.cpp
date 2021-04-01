@@ -63,6 +63,9 @@ int main()
         case 'n':
             GameMessage::skipLine();
             break;
+        case 'g':
+            resExtract.upgradeResourceExtractionMenu(player);
+            break;
         case 'q':
             buildings.printQueueStatus();
             break;
