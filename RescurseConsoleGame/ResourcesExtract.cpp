@@ -1,12 +1,15 @@
-#include "ResourcesEtract.h"
+#include "ResourcesExtract.h"
 
 ResourcesExtract::ResourcesExtract(std::vector<uint64_t> dataList)
 {
 	uint16_t counter = 0;
 
 	logExtract = dataList[counter++];
+	upgradeLogExtractValue = dataList[counter++];
 	woodExtract = dataList[counter++];
+	upgradeWoodExtractValue = dataList[counter++];
 	stoneExtract = dataList[counter++];
+	upgradeStoneExtractValue = dataList[counter++];	
 }
 
 void ResourcesExtract::extract(Resource& log, Resource& wood, Resource& stone)

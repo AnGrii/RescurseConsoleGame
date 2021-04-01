@@ -16,7 +16,7 @@
 #include "Player.h"
 #include "Resource.h"
 #include "ResourceManager.h"
-#include "ResourcesEtract.h"
+#include "ResourcesExtract.h"
 #include "Buildings.h"
 #include "BuildingsManager.h"
 #include "Shop.h"

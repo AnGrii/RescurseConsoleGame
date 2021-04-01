@@ -149,7 +149,7 @@
     <ClCompile Include="RescurseConsoleGame.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
-    <ClCompile Include="ResourcesEtract.cpp" />
+    <ClCompile Include="ResourcesExtract.cpp" />
     <ClCompile Include="ScienceCentre.cpp" />
     <ClCompile Include="Shop.cpp" />
   </ItemGroup>
@@ -161,7 +161,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
-    <ClInclude Include="ResourcesEtract.h" />
+    <ClInclude Include="ResourcesExtract.h" />
     <ClInclude Include="ScienceCentre.h" />
     <ClInclude Include="Shop.h" />
   </ItemGroup>

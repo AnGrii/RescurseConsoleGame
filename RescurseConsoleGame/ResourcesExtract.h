@@ -12,7 +12,9 @@ public:
 	void extract(Resource& log, Resource& wood, Resource& stone);
 
 private:
-	uint64_t logExtract = 1, woodExtract = 1, stoneExtract = 1;
+	uint64_t logExtract, upgradeLogExtractValue,
+		woodExtract, upgradeWoodExtractValue,
+		stoneExtract, upgradeStoneExtractValue;
 
 	void extractLog(Resource& log);
 	void extractWood(Resource& log, Resource& wood);
