@@ -1,15 +1,15 @@
 Player 1000000000
-10 0
-10 0
-0 0
-0 0
-0 0
-0 0
-0 0
-0 0
-0 0
-0 0
-0 0
+10 1
+10 1
+0 1
+0 1
+0 1
+0 1
+0 1
+0 1
+0 1
+0 1
+0 1
 Forestry/ Sawmill/ Quarry/ Career/
 Copper Mine/ Tin Mine/ Alloy Plant/
 Silver Cleaner/ Gold_Mine/

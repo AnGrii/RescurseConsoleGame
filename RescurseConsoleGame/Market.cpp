@@ -26,67 +26,100 @@ void Market::buySellMenu(Player& p, ResourceManager &rm)
 		if (selectTransfer == 'b') {
 			buyResource(p, rm.log);
 		}
-		sellResource(p, rm.log);
+		else
+		{
+			sellResource(p, rm.log);
+		}
 		break;
 	case '2':
 		if (selectTransfer == 'b') {
 			buyResource(p, rm.wood);
 		}
-		sellResource(p, rm.wood);
+		else
+		{
+			sellResource(p, rm.wood);
+		}
 		break;
 	case '3':
 		if (selectTransfer == 'b') {
 			buyResource(p, rm.stone);
 		}
-		sellResource(p, rm.stone);
+		else
+		{
+			sellResource(p, rm.stone);
+		}
 		break;
 	case '4':
 		if (selectTransfer == 'b') {
 			buyResource(p, rm.coal);
 		}
-		sellResource(p, rm.coal);
+		else
+		{
+			sellResource(p, rm.coal);
+		}
 		break;
 	case '5':
 		if (selectTransfer == 'b') {
 			buyResource(p, rm.copper);
 		}
-		sellResource(p, rm.copper);
+		else
+		{
+			sellResource(p, rm.copper);
+		}
 		break;
 	case '6':
 		if (selectTransfer == 'b') {
 			buyResource(p, rm.tin);
 		}
-		sellResource(p, rm.tin);
+		else
+		{		
+			sellResource(p, rm.tin);
+		}
 		break;
 	case '7':
 		if (selectTransfer == 'b') {
 			buyResource(p, rm.bronze);
 		}
-		sellResource(p, rm.bronze);
+		else
+		{
+			sellResource(p, rm.bronze);
+		}
 		break;
 	case '8':
 		if (selectTransfer == 'b') {
 			buyResource(p, rm.silver);
 		}
-		sellResource(p, rm.silver);
+		else
+		{
+			sellResource(p, rm.silver);
+		}
 		break;
 	case '9':
 		if (selectTransfer == 'b') {
 			buyResource(p, rm.gold);
 		}
-		sellResource(p, rm.gold);
+		else
+		{
+			sellResource(p, rm.gold);
+		}
 		break;
 	case 'a':
 		if (selectTransfer == 'b') {
 			buyResource(p, rm.platina);
 		}
-		sellResource(p, rm.platina);
+		else
+		{
+			sellResource(p, rm.platina);
+		}
 		break;
 	case 'b':
 		if (selectTransfer == 'b') {
 			buyResource(p, rm.diamond);
 		}
-		sellResource(p, rm.diamond);
+		else
+		{
+			sellResource(p, rm.diamond);
+		}
 		break;
 	default:
 		std::cout << "Wrong input!" << std::endl << std::endl;
