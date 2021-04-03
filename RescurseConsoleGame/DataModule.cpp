@@ -62,9 +62,15 @@ void DataModule::loadBuildingsName(std::ifstream& loadDataFile)
 	}
 }
 
-void DataModule::loadSellCoeficient(std::ifstream& loadDataFile)
+void DataModule::loadMarketData(std::ifstream& loadDataFile)
 {
-	loadDataFile >> sellCoeficient;
+	double buffer;
+
+	marketData.resize(MARKET_DATA_COUNT);
+
+	loadDataFile >> buffer;
+
+	marketData[0] = buffer;
 }
 
 void DataModule::loadResourcesExtract(std::ifstream& loadDataFile)
@@ -112,7 +118,7 @@ DataModule::DataModule(std::string dataFileName)
 
 	loadResourcesExtract(loadDataFile);
 
-	loadSellCoeficient(loadDataFile);
+	loadMarketData(loadDataFile);
 }
 
 std::vector < std::string> DataModule::getPlayerName()
@@ -145,9 +151,9 @@ std::vector<uint64_t> DataModule::getResourcesExtractData()
 	return resourcesExtractData;
 }
 
-uint64_t DataModule::getSellCoeficient()
+std::vector<double> DataModule::getMarketData()
 {
-	return sellCoeficient;
+	return marketData;
 }
 
 

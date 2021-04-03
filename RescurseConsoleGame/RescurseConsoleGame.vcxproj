@@ -151,7 +151,7 @@
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ResourcesExtract.cpp" />
     <ClCompile Include="ScienceCentre.cpp" />
-    <ClCompile Include="Shop.cpp" />
+    <ClCompile Include="Market.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BuildingsManager.h" />
@@ -163,7 +163,7 @@
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ResourcesExtract.h" />
     <ClInclude Include="ScienceCentre.h" />
-    <ClInclude Include="Shop.h" />
+    <ClInclude Include="Market.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt" />

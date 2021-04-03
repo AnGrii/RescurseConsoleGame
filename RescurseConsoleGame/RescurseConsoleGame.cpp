@@ -19,7 +19,7 @@
 #include "ResourcesExtract.h"
 #include "Buildings.h"
 #include "BuildingsManager.h"
-#include "Shop.h"
+#include "Market.h"
 #include "GameHelper.h"
 
 
@@ -30,11 +30,12 @@ int main()
     DataModule data("Data.txt");
 
     Player player(data.getPlayerName(), data.getPlayerData());
-    ResourceManager res(data.getRecourcesData());
+    ResourceManager resManager(data.getRecourcesData());
     ResourcesExtract resExtract(data.getResourcesExtractData());
     BuildingsManager buildings(
         data.getBuildingsNameData(),
         data.getBuildingsData());
+    Market market(data.getMarketData());
 
     char g_Select = '0';
     bool g_Exit = false;
@@ -44,12 +45,12 @@ int main()
         GameMessage::keywordHelp(true);
 
         buildings.updateBuildingsQueue();
-        buildings.work(res);
+        buildings.work(resManager);
         buildings.brokeEvent();
 
         player.printBalance();
 
-        res.printResourcesCount();
+        resManager.printResourcesCount();
         
         std::cout << "Input: ";
         std::cin >> g_Select;
@@ -58,7 +59,7 @@ int main()
         switch (g_Select)
         {
         case 'e':
-           resExtract.extract(res.log, res.wood, res.stone);
+           resExtract.extract(resManager.log, resManager.wood, resManager.stone);
             break;
         case 'n':
             GameMessage::skipLine();
@@ -73,13 +74,13 @@ int main()
             buildings.SkipBuildingMenu(player);
             break;
         case 'b':
-            buildings.buildMenu(res);
+            buildings.buildMenu(resManager);
             break;
         case 'i':
             buildings.printBuildingsInfo();
             break;
         case 'm':
-            std::cout << "Resource Market!" << std::endl;
+            market.buySellMenu(resManager);
             break;
         case 'x': 
             g_Exit = true;
@@ -90,7 +91,5 @@ int main()
         }
     }
    
-
-
     return 0;
 }

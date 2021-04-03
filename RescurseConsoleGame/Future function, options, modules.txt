@@ -3,14 +3,7 @@
 - Add shop ( market )( buy / sell production ) /
 ( coeficient of sell will be on data file in setting data) - done
 
-- Add instruments to resources extract(increase recource extracting)
-
 - ScienceCentre will increase building productivity
-
-
-
-
-
 
 
 Data loading / saving
