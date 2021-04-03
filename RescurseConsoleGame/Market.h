@@ -5,13 +5,14 @@
 
 #include"Resource.h"
 #include"ResourceManager.h"
+#include"Player.h"
 
 class Market
 {
 public:
 	Market(std::vector<double> dataList);
 
-	void buySellMenu(ResourceManager &rm);
+	void buySellMenu(Player& p, ResourceManager &rm);
 
 private:
 	double sellCOeficient = 1;
@@ -19,8 +20,8 @@ private:
 
 	void showBuySellInfo(ResourceManager &rm);
 
-	void sellResource(Resource& res);
-	void buyResource(Resource& res);
+	void buyResource(Player& p, Resource& res);
+	void sellResource(Player& p, Resource& res);
 
 	void printResourcesBuySellInfo(char nameId, std::string name, Resource res);
 };

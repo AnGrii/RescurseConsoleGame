@@ -80,7 +80,7 @@ int main()
             buildings.printBuildingsInfo();
             break;
         case 'm':
-            market.buySellMenu(resManager);
+            market.buySellMenu(player, resManager);
             break;
         case 'x': 
             g_Exit = true;

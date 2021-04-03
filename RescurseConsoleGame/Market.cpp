@@ -7,7 +7,7 @@ Market::Market(std::vector<double> dataList)
 	sellCOeficient = dataList[counter++];
 }
 
-void Market::buySellMenu(ResourceManager &rm)
+void Market::buySellMenu(Player& p, ResourceManager &rm)
 {
 	showBuySellInfo(rm);
 
@@ -24,69 +24,69 @@ void Market::buySellMenu(ResourceManager &rm)
 	{
 	case '1':
 		if (selectTransfer == 'b') {
-			buyResource(rm.log);
+			buyResource(p, rm.log);
 		}
-		sellResource(rm.log);
+		sellResource(p, rm.log);
 		break;
 	case '2':
 		if (selectTransfer == 'b') {
-			buyResource(rm.log);
+			buyResource(p, rm.wood);
 		}
-		sellResource(rm.log);
+		sellResource(p, rm.wood);
 		break;
 	case '3':
 		if (selectTransfer == 'b') {
-			buyResource(rm.log);
+			buyResource(p, rm.stone);
 		}
-		sellResource(rm.log);
+		sellResource(p, rm.stone);
 		break;
 	case '4':
 		if (selectTransfer == 'b') {
-			buyResource(rm.log);
+			buyResource(p, rm.coal);
 		}
-		sellResource(rm.log);
+		sellResource(p, rm.coal);
 		break;
 	case '5':
 		if (selectTransfer == 'b') {
-			buyResource(rm.log);
+			buyResource(p, rm.copper);
 		}
-		sellResource(rm.log);
+		sellResource(p, rm.copper);
 		break;
 	case '6':
 		if (selectTransfer == 'b') {
-			buyResource(rm.log);
+			buyResource(p, rm.tin);
 		}
-		sellResource(rm.log);
+		sellResource(p, rm.tin);
 		break;
 	case '7':
 		if (selectTransfer == 'b') {
-			buyResource(rm.log);
+			buyResource(p, rm.bronze);
 		}
-		sellResource(rm.log);
+		sellResource(p, rm.bronze);
 		break;
 	case '8':
 		if (selectTransfer == 'b') {
-			buyResource(rm.log);
+			buyResource(p, rm.silver);
 		}
-		sellResource(rm.log);
+		sellResource(p, rm.silver);
 		break;
 	case '9':
 		if (selectTransfer == 'b') {
-			buyResource(rm.log);
+			buyResource(p, rm.gold);
 		}
-		sellResource(rm.log);
+		sellResource(p, rm.gold);
 		break;
 	case 'a':
 		if (selectTransfer == 'b') {
-			buyResource(rm.log);
+			buyResource(p, rm.platina);
 		}
-		sellResource(rm.log);
+		sellResource(p, rm.platina);
 		break;
 	case 'b':
 		if (selectTransfer == 'b') {
-			buyResource(rm.log);
+			buyResource(p, rm.diamond);
 		}
-		sellResource(rm.log);
+		sellResource(p, rm.diamond);
 		break;
 	default:
 		std::cout << "Wrong input!" << std::endl << std::endl;
