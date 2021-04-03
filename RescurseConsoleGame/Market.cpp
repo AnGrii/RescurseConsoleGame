@@ -11,26 +11,87 @@ void Market::buySellMenu(ResourceManager &rm)
 {
 	showBuySellInfo(rm);
 
-	char selectTransfer = '0';
-	std::cout << "Input to do transfer:" << std::endl
+	char selectTransfer = '0', selectReosurce = '0';
+	std::cout << "Input resource id and select of transfer: ( 4 b )" << std::endl
 		<< "b - Buy" << std::endl
 		<< "s - Sell" << std::endl
 		<< "Any_key - exit" << std::endl;
-	std::cin >> selectTransfer;
+	std::cin >> selectReosurce >> selectTransfer;
 	std::cout << std::endl;
 
-	switch (selectTransfer)
+
+	switch (selectReosurce)
 	{
-	case 'b':
-		//buyResource();
+	case '1':
+		if (selectTransfer == 'b') {
+			buyResource(rm.log);
+		}
+		sellResource(rm.log);
 		break;
-	case 's':
-		//sellResource();
+	case '2':
+		if (selectTransfer == 'b') {
+			buyResource(rm.log);
+		}
+		sellResource(rm.log);
+		break;
+	case '3':
+		if (selectTransfer == 'b') {
+			buyResource(rm.log);
+		}
+		sellResource(rm.log);
+		break;
+	case '4':
+		if (selectTransfer == 'b') {
+			buyResource(rm.log);
+		}
+		sellResource(rm.log);
+		break;
+	case '5':
+		if (selectTransfer == 'b') {
+			buyResource(rm.log);
+		}
+		sellResource(rm.log);
+		break;
+	case '6':
+		if (selectTransfer == 'b') {
+			buyResource(rm.log);
+		}
+		sellResource(rm.log);
+		break;
+	case '7':
+		if (selectTransfer == 'b') {
+			buyResource(rm.log);
+		}
+		sellResource(rm.log);
+		break;
+	case '8':
+		if (selectTransfer == 'b') {
+			buyResource(rm.log);
+		}
+		sellResource(rm.log);
+		break;
+	case '9':
+		if (selectTransfer == 'b') {
+			buyResource(rm.log);
+		}
+		sellResource(rm.log);
+		break;
+	case 'a':
+		if (selectTransfer == 'b') {
+			buyResource(rm.log);
+		}
+		sellResource(rm.log);
+		break;
+	case 'b':
+		if (selectTransfer == 'b') {
+			buyResource(rm.log);
+		}
+		sellResource(rm.log);
 		break;
 	default:
+		std::cout << "Wrong input!" << std::endl << std::endl;
 		break;
 	}
-
 }
 
 void Market::showBuySellInfo(ResourceManager &rm)
