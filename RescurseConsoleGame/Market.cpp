@@ -114,6 +114,46 @@ void Market::showBuySellInfo(ResourceManager &rm)
 	std::cout << std::endl;
 }
 
+void Market::buyResource(Player& p, Resource& res)
+{
+	uint64_t count = 0, transferValue = 0;
+
+	std::cout << "Input count: ";
+	std::cin >> count;
+	std::cout << std::endl;
+
+	transferValue = count * res.getValue();
+
+	if (p.getBalance() >= transferValue) {
+		res.add(count);
+		p.reduceBalance(transferValue);
+	}
+	else
+	{
+		std::cout << "Not enough money!!!" << std::endl;
+	}
+}
+
+void Market::sellResource(Player& p, Resource& res)
+{
+	uint64_t count = 0, transferValue = 0;
+
+	std::cout << "Input count: ";
+	std::cin >> count;
+	std::cout << std::endl;
+
+	transferValue = count * res.getValue() * sellCOeficient;
+
+	if (res.getCount() >= count) {
+		res.reduce(count);
+		p.addBalance(transferValue);
+	}
+	else
+	{
+		std::cout << "Not enough count of resource!!!" << std::endl;
+	}
+}
+
 void Market::printResourcesBuySellInfo(char nameId, std::string name, Resource res)
 {
 	std::cout << nameId << " - " << name << "\t" << res.getCount()

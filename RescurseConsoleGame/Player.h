@@ -12,8 +12,9 @@ public:
 	void SaveData(std::vector<std::string>& name, std::vector<uint64_t>& data);
 
 	void printBalance();
-	void addMoney(uint64_t count);
-	void reduceMoney(uint64_t count);
+	void addBalance(uint64_t count);
+	void reduceBalance(uint64_t count);
+	uint64_t getBalance();
 	uint64_t& getBalanceLink();
 	bool payAndGetStatus(uint64_t count);
 
