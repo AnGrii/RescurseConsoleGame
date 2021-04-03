@@ -8,6 +8,7 @@ void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string na
 	productivity =	buildingData[++counter];
 	inQueue =		buildingData[++counter];
 	valueOfSkipTime = buildingData[++counter];
+	upgradeProductivityValue = buildingData[++counter];
 	buildTime =		buildingData[++counter];
 	endBuildTime =	buildingData[++counter];
 	resource1 =		buildingData[++counter];

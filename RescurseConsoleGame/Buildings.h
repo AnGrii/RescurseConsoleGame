@@ -53,7 +53,8 @@ public:
 	std::string getName() { return name; }
 
 private:
-	uint64_t count, productivity, inQueue, valueOfSkipTime,
+	uint64_t count, productivity, inQueue, valueOfSkipTime, 
+		upgradeProductivityValue, 
 		buildTime, endBuildTime, resource1, resource2, resource3;
 	bool activated;
 	std::string name;
