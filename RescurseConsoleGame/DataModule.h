@@ -56,8 +56,7 @@ private:
 	/// <summary>
 	/// If keyword not finded, function will throw exception
 	/// </summary>
-	void goToStringInFile(std::ifstream& dataFile, std::string keyword,
-		std::string exceptionName);
+	void goToStringInFile(std::ifstream& dataFile, std::string keyword);
 
 	template<typename dataType>
 	dataType loadNumber(std::ifstream& dataFile);
@@ -65,12 +64,14 @@ private:
 
 	template<typename dataType>
 	void loadData(std::vector< dataType>& stroage, size_t dataCount,
-		std::function< dataType (std::ifstream& dataFile)>);
+		std::string dataFileName, std::string dataKeyword,
+		std::function< dataType (std::ifstream& dataFile)> function);
 
 	template<typename dataType>
 	void loadData(std::vector < std::vector< dataType>>& stroage,
-		size_t listsCount, size_t dataCount,
-		std::function< dataType (std::ifstream& dataFile)>);
+		size_t listsCount, size_t dataCount, 
+		std::string dataFileName, std::string dataKeyword,
+		std::function< dataType (std::ifstream& dataFile)> function);
 
 	//End of loading data components
 

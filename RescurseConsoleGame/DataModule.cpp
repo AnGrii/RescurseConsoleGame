@@ -1,7 +1,6 @@
 #include "DataModule.h"
 
-void DataModule::goToStringInFile(std::ifstream& dataFile, std::string keyword,
-	std::string exceptionName)
+void DataModule::goToStringInFile(std::ifstream& dataFile, std::string keyword)
 {
 	std::string buffer = "0";
 	uint32_t dataCounter = 0;
@@ -11,11 +10,13 @@ void DataModule::goToStringInFile(std::ifstream& dataFile, std::string keyword,
 
 		dataCounter++;
 		if (dataCounter >= COUNT_DATA_UNIT_LOADING_TO_ERROR_THROW) {
-			std::string errorMSG = "Data count overflow\t!" + keyword;
+			std::string errorMSG = "Data count overflow\t!" + keyword + \
+				"\t - that keyword data not finded!!!";
 			throw std::exception(errorMSG.data());
 		}
 	}
 }
+
 
 template<typename dataType>
 dataType DataModule::loadNumber(std::ifstream& dataFile)
@@ -24,13 +25,13 @@ dataType DataModule::loadNumber(std::ifstream& dataFile)
 
 	dataFile >> buffer;
 
-	uint8_t warning = 100 * 100; //Warning for future save data loading (in this place);
+	//Warning for future save data loading (in this place);
 
 	return buffer;
 }
 std::string DataModule::loadName(std::ifstream& dataFile)
 {
-	uint8_t warning = 100 * 100; //Warning fo future realization for save data loading
+	//Warning fo future realization for save data loading
 
 	std::string Buffer, Result;
 
@@ -47,6 +48,71 @@ std::string DataModule::loadName(std::ifstream& dataFile)
 
 	return Result;
 }
+
+template<typename dataType>
+void DataModule::loadData(std::vector<dataType>& stroage, size_t dataCount,
+	std::string dataFileName, std::string dataKeyword,
+	std::function<dataType(std::ifstream& dataFile)> function)
+{
+	std::ifstream dataFile;
+	dataFile.open(dataFileName);
+
+	try
+	{
+		goToStringInFile(dataFile, dataKeyword);
+	}
+	catch (const std::exception& ex)
+	{
+		std::cout << ex.what() << std::endl;
+		system("pause");
+		exit(1);
+	}
+	
+	stroage.resize(dataCount);
+
+	
+	for (auto& item : stroage) {
+		item = function<dataType>(dataFile);
+	}
+}
+
+template<typename dataType>
+void DataModule::loadData(std::vector<std::vector<dataType>>& stroage,
+	size_t listsCount, size_t dataCount,
+	std::string dataFileName, std::string dataKeyword,
+	std::function<dataType(std::ifstream& dataFile)> function)
+{
+	std::ifstream dataFile;
+	dataFile.open(dataFileName);
+
+	try
+	{
+		goToStringInFile(dataFile, dataKeyword);
+	}
+	catch (const std::exception& ex)
+	{
+		std::cout << ex.what() << std::endl;
+		system("pause");
+		exit(1);
+	}
+
+	//Stroage initialization 
+	stroage.resize(listsCount);
+
+	for (auto& list : stroage) {
+		list.resize(dataCount);
+	}
+
+	//Data loading
+	for (auto& list : stroage)
+	{
+		for (auto& item : list)
+		{
+			item = function<dataType>(dataFile);
+		}
+	}
+}
+
 
 
 void DataModule::loadPlayer(std::ifstream& loadDataFile)
