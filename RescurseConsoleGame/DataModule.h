@@ -52,6 +52,28 @@ private:
 
 	std::vector< std::vector< uint64_t>> settingsData;
 	
+	//Loading data components
+	/// <summary>
+	/// If keyword not finded, function will throw exception
+	/// </summary>
+	void goToStringInFile(std::ifstream& dataFile, std::string keyword,
+		std::string exceptionName);
+
+	template<typename dataType>
+	dataType loadNumber(std::ifstream& dataFile);
+	std::string loadName(std::ifstream& dataFile);
+
+	template<typename dataType>
+	void loadData(std::vector< dataType>& stroage, size_t dataCount,
+		std::function< dataType (std::ifstream& dataFile)>);
+
+	template<typename dataType>
+	void loadData(std::vector < std::vector< dataType>>& stroage,
+		size_t listsCount, size_t dataCount,
+		std::function< dataType (std::ifstream& dataFile)>);
+
+	//End of loading data components
+
 	//Loading part
 	void loadPlayer(std::ifstream& loadDataFile);
 
@@ -67,3 +89,5 @@ private:
 
 	//void loadSettings(std::ifstream& loadDataFile);
 };
+
+

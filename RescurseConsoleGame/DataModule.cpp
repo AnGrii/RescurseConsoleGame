@@ -1,14 +1,44 @@
 #include "DataModule.h"
 
-std::string getFullNameDataUnit(std::ifstream& DataFile)
+void DataModule::goToStringInFile(std::ifstream& dataFile, std::string keyword,
+	std::string exceptionName)
 {
+	std::string buffer = "0";
+	uint32_t dataCounter = 0;
+
+	while (buffer != keyword) {
+		dataFile >> buffer;
+
+		dataCounter++;
+		if (dataCounter >= COUNT_DATA_UNIT_LOADING_TO_ERROR_THROW) {
+			std::string errorMSG = "Data count overflow\t!" + keyword;
+			throw std::exception(errorMSG.data());
+		}
+	}
+}
+
+template<typename dataType>
+dataType DataModule::loadNumber(std::ifstream& dataFile)
+{
+	dataType buffer;
+
+	dataFile >> buffer;
+
+	uint8_t warning = 100 * 100; //Warning for future save data loading (in this place);
+
+	return buffer;
+}
+std::string DataModule::loadName(std::ifstream& dataFile)
+{
+	uint8_t warning = 100 * 100; //Warning fo future realization for save data loading
+
 	std::string Buffer, Result;
 
-	DataFile >> Buffer;
+	dataFile >> Buffer;
 
 	while (Buffer.at(Buffer.length() - 1) != '/') {
 		Result += Buffer + ' ';
-		DataFile >> Buffer;
+		dataFile >> Buffer;
 	}
 
 	Result += Buffer;
@@ -17,6 +47,7 @@ std::string getFullNameDataUnit(std::ifstream& DataFile)
 
 	return Result;
 }
+
 
 void DataModule::loadPlayer(std::ifstream& loadDataFile)
 {
@@ -58,7 +89,7 @@ void DataModule::loadBuildingsName(std::ifstream& loadDataFile)
 
 	for (std::string& data : buildingNameData)
 	{
-		data = getFullNameDataUnit(loadDataFile);
+		data = loadName(loadDataFile);
 	}
 }
 

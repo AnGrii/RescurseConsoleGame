@@ -9,7 +9,7 @@
 #include <conio.h>
 #include <thread>
 #include <mutex>
-#include<functional>
+#include <functional>
 
 
 #include "DataModule.h"
