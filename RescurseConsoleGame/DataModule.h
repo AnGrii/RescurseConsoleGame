@@ -6,6 +6,8 @@
 #include<algorithm>
 #include<functional>
 
+
+
 /// <summary>
 ///  Loading, initialisation and checking game data
 /// </summary>
@@ -64,9 +66,6 @@ private:
 	std::vector< std::vector< uint64_t>> settingsData;
 	
 	//Loading data components
-	/// <summary>
-	/// If keyword not finded, function will throw exception
-	/// </summary>
 	void goToStringInFile(std::ifstream& dataFile, std::string keyword);
 
 	template<typename dataType>
@@ -79,12 +78,12 @@ private:
 		std::function< dataType (std::ifstream& dataFile)> function);
 
 	template<typename dataType>
-	void loadData(std::vector < std::vector< dataType>>& stroage,
-		size_t listsCount, size_t dataCount, 
+	void loadData(std::vector<std::vector<dataType>>& stroage,
+		size_t listsCount, size_t dataCount,
 		std::string dataFileName, std::string dataKeyword,
-		std::function< dataType (std::ifstream& dataFile)> function);
-
+		std::function<dataType(std::ifstream& dataFile)> function);
 	//End of loading data components
+
 
 	//Loading part
 	void loadPlayer(std::ifstream& loadDataFile);
@@ -98,8 +97,6 @@ private:
 	void loadMarketData(std::ifstream& loadDataFile);
 
 	void loadResourcesExtract(std::ifstream& loadDataFile);
-
-	//void loadSettings(std::ifstream& loadDataFile);
 };
 
 

@@ -1,5 +1,8 @@
 #include "DataModule.h"
 
+/// <summary>
+/// If keyword not finded, function will throw exception
+/// </summary>
 void DataModule::goToStringInFile(std::ifstream& dataFile, std::string keyword)
 {
 	std::string buffer = "0";
@@ -114,7 +117,6 @@ void DataModule::loadData(std::vector<std::vector<dataType>>& stroage,
 		}
 	}
 }
-
 
 
 void DataModule::loadPlayer(std::ifstream& loadDataFile)
