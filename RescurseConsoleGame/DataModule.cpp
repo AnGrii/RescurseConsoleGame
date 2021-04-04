@@ -21,7 +21,7 @@ void DataModule::goToStringInFile(std::ifstream& dataFile, std::string keyword)
 template<typename dataType>
 dataType DataModule::loadNumber(std::ifstream& dataFile)
 {
-	dataType buffer;
+	dataType buffer = 0;
 
 	dataFile >> buffer;
 
@@ -49,6 +49,7 @@ std::string DataModule::loadName(std::ifstream& dataFile)
 	return Result;
 }
 
+
 template<typename dataType>
 void DataModule::loadData(std::vector<dataType>& stroage, size_t dataCount,
 	std::string dataFileName, std::string dataKeyword,
@@ -67,12 +68,13 @@ void DataModule::loadData(std::vector<dataType>& stroage, size_t dataCount,
 		system("pause");
 		exit(1);
 	}
-	
-	stroage.resize(dataCount);
 
+	//Stroage initialization 
+	stroage.resize(dataCount);
 	
+	//Data loading
 	for (auto& item : stroage) {
-		item = function<dataType>(dataFile);
+		item = function(dataFile);
 	}
 }
 
@@ -108,7 +110,7 @@ void DataModule::loadData(std::vector<std::vector<dataType>>& stroage,
 	{
 		for (auto& item : list)
 		{
-			item = function<dataType>(dataFile);
+			item = function(dataFile);
 		}
 	}
 }
@@ -204,6 +206,9 @@ void DataModule::loadBuildings(std::ifstream& loadDataFile)
 
 DataModule::DataModule(std::string dataFileName)
 {
+	/*loadData<uint64_t>(resourcesData, RESOURCES_COUNT, RESOURCES_DATA_COUNT,
+		dataFileName, keywordResourcesData, loadNumber<uint64_t>);*/
+
 	std::ifstream loadDataFile(dataFileName);
 
 	loadPlayer(loadDataFile);

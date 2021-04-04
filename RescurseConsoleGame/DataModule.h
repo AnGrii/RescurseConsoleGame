@@ -3,7 +3,6 @@
 #include<string>
 #include<vector>
 #include<fstream>
-#include<string>
 #include<algorithm>
 #include<functional>
 
@@ -28,9 +27,21 @@ public:
 	std::vector< double> getMarketData();
 
 private:
+	const std::string dataFileName = "Data.txt",
+		keywordPlayerName = "playerName:",
+		keywordPlayerData = "playerData:",
+		keywordResourcesData = "resourcesData:",
+		keywordBuildingsName = "buildingsName:",
+		keywordBuildingsData = "buildingsData:",
+		keywordRecourcesExtractData = "resourcesExtract:",
+		keywordSellCoeficientData = "sellCoeficient:",
+		keywordSettingsData = "setting:";
+
 	const uint16_t
 		COUNT_DATA_UNIT_LOADING_TO_ERROR_THROW = 1000,
 		//function will find "key word" of data if it's word will be don't finded function will throw error
+		PLAYER_DATA_COUNT = 1,
+		PLAYER_NAME_DATA_COUNT = 1,
 		RESOURCES_COUNT = 11,
 		RESOURCES_DATA_COUNT = 2,
 		BUILDING_COUNT = 11,
