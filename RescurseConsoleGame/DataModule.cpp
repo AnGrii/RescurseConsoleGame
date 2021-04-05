@@ -40,7 +40,7 @@ void DataModule::loadBuildingsName(std::ifstream& loadDataFile)
 
 	for (std::string& data : buildingNameData)
 	{
-		data = LoadingComponents::loadName(loadDataFile);
+		data = LoadingComponents::readName(loadDataFile);
 	}
 }
 
@@ -89,23 +89,41 @@ void DataModule::loadBuildings(std::ifstream& loadDataFile)
 
 DataModule::DataModule(const std::string dataFileName)
 {
-	/*LoadingComponents::loadData<uint64_t>(resourcesData,
+	//PLAYER_NAME
+	LoadingComponents::loadData<std::string>(playerNameData,
+		PLAYER_NAME_DATA_COUNT,
+		dataFileName, keywordPlayerName,
+		LoadingComponents::readName);
+	//PLAYER_DATA
+	LoadingComponents::loadData<uint64_t>(playerData,
+		PLAYER_DATA_COUNT,
+		dataFileName, keywordPlayerData,
+		LoadingComponents::readNumber<uint64_t>);
+	//RESOURCE_DATA
+	LoadingComponents::loadData<uint64_t>(resourcesData,
 		RESOURCES_COUNT, RESOURCES_DATA_COUNT,
 		dataFileName, keywordResourcesData,
-		LoadingComponents::loadNumber<uint64_t>);*/
-
-	std::ifstream loadDataFile(dataFileName);
-
-	loadPlayer(loadDataFile);
-	
-	loadResources(loadDataFile);
-	
-	loadBuildingsName(loadDataFile);
-	loadBuildings(loadDataFile);
-
-	loadResourcesExtract(loadDataFile);
-
-	loadMarketData(loadDataFile);
+		LoadingComponents::readNumber<uint64_t>);
+	//BUILDING_NAME
+	LoadingComponents::loadData<std::string>(buildingNameData,
+		BUILDING_COUNT,
+		dataFileName, keywordBuildingsName,
+		LoadingComponents::readName);
+	//BUILDING_DATA
+	LoadingComponents::loadData<uint64_t>(buildingsData,
+		BUILDING_COUNT, BUILDING_DATA_COUNT,
+		dataFileName, keywordBuildingsData,
+		LoadingComponents::readNumber<uint64_t>);
+	//RESOURCE_EXTRACT_DATA
+	LoadingComponents::loadData<uint64_t>(resourcesExtractData,
+		RESOURCES_EXTRACT_DATA_COUNT,
+		dataFileName, keywordRecourcesExtractData,
+		LoadingComponents::readNumber<uint64_t>);
+	//MARKET_DATA
+	LoadingComponents::loadData<double>(marketData,
+		MARKET_DATA_COUNT,
+		dataFileName, keywordMarketData,
+		LoadingComponents::readNumber<double>);
 }
 
 std::vector < std::string> DataModule::getPlayerName()

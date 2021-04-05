@@ -7,7 +7,7 @@ void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string na
 	count =			buildingData[counter];
 	productivity =	buildingData[++counter];
 	inQueue =		buildingData[++counter];
-	valueOfSkipTime = buildingData[++counter];
+	skipTimeValue = buildingData[++counter];
 	upgradeValue = buildingData[++counter];
 	buildTime =		buildingData[++counter];
 	endBuildTime =	buildingData[++counter];
@@ -50,7 +50,7 @@ void Building::increaseResValue3()
 
 void Building::increaseSkipValue()
 {
-	valueOfSkipTime =uint64_t(valueOfSkipTime * double(1.0 + VALUE_INCREASE_PROCENT));
+	skipTimeValue =uint64_t(skipTimeValue * double(1.0 + VALUE_INCREASE_PROCENT));
 }
 
 void Building::addCount(uint64_t addCount)
@@ -87,7 +87,7 @@ bool Building::getActiveStatus()
 
 uint64_t Building::getSkipValue()
 {
-	return valueOfSkipTime;
+	return skipTimeValue;
 }
 
 bool Building::isInQueue()
@@ -140,7 +140,7 @@ void Building::printQueueInfo()
 void Building::printSkipInfo(char nameId)
 {
 	if (this->isInQueue()) {
-		std::cout << nameId << " - " << name << "\t-\t\t" << valueOfSkipTime
+		std::cout << nameId << " - " << name << "\t-\t\t" << skipTimeValue
 			<< std::endl << std::endl;
 	}
 }
@@ -174,6 +174,19 @@ void Building::brokeBuild()
 	}
 }
 
+void Building::buildInfo()
+{
+	std::cout << "=========   " << name << "   =========" << std::endl
+		<< "Count:\t\t\t" << count << std::endl
+		<< "Productivity:\t\t" << productivity << std::endl
+		<< "Skip build time value:\t" << skipTimeValue << std::endl
+		<< "Upgrade value:\t" << upgradeValue << std::endl
+		<< "Build time:\t\t" << buildTime << std::endl
+		<< "Resource1 needed:\t" << resource1 << std::endl
+		<< "Resource2 needed:\t" << resource2 << std::endl
+		<< "Resource3 needed:\t" << resource3 << std::endl
+		<< "Activated:\t\t" << activated << std::endl << std::endl;
+}
 
 
 

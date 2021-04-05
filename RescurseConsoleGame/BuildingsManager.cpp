@@ -165,18 +165,7 @@ void BuildingsManager::build(Building& build,
 	}
 }
 
-void Building::buildInfo()
-{
-	std::cout << "=========   " << this->getName() << "   =========" << std::endl
-		<< "Count:\t\t\t" << this->getCount() << std::endl
-		<< "Productivity:\t\t" << this->getProductivity() << std::endl
-		<< "Skip build time value:\t" << this->getSkipValue() << std::endl
-		<< "Build time:\t\t" << this->getBuildTime() << std::endl
-		<< "Resource1 needed:\t" << this->getRes1() << std::endl
-		<< "Resource2 needed:\t" << this->getRes2() << std::endl
-		<< "Resource3 needed:\t" << this->getRes3() << std::endl
-		<< "Activated:\t\t" << this->getActiveStatus() << std::endl << std::endl;
-}
+
 
 void BuildingsManager::printQueueStatus()
 {

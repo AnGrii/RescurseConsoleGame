@@ -12,7 +12,7 @@ class Building
 public:
 	Building() :
 	count(0), productivity(0), inQueue(0),
-		valueOfSkipTime(0), upgradeValue(0), buildTime(0), endBuildTime(0),
+		skipTimeValue(0), upgradeValue(0), buildTime(0), endBuildTime(0),
 		resource1(0), resource2(0), resource3(0), activated(0),
 	name("NoName"){}
 
@@ -53,7 +53,7 @@ public:
 	std::string getName() { return name; }
 
 private:
-	uint64_t count, productivity, inQueue, valueOfSkipTime, upgradeValue, 
+	uint64_t count, productivity, inQueue, skipTimeValue, upgradeValue, 
 		buildTime, endBuildTime, resource1, resource2, resource3;
 	bool activated;
 	std::string name;

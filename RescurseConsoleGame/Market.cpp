@@ -129,7 +129,7 @@ void Market::buySellMenu(Player& p, ResourceManager &rm)
 
 void Market::showBuySellInfo(ResourceManager &rm)
 {
-	std::cout << "======\tMarket\t=====" << std::endl
+	std::cout << "===========\tMarket\t==========" << std::endl
 		<< "Resource\tCount\tBuy\tSell" << std::endl;
 		
 	printResourcesBuySellInfo('1', "Log_", rm.log);

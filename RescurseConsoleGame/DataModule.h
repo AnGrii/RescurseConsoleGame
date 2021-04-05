@@ -35,7 +35,7 @@ private:
 		keywordBuildingsName = "buildingsName:",
 		keywordBuildingsData = "buildingsData:",
 		keywordRecourcesExtractData = "resourcesExtract:",
-		keywordSellCoeficientData = "sellCoeficient:",
+		keywordMarketData = "marketData:",
 		keywordSettingsData = "setting:";
 
 	const uint16_t
@@ -80,15 +80,17 @@ private:
 
 
 		template<typename dataType>
-		static dataType loadNumber(std::ifstream& dataFile)
+		static dataType readNumber(std::ifstream& dataFile)
 		{
 			dataType buffer = 0;
 
 			dataFile >> buffer;
 
+			//Warning fo future realization for save data loading
+
 			return buffer;
 		}
-		static std::string loadName(std::ifstream& dataFile)
+		static std::string readName(std::ifstream& dataFile)
 		{
 			//Warning fo future realization for save data loading
 

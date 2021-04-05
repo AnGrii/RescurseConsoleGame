@@ -36,7 +36,7 @@ resourcesExtract:
 1 100
 1 100
 1 100
-sellCoeficient:
+marketData:
 0.75
 setting:
 1 1 1 1 1 1 1 1 1 1
