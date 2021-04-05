@@ -1,26 +1,9 @@
-- Add different status to building - power( 10%, 25%, 50%, 75%, 100% );
-
-- Add shop ( market )( buy / sell production ) /
-( coeficient of sell will be on data file in setting data) - done
+- Add different productivity status for building - power( 10%, 25%, 50%, 75%, 100% );
 
 - ScienceCentre will increase building productivity
 
 
 Data loading / saving
-{
-- Change data loading way( data part need to have name for chaotic data read )
-
-	Dynamic data loading:
-	(
-	open file
-	go to string(key word)(function)
-	create vecto (r / rs)
-	2 functions for uint64_t / string
-	&function of data read(&file)
-	write data to vecto (r / rs)
-	close file
-	)
-}
 {
 	- Add load data checking 
     (data will be for 1 unit higher to find non initialisate data - 0 or UINT64_MAX,
