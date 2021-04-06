@@ -1,6 +1,5 @@
 #include "DataModule.h"
 
-
 DataModule::DataModule(const std::string dataFileName)
 {
 	//PLAYER_NAME
@@ -45,7 +44,6 @@ DataModule::DataModule(const std::string dataFileName)
 		dataFileName, keywordMarketData,
 		LoadingComponents::readNumber<double>);
 }
-
 
 
 std::vector < std::string> DataModule::getPlayerName()

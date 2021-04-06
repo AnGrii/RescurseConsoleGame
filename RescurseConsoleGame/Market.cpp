@@ -175,7 +175,7 @@ void Market::sellResource(Player& p, Resource& res)
 	std::cin >> count;
 	std::cout << std::endl;
 
-	transferValue = count * res.getValue() * sellCOeficient;
+	transferValue = uint64_t(count * res.getValue() * sellCOeficient);
 
 	if (res.getCount() >= count) {
 		res.reduce(count);

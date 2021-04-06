@@ -38,7 +38,7 @@ private:
 		keywordMarketData = "marketData:",
 		keywordSettingsData = "setting:";
 
-	const uint16_t
+	static const uint16_t
 		COUNT_LOADING_DATA_UNIT_TO_THROW_ERROR = 1000,
 		PLAYER_DATA_COUNT = 1,
 		PLAYER_NAME_DATA_COUNT = 1,
@@ -78,7 +78,6 @@ private:
 		}
 
 
-
 		template<typename dataType>
 		static dataType readNumber(std::ifstream& dataFile)
 		{
@@ -92,15 +91,20 @@ private:
 		}
 		static std::string readName(std::ifstream& dataFile)
 		{
-			//Warning fo future realization for save data loading
-
 			std::string Buffer, Result;
 
 			dataFile >> Buffer;
 
+			uint16_t dataReadCounter = 0;
 			while (Buffer.at(Buffer.length() - 1) != '/') {
 				Result += Buffer + ' ';
 				dataFile >> Buffer;
+				dataReadCounter++;
+
+				if (dataReadCounter >= COUNT_LOADING_DATA_UNIT_TO_THROW_ERROR) {
+					std::string errorMSG = "Error names loading!";
+					throw(std::exception(errorMSG.data()));
+				}
 			}
 
 			Result += Buffer;
@@ -180,5 +184,3 @@ private:
 		LoadingComponents() {}
 	};
 };
-
-
