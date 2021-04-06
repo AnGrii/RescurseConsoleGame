@@ -4,8 +4,6 @@
 #include <string>
 #include <ctime>
 
-#include "Resource.h"
-
 
 class Building
 {
