@@ -64,7 +64,7 @@ private:
 
 	std::vector< std::vector< uint64_t>> settingsData;
 	
-	//...
+
 	class LoadingComponents {
 	public:
 		static void goToStringInFile(std::ifstream& dataFile, std::string keyword)
@@ -179,19 +179,6 @@ private:
 	private:
 		LoadingComponents() {}
 	};
-
-	//Loading part
-	void loadPlayer(std::ifstream& loadDataFile);
-
-	void loadResources(std::ifstream& loadDataFile);
-
-	void loadBuildings(std::ifstream& loadDataFile);
-
-	void loadBuildingsName(std::ifstream& loadDataFile);
-
-	void loadMarketData(std::ifstream& loadDataFile);
-
-	void loadResourcesExtract(std::ifstream& loadDataFile);
 };
 
 
