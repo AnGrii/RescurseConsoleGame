@@ -85,7 +85,11 @@ private:
 
 			dataFile >> buffer;
 
-			//Warning fo future realization for save data loading
+			if (buffer == 0) {
+				std::string errorMSG = "Broken data loaded!";
+
+				throw std::exception(errorMSG.data());
+			}
 
 			return buffer;
 		}

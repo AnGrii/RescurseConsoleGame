@@ -42,7 +42,7 @@ void Building::increaseResValue2()
 {
 	resource2 += uint64_t(resource2 * VALUE_INCREASE_PROCENT);
 }
-
+ 
 void Building::increaseResValue3()
 {
 	resource3 += uint64_t(resource3 * VALUE_INCREASE_PROCENT);
