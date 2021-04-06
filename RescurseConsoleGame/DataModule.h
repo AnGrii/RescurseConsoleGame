@@ -90,6 +90,8 @@ private:
 
 				throw std::exception(errorMSG.data());
 			}
+			//Data in file is for 1 unit bigger;
+			buffer--;
 
 			return buffer;
 		}

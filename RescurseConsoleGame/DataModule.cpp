@@ -43,6 +43,9 @@ DataModule::DataModule(const std::string dataFileName)
 		MARKET_DATA_COUNT,
 		dataFileName, keywordMarketData,
 		LoadingComponents::readNumber<double>);
+
+	//SETTINGS_DATA
+
 }
 
 
