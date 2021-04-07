@@ -15,7 +15,7 @@ void Market::buySellMenu(Player& p, ResourceManager &rm)
 	std::cout << "Input resource id and select of transfer: ( 4 b )" << std::endl
 		<< "b - Buy" << std::endl
 		<< "s - Sell" << std::endl
-		<< "Any_key - exit" << std::endl;
+		<< "Any 2 key - exit" << std::endl;
 	std::cin >> selectReosurce >> selectTransfer;
 	std::cout << std::endl;
 

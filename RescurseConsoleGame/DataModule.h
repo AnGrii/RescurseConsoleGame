@@ -13,7 +13,11 @@
 class DataModule
 {
 public:
-	DataModule(std::string dataFileName);
+	DataModule(const std::string dataFileName);
+
+	void loadData(const std::string dataFileName);
+	void saveData(const std::string dataFileName);
+	 
 
 	std::vector< std::string> getPlayerName();
 	std::vector< uint64_t> getPlayerData();

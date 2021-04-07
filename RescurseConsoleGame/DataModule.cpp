@@ -2,6 +2,11 @@
 
 DataModule::DataModule(const std::string dataFileName)
 {
+	this->loadData(dataFileName);
+}
+
+void DataModule::loadData(std::string dataFileName)
+{
 	//PLAYER_NAME
 	LoadingComponents::loadData<std::string>(playerNameData,
 		PLAYER_NAME_DATA_COUNT,
