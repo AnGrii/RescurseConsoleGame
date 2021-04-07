@@ -53,8 +53,53 @@ void DataModule::loadData(std::string dataFileName)
 
 }
 
+void DataModule::saveData(const std::string dataFileName)
+{
+	//Clean data
+	std::ofstream clean(dataFileName);
+	clean.close();
 
-std::vector < std::string> DataModule::getPlayerName()
+	//PLAYER_NAME
+	SavingComponents::saveData<std::string>(playerNameData,
+			dataFileName, keywordPlayerName,
+			SavingComponents::prepareStringToSave);
+
+	//PLAYER_DATA
+	SavingComponents::saveData<uint64_t>(playerData,
+		dataFileName, keywordPlayerData,
+		SavingComponents::prepareNumberToSave<uint64_t>);
+
+	//RESOURCE_DATA
+	SavingComponents::saveData<uint64_t>(resourcesData,
+		dataFileName, keywordResourcesData,
+		SavingComponents::prepareNumberToSave<uint64_t>);
+
+	//BUILDING_NAME
+	SavingComponents::saveData<std::string>(buildingNameData,
+		dataFileName, keywordBuildingsName,
+		SavingComponents::prepareStringToSave);
+
+	//BUILDING_DATA
+	SavingComponents::saveData<uint64_t>(buildingsData,
+		dataFileName, keywordBuildingsData,
+		SavingComponents::prepareNumberToSave<uint64_t>);
+
+	//RESOURCE_EXTRACT_DATA
+	SavingComponents::saveData<uint64_t>(resourcesExtractData,
+		dataFileName, keywordRecourcesExtractData,
+		SavingComponents::prepareNumberToSave<uint64_t>);
+
+	//MARKET_DATA
+	SavingComponents::saveData<double>(marketData,
+		dataFileName, keywordMarketData,
+		SavingComponents::prepareNumberToSave<double>);
+
+	//SETTINGS_DATA
+
+}
+
+
+std::vector<std::string> DataModule::getPlayerName()
 {
 	return playerNameData;
 }
@@ -63,12 +108,12 @@ std::vector<uint64_t> DataModule::getPlayerData()
 	return playerData;
 }
 
-std::vector< std::vector< uint64_t>> DataModule::getRecourcesData()
+std::vector<std::vector< uint64_t>> DataModule::getRecourcesData()
 {
 	return resourcesData;
 }
 
-std::vector< std::vector< uint64_t>> DataModule::getBuildingsData()
+std::vector<std::vector<uint64_t>> DataModule::getBuildingsData()
 {
 	return buildingsData;
 }
@@ -86,20 +131,3 @@ std::vector<double> DataModule::getMarketData()
 {
 	return marketData;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

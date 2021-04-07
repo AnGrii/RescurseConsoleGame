@@ -8,7 +8,7 @@
 
 
 /// <summary>
-///  Loading, initialisation and checking game data
+/// Loading, initialisation and checking game data
 /// </summary>
 class DataModule
 {
@@ -19,17 +19,17 @@ public:
 	void saveData(const std::string dataFileName);
 	 
 
-	std::vector< std::string> getPlayerName();
-	std::vector< uint64_t> getPlayerData();
+	std::vector<std::string> getPlayerName();
+	std::vector<uint64_t> getPlayerData();
 	
-	std::vector< std::vector< uint64_t>> getRecourcesData();
+	std::vector<std::vector<uint64_t>> getRecourcesData();
 
-	std::vector< std::vector< uint64_t>> getBuildingsData();
+	std::vector<std::vector<uint64_t>> getBuildingsData();
 	std::vector<std::string> getBuildingsNameData();
 
-	std::vector< uint64_t> getResourcesExtractData();
+	std::vector<uint64_t> getResourcesExtractData();
 
-	std::vector< double> getMarketData();
+	std::vector<double> getMarketData();
 
 private:
 	const std::string dataFileName = "Data.txt",
@@ -57,16 +57,16 @@ private:
 	std::vector<uint64_t> playerData;
 	std::vector<std::string> playerNameData;
 
-	std::vector< std::vector< uint64_t>> resourcesData;
+	std::vector<std::vector<uint64_t>> resourcesData;
 
-	std::vector< std::string> buildingNameData;
-	std::vector< std::vector< uint64_t>> buildingsData;
+	std::vector<std::string> buildingNameData;
+	std::vector<std::vector<uint64_t>> buildingsData;
 
 	std::vector<uint64_t> resourcesExtractData;
 
 	std::vector<double> marketData;
 
-	std::vector< std::vector< uint64_t>> settingsData;
+	std::vector<std::vector<uint64_t>> settingsData;
 	
 
 	class LoadingComponents {
@@ -89,7 +89,7 @@ private:
 
 			dataFile >> buffer;
 
-			if (buffer == 0) {
+			if (buffer == 0 or buffer == UINT64_MAX) {
 				std::string errorMSG = "Broken data loaded!";
 
 				throw std::exception(errorMSG.data());
@@ -130,8 +130,7 @@ private:
 			std::string dataFileName, std::string dataKeyword,
 			std::function<dataType(std::ifstream& dataFile)> function)
 		{
-			std::ifstream dataFile;
-			dataFile.open(dataFileName);
+			std::ifstream dataFile(dataFileName);
 
 			try
 			{
@@ -159,8 +158,7 @@ private:
 			std::string dataFileName, std::string dataKeyword,
 			std::function<dataType(std::ifstream& dataFile)> function)
 		{
-			std::ifstream dataFile;
-			dataFile.open(dataFileName);
+			std::ifstream dataFile(dataFileName);
 
 			try
 			{
@@ -193,4 +191,69 @@ private:
 	private:
 		LoadingComponents() {}
 	};
+	class SavingComponents
+	{
+	public:
+		template<typename dataType>
+		static dataType prepareNumberToSave(dataType number) {
+			if (number < UINT64_MAX) {
+				return ++number;
+			}
+			else {
+				return number;
+			}
+		}
+		static std::string prepareStringToSave(std::string str) {
+			return str += '/';
+		}
+
+
+		template<typename dataType>
+		static void saveData(std::vector<dataType>& stroage,
+			std::string dataFileName, std::string dataKeyword,
+			std::function<dataType(dataType)> function) 
+		{
+			std::ofstream dataFile(dataFileName, std::ios_base::app);
+
+			//Write keyword
+			dataFile << dataKeyword << '\n';
+
+			//Data saving
+			for (auto& item : stroage) {
+				dataType savingUnit = function(item);
+
+				dataFile << savingUnit  << ' ';
+			}
+
+			dataFile << '\n';
+		}
+
+		template<typename dataType>
+		static void saveData(std::vector <std::vector<dataType>>& stroage,
+			std::string dataFileName, std::string dataKeyword,
+			std::function<dataType(dataType)> function) 
+		{
+			std::ofstream dataFile(dataFileName, std::ios_base::app);
+
+			//Write keyword
+			dataFile << dataKeyword << '\n';
+
+			//Data loading
+			for (auto& list : stroage)
+			{
+				for (auto& item : list)
+				{
+					dataFile << function(item) << ' ';
+				}
+				dataFile << '\n';
+			}
+			//Function ofstream open file in app mode add '\n' in end
+		}
+		
+
+	private:
+		SavingComponents(){}
+	};
+
+	
 };

@@ -27,7 +27,9 @@ int main()
 {
     srand(static_cast<uint64_t>(NULL));
 
-    DataModule data("Data.txt");
+    const std::string g_DataFileName = "Data.txt";
+
+    DataModule data(g_DataFileName);
 
     Player player(data.getPlayerName(), data.getPlayerData());
     ResourceManager resManager(data.getRecourcesData());
@@ -83,6 +85,7 @@ int main()
             market.buySellMenu(player, resManager);
             break;
         case 'x': 
+            data.saveData(g_DataFileName);
             g_Exit = true;
             break;
         default:
