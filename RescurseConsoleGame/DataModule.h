@@ -89,7 +89,8 @@ private:
 
 			dataFile >> buffer;
 
-			if (buffer == 0 or buffer == UINT64_MAX) {
+			if (buffer == 0 or buffer >= INT64_MAX - 107) // Limit for double
+			{
 				std::string errorMSG = "Broken data loaded!";
 
 				throw std::exception(errorMSG.data());
