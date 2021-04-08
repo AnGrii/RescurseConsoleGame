@@ -87,12 +87,12 @@ int main()
         case 'm':
             market.buySellMenu(player, resManager);
             break;
+        case 'r':
+            data.restoreData(g_DataFileName);
+            break;
         case 'x': 
             data.saveData(g_DataFileName);
             g_Exit = true;
-            break;
-        case 'r':
-            data.restoreData(g_DataFileName);
             break;
         default:
             GameMessage::incorrectInput();
