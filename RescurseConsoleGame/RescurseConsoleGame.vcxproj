@@ -150,7 +150,6 @@
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ResourcesExtract.cpp" />
-    <ClCompile Include="ScienceCentre.cpp" />
     <ClCompile Include="Market.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -162,7 +161,6 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ResourcesExtract.h" />
-    <ClInclude Include="ScienceCentre.h" />
     <ClInclude Include="Market.h" />
   </ItemGroup>
   <ItemGroup>

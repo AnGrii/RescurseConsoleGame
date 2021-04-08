@@ -33,9 +33,6 @@
     <ClCompile Include="GameHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ScienceCentre.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BuildingsManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -63,9 +60,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameHelper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ScienceCentre.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BuildingsManager.h">

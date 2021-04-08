@@ -188,6 +188,10 @@ void Building::buildInfo()
 		<< "Activated:\t\t" << activated << std::endl << std::endl;
 }
 
+void Building::upgradeBuildings(BuildingsManager& buildings)
+{
+}
+
 std::string Building::getUpgradeBuildInfo()
 {
 	std::string info;
