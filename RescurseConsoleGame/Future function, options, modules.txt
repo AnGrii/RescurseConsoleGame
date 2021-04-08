@@ -1,15 +1,13 @@
-- Add different productivity status for building - power( 10%, 25%, 50%, 75%, 100% );
+- Add different productivity status for building - power( 10%, 25%, 50%, 75%, 100% )
 
 - ScienceCentre will increase building productivity
 
 Data loading / saving
-{	
-	- Data file restore / new game
+{
+	- Data file (restore / create new) game
 }
 
 - About
-
-
 
 ========== DATA_COPY ========== VERSION WITH FUTURE FUNCTIONAL
 playerName:
@@ -39,7 +37,7 @@ buildingsData:
 1 2 1 101 1001 11 1 5 6 7 2
 1 2 1 101 1001 16 1 8 9 10 2
 1 2 1 101 1001 21 1 11 12 13 2
-1 2 1 101 1001 26 1 13 14 15 16 2
+1 2 1 101 1001 26 1 14 15 16 2
 1 2 1 101 1001 31 1 17 18 17 2
 1 2 1 101 1001 36 1 20 21 22 2
 1 2 1 101 1001 41 1 23 24 25 2

@@ -8,7 +8,7 @@
 
 
 /// <summary>
-/// Loading, initialisation and checking game data
+/// Loading, Initialisation, Checking and Saving game data
 /// </summary>
 class DataModule
 {
@@ -17,6 +17,7 @@ public:
 
 	void loadData(const std::string dataFileName);
 	void saveData(const std::string dataFileName);
+	void restoreData(const std::string dataFileName);
 	 
 
 	std::vector<std::string> getPlayerName();
@@ -255,6 +256,63 @@ private:
 	private:
 		SavingComponents(){}
 	};
+	class Restore {
+	public:
+		Restore(){}
 
-	
+		void restoreData(const std::string dataFileName) {
+
+			std::ofstream dataFile(dataFileName);
+
+			for (auto& item : restoreDataList)
+			{
+				dataFile << item << '\n';
+			}
+		}
+	private:
+		const std::vector<std::string> restoreDataList{
+			"playerName:",
+			"Player",
+			"playerData:",
+			"100000001",
+			"resourcesName:",
+			"resourcesData:",
+			"11 2",
+			"11 3",
+			"11 4",
+			"1 5",
+			"1 6",
+			"1 7",
+			"1 8",
+			"1 9",
+			"1 10",
+			"1 11",
+			"1 12",
+			"buildingsName:",
+			"Forestry/ Sawmill/ Quarry/ Career/",
+			"Copper Mine/ Tin Mine/ Alloy Plant/",
+			"Silver Cleaner/ Gold_Mine/",
+			"Platina Cleaner/ Diamond Factory/",
+			"buildingsData:",
+			"1 2 1 101 1001 6 1 2 3 4 2",
+			"1 2 1 101 1001 11 1 5 6 7 2",
+			"1 2 1 101 1001 16 1 8 9 10 2",
+			"1 2 1 101 1001 21 1 11 12 13 2",
+			"1 2 1 101 1001 26 1 14 15 16 2",
+			"1 2 1 101 1001 31 1 17 18 17 2",
+			"1 2 1 101 1001 36 1 20 21 22 2",
+			"1 2 1 101 1001 41 1 23 24 25 2",
+			"1 2 1 101 1001 46 1 26 27 28 2",
+			"1 2 1 101 1001 51 1 29 30 31 2",
+			"1 2 1 101 1001 101 1 32 33 34 2",
+			"resourcesExtract:",
+			"2 101",
+			"2 101",
+			"2 101",
+			"marketData:",
+			"1.75",
+			"setting:",
+			"2 2 2 2 2 2 2 2 2 2"
+		};
+	};
 };
