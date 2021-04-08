@@ -186,6 +186,7 @@ void BuildingsManager::brokeEvent()
 {
 	srand(static_cast<uint64_t>(NULL));
 
+	//CHANCE: 1 : (100k - 2)
 	uint16_t chance = rand() % 100 * rand() % 1000;
 
 	switch (chance)

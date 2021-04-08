@@ -88,9 +88,7 @@ int main()
             data.saveData(g_DataFileName);
             g_Exit = true;
             break;
-        case 'r':
-            data.restoreData(g_DataFileName);
-            break;
+        //ADD RESTORE data.restoreData(g_DataFileName);
         default:
             GameMessage::incorrectInput();
             break;

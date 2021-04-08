@@ -4,7 +4,7 @@
 
 Data loading / saving
 {
-	- Data file (restore / create new) game
+	if loading of data file fail game will create new
 }
 
 - About
