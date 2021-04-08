@@ -1,7 +1,5 @@
 - Add different productivity status for building - power( 10%, 25%, 50%, 75%, 100% )
 
-- ScienceCentre will increase building productivity
-
 - Rewrite building (print info) -> (return std::string)
 - Add resources names
 - Rewrite resources (print info) -> (return std::string)

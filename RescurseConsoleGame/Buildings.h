@@ -36,6 +36,8 @@ public:
 	
 	uint64_t getSkipValue();
 
+	uint64_t getUpgradeValue();
+
 	bool isInQueue();
 	bool addInQueue();
 	void updateQueue();
@@ -49,7 +51,7 @@ public:
 	void buildInfo();
 
 	std::string getUpgradeBuildInfo();
-	void increaseProductivity();
+	void increaseProductivity(bool payStatus);
 
 	std::string getName() { return name; }
 

@@ -90,6 +90,11 @@ uint64_t Building::getSkipValue()
 	return skipTimeValue;
 }
 
+uint64_t Building::getUpgradeValue()
+{
+	return upgradeValue;
+}
+
 bool Building::isInQueue()
 {
 	if (endBuildTime == 0){
@@ -193,20 +198,24 @@ std::string Building::getUpgradeBuildInfo()
 	std::string info;
 
 	info += name;
-	info += " Productivity: ";
+	info += "\t\tProductivity:\t";
 	info += std::to_string(productivity);
-	info += " Upgrade Value: ";
+	info += "\tUpgrade Value:\t";
 	info += std::to_string(upgradeValue);
+
+	return info;
 }
 
-void Building::increaseProductivity()
+void Building::increaseProductivity(bool payStatus)
 {
-	if (productivity < UINT64_MAX - 2) {
-		productivity++;
-	}
-	else
-	{
-		productivity = UINT64_MAX - 2;
+	if (payStatus) {
+		if (productivity < UINT64_MAX - 2) {
+			productivity++;
+		}
+		else
+		{
+			productivity = UINT64_MAX - 2;
+		}
 	}
 }
 

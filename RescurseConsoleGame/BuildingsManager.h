@@ -30,7 +30,7 @@ public:
 
 	void SkipBuildingMenu(Player& p);
 
-	void upgradeBuildings();
+	void upgradeMenu(Player& p);
 private:
 	Building
 		forestry, sawmill, quarry, career,
@@ -46,6 +46,6 @@ private:
 	void build(Building& build,
 		Resource& reqRes1, Resource& reqRes2, Resource& reqRes3);
 
-	void upgradeBuildingsInfo();
-	void upgradeBuildingsMenu();
+	void upgradeInfo();
+	void upgradeBuildingsMenu(Player& p);
 };

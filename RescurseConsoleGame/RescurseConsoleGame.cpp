@@ -78,6 +78,9 @@ int main()
         case 'b':
             buildings.buildMenu(resManager);
             break;
+        case 'u':
+            buildings.upgradeMenu(player);
+            break;
         case 'i':
             buildings.printBuildingsInfo();
             break;
@@ -88,7 +91,9 @@ int main()
             data.saveData(g_DataFileName);
             g_Exit = true;
             break;
-        //ADD RESTORE data.restoreData(g_DataFileName);
+        case 'r':
+            data.restoreData(g_DataFileName);
+            break;
         default:
             GameMessage::incorrectInput();
             break;

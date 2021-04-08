@@ -165,7 +165,70 @@ void BuildingsManager::build(Building& build,
 	}
 }
 
+void BuildingsManager::upgradeInfo()
+{
+	std::cout << "========== Buildings Upgrade ===========" << std::endl
+		<< "1 - " << forestry.getUpgradeBuildInfo() << std::endl
+		<< "2 - " << sawmill.getUpgradeBuildInfo() << std::endl
+		<< "3 - " << quarry.getUpgradeBuildInfo() << std::endl
+		<< "4 - " << career.getUpgradeBuildInfo() << std::endl
+		<< "5 - " << copperMine.getUpgradeBuildInfo() << std::endl
+		<< "6 - " << tinMine.getUpgradeBuildInfo() << std::endl
+		<< "7 - " << alloyPlant.getUpgradeBuildInfo() << std::endl
+		<< "8 - " << silverCleaner.getUpgradeBuildInfo() << std::endl
+		<< "9 - " << goldMine.getUpgradeBuildInfo() << std::endl
+		<< "a - " << platinaCleaner.getUpgradeBuildInfo() << std::endl
+		<< "b - " << diamondFactory.getUpgradeBuildInfo() << std::endl << std::endl;
+}
 
+void BuildingsManager::upgradeBuildingsMenu(Player& p)
+{
+	char select = '0';
+	std::cout << "Input building id-name: ";
+	std::cin >> select;
+	std::cout << std::endl;
+
+
+	switch (select)
+	{
+	case '1':
+		forestry.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
+		break;
+	case '2':
+		sawmill.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
+		break;
+	case '3':
+		quarry.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
+		break;
+	case '4':
+		career.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
+		break;
+	case '5':
+		copperMine.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
+		break;
+	case '6':
+		tinMine.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
+		break;
+	case '7':
+		alloyPlant.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
+		break;
+	case '8':
+		silverCleaner.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
+		break;
+	case '9':
+		goldMine.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
+		break;
+	case 'a':
+		platinaCleaner.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
+		break;
+	case 'b':
+		diamondFactory.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
+		break;
+	default:
+		break;
+	}
+
+}
 
 void BuildingsManager::printQueueStatus()
 {
@@ -307,8 +370,8 @@ void BuildingsManager::SkipBuildingMenu(Player &p)
 
 }
 
-void BuildingsManager::upgradeBuildings()
+void BuildingsManager::upgradeMenu(Player& p)
 {
-	this->upgradeBuildingsInfo();
-	this->upgradeBuildingsMenu();
+	this->upgradeInfo();
+	this->upgradeBuildingsMenu(p);
 }
