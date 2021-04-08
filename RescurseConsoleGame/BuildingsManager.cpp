@@ -306,3 +306,9 @@ void BuildingsManager::SkipBuildingMenu(Player &p)
 	}
 
 }
+
+void BuildingsManager::upgradeBuildings()
+{
+	this->upgradeBuildingsInfo();
+	this->upgradeBuildingsMenu();
+}

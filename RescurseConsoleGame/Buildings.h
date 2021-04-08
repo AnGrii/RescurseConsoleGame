@@ -48,8 +48,6 @@ public:
 
 	void buildInfo();
 
-	void upgradeBuildings();
-
 	std::string getUpgradeBuildInfo();
 	void increaseProductivity();
 
@@ -64,7 +62,4 @@ private:
 	const double INCREASE_VALUE_COEFFICIENT = 1.2;
 
 	void skipBuildingTime();
-
-	static void upgradeBuildingsInfo();
-	static void upgradeBuildingsMenu();
 };

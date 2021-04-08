@@ -35,22 +35,22 @@ uint64_t Building::getRes3()
 
 void Building::increaseResValue1()
 {
-	resource1 = uint64_t(resource1 * INCREASE_COEFFICIENT_VALUE);
+	resource1 = uint64_t(resource1 * INCREASE_VALUE_COEFFICIENT);
 }
 
 void Building::increaseResValue2()
 {
-	resource2 = uint64_t(resource2 * INCREASE_COEFFICIENT_VALUE);
+	resource2 = uint64_t(resource2 * INCREASE_VALUE_COEFFICIENT);
 }
  
 void Building::increaseResValue3()
 {
-	resource3 = uint64_t(resource3 * INCREASE_COEFFICIENT_VALUE);
+	resource3 = uint64_t(resource3 * INCREASE_VALUE_COEFFICIENT);
 }
 
 void Building::increaseSkipValue()
 {
-	skipTimeValue = uint64_t(skipTimeValue * INCREASE_COEFFICIENT_VALUE);
+	skipTimeValue = uint64_t(skipTimeValue * INCREASE_VALUE_COEFFICIENT);
 }
 
 void Building::addCount(uint64_t addCount)
@@ -186,12 +186,6 @@ void Building::buildInfo()
 		<< "Resource2 needed:\t" << resource2 << std::endl
 		<< "Resource3 needed:\t" << resource3 << std::endl
 		<< "Activated:\t\t" << activated << std::endl << std::endl;
-}
-
-void Building::upgradeBuildings()
-{
-	this->upgradeBuildingsInfo();
-	this->upgradeBuildingsMenu();
 }
 
 std::string Building::getUpgradeBuildInfo()
