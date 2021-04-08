@@ -53,6 +53,10 @@ void Building::increaseSkipValue()
 	skipTimeValue = uint64_t(skipTimeValue * INCREASE_VALUE_COEFFICIENT);
 }
 
+void Building::increaseUpgradeValue() {
+	upgradeValue = uint64_t(upgradeValue * INCREASE_VALUE_COEFFICIENT);
+}
+
 void Building::addCount(uint64_t addCount)
 {
 	uint64_t limit = UINT64_MAX - this->count;
@@ -217,6 +221,8 @@ void Building::increaseProductivity(bool payStatus)
 			productivity = UINT64_MAX - 2;
 		}
 	}
+
+	this->increaseUpgradeValue();
 }
 
 

@@ -26,6 +26,8 @@ public:
 
 	void increaseSkipValue();
 
+	void increaseUpgradeValue();
+
 	void addCount(uint64_t addCount);
 
 	uint64_t getCount();
