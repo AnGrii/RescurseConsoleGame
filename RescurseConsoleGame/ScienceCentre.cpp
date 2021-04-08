@@ -6,6 +6,7 @@ void ScienceCentre::upgradeBuildings(BuildingsManager& buildings)
 	ScienceCentre::upgradeBuildingsMenu(buildings);
 }
 
+
 void ScienceCentre::upgradeBuildingsInfo(const BuildingsManager& buildings)
 {
 
@@ -13,4 +14,6 @@ void ScienceCentre::upgradeBuildingsInfo(const BuildingsManager& buildings)
 
 void ScienceCentre::upgradeBuildingsMenu(BuildingsManager& buildings)
 {
+
 }
+

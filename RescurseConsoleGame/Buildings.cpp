@@ -188,6 +188,28 @@ void Building::buildInfo()
 		<< "Activated:\t\t" << activated << std::endl << std::endl;
 }
 
+std::string Building::getUpgradeBuildInfo()
+{
+	std::string info;
+
+	info += name;
+	info += " Productivity: ";
+	info += std::to_string(productivity);
+	info += " Upgrade Value: ";
+	info += std::to_string(upgradeValue);
+}
+
+void Building::increaseProductivity()
+{
+	if (productivity < UINT64_MAX - 2) {
+		productivity++;
+	}
+	else
+	{
+		productivity = UINT64_MAX - 2;
+	}
+}
+
 
 
 

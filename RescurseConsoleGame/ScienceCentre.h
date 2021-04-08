@@ -4,6 +4,7 @@
 
 #include "BuildingsManager.h"
 
+
 class ScienceCentre
 {
 public:

@@ -48,6 +48,9 @@ public:
 
 	void buildInfo();
 
+	std::string getUpgradeBuildInfo();
+	void increaseProductivity();
+
 	std::string getName() { return name; }
 
 private:

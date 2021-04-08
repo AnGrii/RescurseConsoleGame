@@ -2,6 +2,17 @@
 
 - ScienceCentre will increase building productivity
 
+- Rewrite building (print info) -> (return std::string)
+- Add resources names
+- Rewrite resources (print info) -> (return std::string)
+{
+	stoi - string to int
+	stof - string to float
+	stod - string to double
+	stoull - string to long long uint
+	to_string - number to string
+}
+
 Data loading / saving
 {
 	if loading of data file fail game will create new
