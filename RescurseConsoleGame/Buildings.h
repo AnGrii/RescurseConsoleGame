@@ -48,7 +48,7 @@ public:
 
 	void buildInfo();
 
-	void upgradeBuildings(BuildingsManager& buildings);
+	void upgradeBuildings();
 
 	std::string getUpgradeBuildInfo();
 	void increaseProductivity();
