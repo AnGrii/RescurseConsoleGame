@@ -272,7 +272,7 @@ private:
 	private:
 		const std::vector<std::string> restoreDataList{
 			"playerName:",
-			"Player",
+			"Player/",
 			"playerData:",
 			"100000001",
 			"resourcesName:",
