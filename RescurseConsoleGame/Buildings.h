@@ -56,7 +56,7 @@ private:
 	bool activated;
 	std::string name;
 
-	const double VALUE_INCREASE_PROCENT = 0.2;
+	const double INCREASE_COEFFICIENT_VALUE = 1.2;
 
 	void skipBuildingTime();
 };

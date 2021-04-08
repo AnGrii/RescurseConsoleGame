@@ -35,22 +35,22 @@ uint64_t Building::getRes3()
 
 void Building::increaseResValue1()
 {
-	resource1 += uint64_t(resource1 * VALUE_INCREASE_PROCENT);
+	resource1 = uint64_t(resource1 * INCREASE_COEFFICIENT_VALUE);
 }
 
 void Building::increaseResValue2()
 {
-	resource2 += uint64_t(resource2 * VALUE_INCREASE_PROCENT);
+	resource2 = uint64_t(resource2 * INCREASE_COEFFICIENT_VALUE);
 }
  
 void Building::increaseResValue3()
 {
-	resource3 += uint64_t(resource3 * VALUE_INCREASE_PROCENT);
+	resource3 = uint64_t(resource3 * INCREASE_COEFFICIENT_VALUE);
 }
 
 void Building::increaseSkipValue()
 {
-	skipTimeValue =uint64_t(skipTimeValue * double(1.0 + VALUE_INCREASE_PROCENT));
+	skipTimeValue = uint64_t(skipTimeValue * INCREASE_COEFFICIENT_VALUE);
 }
 
 void Building::addCount(uint64_t addCount)
