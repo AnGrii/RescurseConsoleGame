@@ -4,14 +4,14 @@ void GameMessage::keywordHelp(bool show)
 {
 	std::cout << "Key to do:" << std::endl
 		<< "e - Extract base resources" << std::endl
-		<< "n - Next day :)" << std::endl
-		<< "g - Upgrade Resources Extraction!" << std::endl
-		<< "q - Queue of Buildings!" << std::endl
-		<< "s - Skip Buildings Menu!" << std::endl
-		<< "b - Build Buildings!" << std::endl
-		<< "u - Upgrade Buildings!" << std::endl
-		<< "i - Buildings information!" << std::endl
-		<< "m - Resource Market!" << std::endl
+		<< "n - Next day" << std::endl
+		<< "g - Upgrade Resources Extraction" << std::endl
+		<< "q - Queue of Buildings" << std::endl
+		<< "s - Skip Buildings Menu" << std::endl
+		<< "b - Build Buildings" << std::endl
+		<< "u - Upgrade Buildings" << std::endl
+		<< "i - Buildings information" << std::endl
+		<< "m - Resource Market" << std::endl
 		<< "r - Restore data" << std::endl
 		<< "x - Save and Exit" << std::endl
 		<< "" << std::endl;
