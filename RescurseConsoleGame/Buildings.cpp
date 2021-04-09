@@ -124,6 +124,7 @@ void Building::updateQueue()
 	if (endBuildTime > 0) {	
 		endBuildTime--; 
 		if (endBuildTime == 0) {
+			count++;
 			std::cout << "Building finished!" << std::endl << std::endl;
 		}
 	}
@@ -133,7 +134,6 @@ void Building::updateQueue()
 				std::cout << "Building started!" << std::endl << std::endl;
 			endBuildTime = buildTime;
 			inQueue--;
-			count++;
 		}
 	}
 }
