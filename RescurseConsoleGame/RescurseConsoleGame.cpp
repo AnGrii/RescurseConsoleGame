@@ -88,7 +88,7 @@ int main()
             market.buySellMenu(player, resManager);
             break;
         case 'r':
-            //data.restoreData(g_DataFileName);
+            data.restoreData(g_DataFileName);
             break;
         case 'x': 
             data.saveData(g_DataFileName);

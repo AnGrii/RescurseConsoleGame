@@ -280,7 +280,6 @@ private:
 			"playerData:",
 			"100000001",
 			"resourcesName:",
-			"resourcesName:",
 			"Log/ Wood/ Stone/ Coal/ Copper/ Tin/ Bronze/",
 			"Silver/ Gold/ Platina/ Diamond/",
 			"resourcesData:",
