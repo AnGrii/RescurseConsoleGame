@@ -1,8 +1,8 @@
 - Add different productivity status for building - power( 10%, 25%, 50%, 75%, 100% )
 
-- Rewrite building (print info) -> (return std::string)
-- Add resources names
-- Rewrite resources (print info) -> (return std::string)
+- Rewrite building /  buildingManager(print info) -> (return std::string)
+- Rewrite resources manager (print info) -> (return std::string)
+
 {
 	stoi - string to int
 	stof - string to float

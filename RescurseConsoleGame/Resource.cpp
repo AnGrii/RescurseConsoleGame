@@ -7,8 +7,8 @@ void Resource::Reinitialisate(std::string name,
 	uint16_t counter = 0;
 
 	this->name = name;
-	this->count = dataList[counter++];
-	this->value = dataList[counter++];
+	this->count = dataList[counter]; counter++;
+	this->value = dataList[counter]; counter++;
 }
 
 uint64_t Resource::getCount()
