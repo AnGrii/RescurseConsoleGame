@@ -21,16 +21,16 @@ ResourceManager::ResourceManager(std::vector<std::string> nameList,
 void ResourceManager::printResourcesCount()
 {
 	std::cout
-		<< log.getName() << ":\t" << log.getCount() 
-		<< "\t\t" << bronze.getName() << ":\t" << bronze.getCount() << std::endl
-		<< wood.getName()<<":\t" << wood.getCount() 
-		<< "\t\tSilver:\t" << silver.getCount() << std::endl
-		<< "Stone:\t" << stone.getCount() 
-		<< "\t\tGold:\t" << gold.getCount() << std::endl
-		<< "Coal:\t" << coal.getCount() 
-		<< "\t\tPlatina:" << platina.getCount() << std::endl
-		<< "Copper:\t" << copper.getCount() 
-		<< "\t\tDiamond:" << diamond.getCount() << std::endl
-		<< "Tin:\t" << tin.getCount() << std::endl
+		<< log.getName() << ":\t" << log.getCount() << "\t\t"
+		<< bronze.getName() << ":\t" << bronze.getCount() << std::endl
+		<< wood.getName()<<":\t" << wood.getCount() << "\t\t"
+		<< silver.getName() << ":\t" << silver.getCount() << std::endl
+		<< stone.getName() << ":\t" << stone.getCount() << "\t\t"
+		<< gold.getName() << ":\t" << gold.getCount() << std::endl
+		<< coal.getName() << ":\t" << coal.getCount() << "\t\t"
+		<< platina.getName() << ":" << platina.getCount() << std::endl
+		<< copper.getName() << ":\t" << copper.getCount() << "\t\t"
+		<< diamond.getName() << ":" << diamond.getCount() << std::endl
+		<< tin.getName() << ":\t" << tin.getCount() << std::endl
 		<< std::endl;
 }

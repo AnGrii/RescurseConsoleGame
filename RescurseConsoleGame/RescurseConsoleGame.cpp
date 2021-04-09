@@ -91,7 +91,7 @@ int main()
             //data.restoreData(g_DataFileName);
             break;
         case 'x': 
-            //data.saveData(g_DataFileName);
+            data.saveData(g_DataFileName);
             g_Exit = true;
             break;
         default:

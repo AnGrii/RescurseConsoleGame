@@ -74,6 +74,11 @@ void DataModule::saveData(const std::string dataFileName)
 		dataFileName, keywordPlayerData,
 		SavingComponents::prepareNumberToSave<uint64_t>);
 
+	//RESOURCE_NAME_DATA
+	SavingComponents::saveData<std::string>(resourcesNameData,
+		dataFileName, keywordResourcesName,
+		SavingComponents::prepareStringToSave);
+
 	//RESOURCE_DATA
 	SavingComponents::saveData<uint64_t>(resourcesData,
 		dataFileName, keywordResourcesData,
