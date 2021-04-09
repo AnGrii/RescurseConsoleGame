@@ -18,6 +18,11 @@ void DataModule::loadData(std::string dataFileName)
 		PLAYER_DATA_COUNT,
 		dataFileName, keywordPlayerData,
 		LoadingComponents::readNumber<uint64_t>);
+	
+	//RESOURCE_NAME_DATA
+	LoadingComponents::loadData<std::string>(resourcesNameData, RESOURCES_COUNT,
+		dataFileName, keywordResourcesName,
+		LoadingComponents::readName);
 
 	//RESOURCE_DATA
 	LoadingComponents::loadData<uint64_t>(resourcesData,
@@ -114,6 +119,11 @@ std::vector<uint64_t> DataModule::getPlayerData()
 	return playerData;
 }
 
+
+std::vector<std::string> DataModule::getRecourcesNameData()
+{
+	return resourcesNameData;
+}
 std::vector<std::vector< uint64_t>> DataModule::getRecourcesData()
 {
 	return resourcesData;

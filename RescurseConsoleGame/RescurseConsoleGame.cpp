@@ -32,7 +32,7 @@ int main()
     DataModule data(g_DataFileName);
 
     Player player(data.getPlayerName(), data.getPlayerData());
-    ResourceManager resManager(data.getRecourcesData());
+    ResourceManager resManager(data.getRecourcesNameData(), data.getRecourcesData());
     ResourcesExtract resExtract(data.getResourcesExtractData());
     BuildingsManager buildings(
         data.getBuildingsNameData(),
@@ -88,10 +88,10 @@ int main()
             market.buySellMenu(player, resManager);
             break;
         case 'r':
-            data.restoreData(g_DataFileName);
+            //data.restoreData(g_DataFileName);
             break;
         case 'x': 
-            data.saveData(g_DataFileName);
+            //data.saveData(g_DataFileName);
             g_Exit = true;
             break;
         default:

@@ -5,8 +5,9 @@
 class Resource
 {
 public:
-	Resource() : count(0), value(0){}
-	void Reinitialisate(std::vector<uint64_t> dataList);
+	Resource() : count(0), value(0), name("NoName"){}
+	void Reinitialisate(std::string name,
+		std::vector<uint64_t> dataList);
 
 	uint64_t getCount();
 	uint64_t& getCountLink();
@@ -17,8 +18,11 @@ public:
 
 	uint64_t getValue();
 
+	std::string getName();
+
 private:
 	uint64_t count, value;
+	std::string name;
 };
 
 

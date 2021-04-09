@@ -1,20 +1,21 @@
 #include "ResourceManager.h"
 
-ResourceManager::ResourceManager(std::vector< std::vector<uint64_t>> dataList)
+ResourceManager::ResourceManager(std::vector<std::string> nameList,
+	std::vector< std::vector<uint64_t>> dataList)
 {
 	uint16_t counter = 0;
 
-	log.Reinitialisate(dataList[counter++]);
-	wood.Reinitialisate(dataList[counter++]);
-	stone.Reinitialisate(dataList[counter++]);
-	coal.Reinitialisate(dataList[counter++]);
-	copper.Reinitialisate(dataList[counter++]);
-	tin.Reinitialisate(dataList[counter++]);
-	bronze.Reinitialisate(dataList[counter++]);
-	silver.Reinitialisate(dataList[counter++]);
-	gold.Reinitialisate(dataList[counter++]);
-	platina.Reinitialisate(dataList[counter++]);
-	diamond.Reinitialisate(dataList[counter++]);
+	log.Reinitialisate		(nameList[counter], dataList[counter++]);
+	wood.Reinitialisate		(nameList[counter], dataList[counter++]);
+	stone.Reinitialisate	(nameList[counter], dataList[counter++]);
+	coal.Reinitialisate		(nameList[counter], dataList[counter++]);
+	copper.Reinitialisate	(nameList[counter], dataList[counter++]);
+	tin.Reinitialisate		(nameList[counter], dataList[counter++]);
+	bronze.Reinitialisate	(nameList[counter], dataList[counter++]);
+	silver.Reinitialisate	(nameList[counter], dataList[counter++]);
+	gold.Reinitialisate		(nameList[counter], dataList[counter++]);
+	platina.Reinitialisate	(nameList[counter], dataList[counter++]);
+	diamond.Reinitialisate	(nameList[counter], dataList[counter]);
 }
 
 void ResourceManager::printResourcesCount()

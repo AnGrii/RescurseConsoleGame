@@ -1,10 +1,12 @@
 #include "Resource.h"
 
 
-void Resource::Reinitialisate(std::vector<uint64_t> dataList)
+void Resource::Reinitialisate(std::string name,
+	std::vector<uint64_t> dataList)
 {
 	uint16_t counter = 0;
 
+	this->name = name;
 	this->count = dataList[counter++];
 	this->value = dataList[counter++];
 }
@@ -45,5 +47,10 @@ void Resource::set(uint64_t count)
 uint64_t Resource::getValue()
 {
 	return value;
+}
+
+std::string Resource::getName()
+{
+	return name;
 }
 

@@ -23,10 +23,12 @@ public:
 	std::vector<std::string> getPlayerName();
 	std::vector<uint64_t> getPlayerData();
 	
+	std::vector<std::string> getRecourcesNameData();
 	std::vector<std::vector<uint64_t>> getRecourcesData();
 
-	std::vector<std::vector<uint64_t>> getBuildingsData();
 	std::vector<std::string> getBuildingsNameData();
+	std::vector<std::vector<uint64_t>> getBuildingsData();
+	
 
 	std::vector<uint64_t> getResourcesExtractData();
 
@@ -36,6 +38,7 @@ private:
 	const std::string dataFileName = "Data.txt",
 		keywordPlayerName = "playerName:",
 		keywordPlayerData = "playerData:",
+		keywordResourcesName = "resourcesName:",
 		keywordResourcesData = "resourcesData:",
 		keywordBuildingsName = "buildingsName:",
 		keywordBuildingsData = "buildingsData:",
@@ -58,6 +61,7 @@ private:
 	std::vector<uint64_t> playerData;
 	std::vector<std::string> playerNameData;
 
+	std::vector<std::string> resourcesNameData;
 	std::vector<std::vector<uint64_t>> resourcesData;
 
 	std::vector<std::string> buildingNameData;
