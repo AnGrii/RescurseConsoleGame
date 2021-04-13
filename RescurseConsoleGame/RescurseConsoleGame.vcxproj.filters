@@ -79,7 +79,7 @@
     <Text Include="Data.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Future function, options, modules.txt">
+    <Text Include="TODO list.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

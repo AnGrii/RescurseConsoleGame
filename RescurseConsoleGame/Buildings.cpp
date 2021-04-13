@@ -149,7 +149,7 @@ std::string Building::getQueueInfo()
 
 		return info;
 	}
-	return "";
+	return "-";
 }
 
 std::string Building::getSkipInfo(char nameId)

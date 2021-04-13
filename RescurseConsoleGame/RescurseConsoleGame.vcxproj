@@ -165,7 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt" />
-    <Text Include="Future function, options, modules.txt" />
+    <Text Include="TODO list.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

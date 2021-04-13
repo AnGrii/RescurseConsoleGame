@@ -1,16 +1,5 @@
 - Add different productivity status for building - power( 10%, 25%, 50%, 75%, 100% )
 
-- Rewrite building /  buildingManager(print info) -> (return std::string)
-- Rewrite resources manager (print info) -> (return std::string)
-
-{
-	stoi - string to int
-	stof - string to float
-	stod - string to double
-	stoull - string to long long uint
-	to_string - number to string
-}
-
 Data loading / saving
 {
 	Data save fix( data need to be downloaded from classes)
@@ -19,52 +8,45 @@ Data loading / saving
 
 - About
 
-========== DATA_COPY ========== VERSION WITH FUTURE FUNCTIONAL
+
+========== DATA_COPY ==========
 playerName:
-Player
+Player/ 
 playerData:
-100000001
+100000001 
 resourcesName:
-resourcesName:
-Log/ Wood/ Stone/ Coal/ Copper/ Tin/ Bronze/
-Silver/ Gold/ Platina/ Diamond/
+Log/ Wood/ Stone/ Coal/ Copper/ Tin/ Bronze/ Silver/ Gold/ Platina/ Diamond/ 
 resourcesData:
-1 2
-1 3
-1 4
-1 5
-1 6
-1 7
-1 8
-1 9
-1 10
-1 11
-1 12
+101 2 
+101 3 
+101 4 
+1 5 
+1 6 
+1 7 
+1 8 
+1 9 
+1 10 
+1 11 
+1 12 
 buildingsName:
-Forestry/ Sawmill/ Quarry/ Career/
-Copper Mine/ Tin Mine/ Alloy Plant/
-Silver Cleaner/ Gold_Mine/
-Platina Cleaner/ Diamond Factory/
+Forestry/ Sawmill/ Quarry/ Career/ Copper Mine/ Tin Mine/ Alloy Plant/ Silver Cleaner/ Gold_Mine/ Platina Cleaner/ Diamond Factory/ 
 buildingsData:
-1 2 1 101 1001 6 1 2 3 4 2
-1 2 1 101 1001 11 1 5 6 7 2
-1 2 1 101 1001 16 1 8 9 10 2
-1 2 1 101 1001 21 1 11 12 13 2
-1 2 1 101 1001 26 1 14 15 16 2
-1 2 1 101 1001 31 1 17 18 17 2
-1 2 1 101 1001 36 1 20 21 22 2
-1 2 1 101 1001 41 1 23 24 25 2
-1 2 1 101 1001 46 1 26 27 28 2
-1 2 1 101 1001 51 1 29 30 31 2
-1 2 1 101 1001 101 1 32 33 34 2
+1 2 3 101 1001 6 1 2 3 4 2 
+1 2 4 101 1001 11 1 5 6 7 2 
+1 2 3 101 1001 16 1 8 9 10 2 
+1 2 3 101 1001 21 1 11 12 13 2 
+1 2 3 101 1001 26 1 14 15 16 2 
+1 2 3 101 1001 31 1 17 18 17 2 
+1 2 1 101 1001 36 1 20 21 22 2 
+1 2 1 101 1001 41 1 23 24 25 2 
+1 2 1 101 1001 46 1 26 27 28 2 
+1 2 1 101 1001 51 1 29 30 31 2 
+1 2 1 101 1001 101 1 32 33 34 2 
 resourcesExtract:
-2 101
-2 101
-2 101
+2 101 2 101 2 101 
 marketData:
-1.75
-setting:
-2 2 2 2 2 2 2 2 2 2
+1.75 
+
 
 
 
