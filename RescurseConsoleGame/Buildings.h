@@ -43,9 +43,9 @@ public:
 	bool isInQueue();
 	bool addInQueue();
 	void updateQueue();
-	void printQueueInfo();
+	std::string getQueueInfo();
 
-	void printSkipInfo(char nameId);
+	std::string getSkipInfo(char nameId);
 	
 	void skipBuildingProcess(bool payStatus);
 	void brokeBuild();

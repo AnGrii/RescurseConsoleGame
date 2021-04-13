@@ -138,20 +138,33 @@ void Building::updateQueue()
 	}
 }
 
-void Building::printQueueInfo()
+std::string Building::getQueueInfo()
 {
 	if (this->isInQueue()) {
-		std::cout << "Count of " << name << " in queue -\t" << inQueue << std::endl
-			<< "Days to building left -\t" << endBuildTime << std::endl << std::endl;
+		std::string info;
+
+		info = info + "Count of " + name + " in queue -\t";
+		info = info + std::to_string(inQueue) + '\n';
+		info = info + "Days to building left -\t" + std::to_string(endBuildTime);
+		info = info + "\n\n";
+
+		return info;
 	}
+	return "-";
 }
 
-void Building::printSkipInfo(char nameId)
+std::string Building::getSkipInfo(char nameId)
 {
 	if (this->isInQueue()) {
-		std::cout << nameId << " - " << name << "\t-\t\t" << skipTimeValue
-			<< std::endl << std::endl;
+		std::string info;
+
+		info = info + nameId + " - " + name + "\t-\t\t";
+		info = info + std::to_string(skipTimeValue);
+		info = info + "\n\n";
+
+		return info;
 	}
+	return "-";
 }
 
 void Building::skipBuildingTime()
@@ -224,8 +237,4 @@ void Building::increaseProductivity(bool payStatus)
 
 	this->increaseUpgradeValue();
 }
-
-
-
-
 

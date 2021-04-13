@@ -22,17 +22,28 @@ void BuildingsManager::buildMenu(ResourceManager& res)
 {
 	std::cout << "Select build:" << std::endl;
 
-	printBuildRequest(forestry, "1", "Log", "Wood", "Stone");
-	printBuildRequest(sawmill, "2", "Log", "Wood", "Stone");
-	printBuildRequest(quarry, "3", "Log", "Wood", "Stone");
-	printBuildRequest(career, "4", "Log", "Wood", "Stone");
-	printBuildRequest(copperMine, "5", "Log", "Stone", "Coal");
-	printBuildRequest(tinMine, "6", "Coal", "Stone", "Copper");
-	printBuildRequest(alloyPlant, "7", "Stone", "Copper", "Tin");
-	printBuildRequest(silverCleaner, "8", "Stone", "Copper", "Bronze");
-	printBuildRequest(goldMine, "9", "Copper", "Bronze", "Silver");
-	printBuildRequest(platinaCleaner, "a", "Bronze", "Silver", "Gold");
-	printBuildRequest(diamondFactory, "b", "Silver", "Gold", "Platina");
+	printBuildRequest(forestry, "1", \
+		res.log.getName(), res.wood.getName(), res.stone.getName());
+	printBuildRequest(sawmill, "2", \
+		res.log.getName(), res.wood.getName(), res.stone.getName());
+	printBuildRequest(quarry, "3", \
+		res.log.getName(), res.wood.getName(), res.stone.getName());
+	printBuildRequest(career, "4", \
+		res.log.getName(), res.wood.getName(), res.stone.getName());
+	printBuildRequest(copperMine, "5", \
+		res.log.getName(), res.stone.getName(), res.coal.getName());
+	printBuildRequest(tinMine, "6", \
+		res.coal.getName(), res.stone.getName(), res.copper.getName());
+	printBuildRequest(alloyPlant, "7", \
+		res.stone.getName(), res.copper.getName(), res.tin.getName());
+	printBuildRequest(silverCleaner, "8", \
+		res.stone.getName(), res.copper.getName(), res.bronze.getName());
+	printBuildRequest(goldMine, "9", \
+		res.copper.getName(), res.bronze.getName(), res.silver.getName());
+	printBuildRequest(platinaCleaner, "a", \
+		res.bronze.getName(), res.silver.getName(), res.gold.getName());
+	printBuildRequest(diamondFactory, "b", \
+		res.silver.getName(), res.gold.getName(), res.platina.getName());
 
 	char select;
 	std::cout << "Input to build: ";
@@ -232,17 +243,19 @@ void BuildingsManager::upgradeBuildingsMenu(Player& p)
 
 void BuildingsManager::printQueueStatus()
 {
-	forestry.printQueueInfo();
-	sawmill.printQueueInfo();
-	quarry.printQueueInfo();
-	career.printQueueInfo();
-	copperMine.printQueueInfo();
-	tinMine.printQueueInfo();
-	alloyPlant.printQueueInfo();
-	silverCleaner.printQueueInfo();
-	goldMine.printQueueInfo();
-	platinaCleaner.printQueueInfo();
-	diamondFactory.printQueueInfo();
+#define print(obj) std::cout << obj.getQueueInfo() << std::endl
+
+	if (forestry.isInQueue()) print(forestry);
+	if (sawmill.isInQueue()) print(sawmill);
+	if (quarry.isInQueue()) print(quarry);
+	if (career.isInQueue()) print(career);
+	if (copperMine.isInQueue()) print(copperMine);
+	if (tinMine.isInQueue()) print(tinMine);
+	if (alloyPlant.isInQueue()) print(alloyPlant);
+	if (silverCleaner.isInQueue()) print(silverCleaner);
+	if (goldMine.isInQueue()) print(goldMine);
+	if (platinaCleaner.isInQueue()) print(platinaCleaner);
+	if (diamondFactory.isInQueue())print(diamondFactory);
 }
 
 void BuildingsManager::brokeEvent()
@@ -311,17 +324,17 @@ void BuildingsManager::printBuildingsInfo()
 void BuildingsManager::SkipBuildingMenu(Player &p)
 {
 	std::cout << "=====\tValue of skip time of building\t=====" << std::endl;
-	forestry.printSkipInfo('1');
-	sawmill.printSkipInfo('2');
-	quarry.printSkipInfo('3');
-	career.printSkipInfo('4');
-	copperMine.printSkipInfo('5');
-	tinMine.printSkipInfo('6');
-	alloyPlant.printSkipInfo('7');
-	silverCleaner.printSkipInfo('8');
-	goldMine.printSkipInfo('9');
-	platinaCleaner.printSkipInfo('a');
-	diamondFactory.printSkipInfo('b');
+	std::cout << forestry.getSkipInfo('1') << std::endl
+		<< sawmill.getSkipInfo('2') << std::endl
+		<< quarry.getSkipInfo('3') << std::endl
+		<< career.getSkipInfo('4') << std::endl
+		<< copperMine.getSkipInfo('5') << std::endl
+		<< tinMine.getSkipInfo('6') << std::endl
+		<< alloyPlant.getSkipInfo('7') << std::endl
+		<< silverCleaner.getSkipInfo('8') << std::endl
+		<< goldMine.getSkipInfo('9') << std::endl
+		<< platinaCleaner.getSkipInfo('a') << std::endl
+		<< diamondFactory.getSkipInfo('b') << std::endl;
 
 	char select;
 	std::cout << "Input skip build id: ";

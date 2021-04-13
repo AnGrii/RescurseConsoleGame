@@ -13,6 +13,7 @@
 
 Data loading / saving
 {
+	Data save fix( data need to be downloaded from classes)
 	if loading of data file fail game will create new
 }
 
