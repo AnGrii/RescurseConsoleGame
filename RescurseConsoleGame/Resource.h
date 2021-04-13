@@ -1,6 +1,9 @@
 #pragma once
 #include<iostream>
 #include<vector>
+#include<string>
+
+
 
 class Resource
 {
@@ -19,6 +22,8 @@ public:
 	uint64_t getValue();
 
 	std::string getName();
+
+	std::string getNameAndCountInfo();
 
 private:
 	uint64_t count, value;
