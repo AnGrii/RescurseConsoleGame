@@ -243,19 +243,20 @@ void BuildingsManager::upgradeBuildingsMenu(Player& p)
 
 void BuildingsManager::printQueueStatus()
 {
-#define print(obj) std::cout << obj.getQueueInfo() << std::endl
+#define ifPrint(obj) if (obj.isInQueue()) \
+ std::cout << obj.getQueueInfo() << std::endl << std::endl
 
-	if (forestry.isInQueue()) print(forestry);
-	if (sawmill.isInQueue()) print(sawmill);
-	if (quarry.isInQueue()) print(quarry);
-	if (career.isInQueue()) print(career);
-	if (copperMine.isInQueue()) print(copperMine);
-	if (tinMine.isInQueue()) print(tinMine);
-	if (alloyPlant.isInQueue()) print(alloyPlant);
-	if (silverCleaner.isInQueue()) print(silverCleaner);
-	if (goldMine.isInQueue()) print(goldMine);
-	if (platinaCleaner.isInQueue()) print(platinaCleaner);
-	if (diamondFactory.isInQueue())print(diamondFactory);
+	ifPrint(forestry);
+	ifPrint(sawmill);
+	ifPrint(quarry);
+	ifPrint(career);
+	ifPrint(copperMine);
+	ifPrint(tinMine);
+	ifPrint(alloyPlant);
+	ifPrint(silverCleaner);
+	ifPrint(goldMine);
+	ifPrint(platinaCleaner);
+	ifPrint(diamondFactory);
 }
 
 void BuildingsManager::brokeEvent()

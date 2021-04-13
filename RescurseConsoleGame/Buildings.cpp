@@ -146,11 +146,10 @@ std::string Building::getQueueInfo()
 		info = info + "Count of " + name + " in queue -\t";
 		info = info + std::to_string(inQueue) + '\n';
 		info = info + "Days to building left -\t" + std::to_string(endBuildTime);
-		info = info + "\n\n";
 
 		return info;
 	}
-	return "-";
+	return "";
 }
 
 std::string Building::getSkipInfo(char nameId)

@@ -58,9 +58,9 @@ std::string Resource::getNameAndCountInfo()
 {
 	std::string info;
 
-	info = info + this->getName() + ":\t";
+	info = info + this->getName() + ":\t\t";
 	info = info + std::to_string(this->getCount());
 
-	return std::string();
+	return info;
 }
 
