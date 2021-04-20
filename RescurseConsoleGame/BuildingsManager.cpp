@@ -89,8 +89,8 @@ void BuildingsManager::work(ResourceManager& res)
 	if (BUILDINGS_COUNT != res.RESOURCES_COUNT) {
 		throw std::exception("Different counts!");
 		//WARNING: Count of resources and buildings is equal,
-	//if it will changed, it will cause problem
-	//Change cycle counter to fix
+		//if it will changed, it will cause problem
+		//Change cycle counter to fix
 	}
 
 	for (size_t iterator = 0; iterator < BUILDINGS_COUNT; iterator++)
@@ -102,7 +102,7 @@ void BuildingsManager::work(ResourceManager& res)
 
 void BuildingsManager::updateBuildingsQueue()
 {
-	for (auto& item : BuildingsVector) {	item->updateQueue(); }
+	for (auto& item : BuildingsVector) { item->updateQueue(); }
 }
 
 void BuildingsManager::printBuildRequest(Building build, std::string buildSymb,

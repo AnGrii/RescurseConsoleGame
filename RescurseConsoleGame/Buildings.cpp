@@ -194,7 +194,9 @@ std::string Building::getSkipInfo()
 
 void Building::skipBuildingTime()
 {
-	endBuildTime = 0;
+	endBuildTime = 1;
+	//Set 1 for correct work
+	//See declaration of bulding skip time
 }
 
 void Building::skipBuildingProcess(bool payStatus)
