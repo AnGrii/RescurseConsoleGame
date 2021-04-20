@@ -216,7 +216,7 @@ void DataModule::setResourcesExtractData(std::vector<uint64_t> dataVector)
 {
 	bool dataCountBiggerNULL = (dataVector.size() > 0);
 
-	if (dataCountBiggerNULL and dataVector.size() == PLAYER_DATA_COUNT) {
+	if (dataCountBiggerNULL and dataVector.size() == RESOURCES_EXTRACT_DATA_COUNT) {
 		resourcesExtractData.swap(dataVector);
 	}
 	else {

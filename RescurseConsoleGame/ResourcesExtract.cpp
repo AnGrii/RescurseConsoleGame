@@ -16,15 +16,14 @@ std::vector<uint64_t> ResourcesExtract::UploadData()
 {
 	std::vector<uint64_t> dataVector;
 
-	dataVector.resize(RESOURCE_EXTRACT_DATA_COUNT);
+	dataVector.reserve(RESOURCE_EXTRACT_DATA_COUNT);
 
-	uint16_t counter = 0;
-	dataVector[counter] = logExtract; counter++;
-	dataVector[counter] = upgradeLogExtractValue; counter++;
-	dataVector[counter] = woodExtract; counter++;
-	dataVector[counter] = upgradeWoodExtractValue; counter++;
-	dataVector[counter] = stoneExtract; counter++;
-	dataVector[counter] = upgradeStoneExtractValue; counter++;
+	dataVector.push_back(logExtract);
+	dataVector.push_back(upgradeLogExtractValue);
+	dataVector.push_back(woodExtract);
+	dataVector.push_back(upgradeWoodExtractValue);
+	dataVector.push_back(stoneExtract);
+	dataVector.push_back(upgradeStoneExtractValue);
 
 	return dataVector;
 }

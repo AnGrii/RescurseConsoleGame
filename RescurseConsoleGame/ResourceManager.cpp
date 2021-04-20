@@ -30,7 +30,7 @@ std::vector<std::vector<uint64_t>> ResourceManager::UploadData()
 {
 	std::vector<std::vector<uint64_t>> dataVector;
 
-	dataVector.resize(RESOURCES_COUNT);
+	dataVector.reserve(RESOURCES_COUNT);
 
 	for (auto& resource : ReosourcesVector)
 	{

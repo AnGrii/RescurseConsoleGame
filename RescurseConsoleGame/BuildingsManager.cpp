@@ -14,7 +14,7 @@ std::vector<std::vector<uint64_t>> BuildingsManager::UploadData()
 {
 	std::vector<std::vector<uint64_t>> dataVector;
 
-	dataVector.resize(BUILDINGS_COUNT);
+	dataVector.reserve(BUILDINGS_COUNT);
 
 	for (auto& build : BuildingsVector)
 	{
