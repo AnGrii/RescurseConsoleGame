@@ -86,17 +86,18 @@ void BuildingsManager::buildMenu(ResourceManager& res)
 
 void BuildingsManager::work(ResourceManager& res)
 {
-	res.log.add(forestry.getCount() * forestry.getProductivity());
-	res.wood.add(sawmill.getCount() * sawmill.getProductivity());
-	res.stone.add(quarry.getCount() * quarry.getProductivity());
-	res.coal.add(career.getCount() * career.getProductivity());
-	res.copper.add(copperMine.getCount() * copperMine.getProductivity());
-	res.tin.add(tinMine.getCount() * tinMine.getProductivity());
-	res.bronze.add(alloyPlant.getCount() * alloyPlant.getProductivity());
-	res.silver.add(silverCleaner.getCount() * silverCleaner.getProductivity());
-	res.gold.add(goldMine.getCount() * goldMine.getProductivity());
-	res.platina.add(platinaCleaner.getCount() * platinaCleaner.getProductivity());
-	res.diamond.add(diamondFactory.getCount() * diamondFactory.getProductivity());
+	if (BUILDINGS_COUNT != res.RESOURCES_COUNT) {
+		throw std::exception("Different counts!");
+		//WARNING: Count of resources and buildings is equal,
+	//if it will changed, it will cause problem
+	//Change cycle counter to fix
+	}
+
+	for (size_t iterator = 0; iterator < BUILDINGS_COUNT; iterator++)
+	{
+		res.ReosourcesVector[iterator]->add \
+			(BuildingsVector[iterator]->calcProductivity());
+	}
 }
 
 void BuildingsManager::updateBuildingsQueue()
@@ -160,7 +161,7 @@ void BuildingsManager::build(Building& build,
 
 void BuildingsManager::upgradeInfo()
 {
-	char nameIdLIst[11]{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
+	const char nameIdLIst[11]{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
 
 	std::cout << "========== Buildings Upgrade ===========" << std::endl;
 
@@ -173,51 +174,24 @@ void BuildingsManager::upgradeInfo()
 
 void BuildingsManager::upgradeBuildingsMenu(Player& p)
 {
+	const char nameIdLIst[11]{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
+
 	char select = '0';
 	std::cout << "Input building id-name: ";
 	std::cin >> select;
 	std::cout << std::endl;
 
-
-	switch (select)
+	uint16_t buildingId = 0;
+	for (size_t i = 0; i < 11; i++)
 	{
-	case '1':
-		forestry.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
-		break;
-	case '2':
-		sawmill.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
-		break;
-	case '3':
-		quarry.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
-		break;
-	case '4':
-		career.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
-		break;
-	case '5':
-		copperMine.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
-		break;
-	case '6':
-		tinMine.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
-		break;
-	case '7':
-		alloyPlant.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
-		break;
-	case '8':
-		silverCleaner.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
-		break;
-	case '9':
-		goldMine.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
-		break;
-	case 'a':
-		platinaCleaner.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
-		break;
-	case 'b':
-		diamondFactory.increaseProductivity(p.payAndGetStatus(forestry.getUpgradeValue()));
-		break;
-	default:
-		break;
+		if (nameIdLIst[i] == select) { 
+			buildingId = i;
+			break; 
+		}
 	}
 
+	BuildingsVector[buildingId]->increaseProductivity \
+		(p.payAndGetStatus(BuildingsVector[buildingId]->getUpgradeValue()));
 }
 
 void BuildingsManager::printQueueStatus()

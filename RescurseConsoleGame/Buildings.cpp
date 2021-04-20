@@ -5,7 +5,7 @@ void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string na
 	uint16_t counter = 0;
 
 	count =			buildingData[counter];
-	productivity =	buildingData[++counter];
+	productionOutput =	buildingData[++counter];
 	inQueue =		buildingData[++counter];
 	skipTimeValue = buildingData[++counter];
 	upgradeValue = buildingData[++counter];
@@ -26,7 +26,7 @@ std::vector<uint64_t> Building::uploadData()
 
 	uint16_t counter = 0;
 	dataVector[counter] = count; counter++;
-	dataVector[counter] = productivity; counter++;
+	dataVector[counter] = productionOutput; counter++;
 	dataVector[counter] = inQueue; counter++;
 	dataVector[counter] = skipTimeValue; counter++;
 	dataVector[counter] = upgradeValue; counter++;
@@ -96,9 +96,14 @@ uint64_t Building::getCount()
 	return count;
 }
 
-uint64_t Building::getProductivity()
+uint64_t Building::getProductionOutput()
 {
-	return productivity;
+	return productionOutput;
+}
+
+uint64_t Building::calcProductivity()
+{
+	return count * productionOutput;
 }
 
 uint64_t Building::getBuildTime()
@@ -221,7 +226,7 @@ void Building::buildInfo()
 {
 	std::cout << "=========   " << name << "   =========" << std::endl
 		<< "Count:\t\t\t" << count << std::endl
-		<< "Productivity:\t\t" << productivity << std::endl
+		<< "Productivity:\t\t" << productionOutput << std::endl
 		<< "Skip build time value:\t" << skipTimeValue << std::endl
 		<< "Upgrade value:\t\t" << upgradeValue << std::endl
 		<< "Build time:\t\t" << buildTime << std::endl
@@ -247,7 +252,7 @@ std::string Building::getUpgradeBuildInfo()
 	}
 
 	info = info + "Productivity:\t";
-	info = info + std::to_string(productivity);
+	info = info + std::to_string(productionOutput);
 	info = info + "\tUpgrade Value:\t";
 	info = info + std::to_string(upgradeValue);
 
@@ -257,12 +262,12 @@ std::string Building::getUpgradeBuildInfo()
 void Building::increaseProductivity(bool payStatus)
 {
 	if (payStatus) {
-		if (productivity < UINT64_MAX - 2) {
-			productivity++;
+		if (productionOutput < UINT64_MAX - 2) {
+			productionOutput++;
 		}
 		else
 		{
-			productivity = UINT64_MAX - 2;
+			productionOutput = UINT64_MAX - 2;
 		}
 	}
 

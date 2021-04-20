@@ -1,4 +1,4 @@
-- Add different productivity status for building - power( 10%, 25%, 50%, 75%, 100% )
+- Add different productivity status for building - power( 10%, 25%, 50%, 75%, 100%  or custom)
 
 Data loading / saving
 {
@@ -11,8 +11,9 @@ Data loading / saving
 
 - Rewrite building functions to dynamic
 
-- About
+- About (Help to play)
 
+- Auto sell resources (10%, 25%, 50%, 75%, 100% or custom)
 
 ========== DATA_COPY ==========
 playerName:
