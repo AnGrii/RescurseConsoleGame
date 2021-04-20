@@ -9,6 +9,7 @@ Data loading / saving
 - Add building activated menu
 - Add activated to building work! (now it's don't work)
 
+- Rewrite building functions to dynamic
 
 - About
 

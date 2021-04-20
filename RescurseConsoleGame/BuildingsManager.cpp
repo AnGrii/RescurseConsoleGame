@@ -101,10 +101,7 @@ void BuildingsManager::work(ResourceManager& res)
 
 void BuildingsManager::updateBuildingsQueue()
 {
-	for (auto& item : BuildingsVector)
-	{
-		item->updateQueue();
-	}
+	for (auto& item : BuildingsVector) {	item->updateQueue(); }
 }
 
 void BuildingsManager::printBuildRequest(Building build, std::string buildSymb,
@@ -163,18 +160,15 @@ void BuildingsManager::build(Building& build,
 
 void BuildingsManager::upgradeInfo()
 {
-	std::cout << "========== Buildings Upgrade ===========" << std::endl
-		<< "1 - " << forestry.getUpgradeBuildInfo() << std::endl
-		<< "2 - " << sawmill.getUpgradeBuildInfo() << std::endl
-		<< "3 - " << quarry.getUpgradeBuildInfo() << std::endl
-		<< "4 - " << career.getUpgradeBuildInfo() << std::endl
-		<< "5 - " << copperMine.getUpgradeBuildInfo() << std::endl
-		<< "6 - " << tinMine.getUpgradeBuildInfo() << std::endl
-		<< "7 - " << alloyPlant.getUpgradeBuildInfo() << std::endl
-		<< "8 - " << silverCleaner.getUpgradeBuildInfo() << std::endl
-		<< "9 - " << goldMine.getUpgradeBuildInfo() << std::endl
-		<< "a - " << platinaCleaner.getUpgradeBuildInfo() << std::endl
-		<< "b - " << diamondFactory.getUpgradeBuildInfo() << std::endl << std::endl;
+	char nameIdLIst[11]{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
+
+	std::cout << "========== Buildings Upgrade ===========" << std::endl;
+
+	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
+	{
+		std::cout << nameIdLIst[i] << " - " \
+			<< BuildingsVector[i]->getUpgradeBuildInfo() << std::endl;
+	}
 }
 
 void BuildingsManager::upgradeBuildingsMenu(Player& p)

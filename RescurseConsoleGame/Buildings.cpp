@@ -235,11 +235,21 @@ std::string Building::getUpgradeBuildInfo()
 {
 	std::string info;
 
-	info += name;
-	info += "\t\tProductivity:\t";
-	info += std::to_string(productivity);
-	info += "\tUpgrade Value:\t";
-	info += std::to_string(upgradeValue);
+	info = info + name;
+	if(name.size() < 6) {
+		info = info + "\t\t\t";
+	}
+	else if (name.size() <= 11) {
+		info = info + "\t\t";
+	}
+	else {
+		info = info + "\t";
+	}
+
+	info = info + "Productivity:\t";
+	info = info + std::to_string(productivity);
+	info = info + "\tUpgrade Value:\t";
+	info = info + std::to_string(upgradeValue);
 
 	return info;
 }
