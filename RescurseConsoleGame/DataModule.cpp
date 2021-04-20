@@ -152,3 +152,33 @@ std::vector<double> DataModule::getMarketData()
 {
 	return marketData;
 }
+
+void DataModule::setPlayerName(std::vector<std::string> dataVector)
+{
+	playerNameData.swap(dataVector);
+}
+
+void DataModule::setPlayerData(std::vector<uint64_t> dataVector)
+{
+	playerData.swap(dataVector);
+}
+
+void DataModule::setRecourcesData(std::vector<std::vector<uint64_t>> dataVector)
+{
+	resourcesData.swap(dataVector);
+}
+
+void DataModule::setBuildingsData(std::vector<std::vector<uint64_t>> dataVector)
+{
+	buildingsData.swap(dataVector);
+}
+
+void DataModule::getResourcesExtractData(std::vector<uint64_t> dataVector)
+{
+	resourcesExtractData.swap(dataVector);
+}
+
+void DataModule::getMarketData(std::vector<double> dataVector)
+{
+	marketData.swap(dataVector);
+}

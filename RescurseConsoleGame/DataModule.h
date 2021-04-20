@@ -29,10 +29,22 @@ public:
 	std::vector<std::string> getBuildingsNameData();
 	std::vector<std::vector<uint64_t>> getBuildingsData();
 	
-
 	std::vector<uint64_t> getResourcesExtractData();
 
 	std::vector<double> getMarketData();
+
+	void setPlayerName(std::vector<std::string> dataVector);
+	void setPlayerData(std::vector<uint64_t> dataVector);
+
+	//Resources name data not changing in program, actual data will be normal to save
+	void setRecourcesData(std::vector<std::vector<uint64_t>> dataVector);
+
+	//Buildings name data not changing in program, actual data will be normal to save
+	void setBuildingsData(std::vector<std::vector<uint64_t>> dataVector);
+
+	 void getResourcesExtractData(std::vector<uint64_t> dataVector);
+
+	 void getMarketData(std::vector<double> dataVector);
 
 private:
 	const std::string dataFileName = "Data.txt",
