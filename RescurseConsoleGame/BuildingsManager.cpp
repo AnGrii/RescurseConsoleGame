@@ -264,64 +264,35 @@ void BuildingsManager::printBuildingsInfo()
 
 void BuildingsManager::SkipBuildingMenu(Player &p)
 {
-	std::cout << "=====\tValue of skip time of building\t=====" << std::endl;
-	std::cout << forestry.getSkipInfo('1') << std::endl
-		<< sawmill.getSkipInfo('2') << std::endl
-		<< quarry.getSkipInfo('3') << std::endl
-		<< career.getSkipInfo('4') << std::endl
-		<< copperMine.getSkipInfo('5') << std::endl
-		<< tinMine.getSkipInfo('6') << std::endl
-		<< alloyPlant.getSkipInfo('7') << std::endl
-		<< silverCleaner.getSkipInfo('8') << std::endl
-		<< goldMine.getSkipInfo('9') << std::endl
-		<< platinaCleaner.getSkipInfo('a') << std::endl
-		<< diamondFactory.getSkipInfo('b') << std::endl;
+	const char nameIdLIst[11]{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
 
-	char select;
+	std::cout << "=====\tValue of skip time of building\t=====" << std::endl;
+
+	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
+	{
+		std::string info = BuildingsVector[i]->getSkipInfo();
+
+		if (info != "-") {
+			std::cout << nameIdLIst[i] << ' ' << info << std::endl;
+		}
+	}
+
+	char select = '0';
 	std::cout << "Input skip build id: ";
 	std::cin >> select;
 	std::cout << std::endl;
 
-	switch (select)
+	uint16_t buildingId = 0;
+	for (size_t i = 0; i < 11; i++)
 	{
-	case '1':
-		forestry.skipBuildingProcess(p.payAndGetStatus(forestry.getSkipValue()));
-		break;
-	case '2':
-		sawmill.skipBuildingProcess(p.payAndGetStatus(sawmill.getSkipValue()));
-		break;
-	case '3':
-		quarry.skipBuildingProcess(p.payAndGetStatus(quarry.getSkipValue()));
-		break;
-	case '4':
-		career.skipBuildingProcess(p.payAndGetStatus(career.getSkipValue()));
-		break;
-	case '5':
-		copperMine.skipBuildingProcess(p.payAndGetStatus(copperMine.getSkipValue()));
-		break;
-	case '6':
-		tinMine.skipBuildingProcess(p.payAndGetStatus(tinMine.getSkipValue()));
-		break;
-	case '7':
-		alloyPlant.skipBuildingProcess(p.payAndGetStatus(alloyPlant.getSkipValue()));
-		break;
-	case '8':
-		silverCleaner.skipBuildingProcess(p.payAndGetStatus(silverCleaner.getSkipValue()));
-		break;
-	case '9':
-		goldMine.skipBuildingProcess(p.payAndGetStatus(goldMine.getSkipValue()));
-		break;
-	case 'a':
-		platinaCleaner.skipBuildingProcess(p.payAndGetStatus(platinaCleaner.getSkipValue()));
-		break;
-	case 'b':
-		diamondFactory.skipBuildingProcess(p.payAndGetStatus(diamondFactory.getSkipValue()));
-		break;
-	default:
-		std::cout << "Wrong input!" << std::endl << std::endl;
-		break;
+		if (nameIdLIst[i] == select) {
+			buildingId = i;
+			break;
+		}
 	}
 
+	BuildingsVector[buildingId]->skipBuildingProcess \
+		(p.payAndGetStatus(BuildingsVector[buildingId]->getSkipValue()));
 }
 
 void BuildingsManager::upgradeMenu(Player& p)

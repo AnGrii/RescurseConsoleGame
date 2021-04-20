@@ -46,7 +46,7 @@ public:
 	void updateQueue();
 	std::string getQueueInfo();
 
-	std::string getSkipInfo(char nameId);
+	std::string getSkipInfo();
 	
 	void skipBuildingProcess(bool payStatus);
 	void brokeBuild();

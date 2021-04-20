@@ -179,14 +179,13 @@ std::string Building::getQueueInfo()
 	return "-";
 }
 
-std::string Building::getSkipInfo(char nameId)
+std::string Building::getSkipInfo()
 {
 	if (this->isInQueue()) {
 		std::string info;
 
-		info = info + nameId + " - " + name + "\t-\t\t";
+		info = "- " + name + "\t-\t";
 		info = info + std::to_string(skipTimeValue);
-		info = info + "\n\n";
 
 		return info;
 	}
@@ -205,7 +204,8 @@ void Building::skipBuildingProcess(bool payStatus)
 			this->skipBuildingTime();
 			this->increaseSkipValue();
 
-			std::cout << name << " building skiped!" << std::endl << std::endl;
+			std::cout << name << " building skiped!" << std::endl
+				<< std::endl;
 		}
 		else
 		{
