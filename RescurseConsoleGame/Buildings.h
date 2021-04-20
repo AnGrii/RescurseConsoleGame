@@ -13,8 +13,8 @@ public:
 		skipTimeValue(0), upgradeValue(0), buildTime(0), endBuildTime(0),
 		resource1(0), resource2(0), resource3(0), activated(0),
 	name("NoName"){}
-
 	void Reinitialisate(std::vector<uint64_t> buildingData, std::string name);
+	std::vector<uint64_t> uploadData();
 
 	uint64_t getRes1();
 	uint64_t getRes2();
@@ -58,6 +58,8 @@ public:
 	std::string getName() { return name; }
 
 private:
+	static const uint16_t BUILDING_DATA_COUNT = 11;
+
 	uint64_t count, productivity, inQueue, skipTimeValue, upgradeValue, 
 		buildTime, endBuildTime, resource1, resource2, resource3;
 	bool activated;

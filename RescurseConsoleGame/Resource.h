@@ -12,6 +12,8 @@ public:
 	void Reinitialisate(std::string name,
 		std::vector<uint64_t> dataList);
 
+	std::vector<uint64_t> uploadData();
+
 	uint64_t getCount();
 	uint64_t& getCountLink();
 
@@ -26,6 +28,8 @@ public:
 	std::string getNameAndCountInfo();
 
 private:
+	static const uint16_t RESOURCES_DATA_COUNT = 2;
+
 	uint64_t count, value;
 	std::string name;
 };

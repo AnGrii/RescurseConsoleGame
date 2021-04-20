@@ -18,6 +18,28 @@ void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string na
 	this->name = name;
 }
 
+std::vector<uint64_t> Building::uploadData()
+{
+	std::vector<uint64_t> dataVector;
+
+	dataVector.resize(BUILDING_DATA_COUNT);
+
+	uint16_t counter = 0;
+	dataVector[counter] = count; counter++;
+	dataVector[counter] = productivity; counter++;
+	dataVector[counter] = inQueue; counter++;
+	dataVector[counter] = skipTimeValue; counter++;
+	dataVector[counter] = upgradeValue; counter++;
+	dataVector[counter] = buildTime; counter++;
+	dataVector[counter] = endBuildTime; counter++;
+	dataVector[counter] = resource1; counter++;
+	dataVector[counter] = resource2; counter++;
+	dataVector[counter] = resource3; counter++;
+	dataVector[counter] = activated; counter++;
+
+	return dataVector;
+}
+
 uint64_t Building::getRes1()
 {
 	return resource1;

@@ -18,6 +18,7 @@ ResourceManager::ResourceManager(std::vector<std::string> nameList,
 	diamond.Reinitialisate	(nameList[counter], dataList[counter]); counter++;
 }
 
+
 void ResourceManager::printResourcesCount()
 {
 	std::cout

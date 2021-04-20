@@ -6,6 +6,10 @@ Data loading / saving
 	if loading of data file fail game will create new
 }
 
+- Add building activated menu
+- Add activated to building work! (now it's don't work)
+
+
 - About
 
 
