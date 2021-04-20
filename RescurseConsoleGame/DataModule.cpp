@@ -155,30 +155,83 @@ std::vector<double> DataModule::getMarketData()
 
 void DataModule::setPlayerName(std::vector<std::string> dataVector)
 {
-	playerNameData.swap(dataVector);
+	bool dataCountBiggerNULL = (dataVector.size() > 0);
+
+	if (dataCountBiggerNULL and dataVector.size() == PLAYER_DATA_COUNT) {
+		playerNameData.swap(dataVector);
+	}
+	else {
+		throw std::exception("Wrong player name data size (Wrong data)!");
+	}
 }
 
 void DataModule::setPlayerData(std::vector<uint64_t> dataVector)
 {
-	playerData.swap(dataVector);
+	bool dataCountBiggerNULL = (dataVector.size() > 0);
+
+	if (dataCountBiggerNULL and dataVector.size() == PLAYER_DATA_COUNT) {
+		playerData.swap(dataVector);
+	}
+	else {
+		throw std::exception("Wrong player data list size (Wrong data)!");
+	}
 }
 
 void DataModule::setRecourcesData(std::vector<std::vector<uint64_t>> dataVector)
 {
-	resourcesData.swap(dataVector);
+	bool dataCountBiggerNULL = (dataVector.size() > 0);
+
+	if (dataCountBiggerNULL and (dataVector.size() == RESOURCES_COUNT)) {
+		if (dataVector[0].size() == RESOURCES_DATA_COUNT) {
+			resourcesData.swap(dataVector);
+		}
+		else {
+			throw std::exception("Wrong recources data list size (Wrong data)!");
+		}
+	}
+	else {
+		throw std::exception("Wrong recources data list size (Wrong data)!");
+	}
 }
 
 void DataModule::setBuildingsData(std::vector<std::vector<uint64_t>> dataVector)
 {
-	buildingsData.swap(dataVector);
+	bool dataCountBiggerNULL = (dataVector.size() > 0); //To prevent error .size() on data_count
+	bool securityOfSwapData = (dataVector.size() == BUILDING_COUNT);
+
+	if (dataCountBiggerNULL and securityOfSwapData) {
+		if (dataVector[0].size() == BUILDING_DATA_COUNT) {
+			buildingsData.swap(dataVector);
+		}
+		else {
+			throw std::exception("Wrong buildings data list size (Wrong data)!");
+		}
+	}
+	else {
+		throw std::exception("Wrong buildings data list size (Wrong data)!");
+	}
 }
 
 void DataModule::getResourcesExtractData(std::vector<uint64_t> dataVector)
 {
-	resourcesExtractData.swap(dataVector);
+	bool dataCountBiggerNULL = (dataVector.size() > 0);
+
+	if (dataCountBiggerNULL and dataVector.size() == PLAYER_DATA_COUNT) {
+		resourcesExtractData.swap(dataVector);
+	}
+	else {
+		throw std::exception("Wrong resource extract list size (Wrong data)!");
+	}
 }
 
 void DataModule::getMarketData(std::vector<double> dataVector)
 {
-	marketData.swap(dataVector);
+	bool dataCountBiggerNULL = (dataVector.size() > 0);
+
+	if (dataCountBiggerNULL and dataVector.size() == PLAYER_DATA_COUNT) {
+		marketData.swap(dataVector);
+	}
+	else {
+		throw std::exception("Wrong market data data list size (Wrong data)!");
+	}
 }
