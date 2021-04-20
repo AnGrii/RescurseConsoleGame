@@ -223,7 +223,7 @@ void Building::buildInfo()
 		<< "Count:\t\t\t" << count << std::endl
 		<< "Productivity:\t\t" << productivity << std::endl
 		<< "Skip build time value:\t" << skipTimeValue << std::endl
-		<< "Upgrade value:\t" << upgradeValue << std::endl
+		<< "Upgrade value:\t\t" << upgradeValue << std::endl
 		<< "Build time:\t\t" << buildTime << std::endl
 		<< "Resource1 needed:\t" << resource1 << std::endl
 		<< "Resource2 needed:\t" << resource2 << std::endl

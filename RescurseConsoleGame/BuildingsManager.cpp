@@ -3,14 +3,11 @@
 BuildingsManager::BuildingsManager(std::vector<std::string> nameData,
 	std::vector<std::vector<uint64_t>> buildingsData)
 {
-	uint16_t counter = 0;
-
-	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
+	for (size_t counter = 0; counter < BUILDINGS_COUNT; counter++)
 	{
-		BuildingsVector[i]->Reinitialisate \
-			(buildingsData[counter], nameData[counter]); counter++;
+		BuildingsVector[counter]->Reinitialisate \
+			(buildingsData[counter], nameData[counter]);
 	}
-
 }
 
 void BuildingsManager::buildMenu(ResourceManager& res)
@@ -104,17 +101,10 @@ void BuildingsManager::work(ResourceManager& res)
 
 void BuildingsManager::updateBuildingsQueue()
 {
-	forestry.updateQueue();
-	sawmill.updateQueue();
-	quarry.updateQueue();
-	career.updateQueue();
-	copperMine.updateQueue();
-	tinMine.updateQueue();
-	alloyPlant.updateQueue();
-	silverCleaner.updateQueue();
-	goldMine.updateQueue();
-	platinaCleaner.updateQueue();
-	diamondFactory.updateQueue();
+	for (auto& item : BuildingsVector)
+	{
+		item->updateQueue();
+	}
 }
 
 void BuildingsManager::printBuildRequest(Building build, std::string buildSymb,
@@ -238,20 +228,14 @@ void BuildingsManager::upgradeBuildingsMenu(Player& p)
 
 void BuildingsManager::printQueueStatus()
 {
-#define ifPrint(obj) if (obj.isInQueue()) \
- std::cout << obj.getQueueInfo() << std::endl << std::endl
+	for (auto& item : BuildingsVector)
+	{
+		std::string info = item->getQueueInfo();
 
-	ifPrint(forestry);
-	ifPrint(sawmill);
-	ifPrint(quarry);
-	ifPrint(career);
-	ifPrint(copperMine);
-	ifPrint(tinMine);
-	ifPrint(alloyPlant);
-	ifPrint(silverCleaner);
-	ifPrint(goldMine);
-	ifPrint(platinaCleaner);
-	ifPrint(diamondFactory);
+		if (info != "-") {
+			std::cout << info << std::endl << std::endl;
+		}
+	}
 }
 
 void BuildingsManager::brokeEvent()
@@ -304,17 +288,10 @@ void BuildingsManager::brokeEvent()
 
 void BuildingsManager::printBuildingsInfo()
 {
-	forestry.buildInfo();
-	sawmill.buildInfo();
-	quarry.buildInfo();
-	career.buildInfo();
-	copperMine.buildInfo();
-	tinMine.buildInfo();
-	alloyPlant.buildInfo();
-	silverCleaner.buildInfo();
-	goldMine.buildInfo();
-	platinaCleaner.buildInfo();
-	diamondFactory.buildInfo();
+	for (auto& item : BuildingsVector)
+	{
+		item->buildInfo();
+	}
 }
 
 void BuildingsManager::SkipBuildingMenu(Player &p)
