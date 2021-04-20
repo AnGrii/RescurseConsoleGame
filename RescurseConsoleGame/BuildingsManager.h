@@ -32,11 +32,20 @@ public:
 
 	void upgradeMenu(Player& p);
 private:
+	static const uint16_t BUILDINGS_COUNT = 11;
+
 	Building
 		forestry, sawmill, quarry, career,
 		copperMine, tinMine, alloyPlant,
 		silverCleaner, goldMine,
 		platinaCleaner, diamondFactory;
+
+	Building* BuildingsVector[BUILDINGS_COUNT]{
+		&forestry, &sawmill,& quarry,& career,
+		&copperMine,& tinMine,& alloyPlant,
+		&silverCleaner,& goldMine,
+		&platinaCleaner,& diamondFactory
+	};
 
 	void printBuildRequest(Building build, std::string buildSymb,
 		std::string resourceName1,

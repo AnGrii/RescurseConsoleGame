@@ -5,17 +5,12 @@ BuildingsManager::BuildingsManager(std::vector<std::string> nameData,
 {
 	uint16_t counter = 0;
 
-	forestry.Reinitialisate			(buildingsData[counter], nameData[counter]); counter++;
-	sawmill.Reinitialisate			(buildingsData[counter], nameData[counter]); counter++;
-	quarry.Reinitialisate			(buildingsData[counter], nameData[counter]); counter++;
-	career.Reinitialisate			(buildingsData[counter], nameData[counter]); counter++;
-	copperMine.Reinitialisate		(buildingsData[counter], nameData[counter]); counter++;
-	tinMine.Reinitialisate			(buildingsData[counter], nameData[counter]); counter++;
-	alloyPlant.Reinitialisate		(buildingsData[counter], nameData[counter]); counter++;
-	silverCleaner.Reinitialisate	(buildingsData[counter], nameData[counter]); counter++;
-	goldMine.Reinitialisate			(buildingsData[counter], nameData[counter]); counter++;
-	platinaCleaner.Reinitialisate	(buildingsData[counter], nameData[counter]); counter++;
-	diamondFactory.Reinitialisate	(buildingsData[counter], nameData[counter]); counter++;
+	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
+	{
+		BuildingsVector[i]->Reinitialisate \
+			(buildingsData[counter], nameData[counter]); counter++;
+	}
+
 }
 
 void BuildingsManager::buildMenu(ResourceManager& res)
