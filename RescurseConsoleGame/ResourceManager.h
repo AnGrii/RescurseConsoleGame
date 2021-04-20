@@ -21,7 +21,7 @@ public:
 
 	ResourceManager(std::vector<std::string> nameList,
 		std::vector< std::vector<uint64_t>> dataList);
-	//std::vector< std::vector<uint64_t>> uploadData();
+	std::vector< std::vector<uint64_t>> UploadData();
 
 	void printResourcesCount();
 };

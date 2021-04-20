@@ -11,7 +11,7 @@ void Resource::Reinitialisate(std::string name,
 	this->value = dataList[counter]; counter++;
 }
 
-std::vector<uint64_t> Resource::uploadData()
+std::vector<uint64_t> Resource::UploadData()
 {
 	std::vector<uint64_t> dataVector;
 

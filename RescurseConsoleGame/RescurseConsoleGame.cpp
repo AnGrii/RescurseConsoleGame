@@ -91,14 +91,24 @@ int main()
             data.restoreData(g_DataFileName);
             break;
         case 'x': 
+        {
+            data.setPlayerName(player.getPlayerNameData());
+            data.setPlayerData(player.getPlayerData());
+            data.setRecourcesData(resManager.UploadData());
+            data.setBuildingsData(buildings.UploadData());
+            data.setResourcesExtractData(resExtract.UploadData());
+            data.setMarketData(market.UploadData());
+
             data.saveData(g_DataFileName);
             g_Exit = true;
             break;
+
+        }
         default:
             GameMessage::incorrectInput();
             break;
         }
     }
-   
+
     return 0;
 }

@@ -12,6 +12,23 @@ ResourcesExtract::ResourcesExtract(std::vector<uint64_t> dataList)
 	upgradeStoneExtractValue = dataList[counter++];	
 }
 
+std::vector<uint64_t> ResourcesExtract::UploadData()
+{
+	std::vector<uint64_t> dataVector;
+
+	dataVector.resize(RESOURCE_EXTRACT_DATA_COUNT);
+
+	uint16_t counter = 0;
+	dataVector[counter] = logExtract; counter++;
+	dataVector[counter] = upgradeLogExtractValue; counter++;
+	dataVector[counter] = woodExtract; counter++;
+	dataVector[counter] = upgradeWoodExtractValue; counter++;
+	dataVector[counter] = stoneExtract; counter++;
+	dataVector[counter] = upgradeStoneExtractValue; counter++;
+
+	return dataVector;
+}
+
 void ResourcesExtract::extract(Resource& log, Resource& wood, Resource& stone)
 {
 	std::cout << "Select type of resource!" << std::endl

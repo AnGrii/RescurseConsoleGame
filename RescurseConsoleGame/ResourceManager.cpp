@@ -25,3 +25,17 @@ void ResourceManager::printResourcesCount()
 	}
 	std::cout << std::endl;
 }
+
+std::vector<std::vector<uint64_t>> ResourceManager::UploadData()
+{
+	std::vector<std::vector<uint64_t>> dataVector;
+
+	dataVector.resize(RESOURCES_COUNT);
+
+	for (auto& resource : ReosourcesVector)
+	{
+		dataVector.push_back(resource->UploadData());
+	}
+
+	return dataVector;
+}

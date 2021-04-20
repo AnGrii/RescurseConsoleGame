@@ -212,7 +212,7 @@ void DataModule::setBuildingsData(std::vector<std::vector<uint64_t>> dataVector)
 	}
 }
 
-void DataModule::getResourcesExtractData(std::vector<uint64_t> dataVector)
+void DataModule::setResourcesExtractData(std::vector<uint64_t> dataVector)
 {
 	bool dataCountBiggerNULL = (dataVector.size() > 0);
 
@@ -224,7 +224,7 @@ void DataModule::getResourcesExtractData(std::vector<uint64_t> dataVector)
 	}
 }
 
-void DataModule::getMarketData(std::vector<double> dataVector)
+void DataModule::setMarketData(std::vector<double> dataVector)
 {
 	bool dataCountBiggerNULL = (dataVector.size() > 0);
 

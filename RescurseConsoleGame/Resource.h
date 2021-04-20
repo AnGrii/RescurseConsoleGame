@@ -11,8 +11,7 @@ public:
 	Resource() : count(0), value(0), name("NoName"){}
 	void Reinitialisate(std::string name,
 		std::vector<uint64_t> dataList);
-
-	std::vector<uint64_t> uploadData();
+	std::vector<uint64_t> UploadData();
 
 	uint64_t getCount();
 	uint64_t& getCountLink();

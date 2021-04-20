@@ -51,3 +51,21 @@ bool Player::payAndGetStatus(uint64_t count)
 	}
 	return false;//exit branch
 }
+
+std::vector<std::string> Player::getPlayerNameData()
+{
+	std::vector<std::string> dataVector;
+
+	dataVector.push_back(name);
+
+	return dataVector;
+}
+
+std::vector<uint64_t> Player::getPlayerData()
+{
+	std::vector<uint64_t> dataVector;
+
+	dataVector.push_back(balance);
+
+	return dataVector;
+}

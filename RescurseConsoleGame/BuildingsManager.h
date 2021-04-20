@@ -15,6 +15,7 @@ class BuildingsManager
 public:
 	BuildingsManager(std::vector<std::string> nameData,
 		std::vector< std::vector<uint64_t>> buildingsData);
+	std::vector<std::vector<uint64_t>> UploadData();
 
 	void buildMenu(ResourceManager& res);
 

@@ -18,7 +18,7 @@ void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string na
 	this->name = name;
 }
 
-std::vector<uint64_t> Building::uploadData()
+std::vector<uint64_t> Building::UploadData()
 {
 	std::vector<uint64_t> dataVector;
 
@@ -164,6 +164,7 @@ void Building::updateQueue()
 		}
 	}
 }
+
 
 std::string Building::getQueueInfo()
 {

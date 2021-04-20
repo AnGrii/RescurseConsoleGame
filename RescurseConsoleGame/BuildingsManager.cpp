@@ -10,6 +10,20 @@ BuildingsManager::BuildingsManager(std::vector<std::string> nameData,
 	}
 }
 
+std::vector<std::vector<uint64_t>> BuildingsManager::UploadData()
+{
+	std::vector<std::vector<uint64_t>> dataVector;
+
+	dataVector.resize(BUILDINGS_COUNT);
+
+	for (auto& build : BuildingsVector)
+	{
+		dataVector.push_back(build->UploadData());
+	}
+
+	return dataVector;
+}
+
 void BuildingsManager::buildMenu(ResourceManager& res)
 {
 	std::cout << "Select build:" << std::endl;

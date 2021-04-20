@@ -7,6 +7,15 @@ Market::Market(std::vector<double> dataList)
 	sellCOeficient = dataList[counter++];
 }
 
+std::vector<double> Market::UploadData()
+{
+	std::vector<double> dataVector;
+
+	dataVector.push_back(sellCOeficient);
+
+	return dataVector;
+}
+
 void Market::buySellMenu(Player& p, ResourceManager &rm)
 {
 	showBuySellInfo(rm);

@@ -9,6 +9,7 @@ class ResourcesExtract
 {
 public:
 	ResourcesExtract(std::vector<uint64_t> dataList);
+	std::vector<uint64_t> UploadData();
 
 	void extract(Resource& log, Resource& wood, Resource& stone);
 
@@ -16,6 +17,7 @@ public:
 
 private:
 	const double VALUE_INCREASE_COEFICIENT = 0.2;
+	const uint16_t RESOURCE_EXTRACT_DATA_COUNT = 6;
 
 	uint64_t logExtract, upgradeLogExtractValue,
 		woodExtract, upgradeWoodExtractValue,

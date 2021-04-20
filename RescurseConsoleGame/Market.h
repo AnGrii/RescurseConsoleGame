@@ -11,11 +11,12 @@ class Market
 {
 public:
 	Market(std::vector<double> dataList);
-
+	std::vector<double> UploadData();
+	
 	void buySellMenu(Player& p, ResourceManager &rm);
 
 private:
-	double sellCOeficient = 1;
+	double sellCOeficient;
 
 
 	void showBuySellInfo(ResourceManager &rm);

@@ -42,9 +42,9 @@ public:
 	//Buildings name data not changing in program, actual data will be normal to save
 	void setBuildingsData(std::vector<std::vector<uint64_t>> dataVector);
 
-	 void getResourcesExtractData(std::vector<uint64_t> dataVector);
+	 void setResourcesExtractData(std::vector<uint64_t> dataVector);
 
-	 void getMarketData(std::vector<double> dataVector);
+	 void setMarketData(std::vector<double> dataVector);
 
 private:
 	const std::string dataFileName = "Data.txt",

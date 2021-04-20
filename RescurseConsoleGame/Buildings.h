@@ -14,7 +14,7 @@ public:
 		resource1(0), resource2(0), resource3(0), activated(0),
 	name("NoName"){}
 	void Reinitialisate(std::vector<uint64_t> buildingData, std::string name);
-	std::vector<uint64_t> uploadData();
+	std::vector<uint64_t> UploadData();
 
 	uint64_t getRes1();
 	uint64_t getRes2();
