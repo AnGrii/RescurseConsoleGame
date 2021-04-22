@@ -25,7 +25,7 @@ public:
 	void printQueueStatus();
 	void updateBuildingsQueue();
 	
-	void printProductivityInfo();
+	void productivitySettingMenu();
 
 	void SkipBuildingMenu(Player& p);
 

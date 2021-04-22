@@ -119,7 +119,7 @@ void BuildingsManager::updateBuildingsQueue()
 	for (auto& item : BuildingsVector) { item->updateQueue(); }
 }
 
-void BuildingsManager::printProductivityInfo()
+void BuildingsManager::productivitySettingMenu()
 {
 	const char nameIdLIst[11] { '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
 
@@ -130,8 +130,31 @@ void BuildingsManager::printProductivityInfo()
 		std::cout << nameIdLIst[i] << " - " \
 			<< BuildingsVector[i]->getProductivityInfo() << std::endl;
 	}
-
 	std::cout << std::endl;
+
+	char select = '0';
+	std::cout << "Input building id-name: ";
+	std::cin >> select;
+	std::cout << std::endl;
+
+	uint16_t buildingId = 0;
+	for (size_t i = 0; i < 11; i++)
+	{
+		if (nameIdLIst[i] == select) {
+			buildingId = i;
+			break;
+		}
+	}
+
+	std::string str_percent = "0";
+	uint64_t int_percent = 0;
+	std::cout << "Input percent: ";
+	std::cin >> str_percent;
+	std::cout << std::endl;
+
+	int_percent = std::atol(str_percent.data());
+
+	BuildingsVector[buildingId]->setProductivity(int_percent);
 }
 
 void BuildingsManager::printBuildRequest(Building build, std::string buildSymb,

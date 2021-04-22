@@ -121,7 +121,7 @@ std::string Building::getProductivityInfo()
 	std::string info;
 
 	info = name;
-	if (name.length() < 8) {
+	if (name.length() < 6) {
 		info = info + "\t\t\t";
 	}
 	else {

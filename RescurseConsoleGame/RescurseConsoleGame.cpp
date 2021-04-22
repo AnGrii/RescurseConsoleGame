@@ -82,7 +82,7 @@ int main()
             buildings.upgradeMenu(player);
             break;
         case 'p':
-            buildings.printProductivityInfo();
+            buildings.productivitySettingMenu();
             break;
         case 'i':
             buildings.printBuildingsInfo();
