@@ -134,6 +134,22 @@ std::string Building::getProductivityInfo()
 	return info;
 }
 
+bool Building::getActiveStatus()
+{
+	return false;
+}
+
+void Building::setProductivity(uint64_t percent)
+{
+	if (percent <= 100) {
+		this->powerPercent = percent;
+	}
+	else
+	{
+		this->powerPercent = 100;
+	}
+}
+
 uint64_t Building::getSkipValue()
 {
 	return skipTimeValue;

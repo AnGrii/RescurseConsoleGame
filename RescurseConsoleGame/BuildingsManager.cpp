@@ -121,10 +121,16 @@ void BuildingsManager::updateBuildingsQueue()
 
 void BuildingsManager::printProductivityInfo()
 {
-	for (auto& item : BuildingsVector)
+	const char nameIdLIst[11] { '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
+
+	std::cout << "========== Buildings Productivity ===========" << std::endl;
+
+	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
 	{
-		std::cout << item->getProductivityInfo() << std::endl;
+		std::cout << nameIdLIst[i] << " - " \
+			<< BuildingsVector[i]->getProductivityInfo() << std::endl;
 	}
+
 	std::cout << std::endl;
 }
 

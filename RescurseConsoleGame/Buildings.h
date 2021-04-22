@@ -31,10 +31,13 @@ public:
 	void addCount(uint64_t addCount);
 
 	uint64_t getCount();
+
 	uint64_t getProductionOutput();
 	uint64_t calcProductivity(); //Calculate
+	void setProductivity(uint64_t percent);
 	std::string getProductivityInfo();
 	
+
 	uint64_t getBuildTime();
 	bool getActiveStatus();
 	
