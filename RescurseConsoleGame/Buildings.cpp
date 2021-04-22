@@ -8,13 +8,13 @@ void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string na
 	productionOutput =	buildingData[++counter];
 	inQueue =		buildingData[++counter];
 	skipTimeValue = buildingData[++counter];
-	upgradeValue = buildingData[++counter];
+	upgradeValue =  buildingData[++counter];
 	buildTime =		buildingData[++counter];
 	endBuildTime =	buildingData[++counter];
 	resource1 =		buildingData[++counter];
 	resource2 =		buildingData[++counter];
 	resource3 =		buildingData[++counter];
-	activated =		buildingData[++counter];
+	powerPercent =	buildingData[++counter];
 	this->name = name;
 }
 
@@ -25,17 +25,17 @@ std::vector<uint64_t> Building::UploadData()
 	dataVector.resize(BUILDING_DATA_COUNT);
 
 	uint16_t counter = 0;
-	dataVector[counter] = count; counter++;
+	dataVector[counter] = count;		counter++;
 	dataVector[counter] = productionOutput; counter++;
-	dataVector[counter] = inQueue; counter++;
+	dataVector[counter] = inQueue;		counter++;
 	dataVector[counter] = skipTimeValue; counter++;
 	dataVector[counter] = upgradeValue; counter++;
-	dataVector[counter] = buildTime; counter++;
+	dataVector[counter] = buildTime;	counter++;
 	dataVector[counter] = endBuildTime; counter++;
-	dataVector[counter] = resource1; counter++;
-	dataVector[counter] = resource2; counter++;
-	dataVector[counter] = resource3; counter++;
-	dataVector[counter] = activated; counter++;
+	dataVector[counter] = resource1;	counter++;
+	dataVector[counter] = resource2;	counter++;
+	dataVector[counter] = resource3;	counter++;
+	dataVector[counter] = powerPercent; counter++;
 
 	return dataVector;
 }
@@ -103,7 +103,12 @@ uint64_t Building::getProductionOutput()
 
 uint64_t Building::calcProductivity()
 {
-	return count * productionOutput;
+	uint64_t productivity = count * productionOutput * (powerPercent / 100.0);
+
+	if (productivity > 0) {
+		return productivity;
+	}
+	else { return 1; }
 }
 
 uint64_t Building::getBuildTime()
@@ -111,9 +116,22 @@ uint64_t Building::getBuildTime()
 	return buildTime;
 }
 
-bool Building::getActiveStatus()
+std::string Building::getProductivityInfo()
 {
-	return activated;
+	std::string info;
+
+	info = name;
+	if (name.length() < 8) {
+		info = info + "\t\t\t";
+	}
+	else {
+		info = info + "\t\t";
+	}
+
+	info = info + "Productivity: \t";
+	info = info + std::to_string(powerPercent);
+
+	return info;
 }
 
 uint64_t Building::getSkipValue()
@@ -236,7 +254,7 @@ void Building::buildInfo()
 		<< "Resource1 needed:\t" << resource1 << std::endl
 		<< "Resource2 needed:\t" << resource2 << std::endl
 		<< "Resource3 needed:\t" << resource3 << std::endl
-		<< "Activated:\t\t" << activated << std::endl << std::endl;
+		<< "Power Percent:\t\t" << powerPercent << std::endl << std::endl;
 }
 
 std::string Building::getUpgradeBuildInfo()

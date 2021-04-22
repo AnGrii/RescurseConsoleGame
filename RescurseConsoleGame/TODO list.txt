@@ -1,19 +1,19 @@
-- Add different productivity status for building - power( 10%, 25%, 50%, 75%, 100%  or custom)
+- Replace activated value
+
 
 Data loading / saving
 {
-	Data save fix( data need to be downloaded from classes)
 	if loading of data file fail game will create new
 }
 
-- Add building activated menu
-- Add activated to building work! (now it's don't work)
+- Add building productivity settings menu
+- Add productivity settings for building work!
 
 - Rewrite building functions to dynamic
 
 - About (Help to play)
 
-- Auto sell resources (10%, 25%, 50%, 75%, 100% or custom)
+- Auto sell resources (0%, 10%, 25%, 50%, 75%, 100% or custom)
 
 ========== DATA_COPY ==========
 playerName:

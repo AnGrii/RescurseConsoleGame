@@ -119,6 +119,15 @@ void BuildingsManager::updateBuildingsQueue()
 	for (auto& item : BuildingsVector) { item->updateQueue(); }
 }
 
+void BuildingsManager::printProductivityInfo()
+{
+	for (auto& item : BuildingsVector)
+	{
+		std::cout << item->getProductivityInfo() << std::endl;
+	}
+	std::cout << std::endl;
+}
+
 void BuildingsManager::printBuildRequest(Building build, std::string buildSymb,
 	std::string resourceName1,
 	std::string resourceName2,

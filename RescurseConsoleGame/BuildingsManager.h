@@ -15,23 +15,24 @@ class BuildingsManager
 public:
 	BuildingsManager(std::vector<std::string> nameData,
 		std::vector< std::vector<uint64_t>> buildingsData);
-	std::vector<std::vector<uint64_t>> UploadData();
 
-	void buildMenu(ResourceManager& res);
+	std::vector<std::vector<uint64_t>> UploadData();
 
 	void work(ResourceManager& res);
 
-	void updateBuildingsQueue();
+	void printBuildingsInfo();
 
 	void printQueueStatus();
-
-	void brokeEvent();
-
-	void printBuildingsInfo();
+	void updateBuildingsQueue();
+	
+	void printProductivityInfo();
 
 	void SkipBuildingMenu(Player& p);
 
 	void upgradeMenu(Player& p);
+	void buildMenu(ResourceManager& res);
+
+	void brokeEvent();
 private:
 	static const uint16_t BUILDINGS_COUNT = 11;
 
