@@ -10,6 +10,7 @@ void GameMessage::keywordHelp(bool show)
 		<< "s - Skip Buildings Menu" << std::endl
 		<< "b - Build Buildings" << std::endl
 		<< "u - Upgrade Buildings" << std::endl
+		<< "p - Building Prouctivity Settings" << std::endl
 		<< "i - Buildings information" << std::endl
 		<< "m - Resource Market" << std::endl
 		<< "r - Restore data" << std::endl

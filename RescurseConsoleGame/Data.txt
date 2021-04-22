@@ -5,21 +5,21 @@ playerData:
 resourcesName:
 Log/ Wood/ Stone/ Coal/ Copper/ Tin/ Bronze/ Silver/ Gold/ Platina/ Diamond/ 
 resourcesData:
-252 2 
-232 3 
-198 4 
-83 5 
-87 6 
-84 7 
-45 8 
-45 9 
-45 10 
-45 11 
-45 12 
+305 2 
+240 3 
+206 4 
+91 5 
+95 6 
+92 7 
+53 8 
+53 9 
+53 10 
+53 11 
+53 12 
 buildingsName:
 Forestry/ Sawmill/ Quarry/ Career/ Copper Mine/ Tin Mine/ Alloy Plant/ Silver Cleaner/ Gold_Mine/ Platina Cleaner/ Diamond Factory/ 
 buildingsData:
-11 2 1 101 1001 6 1 2 3 4 11 
+11 2 1 101 1001 6 1 2 3 4 101 
 1 2 1 101 1002 11 1 5 6 7 101 
 1 2 1 101 1003 16 1 8 9 10 101 
 1 2 1 101 1004 21 1 11 12 13 101 

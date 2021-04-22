@@ -124,8 +124,11 @@ std::string Building::getProductivityInfo()
 	if (name.length() < 6) {
 		info = info + "\t\t\t";
 	}
-	else {
+	else if (name.length() < 12) {
 		info = info + "\t\t";
+	}
+	else {
+		info = info + "\t";
 	}
 
 	info = info + "Productivity: \t";
