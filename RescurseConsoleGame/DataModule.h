@@ -18,6 +18,7 @@ public:
 	void loadData(const std::string dataFileName);
 	void saveData(const std::string dataFileName);
 	void resetData(const std::string dataFileName);
+	void resetDataWithSecurity(const std::string dataFileName);
 	 
 
 	std::vector<std::string> getPlayerName();
@@ -93,8 +94,7 @@ private:
 			std::string buffer = "0";
 
 			while (buffer != keyword) {
-				dataFile >> buffer;
-				//std::cout << buffer << " - loaded data!" << std::endl << std::endl;
+				dataFile >> buffer;				
 			}
 		}
 
@@ -274,7 +274,7 @@ private:
 	};
 	class Reset {
 	public:
-		Reset(){}
+		Reset() {}
 
 		void resetData(const std::string dataFileName) {
 

@@ -110,8 +110,14 @@ void DataModule::saveData(const std::string dataFileName)
 
 void DataModule::resetData(const std::string dataFileName)
 {
-	Reset restore;
-	restore.resetData(dataFileName);
+	Reset reset;
+	reset.resetData(dataFileName);
+}
+
+void DataModule::resetDataWithSecurity(const std::string dataFileName)
+{
+	Reset resetDataWithSecurity;
+	resetDataWithSecurity.resetDataWithSecurity(dataFileName);
 }
 
 

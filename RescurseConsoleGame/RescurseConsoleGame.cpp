@@ -91,7 +91,7 @@ int main()
             market.buySellMenu(player, resManager);
             break;
         case 'r':
-            data.resetData(g_DataFileName);
+            data.resetDataWithSecurity(g_DataFileName);
             break;
         case 'a':
             GameMessages::About();
