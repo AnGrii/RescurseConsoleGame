@@ -1,6 +1,6 @@
 #include "GameHelper.h"
 
-void GameMessage::keywordHelp(bool show)
+void GameMessages::keywordHelp(bool show)
 {
 	std::cout << "Key to do:" << std::endl
 		<< "e - Extract base resources" << std::endl
@@ -21,9 +21,8 @@ void GameMessage::keywordHelp(bool show)
 /// <summary>
 /// Initialization srand in header needed!!!
 /// </summary>
-void GameMessage::skipLine()
+void GameMessages::skipLine()
 {
-	
 	uint16_t rand = std::rand() % 4;
 
 	switch (rand)
@@ -46,7 +45,20 @@ void GameMessage::skipLine()
 	}
 }
 
-void GameMessage::incorrectInput()
+void GameMessages::incorrectInput()
 {
 	std::cout << "Incorrect input!!!" << std::endl << std::endl;
+}
+
+void GameMessages::About()
+{
+	std::cout << "Hi gamer! Hope u like this game :)" << std::endl
+		<< "It's game about resources!" << std::endl
+		<< "All you need, extract some resources manually and build first building" << std::endl
+		<< "After u will get resources automatically )" << std::endl
+		<< "Then u will have many opportunities to do your mining faster" << std::endl
+		<< "Upgrades of productivity, increasing of builindg count" << std::endl
+		<< "Selling or buying resources to build new buildings" << std::endl
+		<< "It's all is your opportunities to have fun in this game" << std::endl
+		<< "Good luck! Your programmer :)" << std::endl << std::endl;
 }

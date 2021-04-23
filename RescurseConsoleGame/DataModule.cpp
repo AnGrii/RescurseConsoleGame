@@ -108,7 +108,7 @@ void DataModule::saveData(const std::string dataFileName)
 
 }
 
-void DataModule::restoreData(const std::string dataFileName)
+void DataModule::resetData(const std::string dataFileName)
 {
 	Restore restore;
 	restore.restoreData(dataFileName);

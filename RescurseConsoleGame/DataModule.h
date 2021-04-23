@@ -17,7 +17,7 @@ public:
 
 	void loadData(const std::string dataFileName);
 	void saveData(const std::string dataFileName);
-	void restoreData(const std::string dataFileName);
+	void resetData(const std::string dataFileName);
 	 
 
 	std::vector<std::string> getPlayerName();

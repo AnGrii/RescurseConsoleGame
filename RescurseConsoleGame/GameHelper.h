@@ -2,10 +2,10 @@
 #include <iostream>
 #include <random>
 
-class GameMessage
+class GameMessages
 {
 private:
-	GameMessage() {}
+	GameMessages() {}
 
 public:
 	static void keywordHelp(bool show);
@@ -13,5 +13,7 @@ public:
 	static void skipLine();
 
 	static void incorrectInput();
+
+	static void About();
 };
 

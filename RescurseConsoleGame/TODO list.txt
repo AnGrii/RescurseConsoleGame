@@ -1,17 +1,9 @@
-- Replace activated value
-
-
 Data loading / saving
 {
 	if loading of data file fail game will create new
 }
 
-- Add building productivity settings menu
-- Add productivity settings for building work!
-
 - Rewrite building functions to dynamic
-
-- About (Help to play)
 
 - Auto sell resources (0%, 10%, 25%, 50%, 75%, 100% or custom)
 

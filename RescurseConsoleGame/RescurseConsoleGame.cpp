@@ -44,7 +44,7 @@ int main()
 
     while (!g_Exit)
     {
-        GameMessage::keywordHelp(true);
+        GameMessages::keywordHelp(true);
 
         buildings.updateBuildingsQueue();
         buildings.work(resManager);
@@ -64,7 +64,7 @@ int main()
            resExtract.extract(resManager.log, resManager.wood, resManager.stone);
             break;
         case 'n':
-            GameMessage::skipLine();
+            GameMessages::skipLine();
             break;
         case 'g':
             resExtract.upgradeResourceExtractionMenu(player);
@@ -91,7 +91,10 @@ int main()
             market.buySellMenu(player, resManager);
             break;
         case 'r':
-            data.restoreData(g_DataFileName);
+            data.resetData(g_DataFileName);
+            break;
+        case 'a':
+            GameMessages::About();
             break;
         case 'x': 
         {
@@ -108,7 +111,7 @@ int main()
 
         }
         default:
-            GameMessage::incorrectInput();
+            GameMessages::incorrectInput();
             break;
         }
     }
