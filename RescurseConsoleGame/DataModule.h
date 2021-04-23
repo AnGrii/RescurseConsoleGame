@@ -272,11 +272,11 @@ private:
 	private:
 		SavingComponents(){}
 	};
-	class Restore {
+	class Reset {
 	public:
-		Restore(){}
+		Reset(){}
 
-		void restoreData(const std::string dataFileName) {
+		void resetData(const std::string dataFileName) {
 
 			std::ofstream dataFile(dataFileName);
 
@@ -284,6 +284,25 @@ private:
 			{
 				dataFile << item << '\n';
 			}
+		}
+
+		void resetDataWithSecurity(const std::string dataFileName) {
+
+			std::cout << "You are in reset menu!" << std::endl
+				<< "If u want to reset game data input - y" << std::endl
+				<< "To cancel this process input any key" << std::endl;
+				
+			char select = '0';
+			std::cin >> select;
+
+			if (select == 'y') {
+				std::ofstream dataFile(dataFileName);
+
+				for (auto& item : restoreDataList)
+				{
+					dataFile << item << '\n';
+				}
+			}					
 		}
 	private:
 		const std::vector<std::string> restoreDataList{
