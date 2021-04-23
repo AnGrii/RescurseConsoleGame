@@ -113,7 +113,7 @@ private:
 				throw std::exception(errorMSG.data());
 			}
 			//Data in file is for 1 unit bigger;
-			buffer--;
+			buffer -= 1;
 
 			return buffer;
 		}
@@ -286,11 +286,12 @@ private:
 			}
 		}
 
-		void resetDataWithSecurity(const std::string dataFileName) {
-
+		void resetDataWithSecurity(const std::string dataFileName)
+		{
 			std::cout << "You are in reset menu!" << std::endl
 				<< "If u want to reset game data input - y" << std::endl
-				<< "To cancel this process input any key" << std::endl;
+				<< "To cancel this process input any key" << std::endl
+				<< "To reset game will be closed!" << std::endl;
 				
 			char select = '0';
 			std::cin >> select;
@@ -302,7 +303,9 @@ private:
 				{
 					dataFile << item << '\n';
 				}
-			}					
+
+				exit(1);
+			}			
 		}
 	private:
 		const std::vector<std::string> restoreDataList{
