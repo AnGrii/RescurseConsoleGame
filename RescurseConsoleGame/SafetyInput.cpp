@@ -29,13 +29,6 @@ uint64_t SafetyInput::cinAndGetNumFromInput(std::string inputMSG)
 	std::cin >> str_number;
 	std::cout << std::endl;
 
-	// Deleting minus
-	if (str_number.size() >= 1) {
-		if (str_number[0] == '-') {
-			str_number.erase(str_number.begin());
-		}
-	}
-
 	number = std::stoull(str_number);
 
 	return number;
