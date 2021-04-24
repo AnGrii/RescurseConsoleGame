@@ -124,7 +124,7 @@ void BuildingsManager::productivitySettingMenu()
 	std::cout << std::endl;
 
 	uint16_t buildingId = SafetyInput::cinAndGetIDfromChar("Input building id-name: ",
-		charIDList);
+		charIDList, BUILDINGS_COUNT);
 
 	uint64_t int_percent = SafetyInput::cinAndGetNumFromInput("Input percent: ");
 
@@ -241,11 +241,10 @@ void BuildingsManager::SkipBuildingMenu(Player &p)
 			buildingAreInQueue = true;
 		}
 	}
-
 	
 	if (buildingAreInQueue) {
 		uint16_t buildingId = SafetyInput::cinAndGetIDfromChar("Input skip build id: ",
-			charIDList);
+			charIDList, BUILDINGS_COUNT);
 
 		BuildingsVector[buildingId]->skipBuildingProcess \
 			(p.payAndGetStatus(BuildingsVector[buildingId]->getSkipValue()));

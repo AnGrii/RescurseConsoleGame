@@ -9,7 +9,7 @@ public:
 	static char cinAndGetChar(std::string inputMSG);
 
 	static uint16_t cinAndGetIDfromChar(std::string inputMSG, 
-		std::vector<char> nameIdLIst);
+		std::vector<char> nameIdLIst, const size_t MAXIMAL_ID_VALUE);
 
 	static uint64_t cinAndGetNumFromInput(std::string inputMSG);
 private:

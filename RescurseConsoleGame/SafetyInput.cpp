@@ -12,7 +12,7 @@ char SafetyInput::cinAndGetChar(std::string inputMSG)
 }
 
 uint16_t SafetyInput::cinAndGetIDfromChar(std::string inputMSG,
-	std::vector<char> nameIdLIst)
+	std::vector<char> nameIdLIst, const size_t MAXIMAL_ID_VALUE)
 {	
 	char input = '0';
 
@@ -28,6 +28,10 @@ uint16_t SafetyInput::cinAndGetIDfromChar(std::string inputMSG,
 		}
 	}
 
+	if (output > MAXIMAL_ID_VALUE - 1) {
+		output = 0;
+	}
+
 	return output;
 }
 
@@ -40,7 +44,26 @@ uint64_t SafetyInput::cinAndGetNumFromInput(std::string inputMSG)
 	std::cin >> str_number;
 	std::cout << std::endl;
 
-	number = std::stoull(str_number);
+
+	bool coincidenceOfChar = false;
+	if (str_number.size() > 0) {
+		char char_list[]{ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
+		for (auto& ch : char_list)
+		{
+			if (ch == str_number[0]) {
+				coincidenceOfChar = true;
+				break;
+			}
+		}
+	}
+	
+	if (coincidenceOfChar) {
+		number = std::stoull(str_number);
+	}
+	else {
+		number = 0;
+	}	
 
 	return number;
 }
