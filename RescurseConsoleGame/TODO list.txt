@@ -3,7 +3,16 @@ Data loading / saving
 	if loading of data file fail game will create new
 }
 
-- Rewrite building functions to dynamic
+- Rewrite building manager functions to dynamic
+{
+	productivitySettingMenu, SkipBuildingMenu {
+		Change system of input
+	}
+	brokenEvent
+	upgradeMenu
+}
+
+- Define safety input and add to all (components) / { (methods) }
 
 - Auto sell resources (0%, 10%, 25%, 50%, 75%, 100% or custom)
 

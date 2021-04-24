@@ -28,28 +28,17 @@ void BuildingsManager::buildMenu(ResourceManager& res)
 {
 	std::cout << "Select build:" << std::endl;
 
-	printBuildRequest(forestry, "1", \
-		res.log.getName(), res.wood.getName(), res.stone.getName());
-	printBuildRequest(sawmill, "2", \
-		res.log.getName(), res.wood.getName(), res.stone.getName());
-	printBuildRequest(quarry, "3", \
-		res.log.getName(), res.wood.getName(), res.stone.getName());
-	printBuildRequest(career, "4", \
-		res.log.getName(), res.wood.getName(), res.stone.getName());
-	printBuildRequest(copperMine, "5", \
-		res.log.getName(), res.stone.getName(), res.coal.getName());
-	printBuildRequest(tinMine, "6", \
-		res.coal.getName(), res.stone.getName(), res.copper.getName());
-	printBuildRequest(alloyPlant, "7", \
-		res.stone.getName(), res.copper.getName(), res.tin.getName());
-	printBuildRequest(silverCleaner, "8", \
-		res.stone.getName(), res.copper.getName(), res.bronze.getName());
-	printBuildRequest(goldMine, "9", \
-		res.copper.getName(), res.bronze.getName(), res.silver.getName());
-	printBuildRequest(platinaCleaner, "a", \
-		res.bronze.getName(), res.silver.getName(), res.gold.getName());
-	printBuildRequest(diamondFactory, "b", \
-		res.silver.getName(), res.gold.getName(), res.platina.getName());
+	printResourceRequest('1', forestry, res.log, res.wood, res.stone);
+	printResourceRequest('2', sawmill,  res.log, res.wood, res.stone);
+	printResourceRequest('3', quarry, res.log, res.wood, res.stone);
+	printResourceRequest('4', career, res.log, res.wood, res.stone);
+	printResourceRequest('5', copperMine, res.log, res.stone, res.coal);
+	printResourceRequest('6', tinMine, res.coal, res.stone, res.copper);
+	printResourceRequest('7', alloyPlant, res.stone, res.copper, res.tin);
+	printResourceRequest('8', silverCleaner, res.stone, res.copper, res.bronze);
+	printResourceRequest('9', goldMine, res.copper, res.bronze, res.silver);
+	printResourceRequest('a', platinaCleaner, res.bronze, res.silver, res.gold);
+	printResourceRequest('b', diamondFactory, res.silver, res.gold, res.platina);
 
 	char select;
 	std::cout << "Input to build: ";
@@ -95,7 +84,6 @@ void BuildingsManager::buildMenu(ResourceManager& res)
 		std::cout << "Wrong input!" << std::endl << std::endl;
 		break;
 	}
-
 }
 
 void BuildingsManager::work(ResourceManager& res)
@@ -157,19 +145,24 @@ void BuildingsManager::productivitySettingMenu()
 	BuildingsVector[buildingId]->setProductivity(int_percent);
 }
 
-void BuildingsManager::printBuildRequest(Building build, std::string buildSymb,
+void BuildingsManager::printResourceRequest(Building build, std::string buildSymb,
 	std::string resourceName1,
 	std::string resourceName2,
 	std::string resourceName3)
 {
-	std::cout
-		<< "========== "
-		<< buildSymb << " - " << build.getName()
-		<< " =========="
-		<< std::endl << std::endl
-		<< resourceName1 << " - " << build.getRes1() << '\t'
-		<< resourceName2 << " - " << build.getRes2() << '\t'
+	std::cout << buildSymb << " - " << build.getName() << std::endl
+		<< resourceName1 << " - " << build.getRes1() << std::endl
+		<< resourceName2 << " - " << build.getRes2() << std::endl
 		<< resourceName3 << " - " << build.getRes3() << std::endl << std::endl;
+}
+
+void BuildingsManager::printResourceRequest(char buildSymb, Building build,
+	Resource res1, Resource res2, Resource res3)
+{
+	std::cout << buildSymb << " - " << build.getName() << std::endl
+		<< res1.getName() << " - " << build.getRes1() << std::endl
+		<< res2.getName() << " - " << build.getRes2() << std::endl
+		<< res3.getName() << " - " << build.getRes3() << std::endl << std::endl;
 }
 
 void BuildingsManager::build(Building& build,
@@ -209,41 +202,6 @@ void BuildingsManager::build(Building& build,
 	{
 		std::cout << "Not enough count of recources!" << std::endl << std::endl;
 	}
-}
-
-void BuildingsManager::upgradeInfo()
-{
-	const char nameIdLIst[11]{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
-
-	std::cout << "========== Buildings Upgrade ===========" << std::endl;
-
-	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
-	{
-		std::cout << nameIdLIst[i] << " - " \
-			<< BuildingsVector[i]->getUpgradeBuildInfo() << std::endl;
-	}
-}
-
-void BuildingsManager::upgradeBuildingsMenu(Player& p)
-{
-	const char nameIdLIst[11]{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
-
-	char select = '0';
-	std::cout << "Input building id-name: ";
-	std::cin >> select;
-	std::cout << std::endl;
-
-	uint16_t buildingId = 0;
-	for (size_t i = 0; i < 11; i++)
-	{
-		if (nameIdLIst[i] == select) { 
-			buildingId = i;
-			break; 
-		}
-	}
-
-	BuildingsVector[buildingId]->increaseProductivity \
-		(p.payAndGetStatus(BuildingsVector[buildingId]->getUpgradeValue()));
 }
 
 void BuildingsManager::printQueueStatus()
@@ -349,6 +307,31 @@ void BuildingsManager::SkipBuildingMenu(Player &p)
 
 void BuildingsManager::upgradeMenu(Player& p)
 {
-	this->upgradeInfo();
-	this->upgradeBuildingsMenu(p);
+	const char nameIdLIst[11]{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
+
+	std::cout << "========== Buildings Upgrade ===========" << std::endl;
+
+	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
+	{
+		std::cout << nameIdLIst[i] << " - " \
+			<< BuildingsVector[i]->getUpgradeBuildInfo() << std::endl;
+	}
+
+	char select = '0';
+	std::cout << "Input building id-name: ";
+	std::cin >> select;
+	std::cout << std::endl;
+
+	uint16_t buildingId = 0;
+	for (size_t i = 0; i < 11; i++)
+	{
+		if (nameIdLIst[i] == select) {
+			buildingId = i;
+			break;
+		}
+	}
+
+	BuildingsVector[buildingId]->increaseProductivity \
+		(p.payAndGetStatus(BuildingsVector[buildingId]->getUpgradeValue()));
 }
+

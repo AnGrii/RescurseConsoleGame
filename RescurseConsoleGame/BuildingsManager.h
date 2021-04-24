@@ -49,14 +49,14 @@ private:
 		&platinaCleaner,& diamondFactory
 	};
 
-	void printBuildRequest(Building build, std::string buildSymb,
+	void printResourceRequest(Building build, std::string buildSymb,
 		std::string resourceName1,
 		std::string resourceName2,
 		std::string resourceName3);
 
+	void printResourceRequest(char buildSymb, Building build,
+		Resource res1, Resource res2, Resource res3);
+
 	void build(Building& build,
 		Resource& reqRes1, Resource& reqRes2, Resource& reqRes3);
-
-	void upgradeInfo();
-	void upgradeBuildingsMenu(Player& p);
 };
