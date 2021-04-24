@@ -8,7 +8,6 @@ Data loading / saving
 	productivitySettingMenu, SkipBuildingMenu {
 		Change system of input
 	}
-	brokenEvent
 	upgradeMenu
 }
 

@@ -26,7 +26,7 @@ std::vector<std::vector<uint64_t>> BuildingsManager::UploadData()
 
 void BuildingsManager::buildMenu(ResourceManager& res)
 {
-	std::cout << "Select build:" << std::endl;
+	std::cout << "Building Menu:" << std::endl;
 
 	printResourceRequest('1', forestry, res.log, res.wood, res.stone);
 	printResourceRequest('2', sawmill,  res.log, res.wood, res.stone);
@@ -223,45 +223,9 @@ void BuildingsManager::brokeEvent()
 	//CHANCE: 1 : (100k - 2)
 	uint16_t chance = rand() % 100 * rand() % 1000;
 
-	switch (chance)
-	{
-	case 1:
-		forestry.brokeBuild();
-		break;
-	case 2:
-		sawmill.brokeBuild();
-		break;
-	case 3:
-		quarry.brokeBuild();
-		break;
-	case 4:
-		career.brokeBuild();
-		break;
-	case 5:
-		copperMine.brokeBuild();
-		break;
-	case 6:
-		tinMine.brokeBuild();
-		break;
-	case 7:
-		alloyPlant.brokeBuild();
-		break;
-	case 8:
-		silverCleaner.brokeBuild();
-		break;
-	case 9:
-		goldMine.brokeBuild();
-		break;
-	case 10:
-		platinaCleaner.brokeBuild();
-		break;
-	case 11:
-		diamondFactory.brokeBuild();
-		break;
-	default:
-		break;
+	if (chance < BUILDINGS_COUNT - 1) {
+		BuildingsVector[chance]->brokeBuild();
 	}
-
 }
 
 void BuildingsManager::printBuildingsInfo()
