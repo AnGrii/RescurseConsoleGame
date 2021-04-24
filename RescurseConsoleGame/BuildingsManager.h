@@ -8,6 +8,7 @@
 #include "ResourceManager.h"
 #include "Buildings.h"
 #include "Player.h"
+#include "SafetyInput.h"
 
 
 class BuildingsManager

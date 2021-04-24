@@ -238,35 +238,33 @@ void BuildingsManager::printBuildingsInfo()
 
 void BuildingsManager::SkipBuildingMenu(Player &p)
 {
-	const char nameIdLIst[11]{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
+	const std::vector<char> nameIdLIst
+	{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
 
 	std::cout << "=====\tValue of skip time of building\t=====" << std::endl;
 
+	bool buildingAreInQueue = false;
 	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
 	{
 		std::string info = BuildingsVector[i]->getSkipInfo();
 
 		if (info != "-") {
 			std::cout << nameIdLIst[i] << ' ' << info << std::endl;
+			buildingAreInQueue = true;
 		}
 	}
 
-	char select = '0';
-	std::cout << "Input skip build id: ";
-	std::cin >> select;
-	std::cout << std::endl;
+	
+	if (buildingAreInQueue) {
+		uint16_t buildingId = SafetyInput::cinAndGetIDfromChar("Input skip build id: ",
+			nameIdLIst);
 
-	uint16_t buildingId = 0;
-	for (size_t i = 0; i < 11; i++)
-	{
-		if (nameIdLIst[i] == select) {
-			buildingId = uint16_t(i);
-			break;
-		}
+		BuildingsVector[buildingId]->skipBuildingProcess \
+			(p.payAndGetStatus(BuildingsVector[buildingId]->getSkipValue()));
 	}
-
-	BuildingsVector[buildingId]->skipBuildingProcess \
-		(p.payAndGetStatus(BuildingsVector[buildingId]->getSkipValue()));
+	else {
+		std::cout << "Queue of buildings is empty!" << std::endl << std::endl;
+	}
 }
 
 void BuildingsManager::upgradeMenu(Player& p)

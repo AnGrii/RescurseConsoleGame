@@ -3,6 +3,11 @@ Data loading / saving
 	if loading of data file fail game will create new
 }
 
+-Add setting menu{
+	- Change player name
+	- Add change show status of keyword help
+}
+
 - Rewrite building manager functions to dynamic
 {
 	productivitySettingMenu, SkipBuildingMenu {
@@ -10,8 +15,6 @@ Data loading / saving
 	}
 	upgradeMenu
 }
-
-- Fix bug with skip empty queue skip building
 
 - Define safety input and add to all (components) / { (methods) }
 
