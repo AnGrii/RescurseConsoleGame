@@ -29,15 +29,19 @@ int main()
 
     const std::string g_DataFileName = "Data.txt";
 
+
     DataModule data(g_DataFileName);
 
     Player player(data.getPlayerName(), data.getPlayerData());
-    ResourceManager resManager(data.getRecourcesNameData(), data.getRecourcesData());
+    ResourceManager resManager(data.getRecourcesNameData(),
+        data.getRecourcesData());
+
     ResourcesExtract resExtract(data.getResourcesExtractData());
-    BuildingsManager buildings(
-        data.getBuildingsNameData(),
+    BuildingsManager buildings(data.getBuildingsNameData(),
         data.getBuildingsData());
+
     Market market(data.getMarketData());
+
 
     char g_Select = '0';
     bool g_Exit = false;

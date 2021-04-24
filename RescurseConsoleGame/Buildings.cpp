@@ -259,7 +259,9 @@ void Building::brokeBuild()
 {
 	if (count > 0) {
 		count--;
-		std::cout << this->getName() << " was broken!" << std::endl << std::endl;
+		std::cout << "Unhappy day (" << std::endl
+			<< this->getName() << " was broken!" 
+			<< std::endl << std::endl;
 	}
 }
 
