@@ -1,7 +1,7 @@
 playerName:
 Player/ 
 playerData:
-123456789
+1
 resourcesName:
 Log/ Wood/ Stone/ Coal/ Copper/ Tin/ Bronze/ Silver/ Gold/ Platina/ Diamond/ 
 resourcesData:
