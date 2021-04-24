@@ -6,16 +6,16 @@ resourcesName:
 Log/ Wood/ Stone/ Coal/ Copper/ Tin/ Bronze/ Silver/ Gold/ Platina/ Diamond/ 
 resourcesData:
 1 2 
-1 3 
-1 4 
-1 5 
+1 3
+1 4
 1 6 
-1 7 
-1 8 
-1 9 
-1 10 
 1 11 
-1 12 
+1 21 
+1 46
+1 81 
+1 151 
+1 251 
+1 1001
 buildingsName:
 Forestry/ Sawmill/ Quarry/ Career/ Copper Mine/ Tin Mine/ Alloy Plant/ Silver Cleaner/ Gold_Mine/ Platina Cleaner/ Diamond Factory/ 
 buildingsData:
