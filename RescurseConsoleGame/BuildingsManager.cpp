@@ -109,38 +109,24 @@ void BuildingsManager::updateBuildingsQueue()
 
 void BuildingsManager::productivitySettingMenu()
 {
-	const char nameIdLIst[11] { '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
+	const std::vector<char> charIDList
+	{ 'q','w','e','r','t','y','u','i','o',
+		'p','a','s','d','f','g','h','j','k',
+		'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
 
 	std::cout << "========== Buildings Productivity ===========" << std::endl;
 
 	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
 	{
-		std::cout << nameIdLIst[i] << " - " \
+		std::cout << charIDList[i] << " - " \
 			<< BuildingsVector[i]->getProductivityInfo() << std::endl;
 	}
 	std::cout << std::endl;
 
-	char select = '0';
-	std::cout << "Input building id-name: ";
-	std::cin >> select;
-	std::cout << std::endl;
+	uint16_t buildingId = SafetyInput::cinAndGetIDfromChar("Input building id-name: ",
+		charIDList);
 
-	uint16_t buildingId = 0;
-	for (size_t i = 0; i < 11; i++)
-	{
-		if (nameIdLIst[i] == select) {
-			buildingId = uint16_t(i);
-			break;
-		}
-	}
-
-	std::string str_percent = "0";
-	uint64_t int_percent = 0;
-	std::cout << "Input percent: ";
-	std::cin >> str_percent;
-	std::cout << std::endl;
-
-	int_percent = std::atol(str_percent.data());
+	uint64_t int_percent = SafetyInput::cinAndGetNumFromInput("Input percent: ");
 
 	BuildingsVector[buildingId]->setProductivity(int_percent);
 }
@@ -238,8 +224,10 @@ void BuildingsManager::printBuildingsInfo()
 
 void BuildingsManager::SkipBuildingMenu(Player &p)
 {
-	const std::vector<char> nameIdLIst
-	{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
+	const std::vector<char> charIDList
+	{ 'q','w','e','r','t','y','u','i','o',
+		'p','a','s','d','f','g','h','j','k',
+		'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
 
 	std::cout << "=====\tValue of skip time of building\t=====" << std::endl;
 
@@ -249,7 +237,7 @@ void BuildingsManager::SkipBuildingMenu(Player &p)
 		std::string info = BuildingsVector[i]->getSkipInfo();
 
 		if (info != "-") {
-			std::cout << nameIdLIst[i] << ' ' << info << std::endl;
+			std::cout << charIDList[i] << ' ' << info << std::endl;
 			buildingAreInQueue = true;
 		}
 	}
@@ -257,7 +245,7 @@ void BuildingsManager::SkipBuildingMenu(Player &p)
 	
 	if (buildingAreInQueue) {
 		uint16_t buildingId = SafetyInput::cinAndGetIDfromChar("Input skip build id: ",
-			nameIdLIst);
+			charIDList);
 
 		BuildingsVector[buildingId]->skipBuildingProcess \
 			(p.payAndGetStatus(BuildingsVector[buildingId]->getSkipValue()));
