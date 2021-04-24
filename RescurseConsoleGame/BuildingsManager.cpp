@@ -256,29 +256,21 @@ void BuildingsManager::SkipBuildingMenu(Player &p)
 
 void BuildingsManager::upgradeMenu(Player& p)
 {
-	const char nameIdLIst[11]{ '1','2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b' };
+	const std::vector<char> charIDList
+	{ 'q','w','e','r','t','y','u','i','o',
+		'p','a','s','d','f','g','h','j','k',
+		'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
 
 	std::cout << "========== Buildings Upgrade ===========" << std::endl;
 
 	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
 	{
-		std::cout << nameIdLIst[i] << " - " \
+		std::cout << charIDList[i] << " - " \
 			<< BuildingsVector[i]->getUpgradeBuildInfo() << std::endl;
 	}
 
-	char select = '0';
-	std::cout << "Input building id-name: ";
-	std::cin >> select;
-	std::cout << std::endl;
-
-	uint16_t buildingId = 0;
-	for (size_t i = 0; i < 11; i++)
-	{
-		if (nameIdLIst[i] == select) {
-			buildingId = uint16_t(i);
-			break;
-		}
-	}
+	uint16_t buildingId = SafetyInput::cinAndGetIDfromChar("Input building id-name: ",
+		charIDList, BUILDINGS_COUNT);
 
 	BuildingsVector[buildingId]->increaseProductivity \
 		(p.payAndGetStatus(BuildingsVector[buildingId]->getUpgradeValue()));

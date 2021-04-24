@@ -294,7 +294,7 @@ std::string Building::getUpgradeBuildInfo()
 		info = info + "\t";
 	}
 
-	info = info + "Productivity:\t";
+	info = info + "Production Output:\t";
 	info = info + std::to_string(productionOutput);
 	info = info + "\tUpgrade Value:\t";
 	info = info + std::to_string(upgradeValue);
@@ -307,13 +307,12 @@ void Building::increaseProductivity(bool payStatus)
 	if (payStatus) {
 		if (productionOutput < UINT64_MAX - 2) {
 			productionOutput++;
+			this->increaseUpgradeValue();
 		}
 		else
 		{
 			productionOutput = UINT64_MAX - 2;
 		}
 	}
-
-	this->increaseUpgradeValue();
 }
 

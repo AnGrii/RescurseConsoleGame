@@ -3,7 +3,7 @@ Data loading / saving
 	if loading of data file fail game will create new
 }
 
--Add setting menu{
+-Add setting menu {
 	- Change player name
 	- Add change show status of keyword help
 }
@@ -20,10 +20,10 @@ Data loading / saving
 
 - Auto sell resources (0%, 10%, 25%, 50%, 75%, 100% or custom)
 
-	const std::vector<char> charIDList
-	{ 'q','w','e','r','t','y','u','i','o',
-		'p','a','s','d','f','g','h','j','k',
-		'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
+const std::vector<char> charIDList
+{ 'q','w','e','r','t','y','u','i','o',
+	'p','a','s','d','f','g','h','j','k',
+	'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
 
 
 
