@@ -13,7 +13,6 @@ Data loading / saving
 	productivitySettingMenu, SkipBuildingMenu {
 		Change system of input
 	}
-	upgradeMenu
 }
 
 - Define safety input and add to all (components) / { (methods) }

@@ -117,7 +117,7 @@ void ResourcesExtract::increaseStoneExtractUpgradeValue()
 
 void ResourcesExtract::upgradeLogExtraction(Player& p)
 {
-	if (p.payAndGetStatus(upgradeLogExtractValue)) {
+	if (p.tryPay(upgradeLogExtractValue)) {
 		logExtract++;
 		this->increaseLogExtractUpgradeValue();
 	}
@@ -128,7 +128,7 @@ void ResourcesExtract::upgradeLogExtraction(Player& p)
 }
 void ResourcesExtract::upgradeWoodExtraction(Player& p)
 {
-	if (p.payAndGetStatus(upgradeWoodExtractValue)) {
+	if (p.tryPay(upgradeWoodExtractValue)) {
 		woodExtract++;
 		this->increaseWoodExtractUpgradeValue();
 	}
@@ -139,7 +139,7 @@ void ResourcesExtract::upgradeWoodExtraction(Player& p)
 }
 void ResourcesExtract::upgradeStoneExtraction(Player& p)
 {
-	if (p.payAndGetStatus(upgradeStoneExtractValue)) {
+	if (p.tryPay(upgradeStoneExtractValue)) {
 		stoneExtract++;
 		this->increaseStoneExtractUpgradeValue();
 	}

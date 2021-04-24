@@ -247,7 +247,7 @@ void BuildingsManager::SkipBuildingMenu(Player &p)
 			charIDList, BUILDINGS_COUNT);
 
 		BuildingsVector[buildingId]->skipBuildingProcess \
-			(p.payAndGetStatus(BuildingsVector[buildingId]->getSkipValue()));
+			(p.tryPay(BuildingsVector[buildingId]->getSkipValue()));
 	}
 	else {
 		std::cout << "Queue of buildings is empty!" << std::endl << std::endl;
@@ -273,6 +273,6 @@ void BuildingsManager::upgradeMenu(Player& p)
 		charIDList, BUILDINGS_COUNT);
 
 	BuildingsVector[buildingId]->increaseProductivity \
-		(p.payAndGetStatus(BuildingsVector[buildingId]->getUpgradeValue()));
+		( p.tryPay( BuildingsVector[buildingId]->getUpgradeValue()));
 }
 

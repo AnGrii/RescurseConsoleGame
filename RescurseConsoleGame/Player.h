@@ -19,7 +19,7 @@ public:
 	void reduceBalance(uint64_t count);
 	uint64_t getBalance();
 	uint64_t& getBalanceLink();
-	bool payAndGetStatus(uint64_t count);
+	bool tryPay(uint64_t count);
 
 	/*std::string getName();
 	void setNewName(std::string newName);*/

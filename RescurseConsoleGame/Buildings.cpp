@@ -309,10 +309,13 @@ void Building::increaseProductivity(bool payStatus)
 			productionOutput++;
 			this->increaseUpgradeValue();
 		}
-		else
-		{
+		else {
 			productionOutput = UINT64_MAX - 2;
 		}
+	}
+	else {
+		std::cout << "Not enough money for upgrade!" 
+			<< std::endl << std::endl;
 	}
 }
 
