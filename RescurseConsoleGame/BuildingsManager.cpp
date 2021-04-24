@@ -129,7 +129,7 @@ void BuildingsManager::productivitySettingMenu()
 	for (size_t i = 0; i < 11; i++)
 	{
 		if (nameIdLIst[i] == select) {
-			buildingId = i;
+			buildingId = uint16_t(i);
 			break;
 		}
 	}
@@ -260,7 +260,7 @@ void BuildingsManager::SkipBuildingMenu(Player &p)
 	for (size_t i = 0; i < 11; i++)
 	{
 		if (nameIdLIst[i] == select) {
-			buildingId = i;
+			buildingId = uint16_t(i);
 			break;
 		}
 	}
@@ -290,7 +290,7 @@ void BuildingsManager::upgradeMenu(Player& p)
 	for (size_t i = 0; i < 11; i++)
 	{
 		if (nameIdLIst[i] == select) {
-			buildingId = i;
+			buildingId = uint16_t(i);
 			break;
 		}
 	}

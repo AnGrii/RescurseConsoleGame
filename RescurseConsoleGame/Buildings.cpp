@@ -103,7 +103,7 @@ uint64_t Building::getProductionOutput()
 
 uint64_t Building::calcProductivity()
 {
-	uint64_t productivity = count * productionOutput * (powerPercent / 100.0);
+	uint64_t productivity = uint64_t(count * productionOutput * (powerPercent / 100.0));
 
 	if (productivity > 0) {
 		return productivity;

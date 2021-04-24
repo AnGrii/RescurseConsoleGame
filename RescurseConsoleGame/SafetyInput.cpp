@@ -13,7 +13,7 @@ uint16_t SafetyInput::cinAndGetIDfromChar(std::string inputMSG,
 	for (size_t i = 0; i < nameIdLIst.size(); i++)
 	{
 		if (nameIdLIst[i] == input) {
-			output = i;
+			output = uint16_t(i);
 		}
 	}
 
