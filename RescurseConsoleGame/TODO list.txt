@@ -11,6 +11,8 @@ Data loading / saving
 	upgradeMenu
 }
 
+- Fix bug with skip empty queue skip building
+
 - Define safety input and add to all (components) / { (methods) }
 
 - Auto sell resources (0%, 10%, 25%, 50%, 75%, 100% or custom)

@@ -21,11 +21,16 @@ void Market::buySellMenu(Player& p, ResourceManager &rm)
 	showBuySellInfo(rm);
 
 	char selectTransfer = '0', selectReosurce = '0';
-	std::cout << "Input resource id and select of transfer: ( 4 b )" << std::endl
-		<< "b - Buy" << std::endl
+	std::cout << "Input resource id: ";
+	std::cin >> selectReosurce;
+	std::cout << std::endl;
+		
+	std::cout << "b - Buy" << std::endl
 		<< "s - Sell" << std::endl
-		<< "Any 2 key - exit" << std::endl;
-	std::cin >> selectReosurce >> selectTransfer;
+		<< "Any key - exit" << std::endl
+		<< "Select type of transfer: ";
+
+	std::cin >> selectTransfer;
 	std::cout << std::endl;
 
 
@@ -160,8 +165,7 @@ void Market::buyResource(Player& p, Resource& res)
 {
 	uint64_t count = 0, transferValue = 0;
 
-	std::cout << "Input count: ";
-	std::cin >> count;
+	count = SafetyInput::cinAndGetNumFromInput("Input count: ");
 	std::cout << std::endl;
 
 	transferValue = count * res.getValue();

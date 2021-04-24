@@ -19,7 +19,7 @@ public:
 	void saveData(const std::string dataFileName);
 	void resetData(const std::string dataFileName);
 	void resetDataWithSecurity(const std::string dataFileName);
-	 
+	
 
 	std::vector<std::string> getPlayerName();
 	std::vector<uint64_t> getPlayerData();

@@ -1,6 +1,17 @@
 #include "SafetyInput.h"
 
-uint16_t SafetyInput::cinAndGetIDfromChar(std::string inputMSG, 
+char SafetyInput::cinAndGetChar(std::string inputMSG)
+{
+	char input = '0';
+
+	std::cout << inputMSG;
+	std::cin >> input;
+	std::cout << std::endl;
+	
+	return input;
+}
+
+uint16_t SafetyInput::cinAndGetIDfromChar(std::string inputMSG,
 	std::vector<char> nameIdLIst)
 {	
 	char input = '0';

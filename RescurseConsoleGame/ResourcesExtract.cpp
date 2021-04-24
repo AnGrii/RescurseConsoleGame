@@ -31,7 +31,7 @@ std::vector<uint64_t> ResourcesExtract::UploadData()
 void ResourcesExtract::extract(Resource& log, Resource& wood, Resource& stone)
 {
 	std::cout << "Select type of resource!" << std::endl
-		<< "l - Log / w - Wood / s - Stone!" << std::endl
+		<< "l (low L) - Log / w - Wood / s - Stone!" << std::endl
 		<< "Input: ";
 
 	char select = '0';

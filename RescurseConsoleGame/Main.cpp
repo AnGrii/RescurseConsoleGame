@@ -69,6 +69,7 @@ int main()
             break;
         case 'n':
             GameMessages::skipLine();
+            std::this_thread::sleep_for(std::chrono::milliseconds(250));
             break;
         case 'g':
             resExtract.upgradeResourceExtractionMenu(player);

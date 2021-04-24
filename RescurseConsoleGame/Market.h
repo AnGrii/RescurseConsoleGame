@@ -6,6 +6,7 @@
 #include"Resource.h"
 #include"ResourceManager.h"
 #include"Player.h"
+#include "SafetyInput.h"
 
 class Market
 {
