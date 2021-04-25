@@ -12,7 +12,7 @@ class Settings
 public:
 	Settings(std::vector<uint16_t> dataVector);
 
-	static void settingsMenu();
+	static void settingsMenu(Settings settings, Player player);
 
 	bool getShowKeywordHelpStatus();
 

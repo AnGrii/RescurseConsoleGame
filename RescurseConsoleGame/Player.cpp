@@ -61,7 +61,7 @@ void Player::setNewName(std::string newName)
 {
 	bool notEmptyName = (newName != "");
 	bool notEmptyOneSpace = (newName != " ");
-	//bool not = (newName != );
+	//bool not... = (newName != );
 
 	if (notEmptyName and notEmptyOneSpace) {
 		this->name = newName;

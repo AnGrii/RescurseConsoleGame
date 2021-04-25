@@ -43,6 +43,7 @@ int main()
 
     Settings settings(data.getSettingsData());
 
+
     char g_Select = '0';
     bool g_Exit = false;
 
