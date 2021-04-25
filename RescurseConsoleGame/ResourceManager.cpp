@@ -26,6 +26,7 @@ void ResourceManager::printResourcesCount()
 	std::cout << std::endl;
 }
 
+
 std::vector<std::vector<uint64_t>> ResourceManager::UploadData()
 {
 	std::vector<std::vector<uint64_t>> dataVector;

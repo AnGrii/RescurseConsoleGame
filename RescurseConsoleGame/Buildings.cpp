@@ -25,17 +25,17 @@ std::vector<uint64_t> Building::UploadData()
 	dataVector.resize(BUILDING_DATA_COUNT);
 
 	uint16_t counter = 0;
-	dataVector[counter] = count;		counter++;
+	dataVector[counter] = count;			counter++;
 	dataVector[counter] = productionOutput; counter++;
-	dataVector[counter] = inQueue;		counter++;
-	dataVector[counter] = skipTimeValue; counter++;
-	dataVector[counter] = upgradeValue; counter++;
-	dataVector[counter] = buildTime;	counter++;
-	dataVector[counter] = endBuildTime; counter++;
-	dataVector[counter] = resource1;	counter++;
-	dataVector[counter] = resource2;	counter++;
-	dataVector[counter] = resource3;	counter++;
-	dataVector[counter] = powerPercent; counter++;
+	dataVector[counter] = inQueue;			counter++;
+	dataVector[counter] = skipTimeValue;	counter++;
+	dataVector[counter] = upgradeValue;		counter++;
+	dataVector[counter] = buildTime;		counter++;
+	dataVector[counter] = endBuildTime;		counter++;
+	dataVector[counter] = resource1;		counter++;
+	dataVector[counter] = resource2;		counter++;
+	dataVector[counter] = resource3;		counter++;
+	dataVector[counter] = powerPercent;		counter++;
 
 	return dataVector;
 }
@@ -202,7 +202,6 @@ void Building::updateQueue()
 		}
 	}
 }
-
 
 std::string Building::getQueueInfo()
 {
