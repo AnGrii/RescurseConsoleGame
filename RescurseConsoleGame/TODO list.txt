@@ -16,7 +16,8 @@ const std::vector<char> charIDList
 	'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
 
 
-
+setting:
+2
 
 
 

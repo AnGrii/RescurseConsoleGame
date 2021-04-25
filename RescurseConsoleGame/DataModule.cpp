@@ -55,7 +55,12 @@ void DataModule::loadData(std::string dataFileName)
 		LoadingComponents::readNumber<double>);
 
 	//SETTINGS_DATA
-
+	LoadingComponents::loadData<uint16_t>(settingsData,
+		SETTINGS_DATA_COUNT,
+		dataFileName,
+		keywordSettingsData,
+		LoadingComponents::readNumber<uint16_t>);
+	//bool type is unsafe for read number to load operation
 }
 
 void DataModule::saveData(const std::string dataFileName)
@@ -105,7 +110,11 @@ void DataModule::saveData(const std::string dataFileName)
 		SavingComponents::prepareNumberToSave<double>);
 
 	//SETTINGS_DATA
-
+	SavingComponents::saveData<uint16_t>(settingsData,
+		dataFileName,
+		keywordSettingsData,
+		SavingComponents::prepareNumberToSave<uint16_t>);
+	//bool type is unsafe for prepare number to save operation
 }
 
 void DataModule::resetData(const std::string dataFileName)
@@ -157,6 +166,11 @@ std::vector<uint64_t> DataModule::getResourcesExtractData()
 std::vector<double> DataModule::getMarketData()
 {
 	return marketData;
+}
+
+std::vector<uint16_t> DataModule::getSettingsData()
+{
+	return settingsData;
 }
 
 void DataModule::setPlayerName(std::vector<std::string> dataVector)
@@ -240,4 +254,9 @@ void DataModule::setMarketData(std::vector<double> dataVector)
 	else {
 		throw std::exception("Wrong market data data list size (Wrong data)!");
 	}
+}
+
+void DataModule::setSettingsData(std::vector<uint16_t> dataVector)
+{
+	settingsData.swap(dataVector);
 }

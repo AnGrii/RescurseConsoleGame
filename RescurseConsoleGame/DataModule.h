@@ -34,6 +34,8 @@ public:
 
 	std::vector<double> getMarketData();
 
+	std::vector<uint16_t> getSettingsData();
+
 	void setPlayerName(std::vector<std::string> dataVector);
 	void setPlayerData(std::vector<uint64_t> dataVector);
 
@@ -46,6 +48,8 @@ public:
 	 void setResourcesExtractData(std::vector<uint64_t> dataVector);
 
 	 void setMarketData(std::vector<double> dataVector);
+
+	 void setSettingsData(std::vector<uint16_t> dataVector);
 
 private:
 	const std::string dataFileName = "Data.txt",
@@ -68,7 +72,8 @@ private:
 		BUILDING_COUNT = 11,
 		BUILDING_DATA_COUNT = 11,
 		RESOURCES_EXTRACT_DATA_COUNT = 6,
-		MARKET_DATA_COUNT = 1;
+		MARKET_DATA_COUNT = 1,
+		SETTINGS_DATA_COUNT = 1;
 
 	//Data stroages
 	std::vector<uint64_t> playerData;
@@ -84,7 +89,8 @@ private:
 
 	std::vector<double> marketData;
 
-	std::vector<std::vector<uint64_t>> settingsData;
+	//bool type is unsafe
+	std::vector<uint16_t> settingsData;
 	
 
 	class LoadingComponents {
@@ -106,7 +112,7 @@ private:
 
 			dataFile >> buffer;
 
-			if (buffer == 0 or buffer >= INT64_MAX - 107) // Limit for double
+			if ((buffer == 0) or (buffer >= INT64_MAX - 107)) // Limit for double
 			{
 				std::string errorMSG = "Broken data loaded!";
 

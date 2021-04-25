@@ -54,7 +54,6 @@ int main()
         buildings.brokeEvent();
 
         player.printBalance();
-
         resManager.printResourcesCount();
         
         std::cout << "Input: ";
@@ -101,7 +100,9 @@ int main()
             GameMessages::About();
             break;
         case 's':
-            std::cout << "Settings Menu" << std::endl << std::endl;
+            std::cout << "Settings Menu!" << std::endl
+                << " 0__0 " << std::endl
+                << " -><- " << std::endl << std::endl;
             break;
         case 'x': 
         {
