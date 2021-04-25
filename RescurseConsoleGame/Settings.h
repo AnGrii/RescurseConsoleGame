@@ -11,8 +11,9 @@ class Settings
 {
 public:
 	Settings(std::vector<uint16_t> dataVector);
+	std::vector<uint16_t> UploadData();
 
-	static void settingsMenu(Settings settings, Player player);
+	static void settingsMenu(Settings& settings, Player& player);
 
 	bool getShowKeywordHelpStatus();
 

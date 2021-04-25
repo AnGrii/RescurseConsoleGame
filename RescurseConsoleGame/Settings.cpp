@@ -7,7 +7,16 @@ Settings::Settings(std::vector<uint16_t> dataVector)
 	showKeywordHelp = bool(dataVector[counter]); counter++;
 }
 
-void Settings::settingsMenu(Settings settings, Player player)
+std::vector<uint16_t> Settings::UploadData()
+{
+	std::vector<uint16_t> dataVector;
+
+	dataVector.push_back(showKeywordHelp);
+
+	return dataVector;
+}
+
+void Settings::settingsMenu(Settings& settings, Player& player)
 {
 	std::cout << "===== Settings =====" << std::endl
 		<< "q - To change show keyword help status" << std::endl
@@ -23,7 +32,7 @@ void Settings::settingsMenu(Settings settings, Player player)
 		if (settings.showKeywordHelp == true) settings.showKeywordHelp = false;
 		else settings.showKeywordHelp = true;
 
-		std::cout << "Show keyword help status changed!" << std::endl;
+		std::cout << "Show keyword help status changed!" << std::endl << std::endl;
 	}
 		break;
 	case 'w':

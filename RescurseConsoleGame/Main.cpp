@@ -103,7 +103,7 @@ int main()
             GameMessages::About();
             break;
         case 's':
-            settings.settingsMenu();
+            settings.settingsMenu(settings, player);
             break;
         case 'x': 
         {
@@ -113,6 +113,7 @@ int main()
             data.setBuildingsData(buildings.UploadData());
             data.setResourcesExtractData(resExtract.UploadData());
             data.setMarketData(market.UploadData());
+            data.setSettingsData(settings.UploadData());
 
             data.saveData(g_DataFileName);
             g_Exit = true;
