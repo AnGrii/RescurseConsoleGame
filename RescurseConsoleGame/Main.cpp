@@ -20,7 +20,7 @@
 #include "BuildingsManager.h"
 #include "Market.h"
 #include "GameHelper.h"
-
+#include "Settings.h"
 
 int main()
 {
@@ -41,13 +41,14 @@ int main()
 
     Market market(data.getMarketData());
 
+    Settings settings(data.getSettingsData());
 
     char g_Select = '0';
     bool g_Exit = false;
 
     while (!g_Exit)
     {
-        GameMessages::keywordHelp(true);
+        GameMessages::keywordHelp(settings.getShowKeywordHelpStatus());
 
         buildings.updateBuildingsQueue();
         buildings.work(resManager);
@@ -100,9 +101,7 @@ int main()
             GameMessages::About();
             break;
         case 's':
-            std::cout << "Settings Menu!" << std::endl
-                << " 0__0 " << std::endl
-                << " -><- " << std::endl << std::endl;
+            settings.settingsMenu();
             break;
         case 'x': 
         {
