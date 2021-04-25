@@ -57,6 +57,7 @@ int main()
         player.printBalance();
         resManager.printResourcesCount();
         
+        std::cout << std::endl;
         std::cout << "Input: ";
         std::cin >> g_Select;
         std::cout << std::endl;

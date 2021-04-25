@@ -35,4 +35,4 @@ resourcesExtract:
 marketData:
 1.75 
 setting:
-2
+1
