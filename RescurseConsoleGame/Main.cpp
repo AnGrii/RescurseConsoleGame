@@ -1,16 +1,15 @@
 #include <iostream>
-#include <ctime>
+#include <vector>
 #include <string>
 #include <fstream>
 #include <algorithm>
-#include <vector>
 #include <list>
 #include <math.h>
 #include <conio.h>
 #include <thread>
 #include <mutex>
 #include <functional>
-
+#include <ctime>
 
 #include "DataModule.h"
 #include "Player.h"
@@ -77,7 +76,7 @@ int main()
         case 'q':
             buildings.printQueueStatus();
             break;
-        case 's':
+        case 'k':
             buildings.skipBuildingMenu(player);
             break;
         case 'b':

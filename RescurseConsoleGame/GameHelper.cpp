@@ -7,13 +7,14 @@ void GameMessages::keywordHelp(bool show)
 		<< "n - Next day" << std::endl
 		<< "g - Upgrade Resources Extraction" << std::endl
 		<< "q - Queue of Buildings" << std::endl
-		<< "s - Skip Buildings Menu" << std::endl
+		<< "k - Skip Buildings Menu" << std::endl
 		<< "b - Build Buildings" << std::endl
 		<< "u - Upgrade Buildings" << std::endl
 		<< "p - Building Prouctivity Settings" << std::endl
 		<< "i - Buildings information" << std::endl
 		<< "m - Resource Market" << std::endl
 		<< "r - Restore data" << std::endl
+		<< "s - Settings" << std::endl
 		<< "x - Save and Exit" << std::endl
 		<< "" << std::endl;
 }

@@ -8,15 +8,6 @@ Data loading / saving
 	- Add change show status of keyword help
 }
 
-- Rewrite building manager functions to dynamic
-{
-	SkipBuildingMenu {
-		Change system of input
-	}
-}
-
-- Define safety input and add to all (components) / { (methods) }
-
 - Auto sell resources (0%, 10%, 25%, 50%, 75%, 100% or custom)
 
 const std::vector<char> charIDList

@@ -154,6 +154,7 @@
     <ClCompile Include="ResourcesExtract.cpp" />
     <ClCompile Include="Market.cpp" />
     <ClCompile Include="SafetyInput.cpp" />
+    <ClCompile Include="Settings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BuildingsManager.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="ResourcesExtract.h" />
     <ClInclude Include="Market.h" />
     <ClInclude Include="SafetyInput.h" />
+    <ClInclude Include="Settings.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt" />
