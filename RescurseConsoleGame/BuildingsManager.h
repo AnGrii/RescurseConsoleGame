@@ -28,7 +28,7 @@ public:
 	
 	void productivitySettingMenu();
 
-	void SkipBuildingMenu(Player& p);
+	void skipBuildingMenu(Player& p);
 
 	void upgradeMenu(Player& p);
 	void buildMenu(ResourceManager& res);

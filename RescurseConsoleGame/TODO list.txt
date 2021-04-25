@@ -10,7 +10,7 @@ Data loading / saving
 
 - Rewrite building manager functions to dynamic
 {
-	productivitySettingMenu, SkipBuildingMenu {
+	SkipBuildingMenu {
 		Change system of input
 	}
 }

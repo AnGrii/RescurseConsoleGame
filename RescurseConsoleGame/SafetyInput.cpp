@@ -1,6 +1,6 @@
 #include "SafetyInput.h"
 
-char SafetyInput::cinAndGetChar(std::string inputMSG)
+char SafetyInput::cinAndGetChar(std::string inputMSG = "Input:")
 {
 	char input = '0';
 

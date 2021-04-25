@@ -78,7 +78,7 @@ int main()
             buildings.printQueueStatus();
             break;
         case 's':
-            buildings.SkipBuildingMenu(player);
+            buildings.skipBuildingMenu(player);
             break;
         case 'b':
             buildings.buildMenu(resManager);

@@ -40,10 +40,7 @@ void BuildingsManager::buildMenu(ResourceManager& res)
 	printResourceRequest('a', platinaCleaner, res.bronze, res.silver, res.gold);
 	printResourceRequest('b', diamondFactory, res.silver, res.gold, res.platina);
 
-	char select;
-	std::cout << "Input to build: ";
-	std::cin >> select;
-	std::cout << std::endl;
+	char select = SafetyInput::cinAndGetChar("Input id to build: ");
 
 	switch (select)
 	{
@@ -89,7 +86,7 @@ void BuildingsManager::buildMenu(ResourceManager& res)
 void BuildingsManager::work(ResourceManager& res)
 {
 	if (BUILDINGS_COUNT != res.RESOURCES_COUNT) {
-		throw std::exception("Different counts!");
+		throw std::exception("Different counts of resources and buildings!!");
 		//WARNING: Count of resources and buildings is equal,
 		//if it will changed, it will cause problem
 		//Change cycle counter to fix
@@ -160,14 +157,13 @@ void BuildingsManager::build(Building& build,
 		build.getRes2() <= reqRes2.getCount() and
 		build.getRes3() <= reqRes3.getCount())
 	{
-		char select = 'y';
-
+		char select = '0';
 		if (build.isInQueue()) {
-			std::cout << "This type of build are in process, want to add one more to queue?" << std::endl
-				<< "y - Yes, n - any key" << std::endl
-				<< "Input: ";
-			std::cin >> select;
-			std::cout << std::endl;
+			std::cout << "This type of build are in process, " //No need endl
+				<< "want to add one more to queue?" << std::endl
+				<< "y - Yes, n - any key" << std::endl;		
+
+			select = SafetyInput::cinAndGetChar("Input: ");
 		}
 
 		if (select == 'y') {
@@ -180,7 +176,6 @@ void BuildingsManager::build(Building& build,
 				build.increaseResValue2();
 				build.increaseResValue3();
 			}
-
 			std::cout << "Adding building in queue succeed!" << std::endl << std::endl;
 		}
 	}
@@ -216,13 +211,10 @@ void BuildingsManager::brokeEvent()
 
 void BuildingsManager::printBuildingsInfo()
 {
-	for (auto& item : BuildingsVector)
-	{
-		item->buildInfo();
-	}
+	for (auto& item : BuildingsVector) { item->buildInfo(); }
 }
 
-void BuildingsManager::SkipBuildingMenu(Player &p)
+void BuildingsManager::skipBuildingMenu(Player &p)
 {
 	const std::vector<char> charIDList
 	{ 'q','w','e','r','t','y','u','i','o',
