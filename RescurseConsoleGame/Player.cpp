@@ -52,6 +52,22 @@ bool Player::tryPay(uint64_t count)
 	return false;
 }
 
+std::string Player::getName()
+{
+	return name;
+}
+
+void Player::setNewName(std::string newName)
+{
+	bool notEmptyName = (newName != "");
+	bool notEmptyOneSpace = (newName != " ");
+	//bool not = (newName != );
+
+	if (notEmptyName and notEmptyOneSpace) {
+		this->name = newName;
+	}
+}
+
 std::vector<std::string> Player::getPlayerNameData()
 {
 	std::vector<std::string> dataVector;

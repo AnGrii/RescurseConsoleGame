@@ -21,8 +21,8 @@ public:
 	uint64_t& getBalanceLink();
 	bool tryPay(uint64_t count);
 
-	/*std::string getName();
-	void setNewName(std::string newName);*/
+	std::string getName();
+	void setNewName(std::string newName);
 private:
 	uint64_t balance;
 	std::string name;

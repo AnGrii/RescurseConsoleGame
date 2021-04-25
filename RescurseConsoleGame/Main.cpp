@@ -100,6 +100,9 @@ int main()
         case 'a':
             GameMessages::About();
             break;
+        case 's':
+            std::cout << "Settings Menu" << std::endl << std::endl;
+            break;
         case 'x': 
         {
             data.setPlayerName(player.getPlayerNameData());
