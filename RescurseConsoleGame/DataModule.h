@@ -313,6 +313,9 @@ private:
 				exit(1);
 			}			
 		}
+
+		void checkExistenceFileOrAskForCreate(const std::string dataFileName);
+
 	private:
 		const std::vector<std::string> restoreDataList {
 			"playerName:",

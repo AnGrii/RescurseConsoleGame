@@ -260,3 +260,24 @@ void DataModule::setSettingsData(std::vector<uint16_t> dataVector)
 {
 	settingsData.swap(dataVector);
 }
+
+void DataModule::Reset::checkExistenceFileOrAskForCreate(const std::string dataFileName)
+{
+	std::ofstream dataFile(dataFileName);
+
+	if (not dataFile.is_open()) {
+		std::cout << "Data file damaged or nonexistent!" << std::endl
+			<< "Correct data file" << std::endl
+			<< "Or input - y to reset";
+
+		char select = '0';
+		std::cin >> select;
+		std::cout << std::endl;
+
+		if (select == 'y') {
+			resetData(dataFileName);
+		}
+		exit(1);
+	}
+
+}

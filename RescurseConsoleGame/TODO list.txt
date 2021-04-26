@@ -1,13 +1,3 @@
-Data loading / saving
-{
-	if loading of data file fail game will create new
-}
-
--Add setting menu {
-	- Change player name
-	- Add change show status of keyword help
-}
-
 - Auto sell resources (0%, 10%, 25%, 50%, 75%, 100% or custom)
 
 const std::vector<char> charIDList
