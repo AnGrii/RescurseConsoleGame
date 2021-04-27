@@ -125,7 +125,7 @@ void BuildingsManager::productivitySettingMenu()
 
 	uint64_t int_percent = SafetyInput::cinAndGetNumFromInput("Input percent: ");
 
-	BuildingsVector[buildingId]->setProductivity(int_percent);
+	BuildingsVector[buildingId]->setProductivityPercent(int_percent);
 }
 
 void BuildingsManager::printResourceRequest(Building build, std::string buildSymb,

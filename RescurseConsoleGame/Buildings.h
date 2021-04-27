@@ -11,7 +11,8 @@ public:
 	Building() :
 	count(0), productionOutput(0), inQueue(0),
 		skipTimeValue(0), upgradeValue(0), buildTime(0), endBuildTime(0),
-		resource1(0), resource2(0), resource3(0), powerPercent(0),
+		resource1(0), resource2(0), resource3(0),
+		powerPercent(0), autoSellPercent(0),
 	name("NoName"){}
 	void Reinitialisate(std::vector<uint64_t> buildingData, std::string name);
 	std::vector<uint64_t> UploadData();
@@ -34,7 +35,7 @@ public:
 
 	uint64_t getProductionOutput();
 	uint64_t calcProductivity(); //Calculate
-	void setProductivity(uint64_t percent);
+	void setProductivityPercent(uint64_t percent);
 	std::string getProductivityInfo();
 	
 

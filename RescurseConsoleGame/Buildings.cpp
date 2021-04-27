@@ -145,7 +145,7 @@ bool Building::getActiveStatus()
 	return false;
 }
 
-void Building::setProductivity(uint64_t percent)
+void Building::setProductivityPercent(uint64_t percent)
 {
 	if (percent <= 100) {
 		this->powerPercent = percent;
