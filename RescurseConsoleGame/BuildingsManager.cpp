@@ -134,18 +134,18 @@ void BuildingsManager::printResourceRequest(Building build, std::string buildSym
 	std::string resourceName3)
 {
 	std::cout << buildSymb << " - " << build.getName() << std::endl
-		<< resourceName1 << " - " << build.getResCount1() << std::endl
-		<< resourceName2 << " - " << build.getResCount2() << std::endl
-		<< resourceName3 << " - " << build.getResCount3() << std::endl << std::endl;
+		<< resourceName1 << " - " << build.getResource1Count() << std::endl
+		<< resourceName2 << " - " << build.getResource2Count() << std::endl
+		<< resourceName3 << " - " << build.getResource3Count() << std::endl << std::endl;
 }
 
 void BuildingsManager::printResourceRequest(char buildSymb, Building build,
 	Resource res1, Resource res2, Resource res3)
 {
 	std::cout << buildSymb << " - " << build.getName() << std::endl
-		<< res1.getName() << " - " << build.getResCount1() << std::endl
-		<< res2.getName() << " - " << build.getResCount2() << std::endl
-		<< res3.getName() << " - " << build.getResCount3() << std::endl << std::endl;
+		<< res1.getName() << " - " << build.getResource1Count() << std::endl
+		<< res2.getName() << " - " << build.getResource2Count() << std::endl
+		<< res3.getName() << " - " << build.getResource3Count() << std::endl << std::endl;
 }
 
 void BuildingsManager::build(Building& build,
@@ -153,9 +153,9 @@ void BuildingsManager::build(Building& build,
 	Resource& reqRes2,
 	Resource& reqRes3)
 {
-	if (build.getResCount1() <= reqRes1.getCount() and
-		build.getResCount2() <= reqRes2.getCount() and
-		build.getResCount3() <= reqRes3.getCount())
+	if (build.getResource1Count() <= reqRes1.getCount() and
+		build.getResource2Count() <= reqRes2.getCount() and
+		build.getResource3Count() <= reqRes3.getCount())
 	{
 		char select = '0';
 		if (build.isInQueue()) {
@@ -168,9 +168,9 @@ void BuildingsManager::build(Building& build,
 
 		if (select == 'y') {
 			if (build.addInQueue()) {
-				reqRes1.reduce(build.getResCount1());
-				reqRes2.reduce(build.getResCount2());
-				reqRes3.reduce(build.getResCount3());
+				reqRes1.reduce(build.getResource1Count());
+				reqRes2.reduce(build.getResource2Count());
+				reqRes3.reduce(build.getResource3Count());
 
 				build.increaseResRequest1();
 				build.increaseResRequest2();
@@ -264,7 +264,7 @@ void BuildingsManager::upgradeMenu(Player& p)
 	uint16_t buildingId = SafetyInput::cinAndGetIDfromChar("Input building id-name: ",
 		charIDList, BUILDINGS_COUNT);
 
-	BuildingsVector[buildingId]->increaseProductivity \
+	BuildingsVector[buildingId]->increaseProductivityOutput \
 		( p.tryPay( BuildingsVector[buildingId]->getUpgradeValue()));
 }
 

@@ -17,9 +17,9 @@ public:
 	void Reinitialisate(std::vector<uint64_t> buildingData, std::string name);
 	std::vector<uint64_t> UploadData();
 
-	uint64_t getResCount1();
-	uint64_t getResCount2();
-	uint64_t getResCount3();
+	uint64_t getResource1Count();
+	uint64_t getResource2Count();
+	uint64_t getResource3Count();
 
 	void increaseResRequest1();
 	void increaseResRequest2();
@@ -60,7 +60,7 @@ public:
 	void buildInfo();
 
 	std::string getUpgradeBuildInfo();
-	void increaseProductivity(bool payStatus);
+	void increaseProductivityOutput(bool payStatus);
 
 	std::string getName() { return name; }
 

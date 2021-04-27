@@ -18,7 +18,6 @@ void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string na
 	autoSellPercent=	buildingData[counter]; counter++;
 	this->name = name;
 }
-
 std::vector<uint64_t> Building::UploadData()
 {
 	std::vector<uint64_t> dataVector;
@@ -42,17 +41,17 @@ std::vector<uint64_t> Building::UploadData()
 	return dataVector;
 }
 
-uint64_t Building::getResCount1()
+uint64_t Building::getResource1Count()
 {
 	return resource1;
 }
 
-uint64_t Building::getResCount2()
+uint64_t Building::getResource2Count()
 {
 	return resource2;
 }
 
-uint64_t Building::getResCount3()
+uint64_t Building::getResource3Count()
 {
 	return resource3;
 }
@@ -303,7 +302,7 @@ std::string Building::getUpgradeBuildInfo()
 	return info;
 }
 
-void Building::increaseProductivity(bool payStatus)
+void Building::increaseProductivityOutput(bool payStatus)
 {
 	if (payStatus) {
 		if (productionOutput < UINT64_MAX - 2) {
