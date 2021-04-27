@@ -21,9 +21,9 @@ public:
 	uint64_t getRes2();
 	uint64_t getRes3();
 
-	void increaseResValue1();
-	void increaseResValue2();
-	void increaseResValue3();
+	void increaseResRequest1();
+	void increaseResRequest2();
+	void increaseResRequest3();
 
 	void increaseSkipValue();
 
@@ -36,7 +36,7 @@ public:
 	uint64_t getProductionOutput();
 	uint64_t calcProductivity(); //Calculate
 	void setProductivityPercent(uint64_t percent);
-	std::string getProductivityInfo();
+	std::string getPowerPercent();
 	
 
 	uint64_t getBuildTime();

@@ -116,7 +116,7 @@ void BuildingsManager::productivitySettingMenu()
 	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
 	{
 		std::cout << charIDList[i] << " - " \
-			<< BuildingsVector[i]->getProductivityInfo() << std::endl;
+			<< BuildingsVector[i]->getPowerPercent() << std::endl;
 	}
 	std::cout << std::endl;
 
@@ -172,9 +172,9 @@ void BuildingsManager::build(Building& build,
 				reqRes2.reduce(build.getRes2());
 				reqRes3.reduce(build.getRes3());
 
-				build.increaseResValue1();
-				build.increaseResValue2();
-				build.increaseResValue3();
+				build.increaseResRequest1();
+				build.increaseResRequest2();
+				build.increaseResRequest3();
 			}
 			std::cout << "Adding building in queue succeed!" << std::endl << std::endl;
 		}

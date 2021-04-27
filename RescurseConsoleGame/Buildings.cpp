@@ -57,17 +57,17 @@ uint64_t Building::getRes3()
 	return resource3;
 }
 
-void Building::increaseResValue1()
+void Building::increaseResRequest1()
 {
 	resource1 = uint64_t(resource1 * INCREASE_VALUE_COEFFICIENT);
 }
 
-void Building::increaseResValue2()
+void Building::increaseResRequest2()
 {
 	resource2 = uint64_t(resource2 * INCREASE_VALUE_COEFFICIENT);
 }
  
-void Building::increaseResValue3()
+void Building::increaseResRequest3()
 {
 	resource3 = uint64_t(resource3 * INCREASE_VALUE_COEFFICIENT);
 }
@@ -119,7 +119,7 @@ uint64_t Building::getBuildTime()
 	return buildTime;
 }
 
-std::string Building::getProductivityInfo()
+std::string Building::getPowerPercent()
 {
 	std::string info;
 
@@ -134,7 +134,7 @@ std::string Building::getProductivityInfo()
 		info = info + "\t";
 	}
 
-	info = info + "Productivity: \t";
+	info = info + "Power Percent: \t";
 	info = info + std::to_string(powerPercent);
 
 	return info;
