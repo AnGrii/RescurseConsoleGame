@@ -63,10 +63,11 @@ public:
 	std::string getName() { return name; }
 
 private:
-	static const uint16_t BUILDING_DATA_COUNT = 11;
+	static const uint16_t BUILDING_DATA_COUNT = 12;
 
 	uint64_t count, productionOutput, inQueue, skipTimeValue, upgradeValue,
-		buildTime, endBuildTime, resource1, resource2, resource3, powerPercent;
+		buildTime, endBuildTime, resource1, resource2, resource3, powerPercent,
+		autoSellPercent;
 	std::string name;
 
 	const double INCREASE_VALUE_COEFFICIENT = 1.2;

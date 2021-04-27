@@ -4,17 +4,18 @@ void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string na
 {
 	uint16_t counter = 0;
 
-	count =			buildingData[counter];
-	productionOutput =	buildingData[++counter];
-	inQueue =		buildingData[++counter];
-	skipTimeValue = buildingData[++counter];
-	upgradeValue =  buildingData[++counter];
-	buildTime =		buildingData[++counter];
-	endBuildTime =	buildingData[++counter];
-	resource1 =		buildingData[++counter];
-	resource2 =		buildingData[++counter];
-	resource3 =		buildingData[++counter];
-	powerPercent =	buildingData[++counter];
+	count =				buildingData[counter]; counter++;
+	productionOutput =	buildingData[counter]; counter++;
+	inQueue =			buildingData[counter]; counter++;
+	skipTimeValue =		buildingData[counter]; counter++;
+	upgradeValue =		buildingData[counter]; counter++;
+	buildTime =			buildingData[counter]; counter++;
+	endBuildTime =		buildingData[counter]; counter++;
+	resource1 =			buildingData[counter]; counter++;
+	resource2 =			buildingData[counter]; counter++;
+	resource3 =			buildingData[counter]; counter++;
+	powerPercent =		buildingData[counter]; counter++;
+	autoSellPercent=	buildingData[counter]; counter++;
 	this->name = name;
 }
 
@@ -36,6 +37,7 @@ std::vector<uint64_t> Building::UploadData()
 	dataVector[counter] = resource2;		counter++;
 	dataVector[counter] = resource3;		counter++;
 	dataVector[counter] = powerPercent;		counter++;
+	dataVector[counter] = autoSellPercent;		counter++;
 
 	return dataVector;
 }

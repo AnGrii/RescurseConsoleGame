@@ -279,5 +279,4 @@ void DataModule::Reset::checkExistenceFileOrAskForCreate(const std::string dataF
 		}
 		exit(1);
 	}
-
 }
