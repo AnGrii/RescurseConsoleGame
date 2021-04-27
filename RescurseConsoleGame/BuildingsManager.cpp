@@ -116,7 +116,7 @@ void BuildingsManager::productivitySettingMenu()
 	for (size_t i = 0; i < BUILDINGS_COUNT; i++)
 	{
 		std::cout << charIDList[i] << " - " \
-			<< BuildingsVector[i]->getPowerPercent() << std::endl;
+			<< BuildingsVector[i]->getPowerPercentInfo() << std::endl;
 	}
 	std::cout << std::endl;
 
@@ -125,7 +125,7 @@ void BuildingsManager::productivitySettingMenu()
 
 	uint64_t int_percent = SafetyInput::cinAndGetNumFromInput("Input percent: ");
 
-	BuildingsVector[buildingId]->setProductivityPercent(int_percent);
+	BuildingsVector[buildingId]->setPowerPercent(int_percent);
 }
 
 void BuildingsManager::printResourceRequest(Building build, std::string buildSymb,
@@ -134,18 +134,18 @@ void BuildingsManager::printResourceRequest(Building build, std::string buildSym
 	std::string resourceName3)
 {
 	std::cout << buildSymb << " - " << build.getName() << std::endl
-		<< resourceName1 << " - " << build.getRes1() << std::endl
-		<< resourceName2 << " - " << build.getRes2() << std::endl
-		<< resourceName3 << " - " << build.getRes3() << std::endl << std::endl;
+		<< resourceName1 << " - " << build.getResCount1() << std::endl
+		<< resourceName2 << " - " << build.getResCount2() << std::endl
+		<< resourceName3 << " - " << build.getResCount3() << std::endl << std::endl;
 }
 
 void BuildingsManager::printResourceRequest(char buildSymb, Building build,
 	Resource res1, Resource res2, Resource res3)
 {
 	std::cout << buildSymb << " - " << build.getName() << std::endl
-		<< res1.getName() << " - " << build.getRes1() << std::endl
-		<< res2.getName() << " - " << build.getRes2() << std::endl
-		<< res3.getName() << " - " << build.getRes3() << std::endl << std::endl;
+		<< res1.getName() << " - " << build.getResCount1() << std::endl
+		<< res2.getName() << " - " << build.getResCount2() << std::endl
+		<< res3.getName() << " - " << build.getResCount3() << std::endl << std::endl;
 }
 
 void BuildingsManager::build(Building& build,
@@ -153,9 +153,9 @@ void BuildingsManager::build(Building& build,
 	Resource& reqRes2,
 	Resource& reqRes3)
 {
-	if (build.getRes1() <= reqRes1.getCount() and
-		build.getRes2() <= reqRes2.getCount() and
-		build.getRes3() <= reqRes3.getCount())
+	if (build.getResCount1() <= reqRes1.getCount() and
+		build.getResCount2() <= reqRes2.getCount() and
+		build.getResCount3() <= reqRes3.getCount())
 	{
 		char select = '0';
 		if (build.isInQueue()) {
@@ -168,9 +168,9 @@ void BuildingsManager::build(Building& build,
 
 		if (select == 'y') {
 			if (build.addInQueue()) {
-				reqRes1.reduce(build.getRes1());
-				reqRes2.reduce(build.getRes2());
-				reqRes3.reduce(build.getRes3());
+				reqRes1.reduce(build.getResCount1());
+				reqRes2.reduce(build.getResCount2());
+				reqRes3.reduce(build.getResCount3());
 
 				build.increaseResRequest1();
 				build.increaseResRequest2();

@@ -17,15 +17,15 @@ public:
 	void Reinitialisate(std::vector<uint64_t> buildingData, std::string name);
 	std::vector<uint64_t> UploadData();
 
-	uint64_t getRes1();
-	uint64_t getRes2();
-	uint64_t getRes3();
+	uint64_t getResCount1();
+	uint64_t getResCount2();
+	uint64_t getResCount3();
 
 	void increaseResRequest1();
 	void increaseResRequest2();
 	void increaseResRequest3();
 
-	void increaseSkipValue();
+	void increaseSkipBuildingTimeValue();
 
 	void increaseUpgradeValue();
 
@@ -35,8 +35,9 @@ public:
 
 	uint64_t getProductionOutput();
 	uint64_t calcProductivity(); //Calculate
-	void setProductivityPercent(uint64_t percent);
-	std::string getPowerPercent();
+
+	void setPowerPercent(uint64_t percent);
+	std::string getPowerPercentInfo();
 	
 
 	uint64_t getBuildTime();

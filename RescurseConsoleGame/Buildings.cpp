@@ -42,17 +42,17 @@ std::vector<uint64_t> Building::UploadData()
 	return dataVector;
 }
 
-uint64_t Building::getRes1()
+uint64_t Building::getResCount1()
 {
 	return resource1;
 }
 
-uint64_t Building::getRes2()
+uint64_t Building::getResCount2()
 {
 	return resource2;
 }
 
-uint64_t Building::getRes3()
+uint64_t Building::getResCount3()
 {
 	return resource3;
 }
@@ -72,7 +72,7 @@ void Building::increaseResRequest3()
 	resource3 = uint64_t(resource3 * INCREASE_VALUE_COEFFICIENT);
 }
 
-void Building::increaseSkipValue()
+void Building::increaseSkipBuildingTimeValue()
 {
 	skipTimeValue = uint64_t(skipTimeValue * INCREASE_VALUE_COEFFICIENT);
 }
@@ -119,7 +119,7 @@ uint64_t Building::getBuildTime()
 	return buildTime;
 }
 
-std::string Building::getPowerPercent()
+std::string Building::getPowerPercentInfo()
 {
 	std::string info;
 
@@ -145,7 +145,7 @@ bool Building::getActiveStatus()
 	return false;
 }
 
-void Building::setProductivityPercent(uint64_t percent)
+void Building::setPowerPercent(uint64_t percent)
 {
 	if (percent <= 100) {
 		this->powerPercent = percent;
@@ -244,7 +244,7 @@ void Building::skipBuildingProcess(bool payStatus)
 	if (this->isInQueue()) {
 		if (payStatus) {
 			this->skipBuildingTime();
-			this->increaseSkipValue();
+			this->increaseSkipBuildingTimeValue();
 
 			std::cout << name << " building skiped!" << std::endl
 				<< std::endl;
