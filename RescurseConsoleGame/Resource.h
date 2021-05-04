@@ -8,7 +8,7 @@
 class Resource
 {
 public:
-	Resource() : count(0), value(0), name("NoName"){}
+	Resource() : count(0), value(0), autoSellPercent(0), name("NoName"){}
 	void Reinitialisate(std::string name,
 		std::vector<uint64_t> dataList);
 	std::vector<uint64_t> UploadData();
@@ -26,12 +26,10 @@ public:
 
 	std::string getNameAndCountInfo();
 
-	uint64_t sellRecource(uint64_t count);
-
 private:
 	static const uint16_t RESOURCES_DATA_COUNT = 2;
 
-	uint64_t count, value;
+	uint64_t count, value, autoSellPercent;
 	std::string name;
 };
 
