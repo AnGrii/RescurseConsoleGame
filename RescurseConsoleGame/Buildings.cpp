@@ -15,7 +15,6 @@ void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string na
 	resource2 =			buildingData[counter]; counter++;
 	resource3 =			buildingData[counter]; counter++;
 	powerPercent =		buildingData[counter]; counter++;
-	autoSellPercent=	buildingData[counter]; counter++;
 	this->name = name;
 }
 std::vector<uint64_t> Building::UploadData()
@@ -36,7 +35,6 @@ std::vector<uint64_t> Building::UploadData()
 	dataVector[counter] = resource2;		counter++;
 	dataVector[counter] = resource3;		counter++;
 	dataVector[counter] = powerPercent;		counter++;
-	dataVector[counter] = autoSellPercent;		counter++;
 
 	return dataVector;
 }

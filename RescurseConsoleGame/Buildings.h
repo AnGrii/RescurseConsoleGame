@@ -12,7 +12,7 @@ public:
 	count(0), productionOutput(0), inQueue(0),
 		skipTimeValue(0), upgradeValue(0), buildTime(0), endBuildTime(0),
 		resource1(0), resource2(0), resource3(0),
-		powerPercent(0), autoSellPercent(0),
+		powerPercent(0),
 	name("NoName"){}
 	void Reinitialisate(std::vector<uint64_t> buildingData, std::string name);
 	std::vector<uint64_t> UploadData();
@@ -68,8 +68,7 @@ private:
 	static const uint16_t BUILDING_DATA_COUNT = 12;
 
 	uint64_t count, productionOutput, inQueue, skipTimeValue, upgradeValue,
-		buildTime, endBuildTime, resource1, resource2, resource3, powerPercent,
-		autoSellPercent;
+		buildTime, endBuildTime, resource1, resource2, resource3, powerPercent;
 	std::string name;
 
 	const double INCREASE_VALUE_COEFFICIENT = 1.2;

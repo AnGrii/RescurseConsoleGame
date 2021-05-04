@@ -84,3 +84,8 @@ std::string Resource::getNameAndCountInfo()
 	return info;
 }
 
+uint64_t Resource::sellRecource(uint64_t count)
+{
+	if(count)
+}
+

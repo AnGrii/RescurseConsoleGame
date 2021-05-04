@@ -26,6 +26,8 @@ public:
 
 	std::string getNameAndCountInfo();
 
+	uint64_t sellRecource(uint64_t count);
+
 private:
 	static const uint16_t RESOURCES_DATA_COUNT = 2;
 
