@@ -16,7 +16,7 @@ public:
 	void upgradeResourceExtractionMenu(Player& p);
 
 private:
-	const double VALUE_INCREASE_COEFICIENT = 0.2;
+	const double VALUE_INCREASE_COEFICIENT = 0.35;
 	const uint16_t RESOURCE_EXTRACT_DATA_COUNT = 6;
 
 	uint64_t logExtract, upgradeLogExtractValue,

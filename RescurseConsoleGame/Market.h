@@ -17,7 +17,7 @@ public:
 	void buySellMenu(Player& p, ResourceManager &rm);
 
 private:
-	double sellCOeficient;
+	/*double sellCOeficient;
 
 
 	void showBuySellInfo(ResourceManager &rm);
@@ -25,7 +25,7 @@ private:
 	void buyResource(Player& p, Resource& res);
 	void sellResource(Player& p, Resource& res);
 
-	void printResourcesBuySellInfo(char nameId, std::string name, Resource res);
+	void printResourcesBuySellInfo(char nameId, std::string name, Resource res);*/
 };
 
 

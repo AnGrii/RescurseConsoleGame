@@ -18,7 +18,7 @@
 #include "ResourcesExtract.h"
 #include "Buildings.h"
 #include "BuildingsManager.h"
-#include "Market.h"
+//#include "Market.h"
 #include "GameHelper.h"
 #include "Settings.h"
 
@@ -39,7 +39,7 @@ int main()
     BuildingsManager buildings(data.getBuildingsNameData(),
         data.getBuildingsData());
 
-    Market market(data.getMarketData());
+   //Market market(data.getMarketData());
 
     Settings settings(data.getSettingsData());
 
@@ -94,7 +94,7 @@ int main()
             buildings.printBuildingsInfo();
             break;
         case 'm':
-            market.buySellMenu(player, resManager);
+            //market.buySellMenu(player, resManager);
             break;
         case 'r':
             data.resetDataWithSecurity(g_DataFileName);
@@ -112,7 +112,7 @@ int main()
             data.setRecourcesData(resManager.UploadData());
             data.setBuildingsData(buildings.UploadData());
             data.setResourcesExtractData(resExtract.UploadData());
-            data.setMarketData(market.UploadData());
+            //data.setMarketData(market.UploadData());
             data.setSettingsData(settings.UploadData());
 
             data.saveData(g_DataFileName);

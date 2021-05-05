@@ -8,8 +8,6 @@ void Resource::Reinitialisate(std::string name,
 
 	this->name = name;
 	this->count = dataList[counter]; counter++;
-	this->value = dataList[counter]; counter++;
-	this->autoSellPercent = dataList[counter]; counter++;
 }
 
 std::vector<uint64_t> Resource::UploadData()
@@ -20,8 +18,6 @@ std::vector<uint64_t> Resource::UploadData()
 
 	uint16_t counter = 0;
 	dataVector[counter] = this->count; counter++;
-	dataVector[counter] = this->value;  counter++;
-	dataVector[counter] = this->autoSellPercent;  counter++;
 
 	return dataVector;
 }
@@ -30,10 +26,7 @@ uint64_t Resource::getCount()
 {
 	return count;
 }
-uint64_t& Resource::getCountLink()
-{
-	return count;
-}
+
 void Resource::add(uint64_t count)
 {
 	uint64_t limit = UINT64_MAX - this->count;
@@ -57,11 +50,6 @@ void Resource::reduce(uint64_t count)
 void Resource::set(uint64_t count)
 {
 	this->count = count;
-}
-
-uint64_t Resource::getValue()
-{
-	return value;
 }
 
 std::string Resource::getName()
