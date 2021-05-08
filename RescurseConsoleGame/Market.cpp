@@ -26,16 +26,26 @@ Market::Market(std::vector<uint64_t> dataList)
 	}
 }
 
+std::vector<uint64_t> Market::UploadData()
+{
+	std::vector<uint64_t> dataList;
+
+	uint16_t dataCountForInit = 1 + (BUILDINGS_COUNT * 2);
+
+	dataList.reserve(dataCountForInit);
+
+	dataList.push_back(uint64_t(sellCoeficient * 100));
+
+	for (size_t item = 0; item < BUILDINGS_COUNT; item++)
+	{
+		dataList.push_back(resourcesValueVc[item]);
+		dataList.push_back(resourcesAutoSellPercentVc[item]);
+	}
+
+	return dataList;
+}
 
 
-//std::vector<double> Market::UploadData()
-//{
-//	std::vector<double> dataVector;
-//
-//	dataVector.push_back(sellCOeficient);
-//
-//	return dataVector;
-//}
 
 //void Market::buySellMenu(Player& p, ResourceManager &rm)
 //{

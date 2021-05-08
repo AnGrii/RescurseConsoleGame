@@ -26,7 +26,7 @@
 // SAVE_DATA turn on / off saving, for including new data and testing, 
 // Data in data file will be static
 // Reset off together with saving!!!
-//#define SAVE_DATA 
+#define SAVE_DATA 
 
 
 
@@ -51,8 +51,6 @@ int main()
     Market market(data.getMarketData());
 
     Settings settings(data.getSettingsData());
-
-    market.printData();
 
     char g_Select = '0';
     bool g_Exit = false;
