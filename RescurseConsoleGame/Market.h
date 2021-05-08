@@ -17,6 +17,11 @@ public:
 	void buySellMenu(Player& p, ResourceManager &rm);
 
 private:
+	const uint16_t BUILDINGS_COUNT = 11;
+
+	double sellCoeficient;
+	std::vector<uint64_t> resourcesValueVc, resourcesAutoSellPercentVc; // Vc - vector
+
 	/*double sellCOeficient;
 
 

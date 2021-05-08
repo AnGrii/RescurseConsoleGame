@@ -72,7 +72,7 @@ private:
 		BUILDING_COUNT = 11,
 		BUILDING_DATA_COUNT = 11,
 		RESOURCES_EXTRACT_DATA_COUNT = 6,
-		MARKET_DATA_COUNT = 1,
+		MARKET_DATA_COUNT = 1 + (BUILDING_COUNT * 2), // 2 - count values in Market
 		SETTINGS_DATA_COUNT = 1;
 
 	//Data stroages
