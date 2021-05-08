@@ -33,6 +33,6 @@ buildingsData:
 resourcesExtract:
 2 101 2 501 2 1001 
 marketData:
-1.75 
+175 
 setting:
 2 

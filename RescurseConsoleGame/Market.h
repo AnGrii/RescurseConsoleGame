@@ -11,8 +11,8 @@
 class Market
 {
 public:
-	Market(std::vector<double> dataList);
-	std::vector<double> UploadData();
+	Market(std::vector<uint64_t> dataList);
+	std::vector<uint64_t> UploadData();
 	
 	void buySellMenu(Player& p, ResourceManager &rm);
 

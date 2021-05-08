@@ -49,10 +49,10 @@ void DataModule::loadData(std::string dataFileName)
 		LoadingComponents::readNumber<uint64_t>);
 
 	//MARKET_DATA
-	LoadingComponents::loadData<double>(marketData,
+	LoadingComponents::loadData<uint64_t>(marketData,
 		MARKET_DATA_COUNT,
 		dataFileName, keywordMarketData,
-		LoadingComponents::readNumber<double>);
+		LoadingComponents::readNumber<uint64_t>);
 
 	//SETTINGS_DATA
 	LoadingComponents::loadData<uint16_t>(settingsData,
@@ -105,9 +105,9 @@ void DataModule::saveData(const std::string dataFileName)
 		SavingComponents::prepareNumberToSave<uint64_t>);
 
 	//MARKET_DATA
-	SavingComponents::saveData<double>(marketData,
+	SavingComponents::saveData<uint64_t>(marketData,
 		dataFileName, keywordMarketData,
-		SavingComponents::prepareNumberToSave<double>);
+		SavingComponents::prepareNumberToSave<uint64_t>);
 
 	//SETTINGS_DATA
 	SavingComponents::saveData<uint16_t>(settingsData,
@@ -163,7 +163,7 @@ std::vector<uint64_t> DataModule::getResourcesExtractData()
 	return resourcesExtractData;
 }
 
-std::vector<double> DataModule::getMarketData()
+std::vector<uint64_t> DataModule::getMarketData()
 {
 	return marketData;
 }
@@ -244,7 +244,7 @@ void DataModule::setResourcesExtractData(std::vector<uint64_t> dataVector)
 	}
 }
 
-void DataModule::setMarketData(std::vector<double> dataVector)
+void DataModule::setMarketData(std::vector<uint64_t> dataVector)
 {
 	bool dataCountBiggerNULL = (dataVector.size() > 0);
 

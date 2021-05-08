@@ -32,7 +32,7 @@ public:
 	
 	std::vector<uint64_t> getResourcesExtractData();
 
-	std::vector<double> getMarketData();
+	std::vector<uint64_t> getMarketData();
 
 	std::vector<uint16_t> getSettingsData();
 
@@ -47,7 +47,7 @@ public:
 
 	 void setResourcesExtractData(std::vector<uint64_t> dataVector);
 
-	 void setMarketData(std::vector<double> dataVector);
+	 void setMarketData(std::vector<uint64_t> dataVector);
 
 	 void setSettingsData(std::vector<uint16_t> dataVector);
 
@@ -87,7 +87,7 @@ private:
 
 	std::vector<uint64_t> resourcesExtractData;
 
-	std::vector<double> marketData;
+	std::vector<uint64_t> marketData;
 
 	//bool type is unsafe
 	std::vector<uint16_t> settingsData;
