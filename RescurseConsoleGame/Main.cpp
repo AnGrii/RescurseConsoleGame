@@ -18,9 +18,18 @@
 #include "ResourcesExtract.h"
 #include "Buildings.h"
 #include "BuildingsManager.h"
-//#include "Market.h"
+#include "Market.h"
 #include "GameHelper.h"
 #include "Settings.h"
+
+
+// SAVE_DATA turn on / off saving, for including new data and testing, 
+// Data in data file will be static
+// Reset off together with saving!!!
+//#define SAVE_DATA 
+
+
+
 
 int main()
 {
@@ -39,10 +48,11 @@ int main()
     BuildingsManager buildings(data.getBuildingsNameData(),
         data.getBuildingsData());
 
-   //Market market(data.getMarketData());
+    Market market(data.getMarketData());
 
     Settings settings(data.getSettingsData());
 
+    market.printData();
 
     char g_Select = '0';
     bool g_Exit = false;
@@ -97,7 +107,9 @@ int main()
             //market.buySellMenu(player, resManager);
             break;
         case 'r':
+#ifdef SAVE_DATA
             data.resetDataWithSecurity(g_DataFileName);
+#endif
             break;
         case 'a':
             GameMessages::About();
@@ -107,6 +119,7 @@ int main()
             break;
         case 'x': 
         {
+#ifdef SAVE_DATA
             data.setPlayerName(player.getPlayerNameData());
             data.setPlayerData(player.getPlayerData());
             data.setRecourcesData(resManager.UploadData());
@@ -116,9 +129,9 @@ int main()
             data.setSettingsData(settings.UploadData());
 
             data.saveData(g_DataFileName);
+#endif
             g_Exit = true;
             break;
-
         }
         default:
             GameMessages::incorrectInput();

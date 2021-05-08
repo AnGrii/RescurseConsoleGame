@@ -12,10 +12,24 @@ class Market
 {
 public:
 	Market(std::vector<uint64_t> dataList);
-	std::vector<uint64_t> UploadData();
+	//std::vector<uint64_t> UploadData();
 	
-	void buySellMenu(Player& p, ResourceManager &rm);
+	//void buySellMenu(Player& p, ResourceManager &rm);
 
+	void printData() {
+		std::cout << "=============MARKET_DATA=================" << std::endl
+			<< "Sell Coeficient: " << sellCoeficient << std::endl;
+
+		for (auto& item : resourcesValueVc)
+		{
+			std::cout << "Resource Value: " << item << std::endl;
+		}
+
+		for (auto& item : resourcesAutoSellPercentVc)
+		{
+			std::cout << "Resource Auto Sell Percent: " << item << std::endl;
+		}
+	}
 private:
 	const uint16_t BUILDINGS_COUNT = 11;
 

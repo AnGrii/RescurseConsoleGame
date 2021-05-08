@@ -8,23 +8,25 @@ Market::Market(std::vector<uint64_t> dataList)
 		throw std::exception("Wrong init data count!");
 	}
 
-	uint16_t counter = 0;
+	resourcesValueVc.reserve(BUILDINGS_COUNT);
+	resourcesAutoSellPercentVc.reserve(BUILDINGS_COUNT);
 
-	sellCoeficient = dataList[counter]; counter++;
+	size_t counter = 0;
 
-	resourcesValueVc.resize(BUILDINGS_COUNT);
-	resourcesAutoSellPercentVc.resize(BUILDINGS_COUNT);
+	sellCoeficient = (dataList[counter] / 100.0);
 
-	for (counter; counter < BUILDINGS_COUNT + 1; counter++) // BUILDINGS_COUNT + 1 - first element is coeficient
+	for (counter = 1; counter < dataList.size(); counter++)
 	{
-		resourcesValueVc[counter - BUILDINGS_COUNT] = dataList[counter];
-	}
-
-	for (counter; counter < (BUILDINGS_COUNT * 2 + 1); counter++) // (BUILDINGS_COUNT * 2 + 1) - second list
-	{
-		resourcesAutoSellPercentVc[counter - BUILDINGS_COUNT] = dataList[counter];
+		if (counter % 2 == 1) {
+			resourcesValueVc.push_back(dataList[counter]);
+		}
+		else {
+			resourcesAutoSellPercentVc.push_back(dataList[counter]);
+		}
 	}
 }
+
+
 
 //std::vector<double> Market::UploadData()
 //{
