@@ -46,7 +46,6 @@ std::vector<uint64_t> Market::UploadData()
 }
 
 
-
 //void Market::buySellMenu(Player& p, ResourceManager &rm)
 //{
 //	showBuySellInfo(rm);

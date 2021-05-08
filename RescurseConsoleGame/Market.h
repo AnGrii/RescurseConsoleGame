@@ -14,16 +14,14 @@ public:
 	Market(std::vector<uint64_t> dataList);
 	std::vector<uint64_t> UploadData();
 	
-	//void buySellMenu(Player& p, ResourceManager &rm);
+	void buySellMenu(Player& p, ResourceManager &rm);
 private:
 	const uint16_t BUILDINGS_COUNT = 11;
 
 	double sellCoeficient;
 	std::vector<uint64_t> resourcesValueVc, resourcesAutoSellPercentVc; // Vc - vector
 
-	/*double sellCOeficient;
-
-
+	/*
 	void showBuySellInfo(ResourceManager &rm);
 
 	void buyResource(Player& p, Resource& res);

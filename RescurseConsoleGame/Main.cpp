@@ -29,8 +29,6 @@
 #define SAVE_DATA 
 
 
-
-
 int main()
 {
     srand(static_cast<uint64_t>(NULL));
