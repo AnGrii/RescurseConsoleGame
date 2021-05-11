@@ -58,19 +58,17 @@ void Market::Menu(Player& p, ResourceManager& rm)
 		charIDList, BUILDINGS_COUNT);
 	
 	char transferAction = SafetyInput::cinAndGetChar("Input transfer action \n\
-b - buy\n\
-s - sell\n\
+b - Buy\n\
+s - Sell\n\
 Input: ");
 
 	uint64_t transferCount = SafetyInput::cinAndGetUI64FromInput("Input count of resource: ");
 
 	if (transferAction == 'b') {
 		buyResource(p, rm.ReosourcesVector[resourceID], resourceID, transferCount);
-		std::cout << "NOT WORK!!!" << std::endl;
 	}
 	else if (transferAction == 's') {
 		sellResource(p, rm.ReosourcesVector[resourceID], resourceID, transferCount);
-		std::cout << "NOT WORK!!!" << std::endl;
 	}
 	else { /*Nothing*/ }
 }
@@ -100,7 +98,7 @@ void Market::showProductInfo(ResourceManager rm, const std::vector<char> charIDL
 	}
 }
 
-void Market::buyResource(Player& p, Resource* res, uint64_t count, uint16_t resourceID)
+void Market::buyResource(Player& p, Resource* res, uint16_t resourceID, uint64_t count)
 {
 	uint64_t transferValue = count * resourcesValueVc[resourceID];
 
@@ -113,7 +111,7 @@ void Market::buyResource(Player& p, Resource* res, uint64_t count, uint16_t reso
 	}
 }
 
-void Market::sellResource(Player& p, Resource* res, uint64_t count, uint16_t resourceID)
+void Market::sellResource(Player& p, Resource* res, uint16_t resourceID, uint64_t count)
 {
 	uint64_t transferValue = 
 		uint64_t(count * resourcesValueVc[resourceID] * sellCoeficient);

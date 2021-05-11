@@ -1,7 +1,7 @@
 playerName:
 Player/ 
 playerData:
-1 
+1587799475 
 resourcesName:
 Log/ Wood/ Stone/ Coal/ Copper/ Tin/ Bronze/ Silver/ Gold/ Platina/ Diamond/ 
 resourcesData:
@@ -13,7 +13,7 @@ resourcesData:
 1 
 1 
 1 
-1 
+501 
 1 
 1 
 buildingsName:

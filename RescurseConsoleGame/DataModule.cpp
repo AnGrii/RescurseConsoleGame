@@ -247,8 +247,9 @@ void DataModule::setResourcesExtractData(std::vector<uint64_t> dataVector)
 void DataModule::setMarketData(std::vector<uint64_t> dataVector)
 {
 	bool dataCountBiggerNULL = (dataVector.size() > 0);
+	uint16_t marketDataSize = PLAYER_DATA_COUNT + (BUILDING_COUNT * 2);
 
-	if (dataCountBiggerNULL and dataVector.size() == PLAYER_DATA_COUNT) {
+	if (dataCountBiggerNULL and dataVector.size() == marketDataSize) {
 		marketData.swap(dataVector);
 	}
 	else {

@@ -121,7 +121,7 @@ int main()
             data.setRecourcesData(resManager.UploadData());
             data.setBuildingsData(buildings.UploadData());
             data.setResourcesExtractData(resExtract.UploadData());
-            //data.setMarketData(market.UploadData());
+            data.setMarketData(market.UploadData());
             data.setSettingsData(settings.UploadData());
 
             data.saveData(g_DataFileName);

@@ -26,9 +26,9 @@ private:
 
 
 	void buyResource(Player& p, Resource* res,
-		uint64_t count, uint16_t resourceID);
+		uint16_t resourceID, uint64_t count);
 	void sellResource(Player& p, Resource* res,
-		uint64_t count, uint16_t resourceID);
+		uint16_t resourceID, uint64_t count);
 };
 
 
