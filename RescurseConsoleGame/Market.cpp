@@ -65,11 +65,11 @@ Input: ");
 	uint64_t transferCount = SafetyInput::cinAndGetUI64FromInput("Input count of resource: ");
 
 	if (transferAction == 'b') {
-		//buyResource(Player& p, Resource& res, resourceID, transferCount);
+		buyResource(p, rm.ReosourcesVector[resourceID], resourceID, transferCount);
 		std::cout << "NOT WORK!!!" << std::endl;
 	}
 	else if (transferAction == 's') {
-		//sellResource(Player& p, Resource& res, resourceID, transferCount);
+		sellResource(p, rm.ReosourcesVector[resourceID], resourceID, transferCount);
 		std::cout << "NOT WORK!!!" << std::endl;
 	}
 	else { /*Nothing*/ }
@@ -100,44 +100,30 @@ void Market::showProductInfo(ResourceManager rm, const std::vector<char> charIDL
 	}
 }
 
+void Market::buyResource(Player& p, Resource* res, uint64_t count, uint16_t resourceID)
+{
+	uint64_t transferValue = count * resourcesValueVc[resourceID];
 
+	if (transferValue <= p.getBalance()) {
+		res->add(count);
+		p.reduceBalance(transferValue);
+	}
+	else {
+		std::cout << "Not enough money!!!" << std::endl;
+	}
+}
 
-//void Market::buyResource(Player& p, Resource& res)
-//{
-//	uint64_t count = 0, transferValue = 0;
-//
-//	count = SafetyInput::cinAndGetNumFromInput("Input count: ");
-//	std::cout << std::endl;
-//
-//	transferValue = count * res.getValue();
-//
-//	if (p.getBalance() >= transferValue) {
-//		res.add(count);
-//		p.reduceBalance(transferValue);
-//	}
-//	else
-//	{
-//		std::cout << "Not enough money!!!" << std::endl;
-//	}
-//}
+void Market::sellResource(Player& p, Resource* res, uint64_t count, uint16_t resourceID)
+{
+	uint64_t transferValue = 
+		uint64_t(count * resourcesValueVc[resourceID] * sellCoeficient);
 
-//void Market::sellResource(Player& p, Resource& res)
-//{
-//	uint64_t count = 0, transferValue = 0;
-//
-//	std::cout << "Input count: ";
-//	std::cin >> count;
-//	std::cout << std::endl;
-//
-//	transferValue = uint64_t(count * res.getValue() * sellCOeficient);
-//
-//	if (res.getCount() >= count) {
-//		res.reduce(count);
-//		p.addBalance(transferValue);
-//	}
-//	else
-//	{
-//		std::cout << "Not enough count of resource!!!" << std::endl;
-//	}
-//}
+	if (count <= res->getCount()) {
+		res->reduce(count);
+		p.addBalance(transferValue);
+	}
+	else {
+		std::cout << "Not enough count of resource!!!" << std::endl;
+	}
+}
 

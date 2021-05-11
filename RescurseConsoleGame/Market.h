@@ -24,11 +24,11 @@ private:
 	
 	void showProductInfo(ResourceManager rm, const std::vector<char> charIDList);
 
-	/*
-	void buyResource(Player& p, Resource& res);
-	void sellResource(Player& p, Resource& res);
 
-	void printResourcesBuySellInfo(char nameId, std::string name, Resource res);*/
+	void buyResource(Player& p, Resource* res,
+		uint64_t count, uint16_t resourceID);
+	void sellResource(Player& p, Resource* res,
+		uint64_t count, uint16_t resourceID);
 };
 
 
