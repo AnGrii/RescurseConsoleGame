@@ -123,7 +123,7 @@ void BuildingsManager::productivitySettingMenu()
 	uint16_t buildingId = SafetyInput::cinAndGetIDfromChar("Input building id-name: ",
 		charIDList, BUILDINGS_COUNT);
 
-	uint64_t int_percent = SafetyInput::cinAndGetNumFromInput("Input percent: ");
+	uint64_t int_percent = SafetyInput::cinAndGetUI64FromInput("Input percent: ");
 
 	BuildingsVector[buildingId]->setPowerPercent(int_percent);
 }

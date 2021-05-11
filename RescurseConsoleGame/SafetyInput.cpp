@@ -35,7 +35,7 @@ uint16_t SafetyInput::cinAndGetIDfromChar(std::string inputMSG,
 	return output;
 }
 
-uint64_t SafetyInput::cinAndGetNumFromInput(std::string inputMSG)
+uint64_t SafetyInput::cinAndGetUI64FromInput(std::string inputMSG)
 {
 	std::string str_number = "0";
 	uint64_t number = 0;

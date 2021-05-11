@@ -45,151 +45,62 @@ std::vector<uint64_t> Market::UploadData()
 	return dataList;
 }
 
+void Market::Menu(Player& p, ResourceManager& rm)
+{
+	const std::vector<char> charIDList
+	{ 'q','w','e','r','t','y','u','i','o',
+		'p','a','s','d','f','g','h','j','k',
+		'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
 
-//void Market::buySellMenu(Player& p, ResourceManager &rm)
-//{
-//	showBuySellInfo(rm);
-//
-//	char selectTransfer = '0', selectReosurce = '0';
-//	std::cout << "Input resource id: ";
-//	std::cin >> selectReosurce;
-//	std::cout << std::endl;
-//		
-//	std::cout << "b - Buy" << std::endl
-//		<< "s - Sell" << std::endl
-//		<< "Any key - exit" << std::endl
-//		<< "Select type of transfer: ";
-//
-//	std::cin >> selectTransfer;
-//	std::cout << std::endl;
-//
-//
-//	switch (selectReosurce)
-//	{
-//	case '1':
-//		if (selectTransfer == 'b') {
-//			buyResource(p, rm.log);
-//		}
-//		else
-//		{
-//			sellResource(p, rm.log);
-//		}
-//		break;
-//	case '2':
-//		if (selectTransfer == 'b') {
-//			buyResource(p, rm.wood);
-//		}
-//		else
-//		{
-//			sellResource(p, rm.wood);
-//		}
-//		break;
-//	case '3':
-//		if (selectTransfer == 'b') {
-//			buyResource(p, rm.stone);
-//		}
-//		else
-//		{
-//			sellResource(p, rm.stone);
-//		}
-//		break;
-//	case '4':
-//		if (selectTransfer == 'b') {
-//			buyResource(p, rm.coal);
-//		}
-//		else
-//		{
-//			sellResource(p, rm.coal);
-//		}
-//		break;
-//	case '5':
-//		if (selectTransfer == 'b') {
-//			buyResource(p, rm.copper);
-//		}
-//		else
-//		{
-//			sellResource(p, rm.copper);
-//		}
-//		break;
-//	case '6':
-//		if (selectTransfer == 'b') {
-//			buyResource(p, rm.tin);
-//		}
-//		else
-//		{		
-//			sellResource(p, rm.tin);
-//		}
-//		break;
-//	case '7':
-//		if (selectTransfer == 'b') {
-//			buyResource(p, rm.bronze);
-//		}
-//		else
-//		{
-//			sellResource(p, rm.bronze);
-//		}
-//		break;
-//	case '8':
-//		if (selectTransfer == 'b') {
-//			buyResource(p, rm.silver);
-//		}
-//		else
-//		{
-//			sellResource(p, rm.silver);
-//		}
-//		break;
-//	case '9':
-//		if (selectTransfer == 'b') {
-//			buyResource(p, rm.gold);
-//		}
-//		else
-//		{
-//			sellResource(p, rm.gold);
-//		}
-//		break;
-//	case 'a':
-//		if (selectTransfer == 'b') {
-//			buyResource(p, rm.platina);
-//		}
-//		else
-//		{
-//			sellResource(p, rm.platina);
-//		}
-//		break;
-//	case 'b':
-//		if (selectTransfer == 'b') {
-//			buyResource(p, rm.diamond);
-//		}
-//		else
-//		{
-//			sellResource(p, rm.diamond);
-//		}
-//		break;
-//	default:
-//		std::cout << "Wrong input!" << std::endl << std::endl;
-//		break;
-//	}
-//}
+	showProductInfo(rm, charIDList);	
 
-//void Market::showBuySellInfo(ResourceManager &rm)
-//{
-//	std::cout << "===========\tMarket\t==========" << std::endl
-//		<< "Resource\tCount\tBuy\tSell" << std::endl;
-//		
-//	printResourcesBuySellInfo('1', "Log_", rm.log);
-//	printResourcesBuySellInfo('2', "Wood", rm.wood);
-//	printResourcesBuySellInfo('3', "Stone", rm.stone);
-//	printResourcesBuySellInfo('4', "Coal", rm.coal);
-//	printResourcesBuySellInfo('5', "Copper", rm.copper);
-//	printResourcesBuySellInfo('6', "Tin_", rm.tin);
-//	printResourcesBuySellInfo('7', "Bronze", rm.bronze);
-//	printResourcesBuySellInfo('8', "Silver", rm.silver);
-//	printResourcesBuySellInfo('9', "Gold", rm.gold);
-//	printResourcesBuySellInfo('a', "Platina", rm.platina);
-//	printResourcesBuySellInfo('b', "Diamond", rm.diamond);
-//
-//	std::cout << std::endl;
-//}
+	uint16_t resourceID = SafetyInput::cinAndGetIDfromChar("Input resources letter: ",
+		charIDList, BUILDINGS_COUNT);
+	
+	char transferAction = SafetyInput::cinAndGetChar("Input transfer action \n\
+b - buy\n\
+s - sell\n\
+Input: ");
+
+	uint64_t transferCount = SafetyInput::cinAndGetUI64FromInput("Input count of resource: ");
+
+	if (transferAction == 'b') {
+		//buyResource(Player& p, Resource& res, resourceID, transferCount);
+		std::cout << "NOT WORK!!!" << std::endl;
+	}
+	else if (transferAction == 's') {
+		//sellResource(Player& p, Resource& res, resourceID, transferCount);
+		std::cout << "NOT WORK!!!" << std::endl;
+	}
+	else { /*Nothing*/ }
+}
+
+void Market::showProductInfo(ResourceManager rm, const std::vector<char> charIDList)
+{
+	for (size_t count = 0; count < rm.RESOURCES_COUNT; count++)
+	{
+		std::cout << charIDList[count] << " - "
+			<< rm.ReosourcesVector[count]->getName();
+
+		if (rm.ReosourcesVector[count]->getName().size() < 4) {
+			std::cout << "\t\t\t";
+		}
+		else if (rm.ReosourcesVector[count]->getName().size() < 8) {
+			std::cout << "\t\t";
+		}
+		else {
+			std::cout << "\t";
+		}
+
+		std::cout << rm.ReosourcesVector[count]->getCount() << "\t"
+			<< "Value: " << resourcesValueVc[count] << "\t"
+			<< "Sell Value: "
+			<< uint64_t(resourcesValueVc[count] * sellCoeficient)
+			<< std::endl;
+	}
+}
+
+
 
 //void Market::buyResource(Player& p, Resource& res)
 //{
@@ -230,10 +141,3 @@ std::vector<uint64_t> Market::UploadData()
 //	}
 //}
 
-//void Market::printResourcesBuySellInfo(char nameId, std::string name, Resource res)
-//{
-//	std::cout << nameId << " - " << name << "\t" << res.getCount()
-//		<< "\t" << res.getValue()
-//		<< "\t" << uint64_t(res.getValue() * sellCOeficient)
-//		<< std::endl;
-//}

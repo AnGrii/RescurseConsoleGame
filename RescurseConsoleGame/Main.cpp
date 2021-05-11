@@ -100,7 +100,7 @@ int main()
             buildings.printBuildingsInfo();
             break;
         case 'm':
-            //market.buySellMenu(player, resManager);
+            market.Menu(player, resManager);
             break;
         case 'r':
 #ifdef SAVE_DATA
