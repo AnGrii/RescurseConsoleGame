@@ -24,6 +24,10 @@ void DataModule::loadData(std::string dataFileName)
 		dataFileName, keywordResourcesName,
 		LoadingComponents::readName);
 
+	//LEVELING_OF_RESOURCES_NAMES
+
+	WorkWithString::stringLeveling(resourcesNameData);
+
 	//RESOURCE_DATA
 	LoadingComponents::loadData<uint64_t>(resourcesData,
 		RESOURCES_COUNT, RESOURCES_DATA_COUNT,
@@ -35,6 +39,9 @@ void DataModule::loadData(std::string dataFileName)
 		BUILDING_COUNT,
 		dataFileName, keywordBuildingsName,
 		LoadingComponents::readName);
+	
+	//LEVELING_OF_BUILDINGS_NAMES
+	WorkWithString::stringLeveling(buildingNameData);
 
 	//BUILDING_DATA
 	LoadingComponents::loadData<uint64_t>(buildingsData,
