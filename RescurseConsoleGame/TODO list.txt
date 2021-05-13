@@ -1,4 +1,15 @@
 - Auto sell resources (0%, 10%, 25%, 50%, 75%, 100% or custom)
 
-- Rewrite logic of market class for new values
 
+Rewrite output of info in classes
+{
+Resources:
+- getNameAndCountInfo
+Buildings:
+- getPowerPercentInfo
+- getQueueInfo
+- getSkipInfo
+- buildInfo
+- getUpgradeBuildInfo
+- getPowerPercentInfo
+}

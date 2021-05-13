@@ -25,7 +25,6 @@ void DataModule::loadData(std::string dataFileName)
 		LoadingComponents::readName);
 
 	//LEVELING_OF_RESOURCES_NAMES
-
 	WorkWithString::stringLeveling(resourcesNameData);
 
 	//RESOURCE_DATA
@@ -289,7 +288,7 @@ void DataModule::Reset::checkExistenceFileOrAskForCreate(const std::string dataF
 	}
 }
 
-void DataModule::WorkWithString::stringLeveling(std::vector<std::string> strVc)
+void DataModule::WorkWithString::stringLeveling(std::vector<std::string>& strVc)
 {
 	size_t maxStrSize = 0;
 
