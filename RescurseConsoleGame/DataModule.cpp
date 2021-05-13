@@ -281,3 +281,32 @@ void DataModule::Reset::checkExistenceFileOrAskForCreate(const std::string dataF
 		exit(1);
 	}
 }
+
+void DataModule::WorkWithString::stringLeveling(std::vector<std::string> strVc)
+{
+	size_t maxStrSize = 0;
+
+	if (strVc.size() > 1) {
+		for (auto& str : strVc) {
+			if (str.length() > maxStrSize) {
+				maxStrSize = str.length();
+			}
+		}
+
+		for (auto& str : strVc)
+		{
+			size_t addSpaceCount = maxStrSize - str.length();
+			std::string spaces;
+
+			while (spaces.length() < addSpaceCount) {
+				spaces = spaces + ' ';
+			}
+
+			str = str + spaces;
+		}
+
+	}
+	else {
+		throw std::exception("Uncorrect data! Wrong count of strings!");
+	}
+}

@@ -359,4 +359,10 @@ private:
 			"1.75"
 		};
 	};
+	class WorkWithString {
+	public:
+		static void stringLeveling(std::vector<std::string> strVc);
+	private:
+		WorkWithString();
+	};
 };
