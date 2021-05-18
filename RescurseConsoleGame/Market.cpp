@@ -54,15 +54,15 @@ void Market::Menu(Player& p, ResourceManager& rm)
 
 	showProductInfo(rm, charIDList);	
 
-	uint16_t resourceID = SafetyInput::cinAndGetIDfromChar("Input resources letter: ",
+	uint16_t resourceID = SafetyInput::cinAndReturnCharID("Input resources letter: ",
 		charIDList, BUILDINGS_COUNT);
 	
-	char transferAction = SafetyInput::cinAndGetChar("Input transfer action \n\
+	char transferAction = SafetyInput::cinAndReturnChar("Input transfer action \n\
 b - Buy\n\
 s - Sell\n\
 Input: ");
 
-	uint64_t transferCount = SafetyInput::cinAndGetUI64FromInput("Input count of resource: ");
+	uint64_t transferCount = SafetyInput::cinAndReturnUI64T("Input count of resource: ");
 
 	if (transferAction == 'b') {
 		buyResource(p, rm.ReosourcesVector[resourceID], resourceID, transferCount);

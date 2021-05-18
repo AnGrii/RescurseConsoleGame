@@ -1,6 +1,6 @@
 #include "SafetyInput.h"
 
-char SafetyInput::cinAndGetChar(std::string inputMSG = "Input:")
+char SafetyInput::cinAndReturnChar(std::string inputMSG = "Input:")
 {
 	char input = '0';
 
@@ -11,7 +11,7 @@ char SafetyInput::cinAndGetChar(std::string inputMSG = "Input:")
 	return input;
 }
 
-uint16_t SafetyInput::cinAndGetIDfromChar(std::string inputMSG,
+uint16_t SafetyInput::cinAndReturnCharID(std::string inputMSG,
 	std::vector<char> nameIdLIst, const size_t MAXIMAL_ID_VALUE)
 {	
 	char input = '0';
@@ -35,7 +35,7 @@ uint16_t SafetyInput::cinAndGetIDfromChar(std::string inputMSG,
 	return output;
 }
 
-uint64_t SafetyInput::cinAndGetUI64FromInput(std::string inputMSG)
+uint64_t SafetyInput::cinAndReturnUI64T(std::string inputMSG)
 {
 	std::string str_number = "0";
 	uint64_t number = 0;

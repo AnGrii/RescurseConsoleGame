@@ -6,12 +6,12 @@
 class SafetyInput
 {
 public:
-	static char cinAndGetChar(std::string inputMSG);
+	static char cinAndReturnChar(std::string inputMSG);
 
-	static uint16_t cinAndGetIDfromChar(std::string inputMSG, 
+	static uint16_t cinAndReturnCharID(std::string inputMSG, 
 		std::vector<char> nameIdLIst, const size_t MAXIMAL_ID_VALUE);
 
-	static uint64_t cinAndGetUI64FromInput(std::string inputMSG);
+	static uint64_t cinAndReturnUI64T(std::string inputMSG);
 private:
 	SafetyInput() {}
 };

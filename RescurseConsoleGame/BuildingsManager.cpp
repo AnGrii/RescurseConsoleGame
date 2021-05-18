@@ -40,7 +40,7 @@ void BuildingsManager::buildMenu(ResourceManager& res)
 	printResourceRequest('a', platinaCleaner, res.bronze, res.silver, res.gold);
 	printResourceRequest('b', diamondFactory, res.silver, res.gold, res.platina);
 
-	char select = SafetyInput::cinAndGetChar("Input id to build: ");
+	char select = SafetyInput::cinAndReturnChar("Input id to build: ");
 
 	switch (select)
 	{
@@ -120,10 +120,10 @@ void BuildingsManager::productivitySettingMenu()
 	}
 	std::cout << std::endl;
 
-	uint16_t buildingId = SafetyInput::cinAndGetIDfromChar("Input building id-name: ",
+	uint16_t buildingId = SafetyInput::cinAndReturnCharID("Input building id-name: ",
 		charIDList, BUILDINGS_COUNT);
 
-	uint64_t int_percent = SafetyInput::cinAndGetUI64FromInput("Input percent: ");
+	uint64_t int_percent = SafetyInput::cinAndReturnUI64T("Input percent: ");
 
 	BuildingsVector[buildingId]->setPowerPercent(int_percent);
 }
@@ -163,7 +163,7 @@ void BuildingsManager::build(Building& build,
 				<< "want to add one more to queue?" << std::endl
 				<< "y - Yes, n - any key" << std::endl;		
 
-			select = SafetyInput::cinAndGetChar("Input: ");
+			select = SafetyInput::cinAndReturnChar("Input: ");
 		}
 
 		if (select == 'y') {
@@ -235,7 +235,7 @@ void BuildingsManager::skipBuildingMenu(Player &p)
 	}
 	
 	if (buildingAreInQueue) {
-		uint16_t buildingId = SafetyInput::cinAndGetIDfromChar("Input skip build id: ",
+		uint16_t buildingId = SafetyInput::cinAndReturnCharID("Input skip build id: ",
 			charIDList, BUILDINGS_COUNT);
 
 		BuildingsVector[buildingId]->skipBuildingProcess \
@@ -261,7 +261,7 @@ void BuildingsManager::upgradeMenu(Player& p)
 			<< BuildingsVector[i]->getUpgradeBuildInfo() << std::endl;
 	}
 
-	uint16_t buildingId = SafetyInput::cinAndGetIDfromChar("Input building id-name: ",
+	uint16_t buildingId = SafetyInput::cinAndReturnCharID("Input building id-name: ",
 		charIDList, BUILDINGS_COUNT);
 
 	BuildingsVector[buildingId]->increaseProductivityOutput \
