@@ -24,8 +24,7 @@
 
 
 // SAVE_DATA turn on / off saving, for including new data and testing, 
-// Data in data file will be static
-// Reset off together with saving!!!
+// Function Reset wiil be off together with saving!!!
 #define SAVE_DATA 
 
 
@@ -35,7 +34,7 @@ int main()
 
     const std::string g_DataFileName = "Data.txt";
 
-
+    
     DataModule data(g_DataFileName);
 
     Player player(data.getPlayerName(), data.getPlayerData());
