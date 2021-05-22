@@ -1,1 +1,8 @@
 - Auto sell resources (0%, 10%, 25%, 50%, 75%, 100% or custom)
+
+- Set limit 15quint for load data
+- Set limit 15quint for class addCount functions
+
+- Create function of showing short value of parameters
+1000 -> 1.0k
+15.000.000.000 -> 15.0m

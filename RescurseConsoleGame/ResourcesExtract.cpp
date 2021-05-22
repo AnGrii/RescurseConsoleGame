@@ -31,14 +31,9 @@ std::vector<uint64_t> ResourcesExtract::UploadData()
 void ResourcesExtract::extract(Resource& log, Resource& wood, Resource& stone)
 {
 	std::cout << "Select type of resource!" << std::endl
-		<< "l (low L) - Log / w - Wood / s - Stone!" << std::endl
-		<< "Input: ";
+		<< "l (low L) - Log / w - Wood / s - Stone!" << std::endl;
 
-	char select = '0';
-
-	std::cin >> select;
-
-	std::cout << std::endl;
+	char select = SafetyInput::cinAndReturnChar("Input: ");
 
 	switch (select)
 	{
@@ -161,13 +156,10 @@ void ResourcesExtract::upgradeExtractionInfo()
 		<< "3 - Stone level: " << stoneExtract << " upgrade value: "
 		<< upgradeStoneExtractValue << std::endl << std::endl;
 }
+
 void ResourcesExtract::upgradeExtractionMenu(Player &p)
 {
-	char select = '0';
-
-	std::cout << "Input name id to upgrade: ";
-	std::cin >> select;
-	std::cout << std::endl;
+	char select = SafetyInput::cinAndReturnChar("Input name id to upgrade: ");
 
 	switch (select)
 	{

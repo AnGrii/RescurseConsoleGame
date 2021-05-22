@@ -4,6 +4,7 @@
 
 #include "Resource.h"
 #include "Player.h"
+#include "SafetyInput.h"
 
 class ResourcesExtract
 {
