@@ -120,19 +120,9 @@ std::string Building::getPowerPercentInfo()
 {
 	std::string info;
 
-	info = name;
-	if (name.length() < 6) {
-		info = info + "\t\t\t";
-	}
-	else if (name.length() < 12) {
-		info = info + "\t\t";
-	}
-	else {
-		info = info + "\t";
-	}
-
+	info = name +"\t";
 	info = info + "Power Percent: \t";
-	info = info + std::to_string(powerPercent);
+	info = info + std::to_string(powerPercent);	
 
 	return info;
 }
@@ -282,16 +272,7 @@ std::string Building::getUpgradeBuildInfo()
 	std::string info;
 
 	info = info + name;
-	if(name.size() < 6) {
-		info = info + "\t\t\t";
-	}
-	else if (name.size() <= 11) {
-		info = info + "\t\t";
-	}
-	else {
-		info = info + "\t";
-	}
-
+	info = info + "\t";
 	info = info + "Production Output:\t";
 	info = info + std::to_string(productionOutput);
 	info = info + "\tUpgrade Value:\t";

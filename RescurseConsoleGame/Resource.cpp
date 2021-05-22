@@ -62,13 +62,7 @@ std::string Resource::getNameAndCountInfo()
 	std::string info;
 
 	info = info + this->name;
-
-	if (this->name.length() < 7) {
-		info = info + ":\t\t";
-	}
-	else {
-		info = info + ":\t";
-	}
+	info = info + ":\t";
 	info = info + std::to_string(this->getCount());
 
 	return info;
