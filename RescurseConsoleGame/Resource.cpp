@@ -62,7 +62,7 @@ std::string Resource::getNameAndCountInfo()
 	std::string info;
 
 	info = info + this->name;
-	info = info + ":\t";
+	info = info + ": ";
 	info = info + std::to_string(this->getCount());
 
 	return info;

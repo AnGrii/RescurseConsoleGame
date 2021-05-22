@@ -23,9 +23,10 @@
 #include "Settings.h"
 
 
-// SAVE_DATA turn on / off saving, for including new data and testing, 
-// Function Reset wiil be off together with saving!!!
-#define SAVE_DATA 
+/// SAVE_DATA turn on / off saving of game
+/// Function Reset will be off together with saving!!!
+/// For including new data and testing new features
+#define SAVE_DATA
 
 
 int main()
@@ -49,7 +50,7 @@ int main()
 
     Settings settings(data.getSettingsData());
 
-    char g_Select = '0';
+
     bool g_Exit = false;
 
     while (!g_Exit)
@@ -63,10 +64,7 @@ int main()
         player.printBalance();
         resManager.printResourcesCount();
         
-        std::cout << std::endl;
-        std::cout << "Input: ";
-        std::cin >> g_Select;
-        std::cout << std::endl;
+        char g_Select = SafetyInput::cinAndReturnChar("Input: ");
 
         switch (g_Select)
         {
@@ -75,6 +73,7 @@ int main()
             break;
         case 'n':
             GameMessages::skipLine();
+
             std::this_thread::sleep_for(std::chrono::milliseconds(250));
             break;
         case 'g':

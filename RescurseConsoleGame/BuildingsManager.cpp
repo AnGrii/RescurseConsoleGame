@@ -157,7 +157,8 @@ void BuildingsManager::build(Building& build,
 		build.getResource2Count() <= reqRes2.getCount() and
 		build.getResource3Count() <= reqRes3.getCount())
 	{
-		char select = '0';
+		char select = 'y';
+
 		if (build.isInQueue()) {
 			std::cout << "This type of build are in process, " //No need endl
 				<< "want to add one more to queue?" << std::endl
