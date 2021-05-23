@@ -14,9 +14,10 @@ void GameMessages::keywordHelp(bool show)
 			<< "i - Buildings information" << std::endl
 			<< "p - Building Prouctivity Settings" << std::endl
 			<< "m - Resource Market" << std::endl
-			<< "a - Auto Sell Resource" << std::endl
-			<< "t - Auto Buy Resource Menu" << std::endl
+			<< "t - Auto Sell Resource" << std::endl
+			<< "o - Auto Buy Resource Menu" << std::endl
 			<< "r - Restore data" << std::endl
+			<< "a - About" << std::endl
 			<< "s - Settings" << std::endl
 			<< "x - Save and Exit" << std::endl
 			<< "" << std::endl;
@@ -65,5 +66,5 @@ void GameMessages::About()
 		<< "Upgrades of productivity, increasing of builindg count" << std::endl
 		<< "Selling or buying resources to build new buildings" << std::endl
 		<< "It's all is your opportunities to have fun in this game" << std::endl
-		<< "Good luck! Your programmer :)" << std::endl << std::endl;
+		<< "Good luck!" << std::endl << std::endl;
 }

@@ -71,19 +71,12 @@ int main()
         case 'e':
            resExtract.extract(resManager.log, resManager.wood, resManager.stone);
             break;
-        case 'n':
-            GameMessages::skipLine();
-
-            std::this_thread::sleep_for(std::chrono::milliseconds(250));
-            break;
         case 'g':
             resExtract.upgradeResourceExtractionMenu(player);
             break;
-        case 'q':
-            buildings.printQueueStatus();
-            break;
-        case 'k':
-            buildings.skipBuildingMenu(player);
+        case 'n':
+            GameMessages::skipLine();
+            std::this_thread::sleep_for(std::chrono::milliseconds(250));
             break;
         case 'b':
             buildings.buildMenu(resManager);
@@ -91,14 +84,26 @@ int main()
         case 'u':
             buildings.upgradeMenu(player);
             break;
-        case 'p':
-            buildings.productivitySettingMenu();
+        case 'q':
+            buildings.printQueueStatus();
+            break;
+        case 'k':
+            buildings.skipBuildingMenu(player);
             break;
         case 'i':
             buildings.printBuildingsInfo();
             break;
+        case 'p':
+            buildings.productivitySettingMenu();
+            break;
         case 'm':
             market.Menu(player, resManager);
+            break;
+        case 't':
+            std::cout << "Auto sell Resources! FUTURE VERSION!!!" << std::endl;
+            break;
+        case 'o':
+            std::cout << "Auto buy menu! FUTURE VERSION!!!" << std::endl;
             break;
         case 'r':
 #ifdef SAVE_DATA
