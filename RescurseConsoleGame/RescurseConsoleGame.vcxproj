@@ -149,6 +149,8 @@
     <ClCompile Include="GameHelper.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ResAutoBuy.cpp" />
+    <ClCompile Include="ResAutoSell.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ResourcesExtract.cpp" />
@@ -157,6 +159,8 @@
     <ClCompile Include="Settings.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ResAutoBuy.h" />
+    <ClInclude Include="ResAutoSell.h" />
     <ClInclude Include="BuildingsManager.h" />
     <ClInclude Include="DataModule.h" />
     <ClInclude Include="Buildings.h" />

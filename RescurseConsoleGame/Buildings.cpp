@@ -2,6 +2,12 @@
 
 void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string name)
 {
+	uint16_t dataCountForInit = BUILDING_DATA_COUNT;
+
+	if (buildingData.size() != dataCountForInit) {
+		throw std::exception("Wrong init data count!");
+	}
+
 	uint16_t counter = 0;
 
 	count =				buildingData[counter]; counter++;
