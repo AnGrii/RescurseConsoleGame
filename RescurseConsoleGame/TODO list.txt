@@ -1,15 +1,39 @@
-- Auto sell resources (0%, 10%, 25%, 50%, 75%, 100% or custom)
+Task for first list:
 
+
+- Auto Sell Percents Data
+- Auto Buy Level Data
+- Auto Buy Count Data
+
+
+- Create AutoSell Class
+- Create Auto sell menu
+{
+Create info cycle
+Create percent select method
+}
+
+
+- Create AutoBuy Class
 - Auto buy resources
 {
-	create (count level) for resources auto buy 
-	create (auto buy) count for every cycle
+	{
+		- Create (count level) info cycle
+		- Create (count level) percent select method
+	}
+
+	{
+		- Create (auto buy) count info cycle
+		- Create (auto buy) count percent select method
+	}
+	settings: buy if money not enough VAL
 }
+
 
 - Set limit 15quint for load data
 - Set limit 15quint for class addCount functions
 
+
 - Create function of showing short value of parameters
 1000 -> 1.0k
 15.000.000.000 -> 15.0m
-

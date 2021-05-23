@@ -19,8 +19,7 @@ void GameMessages::keywordHelp(bool show)
 			<< "r - Restore data" << std::endl
 			<< "a - About" << std::endl
 			<< "s - Settings" << std::endl
-			<< "x - Save and Exit" << std::endl
-			<< "" << std::endl;
+			<< "x - Save and Exit" << std::endl << std::endl;
 	}
 }
 
