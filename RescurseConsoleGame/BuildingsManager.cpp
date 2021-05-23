@@ -1,12 +1,18 @@
 #include "BuildingsManager.h"
 
-BuildingsManager::BuildingsManager(std::vector<std::string> nameData,
-	std::vector<std::vector<uint64_t>> buildingsData)
+BuildingsManager::BuildingsManager(std::vector<std::string> nameVector,
+	std::vector<std::vector<uint64_t>> dataVector)
 {
+	uint16_t dataCountForInit = BUILDINGS_COUNT;
+	
+	if (dataVector.size() != dataCountForInit) {
+		throw std::exception("Wrong init data count!");
+	}
+
 	for (size_t counter = 0; counter < BUILDINGS_COUNT; counter++)
 	{
 		BuildingsVector[counter]->Reinitialisate \
-			(buildingsData[counter], nameData[counter]);
+			(dataVector[counter], nameVector[counter]);
 	}
 }
 

@@ -1,26 +1,26 @@
 #include "Buildings.h"
 
-void Building::Reinitialisate(std::vector<uint64_t> buildingData, std::string name)
+void Building::Reinitialisate(std::vector<uint64_t> dataVector, std::string name)
 {
 	uint16_t dataCountForInit = BUILDING_DATA_COUNT;
 
-	if (buildingData.size() != dataCountForInit) {
+	if (dataVector.size() != dataCountForInit) {
 		throw std::exception("Wrong init data count!");
 	}
 
 	uint16_t counter = 0;
 
-	count =				buildingData[counter]; counter++;
-	productionOutput =	buildingData[counter]; counter++;
-	inQueue =			buildingData[counter]; counter++;
-	skipTimeValue =		buildingData[counter]; counter++;
-	upgradeValue =		buildingData[counter]; counter++;
-	buildTime =			buildingData[counter]; counter++;
-	endBuildTime =		buildingData[counter]; counter++;
-	resource1 =			buildingData[counter]; counter++;
-	resource2 =			buildingData[counter]; counter++;
-	resource3 =			buildingData[counter]; counter++;
-	powerPercent =		buildingData[counter]; counter++;
+	count =				dataVector[counter]; counter++;
+	productionOutput =	dataVector[counter]; counter++;
+	inQueue =			dataVector[counter]; counter++;
+	skipTimeValue =		dataVector[counter]; counter++;
+	upgradeValue =		dataVector[counter]; counter++;
+	buildTime =			dataVector[counter]; counter++;
+	endBuildTime =		dataVector[counter]; counter++;
+	resource1 =			dataVector[counter]; counter++;
+	resource2 =			dataVector[counter]; counter++;
+	resource3 =			dataVector[counter]; counter++;
+	powerPercent =		dataVector[counter]; counter++;
 	this->name = name;
 }
 std::vector<uint64_t> Building::UploadData()

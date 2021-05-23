@@ -1,8 +1,8 @@
 #include "ResAutoSell.h"
 
 
-//if (dataList.size() != RESOURCES_COUNT) {
+//uint16_t dataCountForInit = BUILDING_DATA_COUNT * 2; // 2Vc
+//
+//if (dataVector.size() != dataCountForInit) {
 //	throw std::exception("Wrong init data count!");
 //}
-//
-//autoSellPercentVc.reserve(BUILDINGS_COUNT);

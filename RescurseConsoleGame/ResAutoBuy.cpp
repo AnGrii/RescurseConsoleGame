@@ -4,6 +4,6 @@
 
 //uint16_t dataCountForInit = BUILDING_DATA_COUNT * 2; // 2Vc
 //
-//if (buildingData.size() != dataCountForInit) {
+//if (dataVector.size() != dataCountForInit) {
 //	throw std::exception("Wrong init data count!");
 //}

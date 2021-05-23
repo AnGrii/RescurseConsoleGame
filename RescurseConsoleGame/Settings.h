@@ -18,6 +18,8 @@ public:
 	bool getShowKeywordHelpStatus();
 
 private:
+	uint16_t SETTINGS_DATA_COUNT = 1;
+
 	bool showKeywordHelp;
 };
 

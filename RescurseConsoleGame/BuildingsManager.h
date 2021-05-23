@@ -14,8 +14,8 @@
 class BuildingsManager
 {
 public:
-	BuildingsManager(std::vector<std::string> nameData,
-		std::vector< std::vector<uint64_t>> buildingsData);
+	BuildingsManager(std::vector<std::string> nameVector,
+		std::vector< std::vector<uint64_t>> dataVector);
 
 	std::vector<std::vector<uint64_t>> UploadData();
 

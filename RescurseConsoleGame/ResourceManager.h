@@ -19,8 +19,8 @@ public:
 		&platina, &diamond
 	};
 
-	ResourceManager(std::vector<std::string> nameList,
-		std::vector< std::vector<uint64_t>> dataList);
+	ResourceManager(std::vector<std::string> nameVector,
+		std::vector< std::vector<uint64_t>> dataVector);
 
 	std::vector< std::vector<uint64_t>> UploadData();
 

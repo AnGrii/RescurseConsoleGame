@@ -1,10 +1,10 @@
 #include "Market.h"
 
-Market::Market(std::vector<uint64_t> dataList)
+Market::Market(std::vector<uint64_t> dataVector)
 {
 	uint16_t dataCountForInit = 1 + (BUILDINGS_COUNT * 2);
 
-	if (dataList.size() != dataCountForInit) {
+	if (dataVector.size() != dataCountForInit) {
 		throw std::exception("Wrong init data count!");
 	}
 
@@ -13,15 +13,15 @@ Market::Market(std::vector<uint64_t> dataList)
 
 	size_t counter = 0;
 
-	sellCoeficient = (dataList[counter] / 100.0);
+	sellCoeficient = (dataVector[counter] / 100.0);
 
-	for (counter = 1; counter < dataList.size(); counter++)
+	for (counter = 1; counter < dataVector.size(); counter++)
 	{
 		if (counter % 2 == 1) {
-			resourcesValueVc.push_back(dataList[counter]);
+			resourcesValueVc.push_back(dataVector[counter]);
 		}
 		else {
-			resourcesAutoSellPercentVc.push_back(dataList[counter]);
+			resourcesAutoSellPercentVc.push_back(dataVector[counter]);
 		}
 	}
 }

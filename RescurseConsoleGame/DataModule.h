@@ -361,7 +361,7 @@ private:
 	};
 	class WorkWithString {
 	public:
-		static void stringLeveling(std::vector<std::string>& strVc);
+		static void stringLeveling(std::vector<std::string>& stringVector);
 	private:
 		WorkWithString();
 	};

@@ -4,6 +4,12 @@
 void Resource::Reinitialisate(std::string name,
 	std::vector<uint64_t> dataList)
 {
+	uint16_t dataCountForInit = RESOURCES_DATA_COUNT;
+
+	if (dataList.size() != dataCountForInit) {
+		throw std::exception("Wrong init data count!");
+	}
+
 	uint16_t counter = 0;
 
 	this->name = name;

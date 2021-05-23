@@ -14,7 +14,7 @@ public:
 		resource1(0), resource2(0), resource3(0),
 		powerPercent(0),
 	name("NoName"){}
-	void Reinitialisate(std::vector<uint64_t> buildingData, std::string name);
+	void Reinitialisate(std::vector<uint64_t> dataVector, std::string name);
 	std::vector<uint64_t> UploadData();
 
 	uint64_t getResource1Count();

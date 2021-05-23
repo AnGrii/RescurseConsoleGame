@@ -1,15 +1,21 @@
 #include "ResourcesExtract.h"
 
-ResourcesExtract::ResourcesExtract(std::vector<uint64_t> dataList)
+ResourcesExtract::ResourcesExtract(std::vector<uint64_t> dataVector)
 {
+	uint16_t dataCountForInit = RESOURCE_EXTRACT_DATA_COUNT;
+
+	if (dataVector.size() != dataCountForInit) {
+		throw std::exception("Wrong init data count!");
+	}
+
 	uint16_t counter = 0;
 
-	logExtract = dataList[counter++];
-	upgradeLogExtractValue = dataList[counter++];
-	woodExtract = dataList[counter++];
-	upgradeWoodExtractValue = dataList[counter++];
-	stoneExtract = dataList[counter++];
-	upgradeStoneExtractValue = dataList[counter++];	
+	logExtract = dataVector[counter++];
+	upgradeLogExtractValue = dataVector[counter++];
+	woodExtract = dataVector[counter++];
+	upgradeWoodExtractValue = dataVector[counter++];
+	stoneExtract = dataVector[counter++];
+	upgradeStoneExtractValue = dataVector[counter++];	
 }
 
 std::vector<uint64_t> ResourcesExtract::UploadData()

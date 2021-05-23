@@ -8,7 +8,7 @@
 class ResAutoSell
 {
 public:
-	ResAutoSell(std::vector<uint16_t> dataList);
+	ResAutoSell(std::vector<uint16_t> dataVector);
 	std::vector<uint16_t> UploadData();
 	
 

@@ -9,7 +9,7 @@
 class ResAutoBuy
 {
 public:
-	ResAutoBuy();
+	ResAutoBuy(std::vector<uint64_t> dataVector);
 	
 	void countMenu();
 	void levelMenu();

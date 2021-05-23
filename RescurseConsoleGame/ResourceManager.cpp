@@ -1,13 +1,25 @@
 #include "ResourceManager.h"
 
-ResourceManager::ResourceManager(std::vector<std::string> nameList,
-	std::vector< std::vector<uint64_t>> dataList)
+ResourceManager::ResourceManager(std::vector<std::string> nameVector,
+	std::vector< std::vector<uint64_t>> dataVector)
 {
+	uint16_t dataCountForInit = RESOURCES_COUNT;
+
+	if (nameVector.size() != dataCountForInit) {
+		throw std::exception("Wrong init data count!");
+	}
+
+	uint16_t dataCountForInit = RESOURCES_COUNT;
+
+	if (dataVector.size() != dataCountForInit) {
+		throw std::exception("Wrong init data count!");
+	}
+
 	uint16_t counter = 0;
 
 	for (size_t i = 0; i < RESOURCES_COUNT; i++) {
 		ReosourcesVector[i]->Reinitialisate \
-			(nameList[counter], dataList[counter]); counter++;
+			(nameVector[counter], dataVector[counter]); counter++;
 	}
 }
 

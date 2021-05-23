@@ -1,9 +1,9 @@
 #include "Player.h"
 
-void Player::SaveData(std::vector<std::string>& name, std::vector<uint64_t>& data)
+void Player::SaveData(std::vector<std::string>& name, std::vector<uint64_t>& dataVector)
 {
 	name[0] = this->name;
-	data[0] = balance;
+	dataVector[0] = balance;
 }
 
 void Player::printBalance()

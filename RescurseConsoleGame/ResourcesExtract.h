@@ -9,7 +9,7 @@
 class ResourcesExtract
 {
 public:
-	ResourcesExtract(std::vector<uint64_t> dataList);
+	ResourcesExtract(std::vector<uint64_t> dataVector);
 	std::vector<uint64_t> UploadData();
 
 	void extract(Resource& log, Resource& wood, Resource& stone);
