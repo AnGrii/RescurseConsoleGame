@@ -9,8 +9,6 @@ ResourceManager::ResourceManager(std::vector<std::string> nameVector,
 		throw std::exception("Wrong init data count!");
 	}
 
-	uint16_t dataCountForInit = RESOURCES_COUNT;
-
 	if (dataVector.size() != dataCountForInit) {
 		throw std::exception("Wrong init data count!");
 	}
