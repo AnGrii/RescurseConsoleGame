@@ -1,5 +1,11 @@
 - Auto sell resources (0%, 10%, 25%, 50%, 75%, 100% or custom)
 
+- Auto buy resources
+{
+	create (count level) for resources auto buy 
+	create (auto buy) count for every cycle
+}
+
 - Set limit 15quint for load data
 - Set limit 15quint for class addCount functions
 

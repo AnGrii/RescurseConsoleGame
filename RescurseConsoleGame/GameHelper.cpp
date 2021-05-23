@@ -5,15 +5,17 @@ void GameMessages::keywordHelp(bool show)
 	if (show) {
 		std::cout << "Key to do:" << std::endl
 			<< "e - Extract base resources" << std::endl
-			<< "n - Next day" << std::endl
 			<< "g - Upgrade Resources Extraction" << std::endl
-			<< "q - Queue of Buildings" << std::endl
-			<< "k - Skip Buildings Menu" << std::endl
+			<< "n - Next day" << std::endl
 			<< "b - Build Buildings" << std::endl
 			<< "u - Upgrade Buildings" << std::endl
-			<< "p - Building Prouctivity Settings" << std::endl
+			<< "q - Queue of Buildings" << std::endl
+			<< "k - Skip Buildings Menu" << std::endl
 			<< "i - Buildings information" << std::endl
+			<< "p - Building Prouctivity Settings" << std::endl
 			<< "m - Resource Market" << std::endl
+			<< "a - Auto Sell Resource" << std::endl
+			<< "t - Auto Buy Resource Menu" << std::endl
 			<< "r - Restore data" << std::endl
 			<< "s - Settings" << std::endl
 			<< "x - Save and Exit" << std::endl
