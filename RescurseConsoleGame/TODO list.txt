@@ -37,3 +37,11 @@ Create percent select method
 - Create function of showing short value of parameters
 1000 -> 1.0k
 15.000.000.000 -> 15.0m
+
+
+
+autoSell:
+1 1 1 1 1 1 1 1 1 1 1
+autoBuy:
+1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1

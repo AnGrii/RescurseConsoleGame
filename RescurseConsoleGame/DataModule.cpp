@@ -7,42 +7,42 @@ DataModule::DataModule(const std::string dataFileName)
 
 void DataModule::loadData(std::string dataFileName)
 {
-	//PLAYER_NAME
+	// PLAYER_NAME
 	LoadingComponents::loadData<std::string>(playerNameData,
 		PLAYER_NAME_DATA_COUNT,
 		dataFileName, keywordPlayerName,
 		LoadingComponents::readName);
 
-	//PLAYER_DATA
+	// PLAYER_DATA
 	LoadingComponents::loadData<uint64_t>(playerData,
 		PLAYER_DATA_COUNT,
 		dataFileName, keywordPlayerData,
 		LoadingComponents::readNumber<uint64_t>);
 	
-	//RESOURCE_NAME_DATA
+	// RESOURCE_NAME_DATA
 	LoadingComponents::loadData<std::string>(resourcesNameData, RESOURCES_COUNT,
 		dataFileName, keywordResourcesName,
 		LoadingComponents::readName);
 
-	//LEVELING_OF_RESOURCES_NAMES
+	// LEVELING_OF_RESOURCES_NAMES
 	WorkWithString::stringLeveling(resourcesNameData);
 
-	//RESOURCE_DATA
+	// RESOURCE_DATA
 	LoadingComponents::loadData<uint64_t>(resourcesData,
 		RESOURCES_COUNT, RESOURCES_DATA_COUNT,
 		dataFileName, keywordResourcesData,
 		LoadingComponents::readNumber<uint64_t>);
 
-	//BUILDING_NAME
+	// BUILDING_NAME
 	LoadingComponents::loadData<std::string>(buildingNameData,
 		BUILDING_COUNT,
 		dataFileName, keywordBuildingsName,
 		LoadingComponents::readName);
 	
-	//LEVELING_OF_BUILDINGS_NAMES
+	// LEVELING_OF_BUILDINGS_NAMES
 	WorkWithString::stringLeveling(buildingNameData);
 
-	//BUILDING_DATA
+	// BUILDING_DATA
 	LoadingComponents::loadData<uint64_t>(buildingsData,
 		BUILDING_COUNT, BUILDING_DATA_COUNT,
 		dataFileName, keywordBuildingsData,
@@ -54,7 +54,7 @@ void DataModule::loadData(std::string dataFileName)
 		dataFileName, keywordRecourcesExtractData,
 		LoadingComponents::readNumber<uint64_t>);
 
-	//MARKET_DATA
+	// MARKET_DATA
 	LoadingComponents::loadData<uint64_t>(marketData,
 		MARKET_DATA_COUNT,
 		dataFileName, keywordMarketData,
@@ -66,7 +66,23 @@ void DataModule::loadData(std::string dataFileName)
 		dataFileName,
 		keywordSettingsData,
 		LoadingComponents::readNumber<uint16_t>);
-	//bool type is unsafe for read number to load operation
+	//bool type is unsafe for read number operation
+
+	// AUTO_SELL 
+	LoadingComponents::loadData<uint16_t>(resAutoSellData,
+		RESOURCES_AUTO_SELL_DATA_COUNT,
+		dataFileName,
+		keywordAutoSellData,
+		LoadingComponents::readNumber<uint16_t>);
+
+	// AUTO_BUY
+	LoadingComponents::loadData<uint64_t>(resAutoBuyData,
+		RESOURCES_AUTO_BUY_COUNT,
+		RESOURCES_AUTO_BUY_DATA_COUNT,
+		dataFileName,
+		keywordAutoBuyData,
+		LoadingComponents::readNumber<uint64_t>);
+
 }
 
 void DataModule::saveData(const std::string dataFileName)
@@ -121,6 +137,16 @@ void DataModule::saveData(const std::string dataFileName)
 		keywordSettingsData,
 		SavingComponents::prepareNumberToSave<uint16_t>);
 	//bool type is unsafe for prepare number to save operation
+
+	// AUTO_SELL 
+	SavingComponents::saveData<uint16_t>(resAutoSellData,
+		dataFileName, keywordAutoSellData,
+		SavingComponents::prepareNumberToSave<uint16_t>);
+
+	// AUTO_BUY
+	SavingComponents::saveData<uint64_t>(resAutoBuyData,
+		dataFileName, keywordAutoBuyData,
+		SavingComponents::prepareNumberToSave<uint64_t>);
 }
 
 void DataModule::resetData(const std::string dataFileName)

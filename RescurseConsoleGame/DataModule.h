@@ -39,10 +39,12 @@ public:
 	void setPlayerName(std::vector<std::string> dataVector);
 	void setPlayerData(std::vector<uint64_t> dataVector);
 
-	//Resources name data not changing in program, actual data will be normal to save
+	// Resources name don't need to change in program
+	// Actual data will be normal for save
 	void setRecourcesData(std::vector<std::vector<uint64_t>> dataVector);
 
-	//Buildings name data not changing in program, actual data will be normal to save
+	// Buildings name don't need to change in program
+	// Actual data will be normal for save
 	void setBuildingsData(std::vector<std::vector<uint64_t>> dataVector);
 
 	 void setResourcesExtractData(std::vector<uint64_t> dataVector);
@@ -61,8 +63,10 @@ private:
 		keywordBuildingsData = "buildingsData:",
 		keywordRecourcesExtractData = "resourcesExtract:",
 		keywordMarketData = "marketData:",
-		keywordSettingsData = "setting:";
-
+		keywordSettingsData = "setting:",
+		keywordAutoSellData = "autoSell:",
+		keywordAutoBuyData = "autoBuy:";
+		
 	static const uint16_t
 		COUNT_LOADING_DATA_UNIT_TO_THROW_ERROR = 1000,
 		PLAYER_DATA_COUNT = 1,
@@ -72,8 +76,12 @@ private:
 		BUILDING_COUNT = 11,
 		BUILDING_DATA_COUNT = 11,
 		RESOURCES_EXTRACT_DATA_COUNT = 6,
-		MARKET_DATA_COUNT = 1 + (BUILDING_COUNT * 2), // 2 - count values in Market
-		SETTINGS_DATA_COUNT = 1;
+		MARKET_DATA_COUNT = 1 + (BUILDING_COUNT * 2), // 2 - Count values in Market
+		SETTINGS_DATA_COUNT = 1,
+		RESOURCES_AUTO_SELL_DATA_COUNT = RESOURCES_COUNT,
+		RESOURCES_AUTO_BUY_COUNT = 2,
+		RESOURCES_AUTO_BUY_DATA_COUNT = RESOURCES_COUNT;
+
 
 	//Data stroages
 	std::vector<uint64_t> playerData;
@@ -89,9 +97,12 @@ private:
 
 	std::vector<uint64_t> marketData;
 
-	//bool type is unsafe
 	std::vector<uint16_t> settingsData;
 	
+	std::vector<uint16_t> resAutoSellData;
+
+	std::vector<std::vector<uint64_t>> resAutoBuyData;
+
 
 	class LoadingComponents {
 	public:

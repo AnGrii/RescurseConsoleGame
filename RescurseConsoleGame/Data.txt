@@ -5,8 +5,8 @@ playerData:
 resourcesName:
 Log    / Wood   / Stone  / Coal   / Copper / Tin    / Bronze / Silver / Gold   / Platina/ Diamond/ 
 resourcesData:
-186 
-1017 
+192 
+1020 
 1 
 1 
 1 
@@ -36,3 +36,8 @@ marketData:
 175 2 1 3 1 4 1 6 1 11 1 21 1 46 1 81 1 151 1 251 1 1001 1 
 setting:
 2 
+autoSell:
+1 1 1 1 1 1 1 1 1 1 5 
+autoBuy:
+1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 
