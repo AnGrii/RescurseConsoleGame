@@ -205,6 +205,16 @@ std::vector<uint16_t> DataModule::getSettingsData()
 	return settingsData;
 }
 
+std::vector<uint16_t> DataModule::getResAutoSellData()
+{
+	return resAutoSellData;
+}
+
+std::vector<std::vector<uint64_t>> DataModule::getResAutoBuyData()
+{
+	return resAutoBuyData;
+}
+
 void DataModule::setPlayerName(std::vector<std::string> dataVector)
 {
 	bool dataCountBiggerNULL = (dataVector.size() > 0);
@@ -292,6 +302,16 @@ void DataModule::setMarketData(std::vector<uint64_t> dataVector)
 void DataModule::setSettingsData(std::vector<uint16_t> dataVector)
 {
 	settingsData.swap(dataVector);
+}
+
+void DataModule::getResAutoSellData(std::vector<uint16_t> dataVector)
+{
+	resAutoSellData.swap(dataVector);
+}
+
+void DataModule::getResAutoBuyData(std::vector<std::vector<uint64_t>> dataVector)
+{
+	resAutoBuyData.swap(dataVector);
 }
 
 void DataModule::Reset::checkExistenceFileOrAskForCreate(const std::string dataFileName)

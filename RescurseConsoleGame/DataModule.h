@@ -36,6 +36,10 @@ public:
 
 	std::vector<uint16_t> getSettingsData();
 
+	std::vector<uint16_t> getResAutoSellData();
+
+	std::vector<std::vector<uint64_t>> getResAutoBuyData();
+
 	void setPlayerName(std::vector<std::string> dataVector);
 	void setPlayerData(std::vector<uint64_t> dataVector);
 
@@ -52,6 +56,10 @@ public:
 	 void setMarketData(std::vector<uint64_t> dataVector);
 
 	 void setSettingsData(std::vector<uint16_t> dataVector);
+
+	 void getResAutoSellData(std::vector<uint16_t> dataVector);
+
+	 void getResAutoBuyData(std::vector<std::vector<uint64_t>> dataVector);
 
 private:
 	const std::string dataFileName = "Data.txt",
