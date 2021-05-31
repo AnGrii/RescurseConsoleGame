@@ -52,8 +52,8 @@ int main()
 
     Settings settings(data.getSettingsData());
 
-    ResAutoBuy resAutoBuy(data.getResAutoBuyData());
-    ResAutoSell resAutoSell(data.getResAutoSellData());
+    ResAutoBuy resAutoBuy(data.setResAutoBuyData());
+    ResAutoSell resAutoSell(data.setResAutoSellData());
 
     bool g_Exit = false;
 
@@ -133,6 +133,8 @@ int main()
             data.setResourcesExtractData(resExtract.UploadData());
             data.setMarketData(market.UploadData());
             data.setSettingsData(settings.UploadData());
+            data.setResAutoBuyData(resAutoBuy.UploadData());
+            data.setResAutoSellData(resAutoSell.UploadData());
 
             data.saveData(g_DataFileName);
 #endif

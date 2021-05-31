@@ -49,6 +49,13 @@ void ResAutoBuy::Menu(ResourceManager resManager)
 		<< "l - Level Menu" << std::endl;
 
 	char select = SafetyInput::cinAndReturnChar("Input: ");
+
+	if (select == 'c') {
+		countMenu(resManager);
+	}
+	else if (select == 'l') {
+		levelMenu(resManager);
+	}
 }
 
 
@@ -66,7 +73,8 @@ void ResAutoBuy::countMenu(ResourceManager resManager)
 	{
 		//Forestry - Count: 15200
 
-		std::cout << resManager.ReosourcesVector[i]->getName() << " - "
+		std::cout << charIDList[i]  << " - "
+			<< resManager.ReosourcesVector[i]->getName() << " - "
 			<< "Count: " << countVc[i] << std::endl;
 	}
 
@@ -95,7 +103,8 @@ void ResAutoBuy::levelMenu(ResourceManager resManager)
 	{
 		//Forestry - Count: 50000
 
-		std::cout << charIDList[i] << resManager.ReosourcesVector[i]->getName() << " - "
+		std::cout << charIDList[i] << " - "
+			<< resManager.ReosourcesVector[i]->getName() << " - "
 			<< "Level: " << levelVc[i] << std::endl;
 	}
 

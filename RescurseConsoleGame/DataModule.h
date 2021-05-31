@@ -36,9 +36,9 @@ public:
 
 	std::vector<uint16_t> getSettingsData();
 
-	std::vector<std::vector<uint64_t>> getResAutoSellData();
+	std::vector<std::vector<uint64_t>> setResAutoSellData();
 
-	std::vector<std::vector<uint64_t>> getResAutoBuyData();
+	std::vector<std::vector<uint64_t>> setResAutoBuyData();
 
 	void setPlayerName(std::vector<std::string> dataVector);
 	void setPlayerData(std::vector<uint64_t> dataVector);
@@ -57,9 +57,9 @@ public:
 
 	 void setSettingsData(std::vector<uint16_t> dataVector);
 
-	 void getResAutoSellData(std::vector<std::vector<uint64_t>> dataVector);
+	 void setResAutoSellData(std::vector<std::vector<uint64_t>> dataVector);
 
-	 void getResAutoBuyData(std::vector<std::vector<uint64_t>> dataVector);
+	 void setResAutoBuyData(std::vector<std::vector<uint64_t>> dataVector);
 
 private:
 	const std::string dataFileName = "Data.txt",

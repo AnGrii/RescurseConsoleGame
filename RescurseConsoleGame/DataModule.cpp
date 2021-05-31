@@ -213,13 +213,13 @@ std::vector<uint16_t> DataModule::getSettingsData()
 }
 
 
-std::vector<std::vector<uint64_t>> DataModule::getResAutoSellData()
+std::vector<std::vector<uint64_t>> DataModule::setResAutoSellData()
 {
 	return resAutoSellData;
 }
 
 
-std::vector<std::vector<uint64_t>> DataModule::getResAutoBuyData()
+std::vector<std::vector<uint64_t>> DataModule::setResAutoBuyData()
 {
 	return resAutoBuyData;
 }
@@ -321,13 +321,13 @@ void DataModule::setSettingsData(std::vector<uint16_t> dataVector)
 }
 
 
-void DataModule::getResAutoSellData(std::vector<std::vector<uint64_t>> dataVector)
+void DataModule::setResAutoSellData(std::vector<std::vector<uint64_t>> dataVector)
 {
 	resAutoSellData.swap(dataVector);
 }
 
 
-void DataModule::getResAutoBuyData(std::vector<std::vector<uint64_t>> dataVector)
+void DataModule::setResAutoBuyData(std::vector<std::vector<uint64_t>> dataVector)
 {
 	resAutoBuyData.swap(dataVector);
 }
