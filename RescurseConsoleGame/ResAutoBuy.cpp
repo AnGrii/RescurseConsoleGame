@@ -121,7 +121,7 @@ void ResAutoBuy::levelBuy(Player& player, ResourceManager& resManager)
 
 			if (transferValue <= player.getBalance()) {
 				player.tryPay(transferValue);
-				resManager.ReosourcesVector[resID]->add(countVc[resID]);
+				resManager.ReosourcesVector[resID]->add(count);
 			}
 			else {
 				// Not enough money message isn't important
