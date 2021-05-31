@@ -28,6 +28,7 @@ ResAutoBuy::ResAutoBuy(std::vector<std::vector<uint64_t>> dataVector)
 	countVc.swap(dataVector[1]);
 }
 
+
 std::vector<std::vector<uint64_t>> ResAutoBuy::UploadData()
 {
 	std::vector<std::vector<uint64_t>> dataVector;
