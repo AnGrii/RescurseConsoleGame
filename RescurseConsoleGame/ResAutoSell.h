@@ -9,16 +9,19 @@
 class ResAutoSell
 {
 public:
-	ResAutoSell(std::vector<uint64_t> dataVector);
-	std::vector<uint64_t> UploadData();
+	ResAutoSell(std::vector<std::vector<uint64_t>> dataVector);
+	std::vector<std::vector<uint64_t>> UploadData();
 	
 
-	void Menu();
+	void countMenu();
+	void levelMenu();
 
-	void sell(ResourceManager rm);
+	void countSell(Player player, ResourceManager resManager);
+	void levelSell(Player player, ResourceManager resManager);
 
 private:
-	const uint16_t RESOURCES_COUNT = 11;
+	const uint16_t RESOURCES_AUTO_BUY_LIST_COUNT = 2,
+		RESOURCES_AUTO_BUY_DATA_COUNT = 11;
 
 	std::vector<uint64_t> percentVc, countVc; // Vc - vector
 

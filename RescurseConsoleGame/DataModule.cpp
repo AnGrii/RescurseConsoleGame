@@ -167,6 +167,7 @@ std::vector<std::string> DataModule::getPlayerName()
 {
 	return playerNameData;
 }
+
 std::vector<uint64_t> DataModule::getPlayerData()
 {
 	return playerData;
@@ -177,10 +178,12 @@ std::vector<std::string> DataModule::getRecourcesNameData()
 {
 	return resourcesNameData;
 }
+
 std::vector<std::vector< uint64_t>> DataModule::getRecourcesData()
 {
 	return resourcesData;
 }
+
 
 std::vector<std::vector<uint64_t>> DataModule::getBuildingsData()
 {
@@ -191,30 +194,36 @@ std::vector<std::string> DataModule::getBuildingsNameData()
 	return buildingNameData;
 }
 
+
 std::vector<uint64_t> DataModule::getResourcesExtractData()
 {
 	return resourcesExtractData;
 }
+
 
 std::vector<uint64_t> DataModule::getMarketData()
 {
 	return marketData;
 }
 
+
 std::vector<uint16_t> DataModule::getSettingsData()
 {
 	return settingsData;
 }
+
 
 std::vector<std::vector<uint64_t>> DataModule::getResAutoSellData()
 {
 	return resAutoSellData;
 }
 
+
 std::vector<std::vector<uint64_t>> DataModule::getResAutoBuyData()
 {
 	return resAutoBuyData;
 }
+
 
 void DataModule::setPlayerName(std::vector<std::string> dataVector)
 {
@@ -228,6 +237,7 @@ void DataModule::setPlayerName(std::vector<std::string> dataVector)
 	}
 }
 
+
 void DataModule::setPlayerData(std::vector<uint64_t> dataVector)
 {
 	bool dataCountBiggerNULL = (dataVector.size() > 0);
@@ -239,6 +249,7 @@ void DataModule::setPlayerData(std::vector<uint64_t> dataVector)
 		throw std::exception("Wrong player data list size (Wrong data)!");
 	}
 }
+
 
 void DataModule::setRecourcesData(std::vector<std::vector<uint64_t>> dataVector)
 {
@@ -256,6 +267,7 @@ void DataModule::setRecourcesData(std::vector<std::vector<uint64_t>> dataVector)
 		throw std::exception("Wrong recources data list size (Wrong data)!");
 	}
 }
+
 
 void DataModule::setBuildingsData(std::vector<std::vector<uint64_t>> dataVector)
 {
@@ -275,6 +287,7 @@ void DataModule::setBuildingsData(std::vector<std::vector<uint64_t>> dataVector)
 	}
 }
 
+
 void DataModule::setResourcesExtractData(std::vector<uint64_t> dataVector)
 {
 	bool dataCountBiggerNULL = (dataVector.size() > 0);
@@ -286,6 +299,7 @@ void DataModule::setResourcesExtractData(std::vector<uint64_t> dataVector)
 		throw std::exception("Wrong resource extract list size (Wrong data)!");
 	}
 }
+
 
 void DataModule::setMarketData(std::vector<uint64_t> dataVector)
 {
@@ -300,20 +314,24 @@ void DataModule::setMarketData(std::vector<uint64_t> dataVector)
 	}
 }
 
+
 void DataModule::setSettingsData(std::vector<uint16_t> dataVector)
 {
 	settingsData.swap(dataVector);
 }
+
 
 void DataModule::getResAutoSellData(std::vector<std::vector<uint64_t>> dataVector)
 {
 	resAutoSellData.swap(dataVector);
 }
 
+
 void DataModule::getResAutoBuyData(std::vector<std::vector<uint64_t>> dataVector)
 {
 	resAutoBuyData.swap(dataVector);
 }
+
 
 void DataModule::Reset::checkExistenceFileOrAskForCreate(const std::string dataFileName)
 {
@@ -334,6 +352,7 @@ void DataModule::Reset::checkExistenceFileOrAskForCreate(const std::string dataF
 		exit(1);
 	}
 }
+
 
 void DataModule::WorkWithString::stringLeveling(std::vector<std::string>& strVc)
 {
