@@ -110,7 +110,7 @@ int main()
             std::cout << "Auto sell Resources! FUTURE VERSION!!!" << std::endl;
             break;
         case 'o':
-            std::cout << "Auto buy menu! FUTURE VERSION!!!" << std::endl;
+            resAutoBuy.Menu(resManager);
             break;
         case 'r':
 #ifdef SAVE_DATA

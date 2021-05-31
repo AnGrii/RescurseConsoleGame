@@ -42,9 +42,23 @@ std::vector<std::vector<uint64_t>> ResAutoBuy::UploadData()
 	return dataVector;
 }
 
+void ResAutoBuy::Menu(ResourceManager resManager)
+{
+	std::cout
+		<< "c - Count Menu" << std::endl
+		<< "l - Level Menu" << std::endl;
+
+	char select = SafetyInput::cinAndReturnChar("Input: ");
+}
+
 
 void ResAutoBuy::countMenu(ResourceManager resManager)
 {
+	const std::vector<char> charIDList
+	{ 'q','w','e','r','t','y','u','i','o',
+		'p','a','s','d','f','g','h','j','k',
+		'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
+
 	//Information
 	std::cout << "========== AUTO BUY COUNT SETTINGS ==========" << std::endl << std::endl;
 	
@@ -56,13 +70,24 @@ void ResAutoBuy::countMenu(ResourceManager resManager)
 			<< "Count: " << countVc[i] << std::endl;
 	}
 
-	//Changing status
+	uint16_t resID = \
+		SafetyInput::cinAndReturnCharID("Input letter to change Auto Buy Count: ",
+			charIDList, RESOURCES_AUTO_BUY_DATA_COUNT);
+
+	uint64_t newCount = SafetyInput::cinAndReturnUI64T("Input new Count: ");
+
+	countVc[resID] = newCount;
 
 	std::cout << "^^^^^^^^^^ AUTO BUY COUNT SETTINGS ^^^^^^^^^^" << std::endl << std::endl;
 }
 
 void ResAutoBuy::levelMenu(ResourceManager resManager)
 {
+	const std::vector<char> charIDList
+	{ 'q','w','e','r','t','y','u','i','o',
+		'p','a','s','d','f','g','h','j','k',
+		'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
+
 	//Information
 	std::cout << "========== AUTO BUY LEVEL SETTINGS ==========" << std::endl << std::endl;
 
@@ -70,12 +95,18 @@ void ResAutoBuy::levelMenu(ResourceManager resManager)
 	{
 		//Forestry - Count: 50000
 
-		std::cout << resManager.ReosourcesVector[i]->getName() << " - "
+		std::cout << charIDList[i] << resManager.ReosourcesVector[i]->getName() << " - "
 			<< "Level: " << levelVc[i] << std::endl;
 	}
 
-	//Changing status
+	uint16_t resID = \
+		SafetyInput::cinAndReturnCharID("Input letter to change Auto Buy Level: ",
+			charIDList, RESOURCES_AUTO_BUY_DATA_COUNT);
 
+	uint64_t newLevel = SafetyInput::cinAndReturnUI64T("Input new Level: ");
+
+	levelVc[resID] = newLevel;
+		 
 	std::cout << "^^^^^^^^^^ AUTO BUY LEVEL SETTINGS ^^^^^^^^^^" << std::endl << std::endl;
 }
 
