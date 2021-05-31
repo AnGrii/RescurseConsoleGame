@@ -20,8 +20,8 @@ public:
 	void levelSell(Player player, ResourceManager resManager);
 
 private:
-	const uint16_t RESOURCES_AUTO_BUY_LIST_COUNT = 2,
-		RESOURCES_AUTO_BUY_DATA_COUNT = 11;
+	const uint16_t RESOURCES_AUTO_SELL_LIST_COUNT = 2,
+		RESOURCES_AUTO_SELL_DATA_COUNT = 11;
 
 	std::vector<uint64_t> percentVc, countVc; // Vc - vector
 

@@ -10,7 +10,7 @@
 class ResAutoBuy
 {
 public:
-	ResAutoBuy(std::vector<std::vector<uint64_t>> dataVector){}
+	ResAutoBuy(std::vector<std::vector<uint64_t>> dataVector);
 	std::vector<std::vector<uint64_t>> UploadData();
 
 
@@ -24,7 +24,7 @@ private:
 	const uint16_t RESOURCES_AUTO_BUY_LIST_COUNT = 2,
 		RESOURCES_AUTO_BUY_DATA_COUNT = 11;
 
-	std::vector<uint64_t> countVc, levelVc; // Vc - vector
+	std::vector<uint64_t> levelVc, countVc; // Vc - vector
 
 	void buyResource(Player player, Resource resource);
 };
