@@ -69,11 +69,11 @@ void DataModule::loadData(std::string dataFileName)
 	//bool type is unsafe for read number operation
 
 	// AUTO_SELL 
-	LoadingComponents::loadData<uint16_t>(resAutoSellData,
+	LoadingComponents::loadData<uint64_t>(resAutoSellData,
 		RESOURCES_AUTO_SELL_DATA_COUNT,
 		dataFileName,
 		keywordAutoSellData,
-		LoadingComponents::readNumber<uint16_t>);
+		LoadingComponents::readNumber<uint64_t>);
 
 	// AUTO_BUY
 	LoadingComponents::loadData<uint64_t>(resAutoBuyData,
@@ -139,9 +139,9 @@ void DataModule::saveData(const std::string dataFileName)
 	//bool type is unsafe for prepare number to save operation
 
 	// AUTO_SELL 
-	SavingComponents::saveData<uint16_t>(resAutoSellData,
+	SavingComponents::saveData<uint64_t>(resAutoSellData,
 		dataFileName, keywordAutoSellData,
-		SavingComponents::prepareNumberToSave<uint16_t>);
+		SavingComponents::prepareNumberToSave<uint64_t>);
 
 	// AUTO_BUY
 	SavingComponents::saveData<uint64_t>(resAutoBuyData,
@@ -205,7 +205,7 @@ std::vector<uint16_t> DataModule::getSettingsData()
 	return settingsData;
 }
 
-std::vector<uint16_t> DataModule::getResAutoSellData()
+std::vector<uint64_t> DataModule::getResAutoSellData()
 {
 	return resAutoSellData;
 }
@@ -304,7 +304,7 @@ void DataModule::setSettingsData(std::vector<uint16_t> dataVector)
 	settingsData.swap(dataVector);
 }
 
-void DataModule::getResAutoSellData(std::vector<uint16_t> dataVector)
+void DataModule::getResAutoSellData(std::vector<uint64_t> dataVector)
 {
 	resAutoSellData.swap(dataVector);
 }

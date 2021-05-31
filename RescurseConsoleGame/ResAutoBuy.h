@@ -9,8 +9,9 @@
 class ResAutoBuy
 {
 public:
-	ResAutoBuy(std::vector<uint64_t> dataVector);
-	
+	ResAutoBuy(std::vector<std::vector<uint64_t>> dataVector);
+	std::vector<std::vector<uint64_t>> UploadData();
+
 	void countMenu();
 	void levelMenu();
 

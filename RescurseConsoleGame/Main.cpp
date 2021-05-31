@@ -21,6 +21,8 @@
 #include "Market.h"
 #include "GameHelper.h"
 #include "Settings.h"
+#include "ResAutoBuy.h"
+#include "ResAutoSell.h"
 
 
 /// SAVE_DATA turn on / off saving of game
@@ -50,6 +52,8 @@ int main()
 
     Settings settings(data.getSettingsData());
 
+    ResAutoBuy resAutoBuy(data.getResAutoBuyData());
+    ResAutoSell resAutoSell(data.getResAutoSellData());
 
     bool g_Exit = false;
 

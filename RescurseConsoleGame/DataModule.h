@@ -36,7 +36,7 @@ public:
 
 	std::vector<uint16_t> getSettingsData();
 
-	std::vector<uint16_t> getResAutoSellData();
+	std::vector<uint64_t> getResAutoSellData();
 
 	std::vector<std::vector<uint64_t>> getResAutoBuyData();
 
@@ -57,7 +57,7 @@ public:
 
 	 void setSettingsData(std::vector<uint16_t> dataVector);
 
-	 void getResAutoSellData(std::vector<uint16_t> dataVector);
+	 void getResAutoSellData(std::vector<uint64_t> dataVector);
 
 	 void getResAutoBuyData(std::vector<std::vector<uint64_t>> dataVector);
 
@@ -107,7 +107,7 @@ private:
 
 	std::vector<uint16_t> settingsData;
 	
-	std::vector<uint16_t> resAutoSellData;
+	std::vector<uint64_t> resAutoSellData;
 
 	std::vector<std::vector<uint64_t>> resAutoBuyData;
 

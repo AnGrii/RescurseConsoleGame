@@ -8,8 +8,8 @@
 class ResAutoSell
 {
 public:
-	ResAutoSell(std::vector<uint16_t> dataVector);
-	std::vector<uint16_t> UploadData();
+	ResAutoSell(std::vector<uint64_t> dataVector);
+	std::vector<uint64_t> UploadData();
 	
 
 	void Menu();
@@ -19,7 +19,7 @@ public:
 private:
 	const uint16_t RESOURCES_COUNT = 11;
 
-	std::vector<uint16_t> autoSellPercentVc; // Vc - vector
+	std::vector<uint64_t> autoSellPercentVc; // Vc - vector
 
 	void sellResource(Resource resource);
 };
