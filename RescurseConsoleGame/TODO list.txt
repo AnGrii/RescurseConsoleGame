@@ -1,47 +1,29 @@
 Task for first list:
 
-
-- Auto Sell Percents Data
-- Auto Buy Level Data
-- Auto Buy Count Data
-
-
-- Create AutoSell Class
-- Create Auto sell menu
-{
-Create info cycle
-Create percent select method
-}
-
-
 - Create AutoBuy Class
 - Auto buy resources
 {
 	{
-		- Create (count level) info cycle
-		- Create (count level) percent select method
+		- Create (count level) info - cycle
+		- Create (count level) percent select - method
 	}
 
 	{
-		- Create (auto buy) count info cycle
-		- Create (auto buy) count percent select method
+		- Create (auto buy) count info - cycle
+		- Create (auto buy) count percent select - method
 	}
-	settings: buy if money not enough VAL
+	settings: bool param = buy if money not enough;
 }
 
 
 - Set limit 15quint for load data
 - Set limit 15quint for class addCount functions
 
-
 - Create function of showing short value of parameters
 1000 -> 1.0k
 15.000.000.000 -> 15.0m
 
+- Add after menu line
 
-
-autoSell:
-1 1 1 1 1 1 1 1 1 1 1
-autoBuy:
-1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1
+Start:	"========== AUTO BUY COUNT =========="
+End:	"^^^^^^^^^^ AUTO BUY COUNT ^^^^^^^^^^"

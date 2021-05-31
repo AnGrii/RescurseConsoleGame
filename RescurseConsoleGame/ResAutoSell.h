@@ -16,8 +16,8 @@ public:
 	void countMenu();
 	void levelMenu();
 
-	void countSell(Player player, ResourceManager resManager);
-	void levelSell(Player player, ResourceManager resManager);
+	void countSell(Player& player, ResourceManager& resManager);
+	void levelSell(Player& player, ResourceManager& resManager);
 
 private:
 	const uint16_t RESOURCES_AUTO_SELL_LIST_COUNT = 2,

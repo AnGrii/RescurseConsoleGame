@@ -28,10 +28,6 @@ ResAutoBuy::ResAutoBuy(std::vector<std::vector<uint64_t>> dataVector)
 	countVc.swap(dataVector[1]);
 }
 
-
-	
-
-
 std::vector<std::vector<uint64_t>> ResAutoBuy::UploadData()
 {
 	std::vector<std::vector<uint64_t>> dataVector;
@@ -43,3 +39,38 @@ std::vector<std::vector<uint64_t>> ResAutoBuy::UploadData()
 
 	return dataVector;
 }
+
+
+void ResAutoBuy::countMenu(ResourceManager resManager)
+{
+	//Information
+	std::cout << "========== AUTO BUY COUNT ==========" << std::endl << std::endl;
+	
+	for (size_t i = 0; i < RESOURCES_AUTO_BUY_DATA_COUNT; i++)
+	{
+		//Forestry - Count: 15200
+
+		std::cout << resManager.ReosourcesVector[i]->getName() << " - "
+			<< "Count: " << countVc[i] << std::endl;
+	}
+
+	std::cout << "^^^^^^^^^^ AUTO BUY COUNT ^^^^^^^^^^" << std::endl << std::endl;
+}
+
+void ResAutoBuy::levelMenu(ResourceManager resManager)
+{
+	//Information
+	std::cout << "========== AUTO BUY LEVEL ==========" << std::endl << std::endl;
+
+	for (size_t i = 0; i < RESOURCES_AUTO_BUY_DATA_COUNT; i++)
+	{
+		//Forestry - Count: 50000
+
+		std::cout << resManager.ReosourcesVector[i]->getName() << " - "
+			<< "Level: " << levelVc[i] << std::endl;
+	}
+
+	std::cout << "^^^^^^^^^^ AUTO BUY LEVEL ^^^^^^^^^^" << std::endl << std::endl;
+}
+
+
