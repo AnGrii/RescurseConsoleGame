@@ -1,9 +1,6 @@
 #include "ResAutoBuy.h"
 
 
-
-
-
 ResAutoBuy::ResAutoBuy(std::vector<std::vector<uint64_t>> dataVector)
 {
 	//Check size of loaded data
