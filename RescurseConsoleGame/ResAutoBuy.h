@@ -17,8 +17,8 @@ public:
 	void countMenu(ResourceManager resManager);
 	void levelMenu(ResourceManager resManager);
 
-	void countBuy(Player player, ResourceManager resManager);
-	void levelBuy(Player player, ResourceManager resManager);
+	void countBuy(Player& player, ResourceManager& resManager);
+	void levelBuy(Player& player, ResourceManager& resManager);
 
 private:
 	const uint16_t RESOURCES_AUTO_BUY_LIST_COUNT = 2,
