@@ -23,8 +23,7 @@ private:
 	const uint16_t RESOURCES_AUTO_SELL_LIST_COUNT = 3,
 		RESOURCES_AUTO_SELL_DATA_COUNT = 11;
 
-	std::vector<uint64_t> percentVc, countVc, ResValueVc; // Vc - vector
+	std::vector<uint64_t> countVc, percentVc, ResValueVc; // Vc - vector
 
-	void sellResource(Player& player, uint16_t resID);
 };
 

@@ -1,18 +1,19 @@
 Task for first list:
 
-- Create AutoBuy Class
-- Auto buy resources
+- Auto Buy / Sell Class
+- 
 {
+	Buy
 	{
-		- Create (count level) info - cycle
-		- Create (count level) percent select - method
+		- Add changing status
 	}
 
+	Sell
 	{
-		- Create (auto buy) count info - cycle
-		- Create (auto buy) count percent select - method
+		- Add changing status
 	}
-	settings: bool param = buy if money not enough;
+
+	Futures buy PART of resource for available money
 }
 
 

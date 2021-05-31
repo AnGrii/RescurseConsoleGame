@@ -21,8 +21,9 @@ ResAutoBuy::ResAutoBuy(std::vector<std::vector<uint64_t>> dataVector)
 		throw std::exception("wrong init lists data count!");
 	}
 
-	levelVc.swap(dataVector[0]);
-	countVc.swap(dataVector[1]);
+	// Count - Level - Values
+	countVc.swap(dataVector[0]);
+	levelVc.swap(dataVector[1]);
 	ResValueVc.swap(dataVector[2]);
 }
 
@@ -33,8 +34,9 @@ std::vector<std::vector<uint64_t>> ResAutoBuy::UploadData()
 
 	dataVector.reserve(RESOURCES_AUTO_BUY_LIST_COUNT);
 
-	dataVector.push_back(levelVc);
+	// Count - Level - Values
 	dataVector.push_back(countVc);
+	dataVector.push_back(levelVc);
 	dataVector.push_back(ResValueVc);
 
 	return dataVector;
@@ -44,7 +46,7 @@ std::vector<std::vector<uint64_t>> ResAutoBuy::UploadData()
 void ResAutoBuy::countMenu(ResourceManager resManager)
 {
 	//Information
-	std::cout << "========== AUTO BUY COUNT ==========" << std::endl << std::endl;
+	std::cout << "========== AUTO BUY COUNT SETTINGS ==========" << std::endl << std::endl;
 	
 	for (size_t i = 0; i < RESOURCES_AUTO_BUY_DATA_COUNT; i++)
 	{
@@ -54,16 +56,15 @@ void ResAutoBuy::countMenu(ResourceManager resManager)
 			<< "Count: " << countVc[i] << std::endl;
 	}
 
-	//BUY
+	//Changing status
 
-
-	std::cout << "^^^^^^^^^^ AUTO BUY COUNT ^^^^^^^^^^" << std::endl << std::endl;
+	std::cout << "^^^^^^^^^^ AUTO BUY COUNT SETTINGS ^^^^^^^^^^" << std::endl << std::endl;
 }
 
 void ResAutoBuy::levelMenu(ResourceManager resManager)
 {
 	//Information
-	std::cout << "========== AUTO BUY LEVEL ==========" << std::endl << std::endl;
+	std::cout << "========== AUTO BUY LEVEL SETTINGS ==========" << std::endl << std::endl;
 
 	for (size_t i = 0; i < RESOURCES_AUTO_BUY_DATA_COUNT; i++)
 	{
@@ -73,14 +74,62 @@ void ResAutoBuy::levelMenu(ResourceManager resManager)
 			<< "Level: " << levelVc[i] << std::endl;
 	}
 
-	//BUY
+	//Changing status
 
-	std::cout << "^^^^^^^^^^ AUTO BUY LEVEL ^^^^^^^^^^" << std::endl << std::endl;
+	std::cout << "^^^^^^^^^^ AUTO BUY LEVEL SETTINGS ^^^^^^^^^^" << std::endl << std::endl;
 }
 
-void ResAutoBuy::buyResource(Player& player, uint16_t resID)
+void ResAutoBuy::countBuy(Player& player, ResourceManager& resManager)
 {
-	//uint64_t transferValue = 
+	for (size_t resID = 0; resID < RESOURCES_AUTO_BUY_DATA_COUNT; resID++)
+	{
+		uint64_t transferValue = countVc[resID] * ResValueVc[resID];
+
+		if (transferValue <= player.getBalance()) {
+			player.tryPay(transferValue);
+			resManager.ReosourcesVector[resID]->add(countVc[resID]);
+		}
+		else {
+			// Not enough money message isn't important
+			// Auto buy will be cout<< it every cycle
+		}
+	}
 }
+
+
+void ResAutoBuy::levelBuy(Player& player, ResourceManager& resManager)
+{
+	for (size_t resID = 0; resID < RESOURCES_AUTO_BUY_DATA_COUNT; resID++)
+	{
+		uint64_t count = 0;
+		bool buyResource = false;
+
+
+		if (levelVc[resID] > resManager.ReosourcesVector[resID]->getCount()) {
+			count = levelVc[resID] - \
+				resManager.ReosourcesVector[resID]->getCount();
+
+			buyResource = true;
+		}
+		else {
+			buyResource = false;
+		}
+		
+
+		if (buyResource == true) {
+			uint64_t transferValue = count * ResValueVc[resID];
+
+			if (transferValue <= player.getBalance()) {
+				player.tryPay(transferValue);
+				resManager.ReosourcesVector[resID]->add(countVc[resID]);
+			}
+			else {
+				// Not enough money message isn't important
+				// Auto buy will be cout<< it every cycle
+			}
+		}
+	}
+}
+
 
 

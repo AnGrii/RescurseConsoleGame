@@ -13,7 +13,7 @@ ResAutoSell::ResAutoSell(std::vector<std::vector<uint64_t>> dataVector)
 
 	//Exception
 	if (not listsSizeBiggerNULL or not vectroSizeEqualLoadedData) {
-		throw std::exception("wrong init lists data count!");
+		throw std::exception("Wrong init lists data count!");
 	}
 
 	uint16_t dataCountForInitData = RESOURCES_AUTO_SELL_DATA_COUNT;
@@ -23,8 +23,9 @@ ResAutoSell::ResAutoSell(std::vector<std::vector<uint64_t>> dataVector)
 		throw std::exception("wrong init lists data count!");
 	}
 
-	percentVc.swap(dataVector[0]);
-	countVc.swap(dataVector[1]);
+	// Count - Percent - Values
+	countVc.swap(dataVector[0]);
+	percentVc.swap(dataVector[1]);
 	ResValueVc.swap(dataVector[2]);
 }
 
@@ -34,8 +35,9 @@ std::vector<std::vector<uint64_t>> ResAutoSell::UploadData()
 
 	dataVector.reserve(RESOURCES_AUTO_SELL_LIST_COUNT);
 
-	dataVector.push_back(percentVc);
+	// Count - Percent - Values
 	dataVector.push_back(countVc);
+	dataVector.push_back(percentVc);
 	dataVector.push_back(ResValueVc);
 
 	return dataVector;

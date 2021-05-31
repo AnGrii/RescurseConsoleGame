@@ -65,6 +65,9 @@ int main()
         buildings.work(resManager);
         buildings.brokeEvent();
 
+        resAutoBuy.countBuy(player, resManager);
+        resAutoBuy.levelBuy(player, resManager);
+
         player.printBalance();
         resManager.printResourcesCount();
         

@@ -24,9 +24,9 @@ private:
 	const uint16_t RESOURCES_AUTO_BUY_LIST_COUNT = 3,
 		RESOURCES_AUTO_BUY_DATA_COUNT = 11;
 
-	std::vector<uint64_t> levelVc, countVc, ResValueVc; // Vc - vector
+	std::vector<uint64_t> countVc, levelVc, ResValueVc; // Vc - vector
 
-	void buyResource(Player& player, uint16_t resID);
+	
 };
 
 
