@@ -36,7 +36,7 @@ public:
 
 	std::vector<uint16_t> getSettingsData();
 
-	std::vector<uint64_t> getResAutoSellData();
+	std::vector<std::vector<uint64_t>> getResAutoSellData();
 
 	std::vector<std::vector<uint64_t>> getResAutoBuyData();
 
@@ -57,7 +57,7 @@ public:
 
 	 void setSettingsData(std::vector<uint16_t> dataVector);
 
-	 void getResAutoSellData(std::vector<uint64_t> dataVector);
+	 void getResAutoSellData(std::vector<std::vector<uint64_t>> dataVector);
 
 	 void getResAutoBuyData(std::vector<std::vector<uint64_t>> dataVector);
 
@@ -86,8 +86,9 @@ private:
 		RESOURCES_EXTRACT_DATA_COUNT = 6,
 		MARKET_DATA_COUNT = 1 + (BUILDING_COUNT * 2), // 2 - Count values in Market
 		SETTINGS_DATA_COUNT = 1,
+		RESOURCES_AUTO_SELL_LIST_COUNT = 2,
 		RESOURCES_AUTO_SELL_DATA_COUNT = RESOURCES_COUNT,
-		RESOURCES_AUTO_BUY_COUNT = 2,
+		RESOURCES_AUTO_BUY_LIST_COUNT = 2,
 		RESOURCES_AUTO_BUY_DATA_COUNT = RESOURCES_COUNT;
 
 
@@ -107,7 +108,7 @@ private:
 
 	std::vector<uint16_t> settingsData;
 	
-	std::vector<uint64_t> resAutoSellData;
+	std::vector<std::vector<uint64_t>> resAutoSellData;
 
 	std::vector<std::vector<uint64_t>> resAutoBuyData;
 

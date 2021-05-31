@@ -70,6 +70,7 @@ void DataModule::loadData(std::string dataFileName)
 
 	// AUTO_SELL 
 	LoadingComponents::loadData<uint64_t>(resAutoSellData,
+		RESOURCES_AUTO_SELL_LIST_COUNT,
 		RESOURCES_AUTO_SELL_DATA_COUNT,
 		dataFileName,
 		keywordAutoSellData,
@@ -77,7 +78,7 @@ void DataModule::loadData(std::string dataFileName)
 
 	// AUTO_BUY
 	LoadingComponents::loadData<uint64_t>(resAutoBuyData,
-		RESOURCES_AUTO_BUY_COUNT,
+		RESOURCES_AUTO_BUY_LIST_COUNT,
 		RESOURCES_AUTO_BUY_DATA_COUNT,
 		dataFileName,
 		keywordAutoBuyData,
@@ -205,7 +206,7 @@ std::vector<uint16_t> DataModule::getSettingsData()
 	return settingsData;
 }
 
-std::vector<uint64_t> DataModule::getResAutoSellData()
+std::vector<std::vector<uint64_t>> DataModule::getResAutoSellData()
 {
 	return resAutoSellData;
 }
@@ -304,7 +305,7 @@ void DataModule::setSettingsData(std::vector<uint16_t> dataVector)
 	settingsData.swap(dataVector);
 }
 
-void DataModule::getResAutoSellData(std::vector<uint64_t> dataVector)
+void DataModule::getResAutoSellData(std::vector<std::vector<uint64_t>> dataVector)
 {
 	resAutoSellData.swap(dataVector);
 }

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 
+#include "Player.h"
 #include "ResourceManager.h"
 #include "SafetyInput.h"
 
@@ -19,8 +20,8 @@ public:
 private:
 	const uint16_t RESOURCES_COUNT = 11;
 
-	std::vector<uint64_t> autoSellPercentVc; // Vc - vector
+	std::vector<uint64_t> percentVc, countVc; // Vc - vector
 
-	void sellResource(Resource resource);
+	void sellResource(Player player, Resource resource);
 };
 

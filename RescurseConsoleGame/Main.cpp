@@ -57,7 +57,7 @@ int main()
 
     bool g_Exit = false;
 
-    while (!g_Exit)
+    while (not g_Exit)
     {
         GameMessages::keywordHelp(settings.getShowKeywordHelpStatus());
 

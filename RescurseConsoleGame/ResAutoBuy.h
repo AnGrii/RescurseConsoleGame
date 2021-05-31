@@ -9,8 +9,9 @@
 class ResAutoBuy
 {
 public:
-	ResAutoBuy(std::vector<std::vector<uint64_t>> dataVector);
+	ResAutoBuy(std::vector<std::vector<uint64_t>> dataVector){}
 	std::vector<std::vector<uint64_t>> UploadData();
+
 
 	void countMenu();
 	void levelMenu();
@@ -19,7 +20,7 @@ public:
 	void levelBuy(ResourceManager rm);
 
 private:
-	std::vector<uint64_t> countDataVc, levelDataVc; // Vc - vector
+	std::vector<uint64_t> countVc, levelVc; // Vc - vector
 };
 
 
