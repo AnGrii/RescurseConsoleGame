@@ -23,6 +23,7 @@ ResAutoBuy::ResAutoBuy(std::vector<std::vector<uint64_t>> dataVector)
 
 	levelVc.swap(dataVector[0]);
 	countVc.swap(dataVector[1]);
+	ResValueVc.swap(dataVector[2]);
 }
 
 
@@ -34,6 +35,7 @@ std::vector<std::vector<uint64_t>> ResAutoBuy::UploadData()
 
 	dataVector.push_back(levelVc);
 	dataVector.push_back(countVc);
+	dataVector.push_back(ResValueVc);
 
 	return dataVector;
 }
@@ -52,6 +54,9 @@ void ResAutoBuy::countMenu(ResourceManager resManager)
 			<< "Count: " << countVc[i] << std::endl;
 	}
 
+	//BUY
+
+
 	std::cout << "^^^^^^^^^^ AUTO BUY COUNT ^^^^^^^^^^" << std::endl << std::endl;
 }
 
@@ -68,7 +73,14 @@ void ResAutoBuy::levelMenu(ResourceManager resManager)
 			<< "Level: " << levelVc[i] << std::endl;
 	}
 
+	//BUY
+
 	std::cout << "^^^^^^^^^^ AUTO BUY LEVEL ^^^^^^^^^^" << std::endl << std::endl;
+}
+
+void ResAutoBuy::buyResource(Player& player, uint16_t resID)
+{
+	//uint64_t transferValue = 
 }
 
 

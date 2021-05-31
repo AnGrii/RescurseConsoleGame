@@ -13,18 +13,18 @@ public:
 	std::vector<std::vector<uint64_t>> UploadData();
 	
 
-	void countMenu();
-	void levelMenu();
+	void countMenu(ResourceManager resManager);
+	void levelMenu(ResourceManager resManager);
 
 	void countSell(Player& player, ResourceManager& resManager);
 	void levelSell(Player& player, ResourceManager& resManager);
 
 private:
-	const uint16_t RESOURCES_AUTO_SELL_LIST_COUNT = 2,
+	const uint16_t RESOURCES_AUTO_SELL_LIST_COUNT = 3,
 		RESOURCES_AUTO_SELL_DATA_COUNT = 11;
 
-	std::vector<uint64_t> percentVc, countVc; // Vc - vector
+	std::vector<uint64_t> percentVc, countVc, ResValueVc; // Vc - vector
 
-	void sellResource(Player player, Resource resource);
+	void sellResource(Player& player, uint16_t resID);
 };
 

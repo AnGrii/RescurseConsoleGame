@@ -25,6 +25,7 @@ ResAutoSell::ResAutoSell(std::vector<std::vector<uint64_t>> dataVector)
 
 	percentVc.swap(dataVector[0]);
 	countVc.swap(dataVector[1]);
+	ResValueVc.swap(dataVector[2]);
 }
 
 std::vector<std::vector<uint64_t>> ResAutoSell::UploadData()
@@ -35,6 +36,7 @@ std::vector<std::vector<uint64_t>> ResAutoSell::UploadData()
 
 	dataVector.push_back(percentVc);
 	dataVector.push_back(countVc);
+	dataVector.push_back(ResValueVc);
 
 	return dataVector;
 }
