@@ -75,7 +75,7 @@ private:
 		keywordAutoSellData = "autoSell:",
 		keywordAutoBuyData = "autoBuy:";
 		
-	const uint64_t MAX_PARAM_VALUE = 15'000'000'000'000'000'000;
+	const uint64_t MAX_PARAM_VALUE = 15'000'000'000'000'000'001;
 
 	static const uint16_t
 		COUNT_LOADING_DATA_UNIT_TO_THROW_ERROR = 1000,

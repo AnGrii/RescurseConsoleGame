@@ -24,6 +24,8 @@ public:
 	std::string getNameAndCountInfo();
 
 private:
+	const uint64_t MAX_PARAM_VALUE = 15'000'000'000'000'000'000;
+
 	static const uint16_t RESOURCES_DATA_COUNT = 1;
 
 	uint64_t count;

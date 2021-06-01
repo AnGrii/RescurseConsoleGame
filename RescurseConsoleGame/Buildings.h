@@ -65,6 +65,8 @@ public:
 	std::string getName() { return name; }
 
 private:
+	const uint64_t MAX_PARAM_VALUE = 15'000'000'000'000'000'000;
+
 	static const uint16_t BUILDING_DATA_COUNT = 11;
 
 	uint64_t count, productionOutput, inQueue, skipTimeValue, upgradeValue,

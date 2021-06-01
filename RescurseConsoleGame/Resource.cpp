@@ -35,13 +35,13 @@ uint64_t Resource::getCount()
 
 void Resource::add(uint64_t count)
 {
-	uint64_t limit = UINT64_MAX - this->count;
+	uint64_t limit = MAX_PARAM_VALUE - this->count;
 
 	if (limit > count) {
 		this->count += count;
 	}
 	else {
-		this->count = UINT64_MAX;
+		this->count = MAX_PARAM_VALUE;
 	}
 }
 void Resource::reduce(uint64_t count)

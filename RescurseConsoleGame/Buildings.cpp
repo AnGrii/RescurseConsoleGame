@@ -86,13 +86,13 @@ void Building::increaseUpgradeValue() {
 
 void Building::addCount(uint64_t addCount)
 {
-	uint64_t limit = UINT64_MAX - this->count;
+	uint64_t limit = MAX_PARAM_VALUE - this->count;
 
 	if (limit > addCount) {
 		this->count += addCount;
 	}
 	else {
-		this->count = UINT64_MAX;
+		this->count = MAX_PARAM_VALUE;
 	}
 }
 
@@ -172,7 +172,7 @@ bool Building::isInQueue()
 
 bool Building::addInQueue()
 {
-	if (UINT64_MAX - inQueue > 1) {
+	if (MAX_PARAM_VALUE - inQueue > 1) {
 		inQueue++;
 		return true;
 	}
@@ -290,12 +290,12 @@ std::string Building::getUpgradeBuildInfo()
 void Building::increaseProductivityOutput(bool payStatus)
 {
 	if (payStatus) {
-		if (productionOutput < UINT64_MAX - 2) {
+		if (productionOutput < MAX_PARAM_VALUE) {
 			productionOutput++;
 			this->increaseUpgradeValue();
 		}
 		else {
-			productionOutput = UINT64_MAX - 2;
+			productionOutput = MAX_PARAM_VALUE;
 		}
 	}
 	else {

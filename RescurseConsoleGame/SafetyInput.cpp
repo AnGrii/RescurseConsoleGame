@@ -44,22 +44,26 @@ uint64_t SafetyInput::cinAndReturnUI64T(std::string inputMSG)
 	std::cin >> str_number;
 	std::cout << std::endl;
 
-
-	bool coincidenceOfChar = false;
+	// Check first symbol for correctness 
+	// Method of converting string to number - create error if first symbol isn't a number 
+	bool charCoincidence = false;
 	if (str_number.size() > 0) {
-		char char_list[]{ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+		char numCharList[]{ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-		for (auto& ch : char_list)
+		for (auto& ch : numCharList)
 		{
 			if (ch == str_number[0]) {
-				coincidenceOfChar = true;
+				charCoincidence = true;
 				break;
 			}
 		}
 	}
 	
-	if (coincidenceOfChar) {
+	if (charCoincidence == true) {
 		number = std::stoull(str_number);
+		if (number > MAX_PARAM_VALUE) {
+			number = MAX_PARAM_VALUE;
+		}
 	}
 	else {
 		number = 0;

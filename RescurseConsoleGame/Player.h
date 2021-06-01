@@ -24,6 +24,8 @@ public:
 	std::string getName();
 	void setNewName(std::string newName);
 private:
+	const uint64_t MAX_PARAM_VALUE = 15'000'000'000'000'000'000;
+
 	uint64_t balance;
 	std::string name;
 };

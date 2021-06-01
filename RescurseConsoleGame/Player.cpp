@@ -13,13 +13,13 @@ void Player::printBalance()
 
 void Player::addBalance(uint64_t count)
 {
-	uint64_t limit = UINT64_MAX - this->balance;
+	uint64_t limit = MAX_PARAM_VALUE - this->balance;
 
 	if (limit > count) {
 		this->balance += count;
 	}
 	else {
-		this->balance = UINT64_MAX;
+		this->balance = MAX_PARAM_VALUE;
 	}
 }
 

@@ -13,6 +13,8 @@ public:
 
 	static uint64_t cinAndReturnUI64T(std::string inputMSG);
 private:
+	static const uint64_t MAX_PARAM_VALUE = 15'000'000'000'000'000'000;
+
 	SafetyInput() {}
 };
 
