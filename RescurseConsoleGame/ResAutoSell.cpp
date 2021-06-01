@@ -150,7 +150,7 @@ void ResAutoSell::percentSell(Player& player, ResourceManager& resManager)
 		uint64_t aviableResource = resManager.ReosourcesVector[resID]->getCount();
 
 
-		uint64_t sellCount = aviableResource * ( percentVc[resID] / 100.0 );
+		uint64_t sellCount = uint64_t( aviableResource * ( percentVc[resID] / 100.0 ));
 
 		uint64_t transferValue = sellCount * ResValueVc[resID];
 

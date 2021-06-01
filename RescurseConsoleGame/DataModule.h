@@ -240,6 +240,8 @@ private:
 		}
 
 	private:
+		static const uint64_t MAX_PARAM_VALUE = 15'000'000'000'000'000'001;
+
 		LoadingComponents() {}
 	};
 	class SavingComponents
@@ -303,6 +305,8 @@ private:
 		
 
 	private:
+		static const uint64_t MAX_PARAM_VALUE = 15'000'000'000'000'000'001;
+
 		SavingComponents(){}
 	};
 	class Reset {
@@ -352,6 +356,7 @@ private:
 			"resourcesName:",
 			"Log/ Wood/ Stone/ Coal/ Copper/ Tin/ Bronze/ Silver/ Gold/ Platina/ Diamond/",
 			"resourcesData:",
+			"1",
 			"1",
 			"1",
 			"1",

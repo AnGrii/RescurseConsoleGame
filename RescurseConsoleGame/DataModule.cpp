@@ -20,8 +20,10 @@ void DataModule::loadData(std::string dataFileName)
 		LoadingComponents::readNumber<uint64_t>);
 	
 	// RESOURCE_NAME_DATA
-	LoadingComponents::loadData<std::string>(resourcesNameData, RESOURCES_COUNT,
-		dataFileName, keywordResourcesName,
+	LoadingComponents::loadData<std::string>(resourcesNameData,
+		RESOURCES_COUNT,
+		dataFileName,
+		keywordResourcesName,
 		LoadingComponents::readName);
 
 	// LEVELING_OF_RESOURCES_NAMES
@@ -29,14 +31,17 @@ void DataModule::loadData(std::string dataFileName)
 
 	// RESOURCE_DATA
 	LoadingComponents::loadData<uint64_t>(resourcesData,
-		RESOURCES_COUNT, RESOURCES_DATA_COUNT,
-		dataFileName, keywordResourcesData,
+		RESOURCES_COUNT,
+		RESOURCES_DATA_COUNT,
+		dataFileName,
+		keywordResourcesData,
 		LoadingComponents::readNumber<uint64_t>);
 
 	// BUILDING_NAME
 	LoadingComponents::loadData<std::string>(buildingNameData,
 		BUILDING_COUNT,
-		dataFileName, keywordBuildingsName,
+		dataFileName,
+		keywordBuildingsName,
 		LoadingComponents::readName);
 	
 	// LEVELING_OF_BUILDINGS_NAMES
@@ -44,20 +49,24 @@ void DataModule::loadData(std::string dataFileName)
 
 	// BUILDING_DATA
 	LoadingComponents::loadData<uint64_t>(buildingsData,
-		BUILDING_COUNT, BUILDING_DATA_COUNT,
-		dataFileName, keywordBuildingsData,
+		BUILDING_COUNT,
+		BUILDING_DATA_COUNT,
+		dataFileName,
+		keywordBuildingsData,
 		LoadingComponents::readNumber<uint64_t>);
 
 	//RESOURCE_EXTRACT_DATA
 	LoadingComponents::loadData<uint64_t>(resourcesExtractData,
 		RESOURCES_EXTRACT_DATA_COUNT,
-		dataFileName, keywordRecourcesExtractData,
+		dataFileName,
+		keywordRecourcesExtractData,
 		LoadingComponents::readNumber<uint64_t>);
 
 	// MARKET_DATA
 	LoadingComponents::loadData<uint64_t>(marketData,
 		MARKET_DATA_COUNT,
-		dataFileName, keywordMarketData,
+		dataFileName,
+		keywordMarketData,
 		LoadingComponents::readNumber<uint64_t>);
 
 	//SETTINGS_DATA
