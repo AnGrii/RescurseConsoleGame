@@ -81,7 +81,7 @@ void ResAutoSell::countMenu(ResourceManager resManager)
 	}
 
 	uint16_t resID = \
-		SafetyInput::cinAndReturnCharID("Input letter to change Auto Sell Count: ",
+		SafetyInput::cinAndReturnCharID("\nInput letter to select Recource: ",
 			charIDList, RESOURCES_AUTO_SELL_DATA_COUNT);
 
 	uint64_t newCount = SafetyInput::cinAndReturnUI64T("Input new Count: ");
@@ -111,7 +111,7 @@ void ResAutoSell::percentMenu(ResourceManager resManager)
 	}
 
 	uint16_t resID = \
-		SafetyInput::cinAndReturnCharID("Input letter to change Auto Sell Percent: ",
+		SafetyInput::cinAndReturnCharID("\nInput letter to select Recource: ",
 			charIDList, RESOURCES_AUTO_SELL_DATA_COUNT);
 
 	uint64_t newPercent = SafetyInput::cinAndReturnUI64T("Input new Percent (0 - 100): ");
@@ -132,7 +132,7 @@ void ResAutoSell::countSell(Player& player, ResourceManager& resManager)
 
 		uint64_t aviableResource = resManager.ReosourcesVector[resID]->getCount();
 
-		if (countVc[resID] >= aviableResource) {
+		if (aviableResource >= countVc[resID]) {
 			player.addBalance(transferValue);
 			resManager.ReosourcesVector[resID]->reduce(countVc[resID]);
 		}
@@ -150,17 +150,12 @@ void ResAutoSell::percentSell(Player& player, ResourceManager& resManager)
 		uint64_t aviableResource = resManager.ReosourcesVector[resID]->getCount();
 
 
-		uint64_t sellCount = aviableResource * percentVc[resID];
+		uint64_t sellCount = aviableResource * ( percentVc[resID] / 100.0 );
 
 		uint64_t transferValue = sellCount * ResValueVc[resID];
 
-		if (countVc[resID] >= sellCount) {
-			player.addBalance(transferValue);
-			resManager.ReosourcesVector[resID]->reduce(countVc[resID]);
-		}
-		else {
-			// Not enough money message isn't important
-			// Auto buy will be cout<< it every cycle
-		}
+		
+		player.addBalance(transferValue);
+		resManager.ReosourcesVector[resID]->reduce(sellCount);
 	}
 }

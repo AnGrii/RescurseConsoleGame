@@ -1,27 +1,27 @@
 playerName:
 Player/ 
 playerData:
-45247512226 
+645 
 resourcesName:
 Log    / Wood   / Stone  / Coal   / Copper / Tin    / Bronze / Silver / Gold   / Platina/ Diamond/ 
 resourcesData:
-61 
-486 
-1001 
+54 
+1293 
+19 
 1 
 1 
 1 
 1 
 1 
-57 
 1 
 1 
+51 
 buildingsName:
 Forestry       / Sawmill        / Quarry         / Career         / Copper Mine    / Tin Mine       / Alloy Plant    / Silver Cleaner / Gold_Mine      / Platina Cleaner/ Diamond Factory/ 
 buildingsData:
-2 2 1 101 121 6 1 15 1 1 101 
-1 2 1 101 251 21 1 31 7 1 101 
-1 2 1 101 501 53 46 61 19 7 101 
+7 2 1 101 121 6 5 38 1 1 101 
+4 2 1 101 251 21 1 52 10 1 101 
+3 2 1 101 501 53 1 73 22 8 101 
 1 2 1 101 1001 69 1 101 26 16 101 
 1 2 1 101 10001 85 1 251 51 26 101 
 1 2 1 101 25001 101 1 501 101 51 101 
@@ -38,9 +38,9 @@ setting:
 2 
 autoSell:
 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 
+6 1 11 1 1 1 1 1 1 1 1 
 2 3 4 5 10 18 41 66 131 211 951 
 autoBuy:
 1 1 1 1 1 1 1 1 1 1 1 
-1 1 1 1 1 1 1 1 57 1 1 
+1 1 1 1 1 1 1 1 1 1 1 
 2 3 4 6 11 21 46 81 151 251 1001 

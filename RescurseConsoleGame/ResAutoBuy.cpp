@@ -79,7 +79,7 @@ void ResAutoBuy::countMenu(ResourceManager resManager)
 	}
 
 	uint16_t resID = \
-		SafetyInput::cinAndReturnCharID("Input letter to change Auto Buy Count: ",
+		SafetyInput::cinAndReturnCharID("\nInput letter to select Recource: ",
 			charIDList, RESOURCES_AUTO_BUY_DATA_COUNT);
 
 	uint64_t newCount = SafetyInput::cinAndReturnUI64T("Input new Count: ");
@@ -109,7 +109,7 @@ void ResAutoBuy::levelMenu(ResourceManager resManager)
 	}
 
 	uint16_t resID = \
-		SafetyInput::cinAndReturnCharID("Input letter to change Auto Buy Level: ",
+		SafetyInput::cinAndReturnCharID("\nInput letter to select Recource: ",
 			charIDList, RESOURCES_AUTO_BUY_DATA_COUNT);
 
 	uint64_t newLevel = SafetyInput::cinAndReturnUI64T("Input new Level: ");
