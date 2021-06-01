@@ -42,3 +42,125 @@ std::vector<std::vector<uint64_t>> ResAutoSell::UploadData()
 
 	return dataVector;
 }
+
+
+void ResAutoSell::Menu(ResourceManager resManager)
+{
+	std::cout
+		<< "c - Count Menu" << std::endl
+		<< "p - Percent Menu" << std::endl;
+
+	char select = SafetyInput::cinAndReturnChar("Input: ");
+
+	if (select == 'c') {
+		countMenu(resManager);
+	}
+	else if (select == 'p') {
+		percentMenu(resManager);
+	}
+}
+
+
+void ResAutoSell::countMenu(ResourceManager resManager)
+{
+	const std::vector<char> charIDList
+	{ 'q','w','e','r','t','y','u','i','o',
+		'p','a','s','d','f','g','h','j','k',
+		'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
+
+	//Information
+	std::cout << "========== AUTO SELL COUNT SETTINGS ==========" << std::endl << std::endl;
+
+	for (size_t i = 0; i < RESOURCES_AUTO_SELL_DATA_COUNT; i++)
+	{
+		//Forestry - Count: 15200
+
+		std::cout << charIDList[i] << " - "
+			<< resManager.ReosourcesVector[i]->getName() << " - "
+			<< "Count: " << countVc[i] << std::endl;
+	}
+
+	uint16_t resID = \
+		SafetyInput::cinAndReturnCharID("Input letter to change Auto Sell Count: ",
+			charIDList, RESOURCES_AUTO_SELL_DATA_COUNT);
+
+	uint64_t newCount = SafetyInput::cinAndReturnUI64T("Input new Count: ");
+
+	countVc[resID] = newCount;
+
+	std::cout << "^^^^^^^^^^ AUTO SELL COUNT SETTINGS ^^^^^^^^^^" << std::endl << std::endl;
+}
+
+void ResAutoSell::percentMenu(ResourceManager resManager)
+{
+	const std::vector<char> charIDList
+	{ 'q','w','e','r','t','y','u','i','o',
+		'p','a','s','d','f','g','h','j','k',
+		'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
+
+	//Information
+	std::cout << "========== AUTO SELL PERCENT SETTINGS ==========" << std::endl << std::endl;
+
+	for (size_t i = 0; i < RESOURCES_AUTO_SELL_DATA_COUNT; i++)
+	{
+		//Forestry - Count: 15200
+
+		std::cout << charIDList[i] << " - "
+			<< resManager.ReosourcesVector[i]->getName() << " - "
+			<< "Percent: " << percentVc[i] << std::endl;
+	}
+
+	uint16_t resID = \
+		SafetyInput::cinAndReturnCharID("Input letter to change Auto Sell Percent: ",
+			charIDList, RESOURCES_AUTO_SELL_DATA_COUNT);
+
+	uint64_t newPercent = SafetyInput::cinAndReturnUI64T("Input new Percent (0 - 100): ");
+
+	if (newPercent > 100) { newPercent = 100; }
+
+	percentVc[resID] = newPercent;
+
+	std::cout << "^^^^^^^^^^ AUTO SELL PERCENT SETTINGS ^^^^^^^^^^" << std::endl << std::endl;
+}
+
+
+void ResAutoSell::countSell(Player& player, ResourceManager& resManager)
+{
+	for (size_t resID = 0; resID < RESOURCES_AUTO_SELL_DATA_COUNT; resID++)
+	{
+		uint64_t transferValue = countVc[resID] * ResValueVc[resID];
+
+		uint64_t aviableResource = resManager.ReosourcesVector[resID]->getCount();
+
+		if (countVc[resID] >= aviableResource) {
+			player.addBalance(transferValue);
+			resManager.ReosourcesVector[resID]->reduce(countVc[resID]);
+		}
+		else {
+			// Not enough money message isn't important
+			// Auto buy will be cout<< it every cycle
+		}
+	}
+}
+
+void ResAutoSell::percentSell(Player& player, ResourceManager& resManager)
+{
+	for (size_t resID = 0; resID < RESOURCES_AUTO_SELL_DATA_COUNT; resID++)
+	{
+		uint64_t aviableResource = resManager.ReosourcesVector[resID]->getCount();
+
+
+		uint64_t sellCount = aviableResource * percentVc[resID];
+
+		uint64_t transferValue = sellCount * ResValueVc[resID];
+
+		if (countVc[resID] >= sellCount) {
+			player.addBalance(transferValue);
+			resManager.ReosourcesVector[resID]->reduce(countVc[resID]);
+		}
+		else {
+			// Not enough money message isn't important
+			// Auto buy will be cout<< it every cycle
+		}
+	}
+}

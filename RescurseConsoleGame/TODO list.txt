@@ -1,16 +1,11 @@
 Task for first list:
 
-- Auto Buy / Sell Class
+- Auto Sell Class
 - 
 {
-	Buy
+	AutoSell
 	{
-		- Add changing status
-	}
-
-	Sell
-	{
-		- Add changing status
+	PERCENT NEED CORRECT INPUT 0 - 100
 	}
 
 	Futures buy PART of resource for available money

@@ -53,6 +53,7 @@ int main()
     Settings settings(data.getSettingsData());
 
     ResAutoBuy resAutoBuy(data.setResAutoBuyData());
+
     ResAutoSell resAutoSell(data.setResAutoSellData());
 
     bool g_Exit = false;
@@ -61,16 +62,29 @@ int main()
     {
         GameMessages::keywordHelp(settings.getShowKeywordHelpStatus());
 
+
         buildings.updateBuildingsQueue();
+
         buildings.work(resManager);
+
         buildings.brokeEvent();
 
+
         resAutoBuy.countBuy(player, resManager);
+
         resAutoBuy.levelBuy(player, resManager);
 
+
+        resAutoSell.countSell(player, resManager);
+
+        resAutoSell.percentSell(player, resManager);
+
+
         player.printBalance();
+
         resManager.printResourcesCount();
         
+
         char g_Select = SafetyInput::cinAndReturnChar("Input: ");
 
         switch (g_Select)
@@ -107,7 +121,7 @@ int main()
             market.Menu(player, resManager);
             break;
         case 't':
-            std::cout << "Auto sell Resources! FUTURE VERSION!!!" << std::endl;
+            resAutoSell.Menu(resManager);
             break;
         case 'o':
             resAutoBuy.Menu(resManager);
@@ -127,13 +141,21 @@ int main()
         {
 #ifdef SAVE_DATA
             data.setPlayerName(player.getPlayerNameData());
+
             data.setPlayerData(player.getPlayerData());
+
             data.setRecourcesData(resManager.UploadData());
+
             data.setBuildingsData(buildings.UploadData());
+
             data.setResourcesExtractData(resExtract.UploadData());
+
             data.setMarketData(market.UploadData());
+
             data.setSettingsData(settings.UploadData());
+
             data.setResAutoBuyData(resAutoBuy.UploadData());
+
             data.setResAutoSellData(resAutoSell.UploadData());
 
             data.saveData(g_DataFileName);
