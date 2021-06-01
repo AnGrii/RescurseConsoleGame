@@ -23,6 +23,7 @@ void Building::Reinitialisate(std::vector<uint64_t> dataVector, std::string name
 	powerPercent =		dataVector[counter]; counter++;
 	this->name = name;
 }
+
 std::vector<uint64_t> Building::UploadData()
 {
 	std::vector<uint64_t> dataVector;
@@ -45,6 +46,7 @@ std::vector<uint64_t> Building::UploadData()
 	return dataVector;
 }
 
+
 uint64_t Building::getResource1Count()
 {
 	return resource1;
@@ -59,6 +61,7 @@ uint64_t Building::getResource3Count()
 {
 	return resource3;
 }
+
 
 void Building::increaseResRequest1()
 {
@@ -75,6 +78,7 @@ void Building::increaseResRequest3()
 	resource3 = uint64_t(resource3 * INCREASE_VALUE_COEFFICIENT);
 }
 
+
 void Building::increaseSkipBuildingTimeValue()
 {
 	skipTimeValue = uint64_t(skipTimeValue * INCREASE_VALUE_COEFFICIENT);
@@ -83,6 +87,7 @@ void Building::increaseSkipBuildingTimeValue()
 void Building::increaseUpgradeValue() {
 	upgradeValue = uint64_t(upgradeValue * INCREASE_VALUE_COEFFICIENT);
 }
+
 
 void Building::addCount(uint64_t addCount)
 {
@@ -106,17 +111,6 @@ uint64_t Building::getProductionOutput()
 	return productionOutput;
 }
 
-uint64_t Building::calcProductivity()
-{
-	uint64_t productivity = uint64_t(count * productionOutput * (powerPercent / 100.0));
-
-	if (productivity > 0) {
-		return productivity;
-	}
-	else if(count > 0) { return 1; }
-	else { return 0; }
-}
-
 uint64_t Building::getBuildTime()
 {
 	return buildTime;
@@ -138,6 +132,17 @@ bool Building::getActiveStatus()
 	return false;
 }
 
+uint64_t Building::getSkipValue()
+{
+	return skipTimeValue;
+}
+
+uint64_t Building::getUpgradeValue()
+{
+	return upgradeValue;
+}
+
+
 void Building::setPowerPercent(uint64_t percent)
 {
 	if (percent <= 100) {
@@ -149,15 +154,18 @@ void Building::setPowerPercent(uint64_t percent)
 	}
 }
 
-uint64_t Building::getSkipValue()
+
+uint64_t Building::calcProductivity()
 {
-	return skipTimeValue;
+	uint64_t productivity = uint64_t(count * productionOutput * (powerPercent / 100.0));
+
+	if (productivity > 0) {
+		return productivity;
+	}
+	else if (count > 0) { return 1; }
+	else { return 0; }
 }
 
-uint64_t Building::getUpgradeValue()
-{
-	return upgradeValue;
-}
 
 bool Building::isInQueue()
 {
@@ -198,6 +206,7 @@ void Building::updateQueue()
 	}
 }
 
+
 std::string Building::getQueueInfo()
 {
 	if (this->isInQueue()) {
@@ -211,6 +220,7 @@ std::string Building::getQueueInfo()
 	}
 	return "-";
 }
+
 
 std::string Building::getSkipInfo()
 {
@@ -232,6 +242,7 @@ void Building::skipBuildingTime()
 	//See declaration of bulding skip time
 }
 
+
 void Building::skipBuildingProcess(bool payStatus)
 {
 	if (this->isInQueue()) {
@@ -249,6 +260,7 @@ void Building::skipBuildingProcess(bool payStatus)
 	}
 }
 
+
 void Building::brokeBuild()
 {
 	if (count > 0) {
@@ -258,6 +270,7 @@ void Building::brokeBuild()
 			<< std::endl << std::endl;
 	}
 }
+
 
 void Building::buildInfo()
 {
@@ -273,6 +286,7 @@ void Building::buildInfo()
 		<< "Power Percent:\t\t" << powerPercent << std::endl << std::endl;
 }
 
+
 std::string Building::getUpgradeBuildInfo()
 {
 	std::string info;
@@ -286,6 +300,7 @@ std::string Building::getUpgradeBuildInfo()
 
 	return info;
 }
+
 
 void Building::increaseProductivityOutput(bool payStatus)
 {

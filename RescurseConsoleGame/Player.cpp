@@ -1,6 +1,6 @@
 #include "Player.h"
 
-void Player::SaveData(std::vector<std::string>& name, std::vector<uint64_t>& dataVector)
+void Player::UploadData(std::vector<std::string>& name, std::vector<uint64_t>& dataVector)
 {
 	name[0] = this->name;
 	dataVector[0] = balance;

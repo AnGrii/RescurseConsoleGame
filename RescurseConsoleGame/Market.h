@@ -14,6 +14,7 @@ public:
 	Market(std::vector<uint64_t> dataVector);
 	std::vector<uint64_t> UploadData();
 	
+
 	void Menu(Player& p, ResourceManager &rm);
 private:
 	const uint16_t BUILDINGS_COUNT = 11;

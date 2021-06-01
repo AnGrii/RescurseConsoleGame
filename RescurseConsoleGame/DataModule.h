@@ -16,8 +16,11 @@ public:
 	DataModule(const std::string dataFileName);
 
 	void loadData(const std::string dataFileName);
+
 	void saveData(const std::string dataFileName);
+
 	void resetData(const std::string dataFileName);
+
 	void resetDataWithSecurity(const std::string dataFileName);
 	
 
@@ -40,7 +43,9 @@ public:
 
 	std::vector<std::vector<uint64_t>> setResAutoBuyData();
 
+
 	void setPlayerName(std::vector<std::string> dataVector);
+
 	void setPlayerData(std::vector<uint64_t> dataVector);
 
 	// Resources name don't need to change in program

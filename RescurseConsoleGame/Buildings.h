@@ -17,50 +17,78 @@ public:
 	void Reinitialisate(std::vector<uint64_t> dataVector, std::string name);
 	std::vector<uint64_t> UploadData();
 
+
 	uint64_t getResource1Count();
+
 	uint64_t getResource2Count();
+
 	uint64_t getResource3Count();
 
+
 	void increaseResRequest1();
+
 	void increaseResRequest2();
+
 	void increaseResRequest3();
+
 
 	void increaseSkipBuildingTimeValue();
 
+
 	void increaseUpgradeValue();
+
 
 	void addCount(uint64_t addCount);
 
+
 	uint64_t getCount();
 
+
 	uint64_t getProductionOutput();
+
 	uint64_t calcProductivity(); //Calculate
 
+
 	void setPowerPercent(uint64_t percent);
+
 	std::string getPowerPercentInfo();
 	
 
 	uint64_t getBuildTime();
+
 	bool getActiveStatus();
 	
+
 	uint64_t getSkipValue();
+
 
 	uint64_t getUpgradeValue();
 
+
 	bool isInQueue();
+
 	bool addInQueue();
+
 	void updateQueue();
+
 	std::string getQueueInfo();
+
 
 	std::string getSkipInfo();
 	
+
 	void skipBuildingProcess(bool payStatus);
+
 	void brokeBuild();
+
 
 	void buildInfo();
 
+
 	std::string getUpgradeBuildInfo();
+
 	void increaseProductivityOutput(bool payStatus);
+
 
 	std::string getName() { return name; }
 
