@@ -29,6 +29,9 @@
 /// Function Reset will be off together with saving!!!
 /// For including new data and testing new features
 #define SAVE_DATA
+// RESET_METHOD turn on / off reset
+// For prevent losing new data for new components while it's in development progress
+#define RESET_METHOD
 
 
 int main()
@@ -128,8 +131,10 @@ int main()
             break;
         case 'r':
 #ifdef SAVE_DATA
+#ifdef RESET_METHOD
             data.resetDataWithSecurity(g_DataFileName);
-#endif
+#endif // RESET_METHOD
+#endif // SAVE_DATA
             break;
         case 'a':
             GameMessages::About();

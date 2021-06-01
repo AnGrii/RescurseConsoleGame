@@ -75,6 +75,8 @@ private:
 		keywordAutoSellData = "autoSell:",
 		keywordAutoBuyData = "autoBuy:";
 		
+	const uint64_t MAX_PARAM_VALUE = 15'000'000'000'000'000'000;
+
 	static const uint16_t
 		COUNT_LOADING_DATA_UNIT_TO_THROW_ERROR = 1000,
 		PLAYER_DATA_COUNT = 1,
@@ -132,7 +134,7 @@ private:
 
 			dataFile >> buffer;
 
-			if ((buffer == 0) or (buffer >= INT64_MAX - 107)) // Limit for double
+			if ((buffer == 0) or (buffer >= MAX_PARAM_VALUE)) // Limit for double
 			{
 				std::string errorMSG = "Broken data loaded!";
 
@@ -240,7 +242,7 @@ private:
 	public:
 		template<typename dataType>
 		static dataType prepareNumberToSave(dataType number) {
-			if (number < UINT64_MAX) {
+			if (number <= MAX_PARAM_VALUE) {
 				return ++number;
 			}
 			else {
@@ -343,40 +345,46 @@ private:
 			"playerData:",
 			"1",
 			"resourcesName:",
-			"Log/ Wood/ Stone/ Coal/ Copper/ Tin/ Bronze/ Silver/ Gold/",
-			"Platina/ Diamond/",
+			"Log/ Wood/ Stone/ Coal/ Copper/ Tin/ Bronze/ Silver/ Gold/ Platina/ Diamond/",
 			"resourcesData:",
-			"1 2",
-			"1 3",
-			"1 4",
-			"1 6",
-			"1 11",
-			"1 21",
-			"1 46",
-			"1 81",
-			"1 151",
-			"1 251",
-			"1 1001",
+			"1",
+			"1",
+			"1",
+			"1",
+			"1",
+			"1",
+			"1",
+			"1",
+			"1",
+			"1",
 			"buildingsName:",
-			"Forestry/ Sawmill/ Quarry/ Career/ Copper Mine/ Tin Mine/",
-			"Alloy Plant/ Silver Cleaner/ Gold_Mine/",
-			"Platina Cleaner/ Diamond Factory/",
+			"Forestry/ Sawmill/ Quarry/ Career/ Copper Mine/ Tin Mine/ Alloy Plant/ Silver Cleaner/ Gold Mine/ Platina Cleaner/ Diamond Factory/",
 			"buildingsData:",
-			"1 2 1 101 101 6 1 11 1 1 101",
-			"1 2 1 101 251 21 1 26 6 1 101",
-			"1 2 1 101 501 53 1 51 16 6 101",
-			"1 2 1 101 1001 69 1 101 26 16 101",
-			"1 2 1 101 10001 85 1 251 51 26 101",
-			"1 2 1 101 25001 101 1 501 101 51 101",
-			"1 2 1 101 50001 117 1 1001 251 101 101",
-			"1 2 1 101 100001 133 1 2501 501 251 101",
-			"1 2 1 101 250001 149 1 5001 1001 501 101",
-			"1 2 1 101 500001 165 1 10001 2501 1001 101",
-			"1 2 1 101 1000001 181 1 50001 10001 5001 101",
+			"1 2 1 101 121		6	1 38	1		1		101",
+			"1 2 1 101 251		21	1 52	10		1		101",
+			"1 2 1 101 501		53	1 73	22		8		101",
+			"1 2 1 101 1001		69	1 101	26		16		101",
+			"1 2 1 101 10001	85	1 251	51		26		101",
+			"1 2 1 101 25001	101	1 501	101		51		101",
+			"1 2 1 101 50001	117	1 1001	251		101		101",
+			"1 2 1 101 100001	133	1 2501	501		251		101",
+			"1 2 1 101 250001	149 1 5001	1001	501		101",
+			"1 2 1 101 500001	165 1 10001 2501	1001	101",
+			"1 2 1 101 1000001	181 1 50001 10001	5001	101",
 			"resourcesExtract:",
-			"2 101 2 101 2 101",
+			"2 101 2 501 2 1001",
 			"marketData:",
-			"1.75"
+			"175 2 1 3 1 4 1 6 1 11 1 21 1 46 1 81 1 151 1 251 1 1001 1",
+			"setting:",
+			"2",
+			"autoSell:",
+			"1 1 1 1 1 1 1 1 1 1 1",
+			"1 1 1 1 1 1 1 1 1 1 1",
+			"2 3 4 5 10 18 41 66 131 211 951",
+			"autoBuy:",
+			"1 1 1 1 1 1 1 1 1 1 1",
+			"1 1 1 1 1 1 1 1 1 1 1",
+			"2 3 4 6 11 21 46 81 151 251 1001"
 		};
 	};
 	class WorkWithString {

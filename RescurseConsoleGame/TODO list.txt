@@ -5,7 +5,11 @@ Task for first list:
 {
 	AutoSell
 	{
-	PERCENT NEED CORRECT INPUT 0 - 100
+		Level
+	}
+	Auto Buy
+	{
+		Money ercent buy
 	}
 
 	Futures buy PART of resource for available money
